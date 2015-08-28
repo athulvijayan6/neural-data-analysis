@@ -1,7 +1,7 @@
 % @Author: Athul Vijayan
 % @Date:   2014-05-09 13:56:20
-% @Last Modified by:   Athul Vijayan
-% @Last Modified time: 2015-08-23 07:41:18
+% @Last Modified by:   Athul
+% @Last Modified time: 2015-08-27 09:46:38
 
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -91,15 +91,20 @@ Virus expressing GCaMP6f was injected into the V1 of mice. Approximately 3 weeks
 \subsection{Restructuring the data} % (fold)
 \label{sub:restructuring_the_data}
 There are 19200 Ca readings for each mouse. The experiment is done using 16 different stimuli, Let us think of it as 16 classes. The angle of the drifting pattern changes between the classes. It is implicit that $0^{o}$ and $180^{o}$ will have same orientation, but the direction of drifting will be opposite.\\
-First, the data is split into 16 parts corresponding to each class. There are 10 trials for each class. The data is split into 160 subsequences of $19200/160 = 120$ length. Now this is a time-series of 120 points for each trial, and there are ten sets of data for each class.
+First, the data is split into 16 parts corresponding to each class. There are 10 trials for each class. The data is split into 160 subsequences of $19200/160 = 120$ length. Now this is a time-series of 120 points for each trial, and there are ten sets of data for each class.\\
+120 points in the data represents 6 seconds of brain activity. Out of the 6 seconds, first 4 seconds (80 samples for sampling frequency of 20Hz) correspond to no-stimuli (or Gray stimuli). This represents the background activity of the neuron. The last 40 samples show the response for the intended stimuli.
 % subsection restructuring_the_data (end)
 
 \section{Analysis} % (fold)
 \label{sec:analysis}
+Analysis is broken down into various problem statements. Various methods are considered for each of the problem statements.
 \subsection{Quantifying the neuron activity} % (fold)
 \label{sub:quantifying_the_neuron_activity}
-The 120 point time series provide the activity of single cell in response to a particular stimulus in a trial. The activity of cell has to be studied. The first 80 samples are expected to have spikes due to only background activity, as the stimulus was gray during that time. Peaks in Ca concentration denotes the spikes in the neuron. From neuroanatomy, spike rate is a good quantify to measure neuron activity. In Calcium imaging, the amplitudes corresponds to Ca ion concentration. From the neuron models, more the Ca concentration, more is the spike rate. Following methods are used for quantifying spike rate.
-\subsubsection{Thresholding} % (fold)
+The 120 point time series provide the activity of single cell in response to a particular stimulus in a trial. The activity of cell has to be studied. The first 80 samples are expected to have spikes due to only background activity, as the stimulus was gray during that time. Peaks in Ca concentration denotes the spikes in the neuron. From neuroanatomy, spike rate is a good quantify to measure neuron activity. In Calcium imaging, the amplitudes corresponds to Ca ion concentration. From the neuron models, more the Ca concentration, more is the spike rate. Following methods are used for quantifying spike rate.\\
+Using various methods, a time sequence $F_t$ is calculated. $F_t$ represents the spiking activity of neuron. A relatively large $F_t$ represents a spike and small corresponds to no-spike. Number of spikes in an interval is what we seek. In the 120 sample data, $F_t$ of size 120 is found using various methods. Finally, spike rate is calculated by subtracting the background activity from the response.
+$$spikeRate = \frac{\sum_{n=81}^{120} F_n}{40} - \frac{\sum_{n=1}^{80} F_n}{80}$$
+Various methods for finding $F_t$ is the first problem statement. Following approaches are made to solve this.
+\subsubsection{Thresholding } % (fold)
 \label{ssub:thresholding}
 
 
@@ -111,6 +116,7 @@ The 120 point time series provide the activity of single cell in response to a p
 % subsubsection moving_average_model (end)
 
 % subsection quantifying_the_neuron_activity (end)
+
 \subsection{Estimating orientation selectivity of neuron} % (fold)
 \label{sub:estimating_orientation_selectivity_of_neuron}
 \subsubsection{Circular variance of direction and orientation} % (fold)
