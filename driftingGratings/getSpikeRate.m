@@ -1,7 +1,7 @@
 % @Author: Athul Vijayan
 % @Date:   2015-08-22 12:51:54
-% @Last Modified by:   Athul
-% @Last Modified time: 2015-08-28 13:14:36
+% @Last Modified by:   Athul Vijayan
+% @Last Modified time: 2015-08-29 14:22:51
 
 clear('all');
 
@@ -29,25 +29,85 @@ for i=1:size(rawData, 1)
 end
 
 % ====================== Plots =======================
-% 1. Plots each time-series data of length 120 
-    % figure;
-    % hold on;
-    % for j=1:size(stimuliSeq, 1)
-    %     plot(1:120, cellData{1}(j, 1:120));
-    % end
+colors = hsv(10);
+neuronId = 20;
 
+% -------------------------1------------------------------
+% % 1. Plots each time-series data of length 120 with 
+% % each trial of an experiment with seperate color
+% figure;
+% hold on;
+% experimentNo = 2;
+% for j=1:10
+%     h = plot(1:120, cellData{1}(10*(experimentNo-1) + j, 1:120));
+%     set(h,'Color', colors(j, :));
+%     set(h,'LineWidth',2);
+% end
+% title('Plots of time-series data with each trial in diffenrent color');
+% xlabel('time');
+% ylabel('smoothed amplitude');
+% --------------------------------------------------------
+
+% --------------------------2-----------------------------
 % 2. plots The responses with increasing angle without the gray region
-    % plot(1:1920, reshape(cellData{1}(1:10:160, 1:120), 1, prod(size(cellData{1}(1:10:160, 1:120)))))
+% plot(1:1920, reshape(cellData{1}(1:10:160, 1:120), 1, prod(size(cellData{1}(1:10:160, 1:120)))));
+% ---------------------------------------------------------
 
+% --------------------------3-----------------------------
 % 3. Plots the gray area alone. To show that the background data are almost uniform
+% --------------------------------------------------------
 
-% 4. Polar plot of orientation selectivity
-figure
+
+% --------------------------4-----------------------------
+% 4. Polar plot of Directional selectivity
 % Take a neuron, there will be 10 plots corresponding to each trial of the experiment
 % plot each of the 10 plots in a figure to verify the similarity in response
-neuronId = 20;
-colors = ['']
-for 
-polar(spikeRate{1}(1, 1), spikeRate{1}(1, 2), '*r');
+figure;
+for trial=1:10
+    % Normalize all trial response from 0 to 1
+    normData = abs(spikeRate{neuronId}(trial:10:end, 1))/max(abs(spikeRate{neuronId}(trial:10:end, 1)));
+    normData(end+1) = normData(1);
+    theta = spikeRate{neuronId}(trial:10:end, 2);
+    theta(end+1) = theta(1);
+    h = polar(theta, normData);
+    set(h,'Color',colors(trial, :));
+    set(h,'LineStyle','--');
+    set(h,'Marker','o');
+    set(h,'LineWidth',2);
+    hold on;
+end
+h = compass(dircirvar{neuronId});
+set(h,'LineWidth',5);
+set(h,'Color', 'r');
+title('Polar plot of Directional selectivity');
+% --------------------------------------------------------
+
+% --------------------------5-----------------------------
+% 4. Polar plot of Orientation selectivity
+% Take a neuron, there will be 10 plots corresponding to each trial of the experiment
+% plot each of the 10 plots in a figure to verify the similarity in response
+
+% There are observations for 16 angles, but there are only 8 orientations.
+% We can treat them as two different observations. More data !
+
+figure;
+for trial=1:10
+    % Normalize all trial response from 0 to 1
+    normData = abs(spikeRate{neuronId}(trial:10:end, 1))/max(abs(spikeRate{neuronId}(trial:10:end, 1)));
+    normData(end+1) = normData(1);
+    theta = 2*spikeRate{neuronId}(trial:10:end, 2);
+    theta(end+1) = theta(1);
+    h = polar(theta, normData);
+    set(h,'Color',colors(trial, :));
+    set(h,'LineStyle','--');
+    set(h,'Marker','o');
+    set(h,'LineWidth',2);
+    hold on;
+end
+h = compass(cirvar{neuronId});
+set(h,'LineWidth',5);
+set(h,'Color', 'r');
+title('Polar plot of Orientation selectivity');
+% --------------------------2-----------------------------
 
 % ********************** Plots ************************
