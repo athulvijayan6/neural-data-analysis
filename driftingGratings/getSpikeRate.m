@@ -1,7 +1,7 @@
 % @Author: Athul Vijayan
 % @Date:   2015-08-22 12:51:54
-% @Last Modified by:   Athul Vijayan
-% @Last Modified time: 2015-08-29 14:22:51
+% @Last Modified by:   Athul
+% @Last Modified time: 2015-09-01 23:05:30
 
 clear('all');
 
@@ -24,13 +24,13 @@ for i=1:size(rawData, 1)
 
     % Calculate response of each neuron as a real number
     spikeRate{i} = calculateSpikeRate(cellData{i});
-    cirvar{i} = cirVar(spikeRate{i});
-    dircirvar{i} = dirCirVar(spikeRate{i});
+    cirvar(i) = cirVar(spikeRate{i});
+    dircirvar(i) = dirCirVar(spikeRate{i});
 end
 
 % ====================== Plots =======================
 colors = hsv(10);
-neuronId = 20;
+neuronId = 64;
 
 % -------------------------1------------------------------
 % % 1. Plots each time-series data of length 120 with 
@@ -76,8 +76,8 @@ for trial=1:10
     set(h,'LineWidth',2);
     hold on;
 end
-h = compass(dircirvar{neuronId});
-set(h,'LineWidth',5);
+h = compass(dircirvar(neuronId));
+set(h,'LineWidth',3);
 set(h,'Color', 'r');
 title('Polar plot of Directional selectivity');
 % --------------------------------------------------------
@@ -104,8 +104,8 @@ for trial=1:10
     set(h,'LineWidth',2);
     hold on;
 end
-h = compass(cirvar{neuronId});
-set(h,'LineWidth',5);
+h = compass(cirvar(neuronId));
+set(h,'LineWidth',3);
 set(h,'Color', 'r');
 title('Polar plot of Orientation selectivity');
 % --------------------------2-----------------------------

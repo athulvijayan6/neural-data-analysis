@@ -1,17 +1,18 @@
--4 Restructure data
++-4 Restructure data
 
 -5 Preliminery analysis
 -4 Get spike rate information
-	-2 Thresholding
+	+-2 Averaging
 	-2 Vogelstein deconvolution algorithm
 	-2 Improve ?
 -4 Get orientation preference
-	-2 Plot orientation-tuning curves
+	+-2 Plot orientation-tuning curves
 	-2 Compute OSI and preferred orientation
-	-2 Circular vector sum (Linear fit)
+	+-2 Circular vector sum (Linear fit)
+	-2 Confidence interval
 	-2 Gaussian fit
 -4 Classify simple and complex cells.
-	-2 Compute features for directional selectivity
+	+-2 Compute features for directional selectivity
 	-2 Unsupervised algorithm
 -4 Find distribution of simple and complex cells for each mouse.
 	-2 Clustering

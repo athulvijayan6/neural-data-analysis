@@ -1,7 +1,7 @@
 % @Author: Athul Vijayan
 % @Date:   2014-05-09 13:56:20
 % @Last Modified by:   Athul
-% @Last Modified time: 2015-08-27 09:46:38
+% @Last Modified time: 2015-09-02 00:21:06
 
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -11,6 +11,7 @@
 \usepackage{graphicx}
 \usepackage[toc,page]{appendix}
 \usepackage{color}
+\usepackage{subcaption}
 \usepackage{placeins}
 \usepackage{rotating}
 \usepackage{wrapfig}
@@ -31,6 +32,7 @@
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcommand{\rulesep}{\unskip\ \vrule\ }
 
 %----------------------------------------------------------------------------------------
 %   TITLE PAGE
@@ -88,11 +90,38 @@ Virus expressing GCaMP6f was injected into the V1 of mice. Approximately 3 weeks
 \section{Dataset} % (fold)
 \label{sec:dataset}
 
+\textbf{Notes about Data.mat}\\
+Data.mat contains 4 entries:
+\begin{enumerate}
+    \item Data.rawF =  raw fluorescence values. Matrix size = number of cells x number of frames.
+    \item Data.dFF    = fluorescence normalized to baseline (dFF =  (F-F0)/F0, where F0 is the baseline fluorescence computed using a sliding window of 400 frames). Same size as above.
+    \item Data.Spks  = inferred spike rate using the Vogelstein deconvolution algorithm. Same size as above.
+    \item Data.StimSeq = contains sequence of directions presented during that experiment. Vector size = 160 x 1.
+\end{enumerate}
+\textbf{Notes about Ori.mat}\\
+Ori.mat contains 20 entries. The most pertinent entries are:
+\begin{enumerate}
+    \item Ori.OSI = orientation selectivity indices of the neurons
+    \item Ori.OrFit = double-wrapped Gaussian fits
+    \item Ori.OrFitQuality  = goodness of Gaussian fits. (Higher the percentage value, the better the fit)
+    \item Ori.Width = tuning width in degrees
+    \item Ori.PrefOri = preferred orientation
+    \item Ori.SpkResponse = Contains neural responses for each cells sorted according to the different directions. Size: 1xNumber of cell Cell array. Each cell entry contains a 1x Number of Direction Cell array, which contains a Number of Frames x Trials matrix.
+\end{enumerate}
+
 \subsection{Restructuring the data} % (fold)
 \label{sub:restructuring_the_data}
 There are 19200 Ca readings for each mouse. The experiment is done using 16 different stimuli, Let us think of it as 16 classes. The angle of the drifting pattern changes between the classes. It is implicit that $0^{o}$ and $180^{o}$ will have same orientation, but the direction of drifting will be opposite.\\
 First, the data is split into 16 parts corresponding to each class. There are 10 trials for each class. The data is split into 160 subsequences of $19200/160 = 120$ length. Now this is a time-series of 120 points for each trial, and there are ten sets of data for each class.\\
 120 points in the data represents 6 seconds of brain activity. Out of the 6 seconds, first 4 seconds (80 samples for sampling frequency of 20Hz) correspond to no-stimuli (or Gray stimuli). This represents the background activity of the neuron. The last 40 samples show the response for the intended stimuli.
+\begin{itemize}
+    \item cellData{i} contains all data for neuron i
+    \item cellData{i} is a 160$\times$121 matrix.
+    \item Each row represents a single experiment. and corresponding gray duration.
+    \item In a row first 120 entries show the time series data of 6 seconds (120 samples) long trial. First 4s (80 samples) gray time and last 2s (40 samples) stimuli time.
+    \item Last column contain the angle of visual stimuli in radians. (class)
+\end{itemize}
+
 % subsection restructuring_the_data (end)
 
 \section{Analysis} % (fold)
@@ -119,6 +148,17 @@ Various methods for finding $F_t$ is the first problem statement. Following appr
 
 \subsection{Estimating orientation selectivity of neuron} % (fold)
 \label{sub:estimating_orientation_selectivity_of_neuron}
+\subsubsection{Selectivity Index measures - OSI, DSI} % (fold)
+\label{ssub:traditional_selectivity_measures_oi_di_and_osi}
+OI and DI are used as the normalized measures of ``peak to trough'' orientation selectivity and direction selectivity.
+These quantities are defined as:
+\begin{align}
+    OSI &= \frac{(R_{pref\_ori} - R_{orth})}{(R_{pref\_ori} + R_{orth})}\\
+    DSI &= \frac{(R_{pref} - R_{null})}{(R_{pref} + R_{null})}
+\end{align}
+The response at the preferred orientation $R_{pref\_ori}$ and the response at the preferred direction $R_{pref}$ can be determined in different ways. In some measures, these are taken to be the best response to one of the stimulus orientations or directions that was explicitly measured; that is, if we measure responses at stimulus directions $\theta_1, \cdots, \theta_n$, then we choose the response at the best $\theta_i$ . In other measures, we perform a fit to the tuning curve, and choose the maximum value of the fit as $R_{pref\_ori}$ or $R_{pref}$ .
+% subsubsection traditional_selectivity_measures_oi_di_and_osi (end)
+
 \subsubsection{Circular variance of direction and orientation} % (fold)
 \label{ssub:circular_variance_of_direction_and_orientation}
 As discussed in the paper, Circular variance is a more robust quantifier of orientation and direction selectivity. A scalar value representing the neuron response is extracted from the 6s long time series for each of the orientations and directions (There are 8 orientations and 16 directions). As we have 10 trials for each class, we will have 160 such values for each neuron.\\
@@ -139,18 +179,63 @@ Circular orientation variance and direction variance is given as
     CirVar = 1 - |L_{ori}|\\
     DirCirVar = 1- |L_{dir}|
 \end{align}
-
-% subsubsection circular_variance_of_direction_and_orientation (end)
-
-% subsection estimating_orientation_selectivity_of_neuron (end)
-
-% section analysis (end)
-
-% section dataset (end)
-
-
-
-% section introduction (end)
+Following shows plots of orientation and direction selectivity of various kinds of neurons.
+\begin{enumerate}
+    \item \textbf{Orientation selective simple cell}\\
+    Refer Figure~\ref{max_cirvar}
+    \begin{figure}
+    \centering
+    \caption{Orientation selective simple cell}
+    \label{max_cirvar}
+    \begin{subfigure}{.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{plots/max_cirvar_ori}
+        \caption{Orientation selectivity plot of an orientation selective simple cell. Each curve shows a trial. Note that the cell is sensitive to an optimal orientation. The red arrow represents the direction and magnitude of orientation selectivity}
+    \end{subfigure}
+    \rulesep
+    \begin{subfigure}{.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{plots/max_cirvar_dir}
+        \caption{Directional selectivity plot of an orientation selective simple cell. Each curve shows a trial. Note that the cell is not selective to direction, but is sensitive to orientation. The red arrow represents the direction and magnitude of direction selectivity}
+    \end{subfigure}
+    \end{figure}
+    \item \textbf{Direction selective complex cell}\\
+    Refer Figure~\ref{max_dircirvar}
+    \begin{figure}
+        \centering
+        \caption{Direction selective complex cell}
+        \label{max_dircirvar}
+        \begin{subfigure}{.48\textwidth}
+            \centering
+            \includegraphics[width=\linewidth]{plots/max_dircirvar_ori}
+            \caption{Orientation selectivity plot of an direction selective complex cell. Each curve shows a trial. Note that the cell is sensitive to an optimal orientation. The red arrow represents the direction and magnitude of orientation selectivity}
+        \end{subfigure}
+        \rulesep
+        \begin{subfigure}{.48\textwidth}
+            \centering
+            \includegraphics[width=\linewidth]{plots/max_dircirvar_dir}
+            \caption{Directional selectivity plot of an direction selective complex cell. Each curve shows a trial. Note that the cell is selective to direction as well as orientation. The red arrow represents the direction and magnitude of direction selectivity}
+        \end{subfigure}        
+    \end{figure}
+    \item \textbf{Orientation and direction Un-selective cells}\\
+    Refer Figure~\ref{min_cirvar}
+    \begin{figure}
+        \centering
+        \caption{Orientation and direction Un-selective cells}
+        \label{min_cirvar}
+        \begin{subfigure}{.48\textwidth}
+            \centering
+        \includegraphics[width=\linewidth]{plots/min_cirvar_ori}
+            \caption{Orientation selectivity plot of an Orientation and direction Un-selective cell. Each curve shows a trial. Note that the cell is uniformly sensitive to all orientations. The red arrow represents the direction and magnitude of orientation selectivity. Note the small magnitude}
+        \end{subfigure}
+        \rulesep
+        \begin{subfigure}{.48\textwidth}
+            \centering
+            \includegraphics[width=\linewidth]{plots/min_cirvar_dir}
+            \caption{Directional selectivity plot of an Orientation and direction Un-selective cell. Each curve shows a trial. Note that the cell is uniformly sensitive to all directions. The red arrow represents the direction and magnitude of direction selectivity. Note the small magnitude}
+        \end{subfigure}
+    \end{figure}
+\end{enumerate}
 
 % ======================= References ==========================
 \newpage
