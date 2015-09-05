@@ -1,14 +1,14 @@
 % @Author: Athul Vijayan
 % @Date:   2015-08-22 12:51:54
 % @Last Modified by:   Athul
-% @Last Modified time: 2015-09-01 23:05:30
+% @Last Modified time: 2015-09-03 12:59:35
 
 clear('all');
 
 datTargets = {'dataset/Mouse-A/', 'dataset/Mouse-B/', 'dataset/Mouse-C/', 'dataset/Mouse-D/', 'dataset/Mouse-E/'};
 
 % for each mouse
-load('dataset/Mouse-A/Data.mat');
+load('dataset/Mouse-E/Data.mat');
 rawData = Data.rawF;
 smoothData = Data.dFF;
 spikeData = Data.Spks;
@@ -22,12 +22,51 @@ for i=1:size(rawData, 1)
     [~, I] = sort(cellData{i}(:, end));
     cellData{i} = cellData{i}(I, :);
 
-    % Calculate response of each neuron as a real number
+    % Calculate spike rate response of each neuron as a real number
     spikeRate{i} = calculateSpikeRate(cellData{i});
+    for trial=1:10
+        trialData = spikeRate{i}(trial:10:end, :);
+        [R_pref_ori, theta_pref_ori] = max(trialData(:, 1));
+        % compute OSI
+        theta_orth = mod((theta_pref_ori + 3), 16) + 1;
+        R_orth = trialData(theta_orth, 1);
+        OSI_n(trial) = (R_pref_ori - R_orth)/(R_pref_ori + R_orth);
+        % Compute DSI
+        theta_null = mod((theta_pref_ori + 7), 16) + 1;
+        R_null = trialData(theta_null, 1);
+        DSI_n(trial) = (R_pref_ori - R_null)/(R_pref_ori + R_null);
+    end
+    OSI(i) = mean(OSI_n);
+    DSI(i) = mean(DSI_n);
+    % compute orientation variance
     cirvar(i) = cirVar(spikeRate{i});
+    % compute directional variance
     dircirvar(i) = dirCirVar(spikeRate{i});
 end
 
+ % ----------------------- k-means clustering ----------
+featureVec = [OSI' DSI' abs(cirvar') abs(dircirvar')];
+numClusters = 3;
+[idx, centroids] = kmeans(featureVec, numClusters);
+
+% Analyze the k means clustering results.
+globalMean = mean(featureVec);
+total_ss = 0;
+for i=1:size(featureVec, 1)
+    total_ss = total_ss + norm(globalMean - featureVec(i, :));
+end
+between_ss = 0;
+for i=1:numClusters
+    between_ss = between_ss + length(find(idx==i))*norm(globalMean - centroids(i, :));
+end
+clusterEfficiency = (between_ss/total_ss)*100;
+disp(['The clustering is done with an efficiency of ', num2str(clusterEfficiency)]);
+disp('To see the definition of clustering efficiency, see the documentation');
+% ----------------------- -----------------------------
+
+
+showPlots=false;
+if showPlots
 % ====================== Plots =======================
 colors = hsv(10);
 neuronId = 64;
@@ -55,6 +94,26 @@ neuronId = 64;
 
 % --------------------------3-----------------------------
 % 3. Plots the gray area alone. To show that the background data are almost uniform
+% --------------------------------------------------------
+
+% --------------------------3-----------------------------
+% 3. Plots response vs angle of stimulus pattern.
+figure;
+for trial=4
+    trialData = spikeRate{neuronId}(trial:10:end, :);
+    h = plot(trialData(:, 2), trialData(:, 1));
+    set(h,'Color', colors(trial-2, :));
+    set(h,'Marker', 'o');
+    set(h,'LineStyle', '--');
+    set(h,'LineWidth', 2);
+    hold on;
+end
+title('Neuron response (spike rate) Vs direction of stimuli');
+ylabel('spike rate');
+xlabel('angle in radians');
+
+
+
 % --------------------------------------------------------
 
 
@@ -111,3 +170,4 @@ title('Polar plot of Orientation selectivity');
 % --------------------------2-----------------------------
 
 % ********************** Plots ************************
+end

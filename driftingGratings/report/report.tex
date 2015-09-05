@@ -1,12 +1,13 @@
 % @Author: Athul Vijayan
 % @Date:   2014-05-09 13:56:20
 % @Last Modified by:   Athul
-% @Last Modified time: 2015-09-02 00:21:06
+% @Last Modified time: 2015-09-03 13:12:02
 
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[a4paper, margin=1in]{geometry}
 \usepackage{amsmath}
+\usepackage[table]{xcolor}
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage[toc,page]{appendix}
@@ -47,7 +48,7 @@
 
 {\noindent\Huge\bfseries  Neural data analysis}\\[2\baselineskip] % Title
 {\large \textit{Notes}}\\[4\baselineskip] % Tagline or further description
-{\Large \textsc{Athul Vijayan}} % Author name
+{\Large \textsc{Athul Vijayan \hspace{5pt} ed11b004}} % Author name
 
 \vspace{0.5\textheight} % Whitespace between the title block and the publisher
 }}
@@ -55,7 +56,7 @@
 
 
 \begin{document}
-% \titleGM % This command includes the title page
+\titleGM % This command includes the title page
 \tableofcontents
 
 % =========================== content =========================
@@ -133,21 +134,21 @@ The 120 point time series provide the activity of single cell in response to a p
 Using various methods, a time sequence $F_t$ is calculated. $F_t$ represents the spiking activity of neuron. A relatively large $F_t$ represents a spike and small corresponds to no-spike. Number of spikes in an interval is what we seek. In the 120 sample data, $F_t$ of size 120 is found using various methods. Finally, spike rate is calculated by subtracting the background activity from the response.
 $$spikeRate = \frac{\sum_{n=81}^{120} F_n}{40} - \frac{\sum_{n=1}^{80} F_n}{80}$$
 Various methods for finding $F_t$ is the first problem statement. Following approaches are made to solve this.
-\subsubsection{Thresholding } % (fold)
-\label{ssub:thresholding}
-
-
+\subsubsection{Averaging } % (fold)
+\label{ssub:averaging}
+The Calcium signal amplitudes averaged and the average is believed to be a proxy for the spike rate. From the smoothed data, just taking the mean of last 40 samples (time during which stimuli was presented) provides the estimated spike rate for that trial.
 % subsubsection thresholding (end)
 
-\subsubsection{Moving Average model} % (fold)
-\label{ssub:moving_average_model}
+\subsubsection{Autoregressive model} % (fold)
+\label{ssub:ar_model}
 
 % subsubsection moving_average_model (end)
 
 % subsection quantifying_the_neuron_activity (end)
-
+\FloatBarrier
 \subsection{Estimating orientation selectivity of neuron} % (fold)
 \label{sub:estimating_orientation_selectivity_of_neuron}
+Neurons in the striate cortex of primary visual cortex in the brain are of three types. Cells which respond to orientation of a contrasting visual stimuli and which are not sensitive to orientation. Among the orientation selective cells, some cells are also sensitive to motion of the stimuli in a particular direction in addition to orientation. These cells are called complex cells. Cells which are only sensitive  to orientation, but not to motion are called simple cells. These cells are pyramidal in structure and have a receptive field in shape of a rectangular slit. This section deals with methods to quantify the selective behavior of these cells from experimental data.
 \subsubsection{Selectivity Index measures - OSI, DSI} % (fold)
 \label{ssub:traditional_selectivity_measures_oi_di_and_osi}
 OI and DI are used as the normalized measures of ``peak to trough'' orientation selectivity and direction selectivity.
@@ -156,7 +157,24 @@ These quantities are defined as:
     OSI &= \frac{(R_{pref\_ori} - R_{orth})}{(R_{pref\_ori} + R_{orth})}\\
     DSI &= \frac{(R_{pref} - R_{null})}{(R_{pref} + R_{null})}
 \end{align}
-The response at the preferred orientation $R_{pref\_ori}$ and the response at the preferred direction $R_{pref}$ can be determined in different ways. In some measures, these are taken to be the best response to one of the stimulus orientations or directions that was explicitly measured; that is, if we measure responses at stimulus directions $\theta_1, \cdots, \theta_n$, then we choose the response at the best $\theta_i$ . In other measures, we perform a fit to the tuning curve, and choose the maximum value of the fit as $R_{pref\_ori}$ or $R_{pref}$ .
+The response at the preferred orientation $R_{pref\_ori}$ and the response at the preferred direction $R_{pref}$ can be determined in different ways. In some measures, these are taken to be the best response to one of the stimulus orientations or directions that was explicitly measured; that is, if we measure responses at stimulus directions $\theta_1, \cdots, \theta_n$, then we choose the response at the best $\theta_i$ . In other measures, we perform a fit to the tuning curve, and choose the maximum value of the fit as $R_{pref\_ori}$ or $R_{pref}$ .\\
+This approach is more sensitive to noise. One of the plot of spike rate vs angle of stimuli of a neuron is shown in Figure ~\ref{angle_resp}.
+\begin{figure}
+\centering
+\caption{Comparing response of a neuron Vs angle of stimuli with the expected response}
+\label{angle_resp}
+\begin{subfigure}{.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{plots/max_osi}
+    \caption{Spike rate vs angle of stimuli of a neuron}
+\end{subfigure}
+\rulesep
+\begin{subfigure}{.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{plots/typical_response.png}
+    \caption{Spike rate vs angle of stimuli of a typical orientation selective neuron}
+\end{subfigure}
+\end{figure}
 % subsubsection traditional_selectivity_measures_oi_di_and_osi (end)
 
 \subsubsection{Circular variance of direction and orientation} % (fold)
@@ -236,6 +254,60 @@ Following shows plots of orientation and direction selectivity of various kinds 
         \end{subfigure}
     \end{figure}
 \end{enumerate}
+
+\subsubsection{Measure of reliability - confidence intervals} % (fold)
+\label{ssub:measure_of_reliability_confidence_intervals}
+
+% subsubsection measure_of_reliability_confidence_intervals (end)
+
+\subsection{Classification of simple and complex cells} % (fold)
+\label{sub:classification_of_simple_and_complex_cells}
+The properties that distinguish the tree types of cells are discussed before. This problem statement deals with using machine learning tools for making a classifier for these three classes of cells.\\
+The main challenge here is that we don not have the ground truth data for the data, which force us into category of unsupervised learning methods. This also makes it hard to evaluate the performance of the classification algorithm. We make an effort to classify cells based on some features extracted from the time series data. The feature selection process and the intuition behind it are discussed below.
+\begin{itemize}
+    \item OSI : This is a measure of orientation selectivity, as an individual feature this may not be a strong classifier as the measure is not very robust, but along with other features, this could contribute towards classification.
+    \item DSI : This is a measure of directional selectivity, as an individual feature this may not be a strong classifier as the measure is not very robust, but along with other features, this could contribute towards classification.
+    \item $L_{ori}$ : This is more robust that OSI, and is expected to be a better feature.
+    \item $L_{dir}$ : This is more robust that DSI, and is expected to be a better feature.
+\end{itemize}
+Following unsupervised learning techniques are use for the classification.
+\subsubsection{k-means clustering} % (fold)
+\label{ssub:k_means_clustering}
+We hope that three classes of cells will form three clusters in the feature space. We run the algorithm with 3 clusters and features selected above.\\
+As we said,  analyzing efficiency of classification is hard without ground truth. Here, what we use to analyze is this:
+\begin{itemize}
+    \item Find the global mean
+    \item Find the sum of squared distance of each point in feature space to global mean. denoted by $total\_ss$.
+    \item Find the sum of squared distance of each centroids to the global mean multiplied by number points in the cluster. denoted by $between\_ss$.
+    \item If there is no well clustering, the centroids will be close to the global mean, and $between\_ss$ will be small compared to $total\_ss$.
+    \item If $clusterEfficiency = between\_ss/total\_ss$ is high, the clustering is good and forms distinct clusters.
+\end{itemize}
+Table~\ref{tab:cluster_efficiency} shows the clustering efficiency in each mice.
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{| l || c |}
+        \hline
+        Subject & Cluster efficiency (\%)\\
+        \hline
+        \hline
+        Mouse A & 78.8155 \\
+        \hline
+        Mouse B & 72.3963 \\
+        \hline
+        Mouse C & 72.293 \\
+        \hline
+        Mouse D & 78.8882 \\
+        \hline
+        Mouse E & 76.4573 \\
+        \hline
+    \end{tabular}
+    \caption{Cluster efficiency of various subjects}
+    \label{tab:cluster_efficiency}
+\end{table}
+% subsubsection k_means_clustering (end)
+% subsection classification_of_simple_and_complex_cells (end)
+ 
+
 
 % ======================= References ==========================
 \newpage
