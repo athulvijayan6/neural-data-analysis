@@ -1,7 +1,7 @@
 % @Author: Athul Vijayan
 % @Date:   2014-05-09 13:56:20
-% @Last Modified by:   Athul Vijayan
-% @Last Modified time: 2015-09-09 00:20:51
+% @Last Modified by:   Athul
+% @Last Modified time: 2015-09-09 12:44:15
 
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -13,7 +13,7 @@
 \usepackage[toc,page]{appendix}
 \usepackage{color}
 \usepackage{subcaption}
-\usepackage{placeins}
+\usepackage[section]{placeins}
 \usepackage{rotating}
 \usepackage{wrapfig}
 \usepackage{bm}
@@ -56,7 +56,7 @@
 
 
 \begin{document}
-\titleGM % This command includes the title page
+% \titleGM % This command includes the title page
 \tableofcontents
 
 % =========================== content =========================
@@ -149,35 +149,7 @@ The Calcium signal amplitudes averaged and the average is believed to be a proxy
 \subsection{Estimating orientation selectivity of neuron} % (fold)
 \label{sub:estimating_orientation_selectivity_of_neuron}
 Neurons in the striate cortex of primary visual cortex in the brain are of three types. Cells which respond to orientation of a contrasting visual stimuli and which are not sensitive to orientation. Among the orientation selective cells, some cells are also sensitive to motion of the stimuli in a particular direction in addition to orientation. These cells are called complex cells. Cells which are only sensitive  to orientation, but not to motion are called simple cells. These cells are pyramidal in structure and have a receptive field in shape of a rectangular slit. This section deals with methods to quantify the selective behavior of these cells from experimental data.
-\subsubsection{Estimating the distribution response} % (fold)
-\label{ssub:estimating_the_distribution_response}
-From plotting the spike rate vs theta curve, We can model orientation selectivity of neuron with a Gaussian curve. We can also model the directional selectivity of a orientation/direction selective neuron using mixture of two Gaussian curves. Figure shows~\ref{gauss} a mixture of two Gaussian.\\
-Some Intuitions from the curves are
-\begin{itemize}
-    \item Orientation selective neurons will have distinct peaks in both, or they will have low variance parameter.
-    \item If both peaks in double Gaussian are similar, the cell is not direction specific. It has similar response to both directions, this could be a simple cell.
-    \item For each neuron, the parameters will change. The `mean' parameter will decide the preferred orientation/selectivity. The variance will decide the degree to which they are selective.
-    \item For fitting Gaussian,  we have 320 points. the estimation need not be accurate.
-    \item For fitting double Gaussian,  we have 160 points. the estimation need not be accurate.
-\end{itemize}
-A double Gaussian is of form
-\begin{figure}
-\centering
-\caption{Modeling orientation and directional selectivity using Gaussians}
-\label{gauss}
-\begin{subfigure}{.48\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{plots/gauss.png}
-    \caption{Gaussian distribution}
-\end{subfigure}
-\rulesep
-\begin{subfigure}{.48\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{plots/double_gauss.png}
-    \caption{Mixture of two Gaussians.}
-\end{subfigure}
-\end{figure}
-% subsubsection estimating_the_distribution_response (end)
+
 \subsubsection{Selectivity Index measures - OSI, DSI} % (fold)
 \label{ssub:traditional_selectivity_measures_oi_di_and_osi}
 OI and DI are used as the normalized measures of ``peak to trough'' orientation selectivity and direction selectivity.
@@ -288,7 +260,57 @@ Following shows plots of orientation and direction selectivity of various kinds 
 \label{ssub:measure_of_reliability_confidence_intervals}
 
 % subsubsection measure_of_reliability_confidence_intervals (end)
+\FloatBarrier
+\subsection{Modeling the neuron response} % (fold)
+\label{sub:modeling_the_neuron_response}
+Different measures of orientation selectivity are obtained from the experimental data, aim is to find metrics which represent `true' orientation selectivity. Modeling the response of neuron to various orientations and visualizing is a great way to see if in fact there is a orientation selectivity. If the cell seems selective, further inference can be drawn from models.\\
+In neural data, even though fitting is a good 
+From plotting the spike rate vs theta curve, We can model orientation selectivity of neuron with a Gaussian curve. We can also model the directional selectivity of a orientation/direction selective neuron using mixture of two Gaussian curves. Figure shows~\ref{gauss} a mixture of two Gaussian.\\
+Some Intuitions drawn are
+\begin{itemize}
+    \item Fitting is `blind'. As we do not know the `true' tuning curve. Though, we can compute the error of fit to test data for judging the model.
+    \item Orientation selective neurons will have distinct peaks in both, or they will have low variance parameter.
+    \item Orientation unselective cells are expected to have uniform response to all angles, thus the Gaussian fit will be poor and the variance parameter will have large values.
+    \item If both peaks in double Gaussian are similar, the cell is not direction specific. It has similar response to both directions, this could be a simple cell.
+    \item For each neuron, the parameters will change. The `mean' parameter will decide the preferred orientation/selectivity. The variance will decide the degree to which they are selective.
+    \item For fitting Gaussian,  we have 320 points. the estimation need not be accurate.
+    \item For fitting double Gaussian,  we have 160 points. the estimation need not be accurate.
+\end{itemize}
 
+\begin{figure}
+\centering
+\caption{Modeling orientation and directional selectivity using Gaussians}
+\label{gauss}
+\begin{subfigure}{.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{plots/gauss.png}
+    \caption{Gaussian distribution}
+\end{subfigure}
+\rulesep
+\begin{subfigure}{.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{plots/double_gauss.png}
+    \caption{Mixture of two Gaussians.}
+\end{subfigure}
+\end{figure}
+
+\subsubsection{Estimating orientation fit} % (fold)
+\label{ssub:estimating_orientation_fit}
+The empirical model for orientation tuning curve is
+$$R(\theta) = C + R_p \exp\{\frac{-||\theta-\theta_{pref}||^2}{2\sigma^2}\}$$
+Where parameters $\theta_{pref}$ and $R_p$ are to be estimated. $\sigma$ is the tuning width, which can tell us how much the cell is selective. $C$ is a constant offset.\\
+
+% subsubsection estimating_orientation_fit (end)
+
+\subsubsection{Estimating direction fit} % (fold)
+\label{ssub:estimating_direction_fit}
+The empirical model for direction tuning curve is
+$$R(\theta) = C + R_p \exp\{\frac{-||\theta-\theta_{pref}||^2}{2\sigma_1^2}\} + R_n \exp\{\frac{-||\theta-\theta_{null}||^2}{2\sigma_2^2}\}$$
+Where parameters $\theta_{pref}, \theta_{null}, R_n$ and $R_p$ are to be estimated. By theory, $\theta_{pref} = 180 \pm \theta_{null}$. Here $\sigma_1$ and $\sigma_2$ are the tuning widths, which can tell us how much the cell is selective. $C$ is a constant offset.\\
+% subsubsection estimating_direction_fit (end)
+
+% subsection modeling_the_neuron_response (end)
+\FloatBarrier
 \subsection{Classification of simple and complex cells} % (fold)
 \label{sub:classification_of_simple_and_complex_cells}
 The properties that distinguish the tree types of cells are discussed before. This problem statement deals with using machine learning tools for making a classifier for these three classes of cells.\\
@@ -296,8 +318,8 @@ The main challenge here is that we don not have the ground truth data for the da
 \begin{itemize}
     \item OSI : This is a measure of orientation selectivity, as an individual feature this may not be a strong classifier as the measure is not very robust, but along with other features, this could contribute towards classification.
     \item DSI : This is a measure of directional selectivity, as an individual feature this may not be a strong classifier as the measure is not very robust, but along with other features, this could contribute towards classification.
-    \item $L_{ori}$ : This is more robust that OSI, and is expected to be a better feature.
-    \item $L_{dir}$ : This is more robust that DSI, and is expected to be a better feature.
+    \item $L_{ori}$ : This is more robust than OSI, and is expected to be a better feature.
+    \item $L_{dir}$ : This is more robust than DSI, and is expected to be a better feature.
 \end{itemize}
 Following unsupervised learning techniques are use for the classification.
 \subsubsection{k-means clustering} % (fold)
@@ -335,9 +357,6 @@ Table~\ref{tab:cluster_efficiency} shows the clustering efficiency in each mice.
 \end{table}
 % subsubsection k_means_clustering (end)
 % subsection classification_of_simple_and_complex_cells (end)
- 
-
-
 % ======================= References ==========================
 \newpage
 \bibliographystyle{plain}

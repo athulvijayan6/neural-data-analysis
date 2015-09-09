@@ -9,9 +9,11 @@
 \BOOKMARK [3][-]{subsubsection.3.1.1}{Averaging }{subsection.3.1}% 9
 \BOOKMARK [3][-]{subsubsection.3.1.2}{Autoregressive model}{subsection.3.1}% 10
 \BOOKMARK [2][-]{subsection.3.2}{Estimating orientation selectivity of neuron}{section.3}% 11
-\BOOKMARK [3][-]{subsubsection.3.2.1}{Estimating the distribution response}{subsection.3.2}% 12
-\BOOKMARK [3][-]{subsubsection.3.2.2}{Selectivity Index measures - OSI, DSI}{subsection.3.2}% 13
-\BOOKMARK [3][-]{subsubsection.3.2.3}{Circular variance of direction and orientation}{subsection.3.2}% 14
-\BOOKMARK [3][-]{subsubsection.3.2.4}{Measure of reliability - confidence intervals}{subsection.3.2}% 15
-\BOOKMARK [2][-]{subsection.3.3}{Classification of simple and complex cells}{section.3}% 16
-\BOOKMARK [3][-]{subsubsection.3.3.1}{k-means clustering}{subsection.3.3}% 17
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Selectivity Index measures - OSI, DSI}{subsection.3.2}% 12
+\BOOKMARK [3][-]{subsubsection.3.2.2}{Circular variance of direction and orientation}{subsection.3.2}% 13
+\BOOKMARK [3][-]{subsubsection.3.2.3}{Measure of reliability - confidence intervals}{subsection.3.2}% 14
+\BOOKMARK [2][-]{subsection.3.3}{Modeling the neuron response}{section.3}% 15
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Estimating orientation fit}{subsection.3.3}% 16
+\BOOKMARK [3][-]{subsubsection.3.3.2}{Estimating direction fit}{subsection.3.3}% 17
+\BOOKMARK [2][-]{subsection.3.4}{Classification of simple and complex cells}{section.3}% 18
+\BOOKMARK [3][-]{subsubsection.3.4.1}{k-means clustering}{subsection.3.4}% 19
