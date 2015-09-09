@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.8.24)  3 SEP 2015 13:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.7.24)  9 SEP 2015 00:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -6,7 +6,7 @@ entering extended mode
 /driftingGratings/report
 (/home/athul/machineLearning/neuralData/driftingGratings/report/report.tex
 LaTeX2e <2014/05/01>
-Babel <3.9l> and hyphenation patterns for 79 languages loaded.
+Babel <3.9l> and hyphenation patterns for 2 languages loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
@@ -718,174 +718,190 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 85.
  [3] [4]
+<plots/gauss.png, id=132, 542.025pt x 174.6525pt>
+File: plots/gauss.png Graphic file (type png)
+ <use plots/gauss.png>
+Package pdftex.def Info: plots/gauss.png used on input line 161.
+(pdftex.def)             Requested size: 217.42265pt x 70.05696pt.
+
+<plots/double_gauss.png, id=133, 565.11125pt x 242.9075pt>
+File: plots/double_gauss.png Graphic file (type png)
+
+<use plots/double_gauss.png>
+Package pdftex.def Info: plots/double_gauss.png used on input line 167.
+(pdftex.def)             Requested size: 217.42265pt x 93.4548pt.
 Package epstopdf Info: Source file: <plots/max_osi.eps>
-(epstopdf)                    date: 2015-09-03 05:47:49
+(epstopdf)                    date: 2015-09-06 08:36:57
 (epstopdf)                    size: 8965 bytes
 (epstopdf)             Output file: <plots/max_osi-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-09-03 05:50:56
+(epstopdf)                    date: 2015-09-06 08:36:57
 (epstopdf)                    size: 7985 bytes
 (epstopdf)             Command: <repstopdf --outfile=plots/max_osi-eps-converte
 d-to.pdf plots/max_osi.eps>
-(epstopdf)             \includegraphics on input line 168.
+(epstopdf)             \includegraphics on input line 188.
 Package epstopdf Info: Output file is already uptodate.
 
-<plots/max_osi-eps-converted-to.pdf, id=127, 449.68pt x 338.26375pt>
+<plots/max_osi-eps-converted-to.pdf, id=135, 449.68pt x 338.26375pt>
 File: plots/max_osi-eps-converted-to.pdf Graphic file (type pdf)
 
 <use plots/max_osi-eps-converted-to.pdf>
 Package pdftex.def Info: plots/max_osi-eps-converted-to.pdf used on input line 
-168.
+188.
 (pdftex.def)             Requested size: 217.42265pt x 163.55188pt.
 
-<plots/typical_response.png, id=128, 481.8pt x 367.3725pt>
+<plots/typical_response.png, id=136, 481.8pt x 367.3725pt>
 File: plots/typical_response.png Graphic file (type png)
 
 <use plots/typical_response.png>
-Package pdftex.def Info: plots/typical_response.png used on input line 174.
+Package pdftex.def Info: plots/typical_response.png used on input line 194.
 (pdftex.def)             Requested size: 217.42265pt x 165.78136pt.
- [5]
+ [5 </home/athul/machineLearning/neuralData/driftingGratings/report/plots/gauss
+.png> </home/athul/machineLearning/neuralData/driftingGratings/report/plots/dou
+ble_gauss.png>]
 Package epstopdf Info: Source file: <plots/max_cirvar_ori.eps>
-(epstopdf)                    date: 2015-09-01 23:05:50
+(epstopdf)                    date: 2015-09-06 08:36:57
 (epstopdf)                    size: 18992 bytes
 (epstopdf)             Output file: <plots/max_cirvar_ori-eps-converted-to.pdf>
 
-(epstopdf)                    date: 2015-09-01 23:06:22
+(epstopdf)                    date: 2015-09-06 08:36:57
 (epstopdf)                    size: 17646 bytes
 (epstopdf)             Command: <repstopdf --outfile=plots/max_cirvar_ori-eps-c
 onverted-to.pdf plots/max_cirvar_ori.eps>
-(epstopdf)             \includegraphics on input line 210.
+(epstopdf)             \includegraphics on input line 230.
 Package epstopdf Info: Output file is already uptodate.
 
-<plots/max_cirvar_ori-eps-converted-to.pdf, id=137, 449.68pt x 338.26375pt>
+<plots/max_cirvar_ori-eps-converted-to.pdf, id=145, 449.68pt x 338.26375pt>
 File: plots/max_cirvar_ori-eps-converted-to.pdf Graphic file (type pdf)
 
 <use plots/max_cirvar_ori-eps-converted-to.pdf>
 Package pdftex.def Info: plots/max_cirvar_ori-eps-converted-to.pdf used on inpu
-t line 210.
+t line 230.
 (pdftex.def)             Requested size: 217.42265pt x 163.55188pt.
 Package epstopdf Info: Source file: <plots/max_cirvar_dir.eps>
-(epstopdf)                    date: 2015-09-01 23:06:10
+(epstopdf)                    date: 2015-09-06 08:36:57
 (epstopdf)                    size: 18905 bytes
 (epstopdf)             Output file: <plots/max_cirvar_dir-eps-converted-to.pdf>
 
-(epstopdf)                    date: 2015-09-01 23:06:22
+(epstopdf)                    date: 2015-09-06 08:36:57
 (epstopdf)                    size: 17958 bytes
 (epstopdf)             Command: <repstopdf --outfile=plots/max_cirvar_dir-eps-c
 onverted-to.pdf plots/max_cirvar_dir.eps>
-(epstopdf)             \includegraphics on input line 216.
+(epstopdf)             \includegraphics on input line 236.
 Package epstopdf Info: Output file is already uptodate.
 
-<plots/max_cirvar_dir-eps-converted-to.pdf, id=138, 449.68pt x 338.26375pt>
+<plots/max_cirvar_dir-eps-converted-to.pdf, id=146, 449.68pt x 338.26375pt>
 File: plots/max_cirvar_dir-eps-converted-to.pdf Graphic file (type pdf)
 
 <use plots/max_cirvar_dir-eps-converted-to.pdf>
 Package pdftex.def Info: plots/max_cirvar_dir-eps-converted-to.pdf used on inpu
-t line 216.
+t line 236.
 (pdftex.def)             Requested size: 217.42265pt x 163.55188pt.
 Package epstopdf Info: Source file: <plots/max_dircirvar_ori.eps>
-(epstopdf)                    date: 2015-09-01 23:00:48
+(epstopdf)                    date: 2015-09-06 08:36:57
 (epstopdf)                    size: 18986 bytes
 (epstopdf)             Output file: <plots/max_dircirvar_ori-eps-converted-to.p
 df>
-(epstopdf)                    date: 2015-09-01 23:06:23
+(epstopdf)                    date: 2015-09-06 08:36:57
 (epstopdf)                    size: 17577 bytes
 (epstopdf)             Command: <repstopdf --outfile=plots/max_dircirvar_ori-ep
 s-converted-to.pdf plots/max_dircirvar_ori.eps>
-(epstopdf)             \includegraphics on input line 228.
+(epstopdf)             \includegraphics on input line 248.
 Package epstopdf Info: Output file is already uptodate.
 
-<plots/max_dircirvar_ori-eps-converted-to.pdf, id=140, 449.68pt x 338.26375pt>
+<plots/max_dircirvar_ori-eps-converted-to.pdf, id=148, 449.68pt x 338.26375pt>
 File: plots/max_dircirvar_ori-eps-converted-to.pdf Graphic file (type pdf)
 
 <use plots/max_dircirvar_ori-eps-converted-to.pdf>
 Package pdftex.def Info: plots/max_dircirvar_ori-eps-converted-to.pdf used on i
-nput line 228.
+nput line 248.
 (pdftex.def)             Requested size: 217.42265pt x 163.55188pt.
 Package epstopdf Info: Source file: <plots/max_dircirvar_dir.eps>
-(epstopdf)                    date: 2015-09-01 23:01:47
+(epstopdf)                    date: 2015-09-06 08:36:57
 (epstopdf)                    size: 18916 bytes
 (epstopdf)             Output file: <plots/max_dircirvar_dir-eps-converted-to.p
 df>
-(epstopdf)                    date: 2015-09-01 23:06:23
+(epstopdf)                    date: 2015-09-06 08:36:57
 (epstopdf)                    size: 17983 bytes
 (epstopdf)             Command: <repstopdf --outfile=plots/max_dircirvar_dir-ep
 s-converted-to.pdf plots/max_dircirvar_dir.eps>
-(epstopdf)             \includegraphics on input line 234.
+(epstopdf)             \includegraphics on input line 254.
 Package epstopdf Info: Output file is already uptodate.
 
-<plots/max_dircirvar_dir-eps-converted-to.pdf, id=141, 449.68pt x 338.26375pt>
+<plots/max_dircirvar_dir-eps-converted-to.pdf, id=149, 449.68pt x 338.26375pt>
 File: plots/max_dircirvar_dir-eps-converted-to.pdf Graphic file (type pdf)
 
 <use plots/max_dircirvar_dir-eps-converted-to.pdf>
 Package pdftex.def Info: plots/max_dircirvar_dir-eps-converted-to.pdf used on i
-nput line 234.
+nput line 254.
 (pdftex.def)             Requested size: 217.42265pt x 163.55188pt.
+ [6 </home/athul/machineLearning/neuralData/driftingGratings/report/plots/max_o
+si-eps-converted-to.pdf> </home/athul/machineLearning/neuralData/driftingGratin
+gs/report/plots/typical_response.png>]
 Package epstopdf Info: Source file: <plots/min_cirvar_ori.eps>
-(epstopdf)                    date: 2015-09-01 23:05:10
+(epstopdf)                    date: 2015-09-06 08:36:57
 (epstopdf)                    size: 19058 bytes
 (epstopdf)             Output file: <plots/min_cirvar_ori-eps-converted-to.pdf>
 
-(epstopdf)                    date: 2015-09-01 23:06:24
+(epstopdf)                    date: 2015-09-06 08:36:57
 (epstopdf)                    size: 18081 bytes
 (epstopdf)             Command: <repstopdf --outfile=plots/min_cirvar_ori-eps-c
 onverted-to.pdf plots/min_cirvar_ori.eps>
-(epstopdf)             \includegraphics on input line 246.
+(epstopdf)             \includegraphics on input line 266.
 Package epstopdf Info: Output file is already uptodate.
 
-<plots/min_cirvar_ori-eps-converted-to.pdf, id=143, 442.65375pt x 337.26pt>
+<plots/min_cirvar_ori-eps-converted-to.pdf, id=166, 442.65375pt x 337.26pt>
 File: plots/min_cirvar_ori-eps-converted-to.pdf Graphic file (type pdf)
 
 <use plots/min_cirvar_ori-eps-converted-to.pdf>
 Package pdftex.def Info: plots/min_cirvar_ori-eps-converted-to.pdf used on inpu
-t line 246.
+t line 266.
 (pdftex.def)             Requested size: 217.42265pt x 165.65509pt.
 Package epstopdf Info: Source file: <plots/min_cirvar_dir.eps>
-(epstopdf)                    date: 2015-09-01 23:04:38
+(epstopdf)                    date: 2015-09-06 08:36:57
 (epstopdf)                    size: 18996 bytes
 (epstopdf)             Output file: <plots/min_cirvar_dir-eps-converted-to.pdf>
 
-(epstopdf)                    date: 2015-09-01 23:06:24
+(epstopdf)                    date: 2015-09-06 08:36:57
 (epstopdf)                    size: 18377 bytes
 (epstopdf)             Command: <repstopdf --outfile=plots/min_cirvar_dir-eps-c
 onverted-to.pdf plots/min_cirvar_dir.eps>
-(epstopdf)             \includegraphics on input line 252.
+(epstopdf)             \includegraphics on input line 272.
 Package epstopdf Info: Output file is already uptodate.
 
-<plots/min_cirvar_dir-eps-converted-to.pdf, id=144, 449.68pt x 338.26375pt>
+<plots/min_cirvar_dir-eps-converted-to.pdf, id=167, 449.68pt x 338.26375pt>
 File: plots/min_cirvar_dir-eps-converted-to.pdf Graphic file (type pdf)
 
 <use plots/min_cirvar_dir-eps-converted-to.pdf>
 Package pdftex.def Info: plots/min_cirvar_dir-eps-converted-to.pdf used on inpu
-t line 252.
+t line 272.
 (pdftex.def)             Requested size: 217.42265pt x 163.55188pt.
- [6 </home/athul/machineLearning/neuralData/driftingGratings/report/plots/max_o
-si-eps-converted-to.pdf> </home/athul/machineLearning/neuralData/driftingGratin
-gs/report/plots/typical_response.png>] [7 </home/athul/machineLearning/neuralDa
-ta/driftingGratings/report/plots/max_cirvar_ori-eps-converted-to.pdf> </home/at
-hul/machineLearning/neuralData/driftingGratings/report/plots/max_cirvar_dir-eps
--converted-to.pdf> </home/athul/machineLearning/neuralData/driftingGratings/rep
-ort/plots/max_dircirvar_ori-eps-converted-to.pdf> </home/athul/machineLearning/
-neuralData/driftingGratings/report/plots/max_dircirvar_dir-eps-converted-to.pdf
->] [8 </home/athul/machineLearning/neuralData/driftingGratings/report/plots/min
-_cirvar_ori-eps-converted-to.pdf> </home/athul/machineLearning/neuralData/drift
-ingGratings/report/plots/min_cirvar_dir-eps-converted-to.pdf>] [9]
+ [7 </home/athul/machineLearning/neuralData/driftingGratings/report/plots/max_c
+irvar_ori-eps-converted-to.pdf> </home/athul/machineLearning/neuralData/driftin
+gGratings/report/plots/max_cirvar_dir-eps-converted-to.pdf>] [8 </home/athul/ma
+chineLearning/neuralData/driftingGratings/report/plots/max_dircirvar_ori-eps-co
+nverted-to.pdf> </home/athul/machineLearning/neuralData/driftingGratings/report
+/plots/max_dircirvar_dir-eps-converted-to.pdf> </home/athul/machineLearning/neu
+ralData/driftingGratings/report/plots/min_cirvar_ori-eps-converted-to.pdf> </ho
+me/athul/machineLearning/neuralData/driftingGratings/report/plots/min_cirvar_di
+r-eps-converted-to.pdf>]
+[9]
 No file report.bbl.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 318.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 318.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 338.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 338.
 (/home/athul/machineLearning/neuralData/driftingGratings/report/report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 318.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 318.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 338.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 338.
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 0496CC66DB526C6F5670F93654B89C6F;1174.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 318.
+(rerunfilecheck)             Checksum: C3A92C2A7F5BA8BC307E9387BE1CD821;1270.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 338.
  ) 
 Here is how much of TeX's memory you used:
- 8766 strings out of 493105
- 128464 string characters out of 6137072
- 233127 words of memory out of 5000000
- 12016 multiletter control sequences out of 15000+600000
+ 8781 strings out of 495020
+ 128781 string characters out of 6181324
+ 227490 words of memory out of 5000000
+ 11777 multiletter control sequences out of 15000+600000
  13628 words of font info for 50 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
+ 14 hyphenation exceptions out of 8191
  42i,13n,40p,783b,570s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
@@ -897,10 +913,10 @@ ts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmti12.pfb>
-Output written on report.pdf (9 pages, 291220 bytes).
+Output written on report.pdf (9 pages, 297570 bytes).
 PDF statistics:
- 259 PDF objects out of 1000 (max. 8388607)
- 220 compressed objects within 3 object streams
- 55 named destinations out of 1000 (max. 500000)
- 169 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 268 PDF objects out of 1000 (max. 8388607)
+ 227 compressed objects within 3 object streams
+ 57 named destinations out of 1000 (max. 500000)
+ 187 words of extra memory for PDF output out of 10000 (max. 10000000)
 

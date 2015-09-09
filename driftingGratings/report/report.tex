@@ -1,7 +1,7 @@
 % @Author: Athul Vijayan
 % @Date:   2014-05-09 13:56:20
-% @Last Modified by:   Athul
-% @Last Modified time: 2015-09-03 13:12:02
+% @Last Modified by:   Athul Vijayan
+% @Last Modified time: 2015-09-09 00:20:51
 
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -149,6 +149,35 @@ The Calcium signal amplitudes averaged and the average is believed to be a proxy
 \subsection{Estimating orientation selectivity of neuron} % (fold)
 \label{sub:estimating_orientation_selectivity_of_neuron}
 Neurons in the striate cortex of primary visual cortex in the brain are of three types. Cells which respond to orientation of a contrasting visual stimuli and which are not sensitive to orientation. Among the orientation selective cells, some cells are also sensitive to motion of the stimuli in a particular direction in addition to orientation. These cells are called complex cells. Cells which are only sensitive  to orientation, but not to motion are called simple cells. These cells are pyramidal in structure and have a receptive field in shape of a rectangular slit. This section deals with methods to quantify the selective behavior of these cells from experimental data.
+\subsubsection{Estimating the distribution response} % (fold)
+\label{ssub:estimating_the_distribution_response}
+From plotting the spike rate vs theta curve, We can model orientation selectivity of neuron with a Gaussian curve. We can also model the directional selectivity of a orientation/direction selective neuron using mixture of two Gaussian curves. Figure shows~\ref{gauss} a mixture of two Gaussian.\\
+Some Intuitions from the curves are
+\begin{itemize}
+    \item Orientation selective neurons will have distinct peaks in both, or they will have low variance parameter.
+    \item If both peaks in double Gaussian are similar, the cell is not direction specific. It has similar response to both directions, this could be a simple cell.
+    \item For each neuron, the parameters will change. The `mean' parameter will decide the preferred orientation/selectivity. The variance will decide the degree to which they are selective.
+    \item For fitting Gaussian,  we have 320 points. the estimation need not be accurate.
+    \item For fitting double Gaussian,  we have 160 points. the estimation need not be accurate.
+\end{itemize}
+A double Gaussian is of form
+\begin{figure}
+\centering
+\caption{Modeling orientation and directional selectivity using Gaussians}
+\label{gauss}
+\begin{subfigure}{.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{plots/gauss.png}
+    \caption{Gaussian distribution}
+\end{subfigure}
+\rulesep
+\begin{subfigure}{.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{plots/double_gauss.png}
+    \caption{Mixture of two Gaussians.}
+\end{subfigure}
+\end{figure}
+% subsubsection estimating_the_distribution_response (end)
 \subsubsection{Selectivity Index measures - OSI, DSI} % (fold)
 \label{ssub:traditional_selectivity_measures_oi_di_and_osi}
 OI and DI are used as the normalized measures of ``peak to trough'' orientation selectivity and direction selectivity.

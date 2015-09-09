@@ -3,7 +3,7 @@
 # @Author: Athul
 # @Date:   2015-09-04 16:42:24
 # @Last Modified by:   Athul Vijayan
-# @Last Modified time: 2015-09-06 17:55:48
+# @Last Modified time: 2015-09-09 00:17:56
 from __future__ import division
 import numpy as np
 import scipy.io
@@ -71,6 +71,9 @@ for mouse in xrange(1):
     clusterEfficiency = (between_ss/total_ss)*100
     print('The clustering is done with an efficiency of ' + str(clusterEfficiency))
     print('To see the definition of clustering efficiency, see the documentation')
+    # -----------------------------------------------------------------------
+
+    # ========================== Gaussian fit ===================================
     
     showPlots = False
     if showPlots:

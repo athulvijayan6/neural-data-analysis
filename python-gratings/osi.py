@@ -3,7 +3,7 @@
 # @Author: athul
 # @Date:   2015-09-04 15:23:53
 # @Last Modified by:   Athul Vijayan
-# @Last Modified time: 2015-09-06 17:54:47
+# @Last Modified time: 2015-09-09 00:19:10
 import numpy as np
 
 def calculateSpikeRate(conc, algo='average'): 
@@ -27,6 +27,9 @@ def dirCirVar(spikeRate):
     '''Function calculates the L_dir from spike rate response of neuron to each angle and direction of stimuli'''
     dcv = np.dot(spikeRate[:, 0],np.exp(1j*spikeRate[:, 1]))/np.sum(spikeRate[:, 0])
     return np.abs(dcv)
+
+def makeGMM(spikeRate, numGaussian=1):
+    
 
 
 if __name__=='__main__':

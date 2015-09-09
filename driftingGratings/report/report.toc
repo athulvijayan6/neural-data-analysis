@@ -9,8 +9,9 @@
 \contentsline {subsubsection}{\numberline {3.1.1}Averaging }{5}{subsubsection.3.1.1}
 \contentsline {subsubsection}{\numberline {3.1.2}Autoregressive model}{5}{subsubsection.3.1.2}
 \contentsline {subsection}{\numberline {3.2}Estimating orientation selectivity of neuron}{5}{subsection.3.2}
-\contentsline {subsubsection}{\numberline {3.2.1}Selectivity Index measures - OSI, DSI}{5}{subsubsection.3.2.1}
-\contentsline {subsubsection}{\numberline {3.2.2}Circular variance of direction and orientation}{5}{subsubsection.3.2.2}
-\contentsline {subsubsection}{\numberline {3.2.3}Measure of reliability - confidence intervals}{6}{subsubsection.3.2.3}
-\contentsline {subsection}{\numberline {3.3}Classification of simple and complex cells}{6}{subsection.3.3}
-\contentsline {subsubsection}{\numberline {3.3.1}k-means clustering}{8}{subsubsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.2.1}Estimating the distribution response}{5}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}Selectivity Index measures - OSI, DSI}{5}{subsubsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.3}Circular variance of direction and orientation}{6}{subsubsection.3.2.3}
+\contentsline {subsubsection}{\numberline {3.2.4}Measure of reliability - confidence intervals}{7}{subsubsection.3.2.4}
+\contentsline {subsection}{\numberline {3.3}Classification of simple and complex cells}{7}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}k-means clustering}{9}{subsubsection.3.3.1}
