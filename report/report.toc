@@ -15,5 +15,7 @@
 \contentsline {subsection}{\numberline {3.3}Modeling the neuron response}{7}{subsection.3.3}
 \contentsline {subsubsection}{\numberline {3.3.1}Estimating orientation fit}{8}{subsubsection.3.3.1}
 \contentsline {subsubsection}{\numberline {3.3.2}Estimating direction fit}{8}{subsubsection.3.3.2}
-\contentsline {subsection}{\numberline {3.4}Classification of simple and complex cells}{8}{subsection.3.4}
-\contentsline {subsubsection}{\numberline {3.4.1}k-means clustering}{9}{subsubsection.3.4.1}
+\contentsline {subparagraph}{Results}{8}{section*.7}
+\contentsline {subsection}{\numberline {3.4}Classification of simple and complex cells}{10}{subsection.3.4}
+\contentsline {subsubsection}{\numberline {3.4.1}k-means clustering}{10}{subsubsection.3.4.1}
+\contentsline {subsection}{\numberline {3.5}Study of correlation}{11}{subsection.3.5}

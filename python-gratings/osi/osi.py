@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 # @Author: athul
 # @Date:   2015-09-04 15:23:53
-# @Last Modified by:   Athul Vijayan
-# @Last Modified time: 2015-09-09 00:19:10
+# @Last Modified by:   Athul
+# @Last Modified time: 2015-09-23 12:47:39
 import numpy as np
 
 def calculateSpikeRate(conc, algo='average'): 
@@ -21,16 +21,34 @@ def calculateSpikeRate(conc, algo='average'):
 def cirVar(spikeRate):
     '''Function calculates the L_ori from spike rate response of neuron to each angle and direction of stimuli'''
     cv = np.dot(spikeRate[:, 0],np.exp(2j*spikeRate[:, 1]))/np.sum(spikeRate[:, 0])
-    return np.abs(cv)
+    return cv
 
 def dirCirVar(spikeRate):
     '''Function calculates the L_dir from spike rate response of neuron to each angle and direction of stimuli'''
     dcv = np.dot(spikeRate[:, 0],np.exp(1j*spikeRate[:, 1]))/np.sum(spikeRate[:, 0])
-    return np.abs(dcv)
+    return dcv
 
-def makeGMM(spikeRate, numGaussian=1):
-    
-
+def computeAll(spikeRate):
+    OSI_n = DSI_n = np.zeros((10))
+    for trial in xrange(10):
+        trialData = spikeRate[trial::10, :]
+        R_pref_ori = np.max(trialData[:, 0])
+        theta_pref_ori = np.argmax(trialData[:, 0])
+        # compute OSI
+        theta_orth = (theta_pref_ori + 4) % 16
+        R_orth = trialData[theta_orth, 0]
+        OSI_n[trial] = (R_pref_ori - R_orth)/(R_pref_ori + R_orth)
+        # % Compute DSI
+        theta_null = (theta_pref_ori + 8) % 16
+        R_null = trialData[theta_null, 0]
+        DSI_n[trial] = (R_pref_ori - R_null)/(R_pref_ori + R_null)
+    OSI= np.mean(OSI_n)
+    DSI = np.mean(DSI_n)
+    # % compute orientation variance
+    cirvar = cirVar(spikeRate)
+    # % compute directional variance
+    dircirvar = dirCirVar(spikeRate)
+    return cirvar, dircirvar, OSI, DSI
 
 if __name__=='__main__':
     print('Module for orientation sensitivity analysis of neurons in a drifting grating experiment')

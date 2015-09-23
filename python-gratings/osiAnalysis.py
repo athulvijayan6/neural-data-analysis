@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 # @Author: Athul
 # @Date:   2015-09-04 16:42:24
-# @Last Modified by:   Athul Vijayan
-# @Last Modified time: 2015-09-09 00:17:56
+# @Last Modified by:   Athul
+# @Last Modified time: 2015-09-23 12:40:54
 from __future__ import division
 import numpy as np
 import scipy.io
@@ -32,28 +32,11 @@ for mouse in xrange(1):
         cellData[i] = cellData[i, np.argsort(cellData[i, :, -1])]
         # Calculate spike rate response of each neuron as a real number
         spikeRate[i] = osi.calculateSpikeRate(cellData[i])
-        OSI_n = DSI_n = np.zeros((10))
-        for trial in xrange(10):
-            trialData = spikeRate[i, trial::10, :]
-            R_pref_ori = np.max(trialData[:, 0])
-            theta_pref_ori = np.argmax(trialData[:, 0])
-            # compute OSI
-            theta_orth = (theta_pref_ori + 4) % 16
-            R_orth = trialData[theta_orth, 0]
-            OSI_n[trial] = (R_pref_ori - R_orth)/(R_pref_ori + R_orth)
-            # % Compute DSI
-            theta_null = (theta_pref_ori + 8) % 16
-            R_null = trialData[theta_null, 0]
-            DSI_n[trial] = (R_pref_ori - R_null)/(R_pref_ori + R_null)
-        OSI[i] = np.mean(OSI_n)
-        DSI[i] = np.mean(DSI_n)
-        # % compute orientation variance
-        cirvar[i] = osi.cirVar(spikeRate[i])
-        # % compute directional variance
-        dircirvar[i] = osi.dirCirVar(spikeRate[i])
+
+        cirvar[i], dircirvar[i], OSI[i], DSI[i] = osi.computeAll(spikeRate[i])
 
      # % ----------------------- k-means clustering ----------
-    featureVec = np.vstack((cirvar, dircirvar))
+    featureVec = np.vstack((np.abs(cirvar), np.abs(dircirvar)))
     featureVec = np.transpose(featureVec)
     whiteFeatureVec = whiten(featureVec)
     numClusters = 3
