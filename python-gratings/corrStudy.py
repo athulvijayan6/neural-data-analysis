@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 # @Author: Athul
 # @Date:   2015-09-21 11:41:30
-# @Last Modified by:   Athul Vijayan
-# @Last Modified time: 2015-09-23 23:35:21
+# @Last Modified by:   Athul
+# @Last Modified time: 2015-09-24 12:46:32
 from __future__ import division
 import numpy as np
 import scipy.io
@@ -17,28 +17,27 @@ for mouse in xrange(1):
     data = scipy.io.loadmat('../driftingGratings/'+ dataTargets[mouse] + 'Data.mat')
     data = data['Data']
     rawData = data[0, 0]['rawF']
-    smoothData = data[0, 0]['dFF']
+    smoothData = data[0, 0]['Spks']
     stimuliSeq = data[0, 0]['StimSeq']
     cellData = np.zeros((smoothData.shape[0], stimuliSeq.size, 121))
     spikeRate = np.zeros((smoothData.shape[0], stimuliSeq.size, 2))
     OSI = np.zeros(smoothData.shape[0])
     DSI = np.zeros(smoothData.shape[0])
-    cirvar = np.zeros((smoothData.shape[0]))
-    dircirvar = np.zeros((smoothData.shape[0]))
+    cirvar = np.zeros((smoothData.shape[0]), dtype=np.complex64)
+    dircirvar = np.zeros((smoothData.shape[0]), dtype=np.complex64)
     for i in xrange(smoothData.shape[0]):
         for j in xrange(stimuliSeq.size):
-            cellData[i, j] = np.append(smoothData[i, 120*j: 120*(j+1)], stimuliSeq[j] )
+            cellData[i, j] = np.append(smoothData[i, 120*j: 120*(j+1)], np.radians(stimuliSeq[j]) )
         # sort the array
         cellData[i] = cellData[i, np.argsort(cellData[i, :, -1])]
         # Calculate spike rate response of each neuron as a real number
         spikeRate[i] = osi.calculateSpikeRate(cellData[i])
-
-        cirvar[i], dircirvar[i], OSI[i], DSI[i] = np.abs(osi.computeAll(spikeRate[i]))
+        cirvar[i], dircirvar[i], OSI[i], DSI[i] = osi.computeAll(spikeRate[i])
 
     # ======================= Correlation study ====================
     # Rearrange elements of spikeRate in decreasing circular variance
 
-    spikeRate = spikeRate[np.argsort(cirvar)[::-1]]
+    spikeRate = spikeRate[np.argsort(np.abs(cirvar))[::-1]]
     numNeurons = spikeRate.shape[0]
     corrMat = np.corrcoef(spikeRate[:, :, 0])
 
@@ -54,7 +53,7 @@ for mouse in xrange(1):
     plt.title('Correlation heatmap')
 
     fig, ax = plt.subplots()
-    corrThres = 0.6
+    corrThres = 0.65
     ax.pcolor(corrMat>corrThres, cmap=plt.cm.Blues, alpha=0.8)
     # Format
     fig = plt.gcf()
@@ -65,7 +64,6 @@ for mouse in xrange(1):
     plt.title('Correlation heatmap thresholded c > '+ str(corrThres))
 
     # **************** Plot response of selected cells *********
-
     selNeurons = np.array([1, 2, 3, 4, 5, 6, 7])
     numNeurons = selNeurons.size
     w0 = np.array([4, 50, np.pi/2, 1, 50, 3*np.pi/2, 1])

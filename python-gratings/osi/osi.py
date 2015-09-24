@@ -3,7 +3,7 @@
 # @Author: athul
 # @Date:   2015-09-04 15:23:53
 # @Last Modified by:   Athul
-# @Last Modified time: 2015-09-23 12:47:39
+# @Last Modified time: 2015-09-24 11:13:59
 import numpy as np
 
 def calculateSpikeRate(conc, algo='average'): 
@@ -14,17 +14,21 @@ def calculateSpikeRate(conc, algo='average'):
         if algo == 'average':
             # This algorithm just computes the average Ca concentration
             # from the time of epoch to end of stimuli.The input expected is smoothed Ca data
-            spikeRate[i, 0] = np.mean(conc[i, 80:])
+            spikeRate[i, 0] = np.mean(conc[i, 80:-1])
             spikeRate[i, 1] = conc[i, -1]
     return spikeRate
 
-def cirVar(spikeRate):
+def cirVar(spikeRate, angleUnit='radians'):
     '''Function calculates the L_ori from spike rate response of neuron to each angle and direction of stimuli'''
+    if angleUnit != 'radians':
+        spikeRate[:, -1] = np.radians(spikeRate[:, -1])
     cv = np.dot(spikeRate[:, 0],np.exp(2j*spikeRate[:, 1]))/np.sum(spikeRate[:, 0])
     return cv
 
-def dirCirVar(spikeRate):
+def dirCirVar(spikeRate, angleUnit='radians'):
     '''Function calculates the L_dir from spike rate response of neuron to each angle and direction of stimuli'''
+    if angleUnit != 'radians':
+        spikeRate[:, -1] = np.radians(spikeRate[:, -1])
     dcv = np.dot(spikeRate[:, 0],np.exp(1j*spikeRate[:, 1]))/np.sum(spikeRate[:, 0])
     return dcv
 

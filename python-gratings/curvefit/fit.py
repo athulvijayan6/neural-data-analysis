@@ -3,7 +3,7 @@
 # @Author: Athul
 # @Date:   2015-09-10 12:40:50
 # @Last Modified by:   Athul
-# @Last Modified time: 2015-09-22 17:49:57
+# @Last Modified time: 2015-09-24 12:38:12
 import numpy as np
 from scipy.optimize import leastsq
 
@@ -36,7 +36,7 @@ def residuals(params, R, theta, func=doubleGaussian):
     return (R - Rhat)
 
 def fitCurve(spikeRate, w0, func=doubleGaussian):    
-    theta = np.radians(spikeRate[:, 1])
+    theta = spikeRate[:, 1]
     R = spikeRate[:, 0]
     what = leastsq(residuals, w0, args=(R, theta, func))[0]
     sse = sum(np.square(residuals(what, R, theta)))
