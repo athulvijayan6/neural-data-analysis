@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 # @Author: Athul
 # @Date:   2015-09-21 11:41:30
-# @Last Modified by:   Athul
-# @Last Modified time: 2015-09-23 13:08:47
+# @Last Modified by:   Athul Vijayan
+# @Last Modified time: 2015-09-23 23:35:21
 from __future__ import division
 import numpy as np
 import scipy.io

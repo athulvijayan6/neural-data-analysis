@@ -2,15 +2,15 @@
 # -*- coding: utf-8 -*-
 # @Author: Athul
 # @Date:   2015-09-04 16:42:24
-# @Last Modified by:   Athul
-# @Last Modified time: 2015-09-23 12:40:54
+# @Last Modified by:   Athul Vijayan
+# @Last Modified time: 2015-09-24 07:02:25
 from __future__ import division
 import numpy as np
 import scipy.io
-import osi
+import osi.osi as osi
 from scipy.cluster.vq import kmeans, whiten, vq
-import plotly.plotly as py
-from plotly.graph_objs import *
+import matplotlib.pyplot as plt
+plt.style.use('ggplot')
 
 dataTargets = ['dataset/Mouse-A/', 'dataset/Mouse-B/', 'dataset/Mouse-C/', 'dataset/Mouse-D/', 'dataset/Mouse-E/']
 for mouse in xrange(1):
@@ -19,6 +19,13 @@ for mouse in xrange(1):
     rawData = data[0, 0]['rawF']
     smoothData = data[0, 0]['dFF']
     stimuliSeq = data[0, 0]['StimSeq']
+
+    # To verify
+    data = scipy.io.loadmat('../driftingGratings/'+ dataTargets[mouse] + '/Solutions/Ori.mat')
+    data = data['Ori']
+    OI_ref = data['OI'][0,0].reshape((65,))
+    OSI_ref = data['OSI'][0,0].reshape((65,))
+    
     cellData = np.zeros((smoothData.shape[0], stimuliSeq.size, 121))
     spikeRate = np.zeros((smoothData.shape[0], stimuliSeq.size, 2))
     OSI = np.zeros(smoothData.shape[0])
@@ -32,28 +39,36 @@ for mouse in xrange(1):
         cellData[i] = cellData[i, np.argsort(cellData[i, :, -1])]
         # Calculate spike rate response of each neuron as a real number
         spikeRate[i] = osi.calculateSpikeRate(cellData[i])
+        cirvar[i], dircirvar[i], OSI[i], DSI[i] = np.abs(osi.computeAll(spikeRate[i]))
 
-        cirvar[i], dircirvar[i], OSI[i], DSI[i] = osi.computeAll(spikeRate[i])
+    # ==================== Verify results ===================
+    fig, ax = plt.subplots()
+    x = np.array(xrange(OSI.size))
+    ax.plot(x, OSI_ref, linewidth=2, label='reference')
+    ax.plot(x, cirvar, linewidth=2, label='estimated')
+    print(np.corrcoef(cirvar, OSI_ref))
+    plt.show()
 
-     # % ----------------------- k-means clustering ----------
-    featureVec = np.vstack((np.abs(cirvar), np.abs(dircirvar)))
-    featureVec = np.transpose(featureVec)
-    whiteFeatureVec = whiten(featureVec)
-    numClusters = 3
-    centroids = kmeans(whiteFeatureVec, numClusters)[0]
-    idx = vq(whiteFeatureVec, centroids)[0]
 
-    # % Analyze the k means clustering results.
-    globalMean = np.mean(whiteFeatureVec, 0)
-    total_ss = 0
-    for i in xrange(featureVec.shape[0]):
-        total_ss = total_ss + np.linalg.norm(globalMean - whiteFeatureVec[i, :])
-    between_ss = 0
-    for i in xrange(numClusters):
-        between_ss = between_ss + np.bincount(idx)[i]*np.linalg.norm(globalMean - centroids[i, :])
-    clusterEfficiency = (between_ss/total_ss)*100
-    print('The clustering is done with an efficiency of ' + str(clusterEfficiency))
-    print('To see the definition of clustering efficiency, see the documentation')
+    # % ----------------------- k-means clustering ----------
+    # featureVec = np.vstack((np.abs(cirvar), np.abs(dircirvar)))
+    # featureVec = np.transpose(featureVec)
+    # whiteFeatureVec = whiten(featureVec)
+    # numClusters = 3
+    # centroids = kmeans(whiteFeatureVec, numClusters)[0]
+    # idx = vq(whiteFeatureVec, centroids)[0]
+
+    # # % Analyze the k means clustering results.
+    # globalMean = np.mean(whiteFeatureVec, 0)
+    # total_ss = 0
+    # for i in xrange(featureVec.shape[0]):
+    #     total_ss = total_ss + np.linalg.norm(globalMean - whiteFeatureVec[i, :])
+    # between_ss = 0
+    # for i in xrange(numClusters):
+    #     between_ss = between_ss + np.bincount(idx)[i]*np.linalg.norm(globalMean - centroids[i, :])
+    # clusterEfficiency = (between_ss/total_ss)*100
+    # print('The clustering is done with an efficiency of ' + str(clusterEfficiency))
+    # print('To see the definition of clustering efficiency, see the documentation')
     # -----------------------------------------------------------------------
 
     # ========================== Gaussian fit ===================================
