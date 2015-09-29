@@ -3,7 +3,7 @@
 # @Author: Athul
 # @Date:   2015-09-21 11:41:30
 # @Last Modified by:   Athul
-# @Last Modified time: 2015-09-24 12:46:32
+# @Last Modified time: 2015-09-29 16:44:26
 from __future__ import division
 import numpy as np
 import scipy.io
@@ -64,7 +64,7 @@ for mouse in xrange(1):
     plt.title('Correlation heatmap thresholded c > '+ str(corrThres))
 
     # **************** Plot response of selected cells *********
-    selNeurons = np.array([1, 2, 3, 4, 5, 6, 7])
+    selNeurons = np.array([7, 10, 16, 23, 28])
     numNeurons = selNeurons.size
     w0 = np.array([4, 50, np.pi/2, 1, 50, 3*np.pi/2, 1])
     what = np.zeros((numNeurons, w0.size))

@@ -1,7 +1,7 @@
 % @Author: Athul Vijayan
 % @Date:   2014-05-09 13:56:20
 % @Last Modified by:   Athul
-% @Last Modified time: 2015-09-22 16:53:20
+% @Last Modified time: 2015-09-29 16:48:39
 
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -409,27 +409,70 @@ Table~\ref{tab:cluster_efficiency} shows the clustering efficiency in each mice.
     \caption{Cluster efficiency of various subjects}
     \label{tab:cluster_efficiency}
 \end{table}
-The clustering was done is a higher dimensional space and hard to visualize, In figure, we show clustered neurons in a subspace of original feature space.
-\begin{figure}[h]
-    \centering
-    \label{clusters}
-    \includegraphics[width=.8\textwidth]{plots/clusters}
-    \caption{Clustering result in a subspace of feature vector}
-\end{figure}
+% The clustering was done is a higher dimensional space and hard to visualize, In figure, we show clustered neurons in a subspace of original feature space.
+% \begin{figure}[h]
+%     \centering
+%     \label{clusters}
+%     \includegraphics[width=.8\textwidth]{plots/clusters}
+%     \caption{Clustering result in a subspace of feature vector}
+% \end{figure}
 % subsubsection k_means_clustering (end)
 % subsection classification_of_simple_and_complex_cells (end)
 \subsection{Study of correlation} % (fold)
 \label{sub:study_of_correlation}
 The activity of a population of cells was recorded. We would like to study the functional similarities of different neurons in a mouse. We aim to find out similarly tuned neurons. We could study the effects of receptive fields by this hopefully.\\
-Similarly tuned cells are expected to have similar tuning curves (The double Gaussian we modeled before). We can study the pairwise correlation of tuning curves as first approach. Estimating correlation of the tuning curve may not be close to accurate as there are only 160 samples per neuron. The Figure~\ref{tuningCorr} shows heat map of correlations between tuning curves.
-\begin{figure}[h]
+Similarly tuned cells are expected to have similar tuning curves (The double Gaussian we modeled before). We can study the pairwise correlation of tuning curves as first approach. Estimating correlation of the tuning curve may not be close to accurate as there are only 160 samples per neuron. The Figure~\ref{tuningCorr} shows heat map of correlations between tuning curves for different mices.
+\begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{plots/tuningCorr}
-    \caption{Heatmap of correlations between the tuning curves}
+    \begin{subfigure}{.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{plots/tuningCorr_desc_civar}
+    \end{subfigure}
+    \begin{subfigure}{.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{plots/tuningCorr_desc_civar_m2}
+    \end{subfigure}
+    \newline
+    \begin{subfigure}{.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{plots/tuningCorr_desc_civar_m3}
+    \end{subfigure}
+    \begin{subfigure}{.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{plots/tuningCorr_desc_civar_m4}
+    \end{subfigure}
+    \caption{Correlation of tuning curves for different mices}
     \label{tuningCorr}
 \end{figure}
+\begin{figure}
+    \centering
+    \begin{subfigure}{.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{plots/tuningCorr_desc_civar_thres}
+    \end{subfigure}
+    \begin{subfigure}{.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{plots/tuningCorr_desc_civar_thres_m2}
+    \end{subfigure}
+    \newline
+    \begin{subfigure}{.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{plots/tuningCorr_desc_civar_thres_m3}
+    \end{subfigure}
+    \begin{subfigure}{.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{plots/tuningCorr_desc_civar_thres_m4}
+    \end{subfigure}
+    \caption{Correlation of tuning curves thresholded for different mices}
+    \label{tuningCorr_thres}
+\end{figure}
 To see the sanity of the results, we could plot tuning curves of neurons with high correlation.
-
+\begin{figure}[h]
+    \centering
+    \label{clusters}
+    \includegraphics[width=.8\textwidth]{plots/corrTuned}
+    \caption{Showing correlated neurons are similarly tuned. correlation $> 0.7$}
+\end{figure}
 % subsection study_of_correlation (end)
 % ======================= References ==========================
 \newpage

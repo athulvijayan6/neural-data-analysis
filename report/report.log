@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.8.24)  23 SEP 2015 12:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.8.24)  29 SEP 2015 16:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -885,22 +885,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 303--305
  []
 
 Package epstopdf Info: Source file: <plots/fit_complex1.eps>
-(epstopdf)                    date: 2015-09-22 16:03:42
-(epstopdf)                    size: 54736 bytes
+(epstopdf)                    date: 2015-09-24 12:42:18
+(epstopdf)                    size: 58683 bytes
 (epstopdf)             Output file: <plots/fit_complex1-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-09-22 16:10:31
-(epstopdf)                    size: 24534 bytes
+(epstopdf)                    date: 2015-09-29 16:31:44
+(epstopdf)                    size: 25155 bytes
 (epstopdf)             Command: <repstopdf --outfile=plots/fit_complex1-eps-con
 verted-to.pdf plots/fit_complex1.eps>
 (epstopdf)             \includegraphics on input line 320.
 Package epstopdf Info: Output file is already uptodate.
-<plots/fit_complex1-eps-converted-to.pdf, id=223, 587.19376pt x 406.51875pt>
+<plots/fit_complex1-eps-converted-to.pdf, id=223, 587.19376pt x 442.65375pt>
 File: plots/fit_complex1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use plots/fit_complex1-eps-converted-to.pdf>
 Package pdftex.def Info: plots/fit_complex1-eps-converted-to.pdf used on input 
 line 320.
-(pdftex.def)             Requested size: 217.42265pt x 150.52122pt.
+(pdftex.def)             Requested size: 217.42265pt x 163.9009pt.
 Package epstopdf Info: Source file: <plots/fit_complex2.eps>
 (epstopdf)                    date: 2015-09-22 16:04:23
 (epstopdf)                    size: 55445 bytes
@@ -1038,68 +1038,218 @@ nsel1-eps-converted-to.pdf> </home/athul/machineLearning/neuralData/report/plot
 s/fit_unsel2-eps-converted-to.pdf> </home/athul/machineLearning/neuralData/repo
 rt/plots/fit_unsel3-eps-converted-to.pdf> </home/athul/machineLearning/neuralDa
 ta/report/plots/fit_unsel4-eps-converted-to.pdf>]
-Package epstopdf Info: Source file: <plots/clusters.eps>
-(epstopdf)                    date: 2015-09-22 16:12:52
-(epstopdf)                    size: 346454 bytes
-(epstopdf)             Output file: <plots/clusters-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-09-22 16:14:57
-(epstopdf)                    size: 62840 bytes
-(epstopdf)             Command: <repstopdf --outfile=plots/clusters-eps-convert
-ed-to.pdf plots/clusters.eps>
-(epstopdf)             \includegraphics on input line 416.
+Package epstopdf Info: Source file: <plots/tuningCorr_desc_civar.eps>
+(epstopdf)                    date: 2015-09-23 13:06:50
+(epstopdf)                    size: 933486 bytes
+(epstopdf)             Output file: <plots/tuningCorr_desc_civar-eps-converted-
+to.pdf>
+(epstopdf)                    date: 2015-09-29 16:37:33
+(epstopdf)                    size: 42837 bytes
+(epstopdf)             Command: <repstopdf --outfile=plots/tuningCorr_desc_civa
+r-eps-converted-to.pdf plots/tuningCorr_desc_civar.eps>
+(epstopdf)             \includegraphics on input line 429.
 Package epstopdf Info: Output file is already uptodate.
 
-<plots/clusters-eps-converted-to.pdf, id=601, 769.87625pt x 464.73625pt>
-File: plots/clusters-eps-converted-to.pdf Graphic file (type pdf)
-
-<use plots/clusters-eps-converted-to.pdf>
-Package pdftex.def Info: plots/clusters-eps-converted-to.pdf used on input line
- 416.
-(pdftex.def)             Requested size: 362.37569pt x 218.75226pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-Package epstopdf Info: Source file: <plots/tuningCorr.eps>
-(epstopdf)                    date: 2015-09-22 16:50:56
-(epstopdf)                    size: 947395 bytes
-(epstopdf)             Output file: <plots/tuningCorr-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-09-22 16:51:18
-(epstopdf)                    size: 44058 bytes
-(epstopdf)             Command: <repstopdf --outfile=plots/tuningCorr-eps-conve
-rted-to.pdf plots/tuningCorr.eps>
-(epstopdf)             \includegraphics on input line 427.
+<plots/tuningCorr_desc_civar-eps-converted-to.pdf, id=602, 587.19376pt x 442.65
+375pt>
+File: plots/tuningCorr_desc_civar-eps-converted-to.pdf Graphic file (type pdf)
+ <use plots/tuningCorr_desc_civar-eps-converted-to.pdf>
+Package pdftex.def Info: plots/tuningCorr_desc_civar-eps-converted-to.pdf used 
+on input line 429.
+(pdftex.def)             Requested size: 217.42265pt x 163.9009pt.
+Package epstopdf Info: Source file: <plots/tuningCorr_desc_civar_m2.eps>
+(epstopdf)                    date: 2015-09-29 16:29:14
+(epstopdf)                    size: 695201 bytes
+(epstopdf)             Output file: <plots/tuningCorr_desc_civar_m2-eps-convert
+ed-to.pdf>
+(epstopdf)                    date: 2015-09-29 16:37:34
+(epstopdf)                    size: 35918 bytes
+(epstopdf)             Command: <repstopdf --outfile=plots/tuningCorr_desc_civa
+r_m2-eps-converted-to.pdf plots/tuningCorr_desc_civar_m2.eps>
+(epstopdf)             \includegraphics on input line 433.
 Package epstopdf Info: Output file is already uptodate.
-<plots/tuningCorr-eps-converted-to.pdf, id=603, 587.19376pt x 406.51875pt>
-File: plots/tuningCorr-eps-converted-to.pdf Graphic file (type pdf)
 
-<use plots/tuningCorr-eps-converted-to.pdf>
-Package pdftex.def Info: plots/tuningCorr-eps-converted-to.pdf used on input li
-ne 427.
-(pdftex.def)             Requested size: 452.9679pt x 313.59106pt.
+<plots/tuningCorr_desc_civar_m2-eps-converted-to.pdf, id=603, 587.19376pt x 442
+.65375pt>
+File: plots/tuningCorr_desc_civar_m2-eps-converted-to.pdf Graphic file (type pd
+f)
+ <use plots/tuningCorr_desc_civar_m2-eps-converted-to.pdf>
+Package pdftex.def Info: plots/tuningCorr_desc_civar_m2-eps-converted-to.pdf us
+ed on input line 433.
+(pdftex.def)             Requested size: 217.42265pt x 163.9009pt.
+Package epstopdf Info: Source file: <plots/tuningCorr_desc_civar_m3.eps>
+(epstopdf)                    date: 2015-09-29 16:31:15
+(epstopdf)                    size: 647609 bytes
+(epstopdf)             Output file: <plots/tuningCorr_desc_civar_m3-eps-convert
+ed-to.pdf>
+(epstopdf)                    date: 2015-09-29 16:37:36
+(epstopdf)                    size: 33518 bytes
+(epstopdf)             Command: <repstopdf --outfile=plots/tuningCorr_desc_civa
+r_m3-eps-converted-to.pdf plots/tuningCorr_desc_civar_m3.eps>
+(epstopdf)             \includegraphics on input line 438.
+Package epstopdf Info: Output file is already uptodate.
+
+<plots/tuningCorr_desc_civar_m3-eps-converted-to.pdf, id=604, 587.19376pt x 442
+.65375pt>
+File: plots/tuningCorr_desc_civar_m3-eps-converted-to.pdf Graphic file (type pd
+f)
+ <use plots/tuningCorr_desc_civar_m3-eps-converted-to.pdf>
+Package pdftex.def Info: plots/tuningCorr_desc_civar_m3-eps-converted-to.pdf us
+ed on input line 438.
+(pdftex.def)             Requested size: 217.42265pt x 163.9009pt.
+Package epstopdf Info: Source file: <plots/tuningCorr_desc_civar_m4.eps>
+(epstopdf)                    date: 2015-09-29 16:34:28
+(epstopdf)                    size: 647609 bytes
+(epstopdf)             Output file: <plots/tuningCorr_desc_civar_m4-eps-convert
+ed-to.pdf>
+(epstopdf)                    date: 2015-09-29 16:37:37
+(epstopdf)                    size: 34316 bytes
+(epstopdf)             Command: <repstopdf --outfile=plots/tuningCorr_desc_civa
+r_m4-eps-converted-to.pdf plots/tuningCorr_desc_civar_m4.eps>
+(epstopdf)             \includegraphics on input line 442.
+Package epstopdf Info: Output file is already uptodate.
+
+<plots/tuningCorr_desc_civar_m4-eps-converted-to.pdf, id=605, 587.19376pt x 442
+.65375pt>
+File: plots/tuningCorr_desc_civar_m4-eps-converted-to.pdf Graphic file (type pd
+f)
+ <use plots/tuningCorr_desc_civar_m4-eps-converted-to.pdf>
+Package pdftex.def Info: plots/tuningCorr_desc_civar_m4-eps-converted-to.pdf us
+ed on input line 442.
+(pdftex.def)             Requested size: 217.42265pt x 163.9009pt.
+Package epstopdf Info: Source file: <plots/tuningCorr_desc_civar_thres.eps>
+(epstopdf)                    date: 2015-09-23 13:09:17
+(epstopdf)                    size: 936206 bytes
+(epstopdf)             Output file: <plots/tuningCorr_desc_civar_thres-eps-conv
+erted-to.pdf>
+(epstopdf)                    date: 2015-09-29 16:37:40
+(epstopdf)                    size: 30818 bytes
+(epstopdf)             Command: <repstopdf --outfile=plots/tuningCorr_desc_civa
+r_thres-eps-converted-to.pdf plots/tuningCorr_desc_civar_thres.eps>
+(epstopdf)             \includegraphics on input line 451.
+Package epstopdf Info: Output file is already uptodate.
+
+<plots/tuningCorr_desc_civar_thres-eps-converted-to.pdf, id=606, 587.19376pt x 
+442.65375pt>
+File: plots/tuningCorr_desc_civar_thres-eps-converted-to.pdf Graphic file (type
+ pdf)
+ <use plots/tuningCorr_desc_civar_thres-eps-converted-to.pdf>
+Package pdftex.def Info: plots/tuningCorr_desc_civar_thres-eps-converted-to.pdf
+ used on input line 451.
+(pdftex.def)             Requested size: 217.42265pt x 163.9009pt.
+Package epstopdf Info: Source file: <plots/tuningCorr_desc_civar_thres_m2.eps>
+(epstopdf)                    date: 2015-09-29 16:30:21
+(epstopdf)                    size: 698856 bytes
+(epstopdf)             Output file: <plots/tuningCorr_desc_civar_thres_m2-eps-c
+onverted-to.pdf>
+(epstopdf)                    date: 2015-09-29 16:37:41
+(epstopdf)                    size: 27943 bytes
+(epstopdf)             Command: <repstopdf --outfile=plots/tuningCorr_desc_civa
+r_thres_m2-eps-converted-to.pdf plots/tuningCorr_desc_civar_thres_m2.eps>
+(epstopdf)             \includegraphics on input line 455.
+Package epstopdf Info: Output file is already uptodate.
+
+<plots/tuningCorr_desc_civar_thres_m2-eps-converted-to.pdf, id=607, 587.19376pt
+ x 442.65375pt>
+File: plots/tuningCorr_desc_civar_thres_m2-eps-converted-to.pdf Graphic file (t
+ype pdf)
+
+<use plots/tuningCorr_desc_civar_thres_m2-eps-converted-to.pdf>
+Package pdftex.def Info: plots/tuningCorr_desc_civar_thres_m2-eps-converted-to.
+pdf used on input line 455.
+(pdftex.def)             Requested size: 217.42265pt x 163.9009pt.
+Package epstopdf Info: Source file: <plots/tuningCorr_desc_civar_thres_m3.eps>
+(epstopdf)                    date: 2015-09-29 16:34:46
+(epstopdf)                    size: 651264 bytes
+(epstopdf)             Output file: <plots/tuningCorr_desc_civar_thres_m3-eps-c
+onverted-to.pdf>
+(epstopdf)                    date: 2015-09-29 16:37:43
+(epstopdf)                    size: 26915 bytes
+(epstopdf)             Command: <repstopdf --outfile=plots/tuningCorr_desc_civa
+r_thres_m3-eps-converted-to.pdf plots/tuningCorr_desc_civar_thres_m3.eps>
+(epstopdf)             \includegraphics on input line 460.
+Package epstopdf Info: Output file is already uptodate.
+
+<plots/tuningCorr_desc_civar_thres_m3-eps-converted-to.pdf, id=608, 587.19376pt
+ x 442.65375pt>
+File: plots/tuningCorr_desc_civar_thres_m3-eps-converted-to.pdf Graphic file (t
+ype pdf)
+
+<use plots/tuningCorr_desc_civar_thres_m3-eps-converted-to.pdf>
+Package pdftex.def Info: plots/tuningCorr_desc_civar_thres_m3-eps-converted-to.
+pdf used on input line 460.
+(pdftex.def)             Requested size: 217.42265pt x 163.9009pt.
+Package epstopdf Info: Source file: <plots/tuningCorr_desc_civar_thres_m4.eps>
+(epstopdf)                    date: 2015-09-29 16:36:01
+(epstopdf)                    size: 650367 bytes
+(epstopdf)             Output file: <plots/tuningCorr_desc_civar_thres_m4-eps-c
+onverted-to.pdf>
+(epstopdf)                    date: 2015-09-29 16:37:44
+(epstopdf)                    size: 26047 bytes
+(epstopdf)             Command: <repstopdf --outfile=plots/tuningCorr_desc_civa
+r_thres_m4-eps-converted-to.pdf plots/tuningCorr_desc_civar_thres_m4.eps>
+(epstopdf)             \includegraphics on input line 464.
+Package epstopdf Info: Output file is already uptodate.
+
+<plots/tuningCorr_desc_civar_thres_m4-eps-converted-to.pdf, id=609, 587.19376pt
+ x 442.65375pt>
+File: plots/tuningCorr_desc_civar_thres_m4-eps-converted-to.pdf Graphic file (t
+ype pdf)
+
+<use plots/tuningCorr_desc_civar_thres_m4-eps-converted-to.pdf>
+Package pdftex.def Info: plots/tuningCorr_desc_civar_thres_m4-eps-converted-to.
+pdf used on input line 464.
+(pdftex.def)             Requested size: 217.42265pt x 163.9009pt.
+Package epstopdf Info: Source file: <plots/corrTuned.eps>
+(epstopdf)                    date: 2015-09-29 16:44:51
+(epstopdf)                    size: 41073 bytes
+(epstopdf)             Output file: <plots/corrTuned-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-09-29 16:45:47
+(epstopdf)                    size: 21214 bytes
+(epstopdf)             Command: <repstopdf --outfile=plots/corrTuned-eps-conver
+ted-to.pdf plots/corrTuned.eps>
+(epstopdf)             \includegraphics on input line 473.
+Package epstopdf Info: Output file is already uptodate.
+
+<plots/corrTuned-eps-converted-to.pdf, id=610, 587.19376pt x 442.65375pt>
+File: plots/corrTuned-eps-converted-to.pdf Graphic file (type pdf)
+
+<use plots/corrTuned-eps-converted-to.pdf>
+Package pdftex.def Info: plots/corrTuned-eps-converted-to.pdf used on input lin
+e 473.
+(pdftex.def)             Requested size: 362.37569pt x 273.17265pt.
  [10]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[11 </home/athul/machineLearning/neuralData/report/plots/clusters-eps-converted
--to.pdf>]
+[11 </home/athul/machineLearning/neuralData/report/plots/tuningCorr_desc_civar-
+eps-converted-to.pdf> </home/athul/machineLearning/neuralData/report/plots/tuni
+ngCorr_desc_civar_m2-eps-converted-to.pdf> </home/athul/machineLearning/neuralD
+ata/report/plots/tuningCorr_desc_civar_m3-eps-converted-to.pdf> </home/athul/ma
+chineLearning/neuralData/report/plots/tuningCorr_desc_civar_m4-eps-converted-to
+.pdf>] [12 </home/athul/machineLearning/neuralData/report/plots/tuningCorr_desc
+_civar_thres-eps-converted-to.pdf> </home/athul/machineLearning/neuralData/repo
+rt/plots/tuningCorr_desc_civar_thres_m2-eps-converted-to.pdf> </home/athul/mach
+ineLearning/neuralData/report/plots/tuningCorr_desc_civar_thres_m3-eps-converte
+d-to.pdf> </home/athul/machineLearning/neuralData/report/plots/tuningCorr_desc_
+civar_thres_m4-eps-converted-to.pdf>]
 No file report.bbl.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 440.
-[12 </home/athul/machineLearning/neuralData/report/plots/tuningCorr-eps-convert
-ed-to.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 440.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 483.
+[13 </home/athul/machineLearning/neuralData/report/plots/corrTuned-eps-converte
+d-to.pdf>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 483.
  (/home/athul/machineLearning/neuralData/report/report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 440.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 440.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 483.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 483.
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: 2F67A033799B615BF7179F578556D6C6;1492.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 440.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 483.
  ) 
 Here is how much of TeX's memory you used:
- 8846 strings out of 493105
- 130654 string characters out of 6137072
- 233017 words of memory out of 5000000
- 12074 multiletter control sequences out of 15000+600000
+ 8884 strings out of 493105
+ 132618 string characters out of 6137072
+ 233111 words of memory out of 5000000
+ 12103 multiletter control sequences out of 15000+600000
  12374 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,13n,40p,766b,570s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1111,10 +1261,10 @@ xmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmsy10.pfb>
-Output written on report.pdf (12 pages, 556509 bytes).
+Output written on report.pdf (13 pages, 707298 bytes).
 PDF statistics:
- 691 PDF objects out of 1000 (max. 8388607)
- 309 compressed objects within 4 object streams
- 68 named destinations out of 1000 (max. 500000)
- 261 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 931 PDF objects out of 1000 (max. 8388607)
+ 346 compressed objects within 4 object streams
+ 70 named destinations out of 1000 (max. 500000)
+ 296 words of extra memory for PDF output out of 10000 (max. 10000000)
 
