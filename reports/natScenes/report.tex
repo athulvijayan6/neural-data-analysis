@@ -1,0 +1,143 @@
+% @Author: Athul Vijayan
+% @Date:   2014-05-09 13:56:20
+% @Last Modified by:   Athul
+% @Last Modified time: 2016-01-17 15:18:18
+
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage[table]{xcolor}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[toc,page]{appendix}
+\usepackage{color}
+\usepackage{subcaption}
+\usepackage[section]{placeins}
+\usepackage{rotating}
+\usepackage{wrapfig}
+\usepackage{bm}
+\usepackage[normalem]{ulem}
+\usepackage[table]{xcolor}
+\newcommand{\HRule}{\rule{\linewidth}{0.2mm}} % Defines a new command for the horizontal lines, change thickness here
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=cyan
+}
+\usepackage{array}
+\renewcommand{\P}{\mathbb{P}}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcommand{\rulesep}{\unskip\ \vrule\ }
+
+%----------------------------------------------------------------------------------------
+%   TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\newcommand*{\titleGM}{\begingroup % Create the command for including the title page in the document
+\hbox{ % Horizontal box
+\hspace*{0.2\textwidth} % Whitespace to the left of the title page
+\rule{1pt}{\textheight} % Vertical line
+\hspace*{0.05\textwidth} % Whitespace between the vertical line and title page text
+\parbox[b]{0.75\textwidth}{ % Paragraph box which restricts text to less than the width of the page
+
+{\noindent\Huge\bfseries  Neural data analysis}\\[2\baselineskip] % Title
+{\large \textit{Notes}}\\[4\baselineskip] % Tagline or further description
+{\Large \textsc{Athul Vijayan \hspace{5pt} ed11b004}} % Author name
+
+\vspace{0.5\textheight} % Whitespace between the title block and the publisher
+}}
+\endgroup}
+
+
+\begin{document}
+% \titleGM % This command includes the title page
+\tableofcontents
+
+% =========================== content =========================
+\newpage
+\section{Introduction} % (fold)
+\label{sec:introduction}
+This gives background.
+% section introduction (end)
+
+\section{Experiment} % (fold)
+\label{sec:experiment}
+\subsection{Setup} % (fold)
+\label{sub:setup}
+Calcium images were scanned using a Two-photon calcium imaging device on mice injected with GCaMP6f. Firing rates of these cells were then inferred using a fast nonnegative deconvolution algorithm on the Calcium imaging data.\\
+
+
+\textbf{Visual stimuli}\\
+Creation of noise movies. We developed an algorithm that allowed us to
+create noise images with a user-defined spectral slope. To do so, we took
+advantage of the inverse-square law: $P \sim k^{-\alpha}$ , which translates to a circle
+with radius $\alpha$ in two-dimensional Fourier space. Thus, we constructed all
+noise movies in the Fourier domain. We first defined a matrix of the same
+size as the original image (256 $\times$ 256 pixels) and then created a noise
+amplitude spectrum as a 2D circle of radius $\alpha$ , with $\alpha$ taking values from
+0 (K0 movie) to $\sqrt{2}$ (K2 movie). This was due to the squared relationship
+between the amplitude spectrum and the power spectrum. To create the
+final noise image, we combined this noise amplitude spectrum with a
+random phase spectrum, where phase values were randomly sampled
+from the range $0 - 2\pi$ . The final noise images were visualized by comput-
+ing its 2D inverse Fourier transform. Each frame of the noise movie was
+created using a new random seed, and as a result, the raw noise movies
+had no temporal correlations between frames.
+Noise-masking procedure. Figure \ref{haha} provides a schematic of the noise-
+masking procedure. First, each frame of a natural movie was decomposed into its Fourier components (phase and amplitude) via a 2D fast Fourier
+transform implemented in MATLAB. Next, a noise image was created as
+described above. The phase spectrum of the original movie was then
+combined with the amplitude spectrum of the noise movie. The resulting
+image was then inverse Fourier transformed to yield a noise-masked
+movie frame. This procedure was repeated for all frames. We used a total
+of five different natural movies, each 4 s in duration, from the van Hat-
+eren movie database
+
+% subsection setup (end)
+\subsection{Data} % (fold)
+\label{sub:data}
+MATLAB datafile AmpMov.mat contains the following fields.\\
+Experiments are done various days, the data corresponding to each day are in each folder.\\
+Subscript \_nat corresponds to responses to video stimuli for original natural scenes video. similarly subscripts \_K0, \_K\_1, \_K1\_5, \_K\_2 denote responses to manipulated natural scenes video stimuli.
+\begin{center}
+    \begin{tabular}{|l|l|}
+        \hline
+        Field                                 & Description \\
+        \hline
+        Sorted.SpikeRate                  & blah blah \\
+        Blank                             & Dimension 47 x 16800 \\
+        NumNeurons                        & Number of neurons sampled \\
+        NumMovies                         & Number of movies used as stimulus \\
+        M\_nat                            & Dimension 4 x 47 x 1200 \\
+        MT\_nat                           & Dimension 4 x 47 x 200 x 6 \\
+        MTA\_nat                          & Dimension 4 x 47 x 200 \\
+        MTNA\_nat                         & Dimension 4 x 47 x 1200 \\
+        \hline    
+    \end{tabular}
+\end{center}
+
+% subsection data (end)
+% section experiment (end)
+
+\section{Study of Reliability} % (fold)
+\label{sec:study_of_reliability}
+
+% section study_of_reliability (end)
+
+\section{Study of correlation} % (fold)
+\label{sec:study_of_correlation}
+
+% section study_of_correlation (end)
+
+\section{Searching for Motifs} % (fold)
+\label{sec:searching_for_motifs}
+
+% section searching_for_motifs (end)
+% ======================= References ==========================
+\end{document}

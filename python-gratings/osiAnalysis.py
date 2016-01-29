@@ -3,7 +3,7 @@
 # @Author: Athul
 # @Date:   2015-09-04 16:42:24
 # @Last Modified by:   Athul
-# @Last Modified time: 2015-09-24 12:30:00
+# @Last Modified time: 2015-11-17 11:49:42
 from __future__ import division
 import numpy as np
 import scipy.io
@@ -135,11 +135,17 @@ for mouse in xrange(1):
             # % Normalize all trial response from 0 to 1
             normData = np.abs(spikeRate[neuronId, trial::10, 0])/np.max(np.abs(spikeRate[neuronId, trial::10, 0]));
             normData = np.append(normData, normData[0])
+            try:
+                avgData = avgData + normData
+            except NameError:
+                avgData = normData
             theta = spikeRate[neuronId, trial::10, 1]
             theta = np.append(theta, theta[0])
-            ax.plot(theta, normData, linewidth=2, label='trial '+str(trial))
-        ax.arrow(np.angle(dircirvar[neuronId]), 0, 0, np.abs(dircirvar[neuronId]), color='red', linewidth=3)
+            ax.plot(theta, normData, linewidth=2, alpha=0.3)
+        ax.plot(theta, avgData/10, linewidth=2, label='Average response', color='red')
         ax.set_title('Polar plot of Directional selectivity')
+        ax.text(1.2, 0.8, 'DSI= %.2f' % np.abs(dircirvar[neuronId]))
+        plt.legend(loc='upper right')
     # % --------------------------------------------------------
 
     # % --------------------------5-----------------------------
@@ -153,15 +159,25 @@ for mouse in xrange(1):
         plt.figure()
         ax = plt.subplot(111, polar=True)
         plt.grid(True)
+        del avgData
         for trial in xrange(10):
             # % Normalize all trial response from 0 to 1
             normData = np.abs(spikeRate[neuronId, trial::10, 0])/np.max(np.abs(spikeRate[neuronId, trial::10, 0]));
+            try:
+                avgData = avgData + normData
+            except NameError:
+                avgData = normData
             normData = np.append(normData, normData[0])
             theta = 2*spikeRate[neuronId, trial::10, 1]
             theta = np.append(theta, theta[0])
-            ax.plot(theta, normData, linewidth=2, label='trial '+str(trial))
-        ax.arrow(np.angle(cirvar[neuronId]), 0, 0, np.abs(cirvar[neuronId]), color='red', linewidth=3)
+            ax.plot(theta, normData, linewidth=2, alpha=0.3)
+        avgData = (avgData[:8] + avgData[8:])/2
+        avgData = np.append(avgData, avgData[0])
+        theta = np.append(theta[:8], theta[0])
+        ax.plot(theta, avgData/10, linewidth=2, label='Average response', color='red')
+        ax.set_xticklabels(['0', '', '45', '', '90', '', '135', ''])
         ax.set_title('Polar plot of Orientation selectivity')
+        ax.text(1, 0.8, 'neuron with OSI= %.2f' % np.abs(cirvar[neuronId])+'\nPreffered orientation= %.2f' % np.angle(cirvar[neuronId], deg=True)+' deg')
 
     plt.legend(loc='upper right')
     plt.show()    

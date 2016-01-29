@@ -3,7 +3,7 @@
 # @Author: Athul Vijayan
 # @Date:   2015-09-19 22:47:47
 # @Last Modified by:   Athul
-# @Last Modified time: 2015-09-24 12:40:52
+# @Last Modified time: 2015-11-17 11:53:18
 from __future__ import division
 import numpy as np
 import scipy.io
@@ -45,14 +45,14 @@ for mouse in xrange(1):
 
     # ========================== Plot fits ============================
     
-    for n in [63]:
+    for n in [49]:
         plt.figure()
         plt.subplot(111)
         gs = gridspec.GridSpec(2, 1, height_ratios=[3, 1])
         ax0, ax1 = plt.subplot(gs[0]), plt.subplot(gs[1])
         for trial in xrange(10):
             trialData = spikeRate[n, trial::10, :]
-            ax0.plot(np.degrees(trialData[:, 1]), trialData[:, 0], linewidth=1, label='expe data of trial'+str(trial))
+            ax0.plot(np.degrees(trialData[:, 1]), trialData[:, 0], alpha=0.5, linewidth=1, label='expe data of trial'+str(trial))
             res = trialData[:, 0] - fit.doubleGaussian(trialData[:, 1], what[n])
             ax1.plot(np.degrees(trialData[:, 1]), res, linewidth=1, label='trial '+str(trial))
         x = np.arange(0, 360, 5)
@@ -60,7 +60,7 @@ for mouse in xrange(1):
         ax1.plot(x, np.ones(x.shape), color='black')
         ax0.plot(x, y, linewidth=3.5, color='crimson', label='Fitted curve')
 
-        ax0.set_title('Fitting of directional selectivity')
+        ax0.set_title('Fitting of directional selectivity using double Gaussian')
         ax0.set_xlabel(r'$\theta$')
         ax0.set_ylabel('spikerate')
 
