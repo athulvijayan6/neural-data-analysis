@@ -1,65 +1,91 @@
 % @Author: Athul Vijayan
 % @Date:   2014-05-09 13:56:20
 % @Last Modified by:   Athul
-% @Last Modified time: 2016-01-17 15:18:18
+% @Last Modified time: 2016-02-01 10:35:02
 
-\documentclass[11pt]{article}
-\usepackage[utf8]{inputenc}
-\usepackage[a4paper, margin=1in]{geometry}
-\usepackage{amsmath}
-\usepackage[table]{xcolor}
-\usepackage{amssymb}
-\usepackage{graphicx}
-\usepackage[toc,page]{appendix}
-\usepackage{color}
+\documentclass[11pt,paper=a4,answers]{exam}
+\usepackage{graphicx,lastpage}
 \usepackage{subcaption}
-\usepackage[section]{placeins}
-\usepackage{rotating}
-\usepackage{wrapfig}
-\usepackage{bm}
-\usepackage[normalem]{ulem}
 \usepackage[table]{xcolor}
-\newcommand{\HRule}{\rule{\linewidth}{0.2mm}} % Defines a new command for the horizontal lines, change thickness here
-\usepackage{hyperref}
-\hypersetup{
-    colorlinks,
-    citecolor=black,
-    filecolor=black,
-    linkcolor=black,
-    urlcolor=cyan
-}
-\usepackage{array}
-\renewcommand{\P}{\mathbb{P}}
-\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-\newcommand{\rulesep}{\unskip\ \vrule\ }
 
-%----------------------------------------------------------------------------------------
-%   TITLE PAGE
-%----------------------------------------------------------------------------------------
-
-\newcommand*{\titleGM}{\begingroup % Create the command for including the title page in the document
-\hbox{ % Horizontal box
-\hspace*{0.2\textwidth} % Whitespace to the left of the title page
-\rule{1pt}{\textheight} % Vertical line
-\hspace*{0.05\textwidth} % Whitespace between the vertical line and title page text
-\parbox[b]{0.75\textwidth}{ % Paragraph box which restricts text to less than the width of the page
-
-{\noindent\Huge\bfseries  Neural data analysis}\\[2\baselineskip] % Title
-{\large \textit{Notes}}\\[4\baselineskip] % Tagline or further description
-{\Large \textsc{Athul Vijayan \hspace{5pt} ed11b004}} % Author name
-
-\vspace{0.5\textheight} % Whitespace between the title block and the publisher
-}}
-\endgroup}
+\usepackage{multirow}
+\usepackage{upgreek}
+% \usepackage{float}
+\usepackage{placeins}
+\usepackage[bookmarks]{hyperref}
+\usepackage{censor}
+\usepackage{amsmath}
+\usepackage{amssymb, amsthm}
+\newcommand{\argmax}{\operatornamewithlimits{argmax}}
+\usepackage{bm}
+\usepackage{caption}
+\usepackage{morefloats}
+\usepackage{enumerate}
 
 
+\newcommand{\cb}[1]{{\cellcolor{black! 15 }$ #1$}}
+\newcommand{\Oh}{\bm{\mathcal{O}}}
+\newcommand{\cw}[1]{{\cellcolor{black! 35 }$ \color{white} #1$}}
+\censorruledepth=-.2ex
+\censorruleheight=.1ex
+\hyphenpenalty 10000
+\usepackage[paperheight=10.5in,paperwidth=8.27in,bindingoffset=0in,left=0.8in,right=1in,
+top=0.7in,bottom=1in,headsep=.5\baselineskip]{geometry}
+\flushbottom
+\usepackage[normalem]{ulem}
+\newcommand{\E}{\mathbb{E}}
+\renewcommand\ULthickness{2pt}   %%---> For changing thickness of underline
+\setlength\ULdepth{1.5ex}%\maxdimen ---> For changing depth of underline
+\renewcommand{\baselinestretch}{1}
+\pagestyle{empty}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\pagestyle{headandfoot}
+\headrule
+
+\newcommand{\continuedmessage}{%
+\ifcontinuation{\footnotesize continues\ldots}{}%
+ }
+\newcommand{\e}{\mathrm{e}}
+\renewcommand{\v}{\mathrm{v}}
+\newcommand{\x}{\mathrm{x}}
+\newcommand{\cov}{\mathrm{cov}}
+\newcommand{\q}[1]{\ensuremath{\mathit{q}^{-#1}}}
+\runningheader{\footnotesize \today}
+{\footnotesize Neural Data}
+{\footnotesize Page \thepage\ of \numpages}
+\footrule
+\footer{\footnotesize}
+{}
+{\ifincomplete{\footnotesize section \IncompleteQuestion\ continues
+on the next page\ldots}{\iflastpage{\footnotesize End}{\footnotesize Please go        on to the next page\ldots}}}
+
+\usepackage{cleveref}
+\crefname{figure}{figure}{figures}
+\crefname{question}{question}{questions}
+%==============================================================
 \begin{document}
-% \titleGM % This command includes the title page
-\tableofcontents
+\noindent
+\begin{minipage}[l]{.1\textwidth}%
+\noindent
+\end{minipage}
+\hfill
+\begin{minipage}[r]{.68\textwidth}%
+\begin{center}
+{\large \bfseries \par
+\Large Neural Data Analysis \\[2pt]
+\vspace{6pt}
+\small   \par}
+\end{center}
+\end{minipage}
+\begin{minipage}[l]{.195\textwidth}%
+\noindent
+{\footnotesize}
+\end{minipage}
+\par
+\noindent
+\uline{DONlab \hfill \normalsize\emph \hfill    Athul Vijayan(ED11B004)}\\
 
-% =========================== content =========================
+\tableofcontents
 \newpage
 \section{Introduction} % (fold)
 \label{sec:introduction}
@@ -139,5 +165,5 @@ Subscript \_nat corresponds to responses to video stimuli for original natural s
 \label{sec:searching_for_motifs}
 
 % section searching_for_motifs (end)
-% ======================= References ==========================
+% ============================== Content ends here
 \end{document}

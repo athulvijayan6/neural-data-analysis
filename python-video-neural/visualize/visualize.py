@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 # @Author: athul
 # @Date:   2016-01-13 17:08:59
-# @Last Modified by:   athul
-# @Last Modified time: 2016-01-31 22:13:38
+# @Last Modified by:   Athul
+# @Last Modified time: 2016-02-01 13:50:22
 import matplotlib.pyplot as plt
 from matplotlib import colors, cm
 from matplotlib.collections import RegularPolyCollection
@@ -11,7 +11,7 @@ from mpl_toolkits.axes_grid1 import make_axes_locatable
 import math
 import numpy as np
 
-def hexMap(grid, d_matrix, w=1080, dpi=72, title='SOM Hit map'):
+def plot_map(grid, d_matrix, w=1080, dpi=72., title='SOM Hit map'):
     """
     Plot hexagon map where each neuron is represented by a hexagon. The hexagon
     color is given by the distance between the neurons (D-Matrix)
@@ -54,7 +54,7 @@ def hexMap(grid, d_matrix, w=1080, dpi=72, title='SOM Hit map'):
         sizes=(area_inner_circle,),
         edgecolors = (0, 0, 0, 1),
         array= d_matrix,
-        cmap = cm.gray,
+        cmap = cm.Blues,
         offsets = n_centers,
         transOffset = ax.transData,
     )

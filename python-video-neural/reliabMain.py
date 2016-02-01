@@ -2,12 +2,18 @@
 # -*- coding: utf-8 -*-
 # @Author: athul
 # @Date:   2016-01-31 20:32:16
-# @Last Modified by:   athul
-# @Last Modified time: 2016-01-31 22:29:35
+# @Last Modified by:   Athul
+# @Last Modified time: 2016-02-01 13:53:58
 from __future__ import division
 import numpy as np
 import scipy.io
+from matplotlib import transforms
 from reliability import reliability
+
+from matplotlib import colors, cm
+from matplotlib.collections import RegularPolyCollection
+from mpl_toolkits.axes_grid1 import make_axes_locatable
+
 from visualize import visualize
 import matplotlib.pyplot as plt
 plt.style.use('ggplot')
@@ -47,57 +53,71 @@ if False:
 
 # =============================================================================
 # ============================ Reliability map ================================
-grid = {'centers': np.array([[ 1.5       ,  0.8660254 ],
-   [ 2.5       ,  0.8660254 ],
-   [ 3.5       ,  0.8660254 ],
-   [ 4.5       ,  0.8660254 ],
-   [ 5.5       ,  0.8660254 ],
-   [ 6.5       ,  0.8660254 ],
-   [ 1.        ,  1.73205081],
-   [ 2.        ,  1.73205081],
-   [ 3.        ,  1.73205081],
-   [ 4.        ,  1.73205081],
-   [ 5.        ,  1.73205081],
-   [ 6.        ,  1.73205081],
-   [ 1.5       ,  2.59807621],
-   [ 2.5       ,  2.59807621],
-   [ 3.5       ,  2.59807621],
-   [ 4.5       ,  2.59807621],
-   [ 5.5       ,  2.59807621],
-   [ 6.5       ,  2.59807621],
-   [ 1.        ,  3.46410162],
-   [ 2.        ,  3.46410162],
-   [ 3.        ,  3.46410162],
-   [ 4.        ,  3.46410162],
-   [ 5.        ,  3.46410162],
-   [ 6.        ,  3.46410162],
-   [ 1.5       ,  4.33012702],
-   [ 2.5       ,  4.33012702],
-   [ 3.5       ,  4.33012702],
-   [ 4.5       ,  4.33012702],
-   [ 5.5       ,  4.33012702],
-   [ 6.5       ,  4.33012702],
-   [ 1.        ,  5.19615242],
-   [ 2.        ,  5.19615242],
-   [ 3.        ,  5.19615242],
-   [ 4.        ,  5.19615242],
-   [ 5.        ,  5.19615242],
-   [ 6.        ,  5.19615242]]),
-'x': np.array([ 6.]),
-'y': np.array([ 6.])}
-d_matrix = np.random.rand(36)
-ax = visualize.hexMap(grid, d_matrix, w=900)
+grid = {'centers': np.array([[ 1       ,  1 ], 
+                             [ 2       ,  1 ],
+                             [ 1.5     ,  1.5773 ]]),
+              'x': np.array([ 5.]),
+              'y': np.array([ 3.])}
+d_matrix = np.random.rand(3)
+ax = visualize.plot_map(grid, d_matrix)
+# fig, ax = plt.subplots()
+# centers = grid['centers']
+# xpoints = centers[:, 0]
+# ypoints = centers[:, 1]
+# ax.scatter(xpoints, ypoints, color='red', marker='s')
+# ax.axis([min(xpoints)-1., max(xpoints)+1., min(ypoints)-1., max(ypoints)+1.])
 
-reliables = []
-reliabilityIndex = []
-for neuronId in xrange(49):
-    reliabililtyCorr = reliability.reliabilityCorr(ensembleSpikeRate[neuronId])
-    reliabilityIndex.append(reliabililtyCorr)
-    if reliabililtyCorr > 0.4:
-        reliables.append(neuronId)
-reliabilityIndex = np.array(reliabilityIndex)
-# grid = {'centers':numNeurons, 'x': ,'y':}
-print reliables
+# xy_pixels = ax.transData.transform(centers)
+# xpix, ypix = xy_pixels.T
+
+# # discover radius and hexagon
+# apothem = (xpix[1] - xpix[0]) / np.sqrt(3)
+# area_inner_circle = np.pi * (apothem ** 2)
+# collection_bg = RegularPolyCollection(
+#     numsides=6,  # a hexagon
+#     rotation=0,
+#     sizes=(area_inner_circle,),
+#     edgecolors = (0, 0, 0, 1),
+#     array= d_matrix,
+#     cmap = cm.Blues,
+#     offsets = centers,
+#     transOffset = ax.transData,
+# )
+# trans = transforms.Affine2D().scale(fig.dpi / 72.0)
+# collection_bg.set_transform(trans)  # the points to pixels transform
+
+# ax.add_collection(collection_bg, autolim=True)
+# ax.autoscale_view()
+# # plt.colorbar(collection_bg, cax=cax)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# reliables = []
+# reliabilityIndex = []
+# for neuronId in xrange(49):
+#     reliabililtyCorr = reliability.reliabilityCorr(ensembleSpikeRate[neuronId])
+#     reliabilityIndex.append(reliabililtyCorr)
+#     if reliabililtyCorr > 0.4:
+#         reliables.append(neuronId)
+# reliabilityIndex = np.array(reliabilityIndex)
+# # grid = {'centers':numNeurons, 'x': ,'y':}
+# print reliables
 
 # plt.legend(loc='upper right')
 plt.show() 
