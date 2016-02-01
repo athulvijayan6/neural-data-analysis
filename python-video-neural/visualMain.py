@@ -3,7 +3,7 @@
 # @Author: athul
 # @Date:   2016-01-02 22:49:02
 # @Last Modified by:   athul
-# @Last Modified time: 2016-01-25 15:57:15
+# @Last Modified time: 2016-01-31 20:40:22
 
 from __future__ import division
 import numpy as np
@@ -80,20 +80,6 @@ data = MT_K0
 sample_rate = 20
 ensembleSpikeRate = data[0, vidIndex]
 
-# ========================== Reliablilty plot ================================
-reliables = []
-reliabilityIndex = []
-for neuronId in xrange(49):
-    reliabililtyCorr = reliability.reliabilityCorr(ensembleSpikeRate[neuronId])
-    reliabilityIndex.append(reliabililtyCorr)
-    if reliabililtyCorr > 0.4:
-        reliables.append(neuronId)
-reliabilityIndex = np.array(reliabilityIndex)
-fig, ax = plt.subplots()
-heatmap = ax.pcolor(np.resize(reliabilityIndex, (1, reliabilityIndex.size)), cmap=plt.cm.Blues)
-ax.set_xticks(np.arange(data.shape[0])+0.5, minor=False)
-print reliables
-
 # ================================== response plots ======================
 neuronId = 30
 reliabililtyCorr = reliability.reliabilityCorr(ensembleSpikeRate[neuronId])
@@ -111,7 +97,7 @@ ax.set_title('Responses to movie {0} for neuron {1} having stability correlation
 ax.set_xlabel('time in seconds')
 ax.set_ylabel('Spike rate')
 
-# # =================================================================================
+# ============================================================================
 plt.legend(loc='upper right')
 plt.show() 
 
