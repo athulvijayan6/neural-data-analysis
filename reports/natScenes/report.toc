@@ -1,7 +1,11 @@
-\contentsline {section}{\numberline {1}Introduction}{2}{section.1}
+\contentsline {section}{\numberline {1}Introduction to motif analysis in neurons}{2}{section.1}
 \contentsline {section}{\numberline {2}Experiment}{2}{section.2}
 \contentsline {subsection}{\numberline {2.1}Setup}{2}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}Data}{2}{subsection.2.2}
 \contentsline {section}{\numberline {3}Study of Reliability}{3}{section.3}
-\contentsline {section}{\numberline {4}Study of correlation}{3}{section.4}
-\contentsline {section}{\numberline {5}Searching for Motifs}{3}{section.5}
+\contentsline {section}{\numberline {4}Study of principal components}{4}{section.4}
+\contentsline {subsection}{\numberline {4.1}Reconstruction}{5}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}OSI analysis on data in Eigen space}{5}{subsection.4.2}
+\contentsline {section}{\numberline {5}Searching for subsequences}{6}{section.5}
+\contentsline {subsection}{\numberline {5.1}ACF Gram}{8}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Longest common subsequences}{8}{subsection.5.2}

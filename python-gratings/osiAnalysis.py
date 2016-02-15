@@ -3,7 +3,7 @@
 # @Author: Athul
 # @Date:   2015-09-04 16:42:24
 # @Last Modified by:   Athul
-# @Last Modified time: 2015-11-17 11:49:42
+# @Last Modified time: 2016-02-05 12:28:49
 from __future__ import division
 import numpy as np
 import scipy.io
@@ -12,16 +12,16 @@ from scipy.cluster.vq import kmeans, whiten, vq
 import matplotlib.pyplot as plt
 plt.style.use('ggplot')
 
-dataTargets = ['dataset/Mouse-A/', 'dataset/Mouse-B/', 'dataset/Mouse-C/', 'dataset/Mouse-D/', 'dataset/Mouse-E/']
+dataTargets = ['../datasets/driftingGratings/Mouse-A/', '../datasets/driftingGratings/Mouse-B/', '../datasets/driftingGratings/Mouse-C/', '../datasets/driftingGratings/Mouse-D/', '../datasets/driftingGratings/Mouse-E/']
 for mouse in xrange(1):
-    data = scipy.io.loadmat('../driftingGratings/'+ dataTargets[mouse] + 'Data.mat')
+    data = scipy.io.loadmat(dataTargets[mouse] + 'Data.mat')
     data = data['Data']
     rawData = data[0, 0]['rawF']
     smoothData = data[0, 0]['Spks']
     stimuliSeq = data[0, 0]['StimSeq']
 
     # To verify
-    data = scipy.io.loadmat('../driftingGratings/'+ dataTargets[mouse] + '/Solutions/Ori.mat')
+    data = scipy.io.loadmat(dataTargets[mouse] + '/Solutions/Ori.mat')
     data = data['Ori']
     OI_ref = data['OI'][0,0].reshape((65,))
     OSI_ref = data['OSI'][0,0].reshape((65,))
@@ -98,13 +98,13 @@ for mouse in xrange(1):
 
     # % % 1. Plots each time-series data of length 120 with 
     # % % each trial of an experiment with seperate color
-    if False:
+    if True:
         theta = 1
         fig, ax = plt.subplots()
         for j in xrange(10):
-            x = [2*i/120 for i in xrange(121)]
-            y = list(cellData[neuronId, 10*theta+j, :-2])
-            ax.plot(x, y, label='trial '+str(trial))
+            x = [i/20 for i in xrange(120)]
+            y = cellData[neuronId, 10*theta+j, :-1]
+            ax.plot(x, y, label='trial '+str(j))
         ax.set_title('Plots of time-series data with each trial in diffenrent color')
         ax.set_xlabel('time')
         ax.set_title('Spikes')
@@ -127,7 +127,7 @@ for mouse in xrange(1):
     # % 4. Polar plot of Directional selectivity
     # % Take a neuron, there will be 10 plots corresponding to each trial of the experiment
     # % plot each of the 10 plots in a figure to verify the similarity in response
-    if True:
+    if False:
         plt.figure()
         ax = plt.subplot(111, polar=True)
         plt.grid(True)
@@ -155,7 +155,7 @@ for mouse in xrange(1):
 
     # % There are observations for 16 angles, but there are only 8 orientations.
     # % We can treat them as two different observations. More data !
-    if True:
+    if False:
         plt.figure()
         ax = plt.subplot(111, polar=True)
         plt.grid(True)

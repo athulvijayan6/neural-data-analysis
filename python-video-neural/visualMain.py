@@ -3,7 +3,7 @@
 # @Author: athul
 # @Date:   2016-01-02 22:49:02
 # @Last Modified by:   Athul
-# @Last Modified time: 2016-02-04 15:08:55
+# @Last Modified time: 2016-02-05 13:03:42
 
 from __future__ import division
 import datetime
@@ -84,7 +84,7 @@ ensembleSpikeRate = data[0, vidIndex]
 
 # ================================== response plots ======================
 reliabililtyCorr = reliability.reliabilityCorr(ensembleSpikeRate[neuronId])
-fig, ax = plt.subplots(figsize=(14, 12))
+fig, ax = plt.subplots(figsize=(8, 6))
 meanResponse = np.zeros(ensembleSpikeRate[0, :, 0].shape)
 for trial in xrange(ensembleSpikeRate.shape[2]):
     spikeRate = ensembleSpikeRate[neuronId, :, trial]
@@ -97,11 +97,12 @@ ax.plot(x, meanResponse, label='Mean response', color='red')
 ax.set_title('Responses to movie {0} for neuron {1} having stability measure {2:.2f}'.format(vidIndex, neuronId, reliabililtyCorr))
 ax.set_xlabel('time in seconds')
 ax.set_ylabel('Spike rate')
-now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-fig.savefig(plotDir+'visualMain_meanPlot_'+now+'.pdf')
+
 
 # ============================================================================
 plt.legend(loc='upper right')
+now = datetime.datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
+fig.savefig(plotDir+'visualMain_meanPlot_'+now+'.pdf')
 plt.show() 
 
 
