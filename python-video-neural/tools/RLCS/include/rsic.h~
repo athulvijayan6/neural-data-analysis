@@ -1,0 +1,50 @@
+#ifndef RSIC_H
+#define RSIC_H
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <assert.h>
+#include <string.h>
+#include <ctype.h>
+
+
+// Also aliasing char* as String. 
+typedef char* String;
+
+
+typedef struct DoubleMatrix {
+  double ** mat;
+  int dim;
+  int size;
+  int max_size;
+} DoubleMatrix;
+typedef DoubleMatrix* DoubleMatrixPTR;
+typedef DoubleMatrix** DoubleMatrixPPTR;
+
+
+// for creating and destroying the struct
+DoubleVectorPTR create_DoubleVectorPTR();
+void destroy_DoubleMatrixPTR(DoubleMatrixPTR temp);
+
+
+// for allocation and deallocation of its members
+void alloc_members_DoubleMatrixPTR(DoubleMatrixPTR mat_ptr, const int max_size, const int dim);
+void realloc_members_DoubleMatrixPTR(DoubleMatrixPTR mat_ptr, const int max_size);
+void free_members_DoubleMatrixPTR(DoubleMatrixPTR mat_ptr);
+
+void printf_DoubleMatrixPTR(FILEPTR fin, DoubleMatrixPTR mat);
+
+void copy_DoubleMatrixPTR(DoubleMatrixPTR dest_ptr, const DoubleMatrixPTR src_ptr);
+
+void copy_DoubleMatrixPTR_region(DoubleMatrixPTR  dest_ptr, const DoubleMatrixPTR  src_ptr, const int start, const int end);
+
+void fill_DoubleMatrixPTR_from_file(const String file_path, DoubleMatrixPTR feat_mat_ptr);
+
+void empty_DoubleMatrixPTR(DoubleMatrixPTR mat_ptr);
+
+String read_file_into_buffer(String file_path);
+
+
+
+#endif

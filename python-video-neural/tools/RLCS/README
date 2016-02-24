@@ -1,0 +1,21 @@
+To install this library do:
+
+>> make 
+
+to compile the code. Default behaviour is that the library is installed in lib folder.
+
+>> make install
+
+to install the libraries and header files in the path specified by PREFIX variable.
+The value of this variable can be changed from inside the Makefile.
+
+>> make remove 
+
+to uninstall the installed things
+
+>> make clean
+
+to remove the binaries and object and shared files.
+
+***************
+The header files contains proper usage of each function.

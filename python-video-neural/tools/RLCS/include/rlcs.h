@@ -1,0 +1,163 @@
+/* Description: Contains routines for RLCS
+ * Creation Date: 9 March 2014
+ * Author: Shrey Dutta
+ */
+
+
+#ifndef RLCS_H
+#define RLCS_H
+
+#include "types.h"
+#include "maxmin.h"
+
+#define SQR(x) (x*x)
+#define MYMAX(a,b,c)  (a>b?(a>c?a:c):(b>c?b:c))
+
+
+/* Description: Does windowed RLCS by taking query_feat_ptr[start:end] as query and reference_feat_ptr[start:end] as reference.
+ *
+ * Arguments:
+ * query_feat_ptr- This is a double matrix and contains feature vectors of certain dimension as rows.
+ * reference_feat_ptr- This is a double matrix and contains feature vectors of certain dimension as rows.
+ * parameters_rlcs_ptr- This contains the parameters required for running rlcs. For more details look for it in types.h
+ * start_q - starting index of the query
+ * end_q - ending index of the query
+ * start - starting index of the Reference
+ * end - ending index of the Reference
+ * shift_points_ptr- This is again a double matrix but of dimension one. each point in shift_points_ptr tells at which point the alalysis window could be placed. If the shift_points_ptr's size is zero, analysis window could be placed at every point in the start to end region of reference_feat_ptr.
+ * hop_size- the hop of the analysis window.
+ * reference_path- entire path of the reference file. This could also be empty. It is only used for understanding the particular result belongs to reference.
+ * query_path- similar to reference_path
+ * spot_vec_ptr- The result is stored in it. For details on this structure look for it types.h
+ * THE FOLLOWING ARE DUE TO THE EXTRA FEATURE OF SLOPE OF THE LINEAR TREND OF STAITIONARY POINTS AND ITS DERIVATIVE
+ * NOTE: Do Need To Use This Feature In The First Pass. It Does Not Make Much Sense There.
+ * isFilter - flag telling whether to do it or not
+ * query_sp_ptr - (only valid when isFilter is activated) saddle points of query 
+ * reference_sp_ptr - (only valid when isFilter is activated) saddle points of reference
+ */
+void RLCS_window(const DoubleMatrixPTR query_feat_ptr,const DoubleMatrixPTR reference_feat_ptr, const ParametersRLCSPTR parameters_rlcs_ptr, const int start_q, const int end_q, const int start, const int end, const DoubleMatrixPTR shift_points_ptr, const int hop_size, const char *  reference_path, const char *  query_path, SpotVectorPTR spot_vec_ptr, const int isFilter, const SaddlePointsPTR query_sp_ptr, const SaddlePointsPTR reference_sp_ptr);
+
+// It is a helper function to RLCS_window. Need not be woried about it.
+void RLCS_window0(const DoubleMatrixPTR query_feat_ptr, const DoubleMatrixPTR reference_feat_ptr, const ParametersRLCSPTR parameters_rlcs_ptr, const int start_q, const int end_q, const int start, const int end, const int padd_length, const DoubleMatrixPTR shift_points_ptr, const int hop_size, const char *  reference_path, const char *  query_path, SpotVectorPTR spot_vec_ptr, const int isFilter, const SaddlePointsPTR query_sp_ptr, const SaddlePointsPTR reference_sp_ptr);
+
+
+// NOT USING BLOCK  BEGIN.......
+void RLCS_window_without_grouping(const DoubleMatrixPTR query_feat_ptr,const DoubleMatrixPTR reference_feat_ptr, const ParametersRLCSPTR parameters_rlcs_ptr,  const int start_q, const int end_q, const int start, const int end, const DoubleMatrixPTR shift_points_ptr, const int hop_size, const char *  reference_path, const char *  query_path, MemberVectorPTR member_vec_ptr);
+
+// It is a helper function to RLCS_window. Need not be woried about it.
+void RLCS_window_without_grouping0(const DoubleMatrixPTR query_feat_ptr, const DoubleMatrixPTR reference_feat_ptr, const ParametersRLCSPTR parameters_rlcs_ptr,  const int start_q, const int end_q, const int start, const int end, const int padd_length, const DoubleMatrixPTR shift_points_ptr, const int hop_size, const char *  reference_path, const char *  query_path, MemberVectorPTR member_vec_ptr);
+
+// NOT USING BLOCK END ...
+
+
+// RLCS: THIS FUNCTION IS USED BY RLCS_WINDOW. MAY NOT BE YOUR CONCERN.
+/* Description: Performs RLCS between query_feat_ptr and [start,end] region of region_reference_ptr.
+ *
+ * Arguments:
+ * query_feat_ptr- This is a double matrix and contains feature vectors of certain dimension as rows.
+ * reference_feat_ptr- This is a double matrix and contains feature vectors of certain dimension as rows.
+ * start- starting index to search for the query
+ * end - ending index to search for the query
+ * parameters_rlcs_ptr- This contains the parameters required for running rlcs. For more details look for it in types.h
+ * rlcs_out_ptr- this stores the results of the RLCS. For more on this structre, look for it in types.h
+ * Description of other three params can be looken in previous functions
+ */
+void RLCS(const DoubleMatrixPTR query_feat_ptr, const DoubleMatrixPTR region_reference_ptr, const int start, const int end, const ParametersRLCSPTR parameters_rlcs_ptr, OutputRLCSPTR rlcs_out_ptr, const int isFilter, const SaddlePointsPTR query_sp_ptr, const SaddlePointsPTR reference_sp_ptr);
+
+
+// FIND_BEST_SEQUENCE: THIS FUNCTION IS USED BY RLCS_WINDOW. MAY NOT BE YOUR CONCERN.
+/* Description: This function finds the best sequence using rlcs_out_ptr 
+ * and tuning parameters from parameters_rlcs_ptr and appends to the 
+ * member_vec_ptr.
+ *
+ * Arguments:
+ * rlcs_out_ptr- structure that contains the output of RLCS.
+ * parameters_rlcs_ptr- This contains the parameters required for running rlcs. For more details look for it in types.h
+ * reference_index_correction- this is used to correct the index of the reference which usually get corrupted while windowing.
+ * member_vec_ptr- result in form of a member gets appended to 
+ * member_vec_ptr. For more on this, look for it in types.h
+ */
+void find_best_sequence(const OutputRLCSPTR rlcs_out_ptr, const ParametersRLCSPTR parameters_rlcs_ptr, const int query_index_correction, const int reference_index_correction, const int padd_length, MemberVectorPTR member_vec_ptr);
+
+
+
+
+/* GROUP_MEMBERS: 
+ * Desciption: Form  groups from member_vec_ptr.
+ * 
+ * Arguments:
+ * member_vec_ptr: vectors of members
+ * parameters_rlcs_ptr- This contains the parameters required for running rlcs. For more details look for it in types.h
+ * reference_path- entire path of the reference file. This could also be empty. It is only used for understanding the particular result belongs to reference.
+ * query_path- similar to reference_path
+ *
+ * spot_vec_ptr: After grouping, each group is treated as one spot and stored in a spot vector. For details refer to spot_vector in types.h
+ */
+void group_members(const MemberVectorPTR member_vec_ptr, const ParametersRLCSPTR paramters_rlcs_ptr, const char *  reference_path, const char *  query_path, SpotVectorPTR spot_vec_ptr);
+
+
+void SLCS_perform(const DoubleMatrixPTR  query_feat_ptr, const DoubleMatrixPTR reference_feat_ptr, const ParametersRLCSPTR parameters_slcs_ptr, const int start_q, const int end_q, const int start, const int end, MemberPTR member_ptr);
+
+void SLCS_perform0(const DoubleMatrixPTR query_feat_ptr, const DoubleMatrixPTR reference_feat_ptr, const ParametersRLCSPTR parameters_slcs_ptr, const int start_q, const int end_q, const int start, const int end, const int padd_length, MemberPTR member_ptr);
+
+
+void SLCS_hard_perform(const DoubleMatrixPTR  query_feat_ptr, const DoubleMatrixPTR reference_feat_ptr, const ParametersRLCSPTR parameters_slcs_ptr, const int start_q, const int end_q, const int start, const int end, MemberPTR member_ptr);
+
+void SLCS_hard_perform0(const DoubleMatrixPTR query_feat_ptr, const DoubleMatrixPTR reference_feat_ptr, const ParametersRLCSPTR parameters_slcs_ptr, const int start_q, const int end_q, const int start, const int end, const int padd_length, MemberPTR member_ptr);
+
+
+
+void RLCS_perform(const DoubleMatrixPTR  query_feat_ptr, const DoubleMatrixPTR reference_feat_ptr, const ParametersRLCSPTR parameters_slcs_ptr, const int start_q, const int end_q, const int start, const int end, MemberPTR member_ptr, const int isFilter, const SaddlePointsPTR query_sp_ptr, const SaddlePointsPTR reference_sp_ptr);
+
+void RLCS_perform0(const DoubleMatrixPTR query_feat_ptr, const DoubleMatrixPTR reference_feat_ptr, const ParametersRLCSPTR parameters_slcs_ptr, const int start_q, const int end_q, const int start, const int end, const int padd_length, MemberPTR member_ptr, const int isFilter, const SaddlePointsPTR query_sp_ptr, const SaddlePointsPTR reference_sp_ptr);
+
+void find_best_sequence_rlcs(const OutputRLCSPTR rlcs_out_ptr, const ParametersRLCSPTR  parameters_slcs_ptr, const int query_index_correction,  const int reference_index_correction, const int padd_length, MemberPTR member_ptr);
+
+
+
+void Segment_LCS(const DoubleMatrixPTR query_feat_ptr, const DoubleMatrixPTR region_reference_ptr, const int start, const int end, const ParametersRLCSPTR parameters_slcs_ptr, OutputSLCSPTR slcs_out_ptr);
+
+void Segment_LCS_v2(const DoubleMatrixPTR query_feat_ptr, const DoubleMatrixPTR region_reference_ptr, const int start, const int end, const ParametersRLCSPTR parameters_slcs_ptr, OutputSLCSPTR slcs_out_ptr);
+
+void Segment_LCS_v2_2(const DoubleMatrixPTR query_feat_ptr, const DoubleMatrixPTR region_reference_ptr, const int start, const int end, const ParametersRLCSPTR parameters_slcs_ptr, OutputSLCSPTR slcs_out_ptr);
+
+
+void Segment_LCS_v3(const DoubleMatrixPTR query_feat_ptr, const DoubleMatrixPTR region_reference_ptr, const int start, const int end, const ParametersRLCSPTR parameters_slcs_ptr, OutputSLCSPTR slcs_out_ptr);
+  
+void find_best_sequence_slcs(const OutputSLCSPTR slcs_out_ptr, const ParametersRLCSPTR  parameters_slcs_ptr, const int query_index_correction,  const int reference_index_correction, const int padd_length, MemberPTR member_ptr);
+
+double compute_distance_slcs(const DoubleMatrixPTR region_reference_ptr, const DoubleMatrixPTR query_feat_ptr, const int startr,const int i, const int j, const ParametersRLCSPTR parameters_rlcs_ptr);
+
+double DTWDistance(const DoubleMatrixPTR query_feat_ptr, const DoubleMatrixPTR region_reference_ptr, const ParametersRLCSPTR parameters_slcs_ptr);
+
+// helper function needed while sorting using qsort
+int members_comp(const void* a, const void* b);
+
+// distance function
+//double compute_distance(const DoubleMatrixPTR query_feat_ptr, const DoubleMatrixPTR region_reference_ptr, const int  i, const int j, const ParametersRLCSPTR parameters_rlcs_ptr);
+
+double compute_distance(const DoubleMatrixPTR region_reference_ptr, const DoubleMatrixPTR query_feat_ptr, const int startr, const int i, const int j, const ParametersRLCSPTR parameters_rlcs_ptr,  const SaddlePointsPTR query_sp_ptr, const SaddlePointsPTR region_reference_sp_ptr);
+
+double mean_of_first_diff(DoubleMatrixPTR mat_ptr, int start, int end);
+double std_of_first_diff(DoubleMatrixPTR mat_ptr, int start, int end);
+
+
+void LinReg (const DoubleMatrixPTR mat_ptr, const int start, const int numPts, double *intercept, double *slope);
+
+double slope_of_best_linear_fit(const DoubleMatrixPTR mat_ptr, const int start, const int end);
+
+void avg_error(const DoubleMatrixPTR mat_ptr, const int start, const int numPts, const double intercept, const double slope, double *error);
+
+double std_of_slope(const DoubleMatrixPTR mat_ptr, const int start, const int end);
+
+
+double min(double x, double y);
+double  max(double x, double y);
+
+void correct_SpotVec_for_dtw_dist(SpotVectorPTR spot_vec_ptr, SaddlePointsPTR reference_sp_ptr, SaddlePointsPTR query_sp_ptr);
+
+
+double dtw_dist(const DoubleMatrixPTR region_reference_ptr, const DoubleMatrixPTR query_feat_ptr, const int dtw_r_st, const int dtw_r_ed, const int dtw_q_st, const int dtw_q_ed, const char * distname, const int isNorm);
+
+
+#endif

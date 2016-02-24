@@ -1,0 +1,19 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Experiments}{}% 2
+\BOOKMARK [1][-]{section.3}{Quantifying the neuron activity}{}% 3
+\BOOKMARK [2][-]{subsubsection.3.0.1}{Averaging }{section.3}% 4
+\BOOKMARK [1][-]{section.4}{Estimating orientation selectivity of neuron}{}% 5
+\BOOKMARK [2][-]{subsubsection.4.0.1}{Selectivity Index measures - OSI, DSI}{section.4}% 6
+\BOOKMARK [3][-]{subsubsection.4.0.2}{Circular variance of direction and orientation}{subsubsection.4.0.1}% 7
+\BOOKMARK [1][-]{section.5}{Modeling the neuron response}{}% 8
+\BOOKMARK [2][-]{subsubsection.5.0.1}{Estimating orientation fit}{section.5}% 9
+\BOOKMARK [3][-]{subsubsection.5.0.2}{Estimating direction fit}{subsubsection.5.0.1}% 10
+\BOOKMARK [1][-]{section.6}{Classification of simple and complex cells}{}% 11
+\BOOKMARK [2][-]{subsubsection.6.0.1}{k-means clustering}{section.6}% 12
+\BOOKMARK [1][-]{section.7}{Study of correlation}{}% 13
+\BOOKMARK [1][-]{section.8}{Study of principal components}{}% 14
+\BOOKMARK [2][-]{subsection.8.1}{Reconstruction}{section.8}% 15
+\BOOKMARK [1][-]{section.9}{Study of Reliability}{}% 16
+\BOOKMARK [1][-]{section.10}{Searching for subsequences}{}% 17
+\BOOKMARK [2][-]{subsection.10.1}{ACF Gram}{section.10}% 18
+\BOOKMARK [2][-]{subsection.10.2}{[*Future work] Longest common subsequences detection}{section.10}% 19

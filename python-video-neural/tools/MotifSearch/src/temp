@@ -1,0 +1,5 @@
+ qsort(bhairavi, br1, sizeof(bhairavi[0]), doub_cmp_fun);
+    qsort(kamboji, kam1, sizeof(kamboji[0]), doub_cmp_fun);
+    qsort(kalyani, kal1, sizeof(kalyani[0]), doub_cmp_fun);
+    qsort(shankarabharanam, shank1, sizeof(shankarabharanam[0]), doub_cmp_fun);
+    qsort(varali, var1, sizeof(varali[0]), doub_cmp_fun);
