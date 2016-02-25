@@ -3,13 +3,13 @@
 # @Author: Athul
 # @Date:   2016-02-23 15:20:54
 # @Last Modified by:   Athul
-# @Last Modified time: 2016-02-24 15:59:25
+# @Last Modified time: 2016-02-25 11:31:06
 import numpy as np
 def sim(x, y, measure="cubic"):
     if (x == np.inf) or (y == np.inf):
         return 0
     if measure == "euclidean":
-        return 1 - np.square(x - y);
+        return -1*np.square(x - y);
     if measure == "cubic":
         return 1 - np.power((x - y), 3);
     else:
@@ -25,7 +25,7 @@ def backtrack(c, s, d, a, X, Y, i, j):
     elif d[i, j] == 0:
         return backtrack(c, s, d, a, X, Y, i, j-1)
 
-def lcss(X, Y, thres_sim=0.5, thres_rc=0.5, rho=0):
+def lcss(X, Y, thres_sim=-0.1, thres_rc=0.5, rho=0):
     n = Y.size
     m = X.size
 

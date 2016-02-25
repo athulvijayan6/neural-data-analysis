@@ -3,7 +3,7 @@
 # @Author: Athul
 # @Date:   2016-02-23 16:00:11
 # @Last Modified by:   Athul
-# @Last Modified time: 2016-02-24 16:00:57
+# @Last Modified time: 2016-02-25 11:31:49
 from __future__ import division
 import numpy as np
 from lcs import lcss
@@ -40,10 +40,10 @@ s2 = ensembleSpikeRate[n2]
 # average across trials
 X = np.mean(s1, axis=1)[:10]
 
-Y = np.mean(s2, axis=1)[:10]
+Y = np.mean(s1, axis=1)[:10]
 
 
-c, s, d, a, R = lcss.lcss(X, Y, thres_sim=0.4, thres_rc=0.3, rho=1)
+c, s, d, a, R = lcss.lcss(X, Y, thres_rc=0.3, rho=0)
 
 
 # Plot the score matrix
