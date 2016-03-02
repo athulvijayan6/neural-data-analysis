@@ -3,10 +3,10 @@
 # @Author: Athul
 # @Date:   2016-02-23 16:00:11
 # @Last Modified by:   Athul
-# @Last Modified time: 2016-02-25 11:31:49
+# @Last Modified time: 2016-03-01 14:50:27
 from __future__ import division
 import numpy as np
-from lcs import lcss
+from lcs import lcss2 as lcss
 import datetime
 import scipy.io
 from lcs import acf
@@ -39,17 +39,22 @@ s2 = ensembleSpikeRate[n2]
 
 # average across trials
 X = np.mean(s1, axis=1)[:10]
+Y = np.mean(s2, axis=1)[:10]
 
-Y = np.mean(s1, axis=1)[:10]
+
+c, s, d, a = lcss.lcss(X, Y)
 
 
-c, s, d, a, R = lcss.lcss(X, Y, thres_rc=0.3, rho=0)
+
+
+
+
 
 
 # Plot the score matrix
-if True:
+if False:
     fig, ax = plt.subplots(figsize=(14, 12))
-    cax = ax.imshow(d, aspect='auto', origin='lower', interpolation="none")
+    cax = ax.imshow(s, aspect='auto', origin='lower', interpolation="none")
     ax.grid(True)
     cbar = fig.colorbar(cax)
     ax.set_xlabel('template')

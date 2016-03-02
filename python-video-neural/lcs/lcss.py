@@ -3,15 +3,15 @@
 # @Author: Athul
 # @Date:   2016-02-23 15:20:54
 # @Last Modified by:   Athul
-# @Last Modified time: 2016-02-25 11:31:06
+# @Last Modified time: 2016-03-01 14:33:26
 import numpy as np
-def sim(x, y, measure="cubic"):
+def sim(x, y, measure="euclidean"):
     if (x == np.inf) or (y == np.inf):
         return 0
     if measure == "euclidean":
-        return -1*np.square(x - y);
+        return np.square(x - y)
     if measure == "cubic":
-        return 1 - np.power((x - y), 3);
+        return 1 - np.power((x - y), 3)
     else:
         print("Invalid measure! ")
 
@@ -25,23 +25,23 @@ def backtrack(c, s, d, a, X, Y, i, j):
     elif d[i, j] == 0:
         return backtrack(c, s, d, a, X, Y, i, j-1)
 
-def lcss(X, Y, thres_sim=-0.1, thres_rc=0.5, rho=0):
-    n = Y.size
-    m = X.size
+def lcss(X, Y, thres_sim=0.1, thres_rc=0.5, rho=1):
+    m = Y.size
+    n = X.size
 
     X = np.append(X, np.inf)
     Y = np.append(Y, np.inf)
 
-    c = np.zeros((n+2, m+2))
-    s = np.zeros((n+2, m+2))
+    c = np.zeros((n+2, m+2)) # for storing running score
+    s = np.zeros((n+2, m+2)) # for storing score
     d = np.zeros((n+2, m+2)) # For backtracking up = 0, left = 1, cross = 2
-    a = np.zeros((n+2, m+2))
+    a = np.zeros((n+2, m+2)) # for storing partial scores.
     p = min(m, n)
     for i in xrange(1, m+1):
         for j in xrange(1, n+1):
             xi = X[i]
             yj = Y[j]
-            if sim(xi, yj) > thres_sim:
+            if sim(xi, yj) < thres_sim: #similar
                 d[i, j] = 2
                 c[i, j] = c[i-1, j-1] + (sim(xi, yj) - thres_sim)/(1 - thres_sim)
                 s[i, j] = s[i-1, j-1]
@@ -66,8 +66,7 @@ def lcss(X, Y, thres_sim=-0.1, thres_rc=0.5, rho=0):
                 a[i, j] = -1
             else:
                 a[i, j] = q
-    R = backtrack(c, s, d, a, X, Y, m, n)
-    return c, s, d, a, R
+    return c, s, d, a
 
 
 
