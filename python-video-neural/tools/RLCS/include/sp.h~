@@ -1,0 +1,3 @@
+#include "types.h"
+
+DoubleMatrixPTR find_voiced_parts(DoubleMatrixPTR file_ptr, int v_th, int s_th);

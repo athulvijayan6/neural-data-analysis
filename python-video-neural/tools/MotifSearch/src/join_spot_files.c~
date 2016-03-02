@@ -1,0 +1,47 @@
+#include "types.h"
+/* Join spot files
+ */
+
+
+
+// my main
+int main(int argc, char* argv[]) {
+  
+  if (argc != 2 +1) {
+    printf("!!!!!!Error!!!!!\n");
+    printf("Usage: %s <give the spotfiles to join seperated by space> <name of the joined files> ", argv[0]);
+    exit(-1);
+  }
+  
+  int num_spot_files = argc - 1 - 1;
+  
+
+
+
+  SpotVectorPPTR spots_all_pptr = (SpotVectorPPTR) malloc(sizeof(SpotVectorPTR)*match_num);
+
+
+  
+  // creating and allocating spot vectors
+  for(i = 0; i < num_spot_files; i++){
+    spotted_potential_motif_regions_all_pptr[i] = create_SpotVectorPTR();
+    // simply allocating 10. It will be rellocated inside if necessary.
+    alloc_members_SpotVectorPTR(spotted_potential_motif_regions_all_pptr[i], 10);
+
+    spotted_motifs_all_pptr[i] = create_SpotVectorPTR();
+    // simply allocating 10. It will be rellocated inside if necessary.
+    alloc_members_SpotVectorPTR(spotted_motifs_all_pptr[i], 10);
+  }
+  
+
+  //TODO: This loop can be made parallel
+  for (i = 0; i < num_spot_files; i++) {
+    
+    fprintf(stdout, "Spot_file_no:\t%d\n", i);
+
+    scanf_SpotVectorPTR(fin, spots_all_pptr[i]);
+  }
+
+
+  return 0;
+}

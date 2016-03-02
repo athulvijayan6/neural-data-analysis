@@ -1,0 +1,704 @@
+5
+Group-Begin
+query_path:/home/shrey/motif_match/Code/C/examples/data/query/Bhairavi_m1_44100.wav.cent.spline1.feat
+reference_path:/home/shrey/motif_match/Code/C/examples/data/reference/ALB_Bhairavi1_70albmgpnganesan.wav.cent.spline1.feat
+group_start:23
+group_end:51
+members_size:1
+Member-1
+start:23
+end:51
+score:0.447268
+cost:19.848920
+cost_actual:26.000000
+war:22.848920
+waq:24.848920
+alignment_size:34
+query reference
+0 23
+1 24
+2 25
+3 25
+4 26
+5 27
+6 28
+7 29
+8 30
+9 31
+10 31
+11 31
+12 32
+13 33
+14 33
+15 34
+16 34
+17 35
+18 36
+19 37
+20 38
+21 39
+22 40
+23 41
+23 42
+23 43
+24 44
+25 45
+26 46
+27 47
+27 48
+28 49
+29 50
+30 51
+Best Member
+start:23
+end:51
+score:0.447268
+cost:19.848920
+cost_actual:26.000000
+war:22.848920
+waq:24.848920
+alignment_size:34
+query reference
+0 23
+1 24
+2 25
+3 25
+4 26
+5 27
+6 28
+7 29
+8 30
+9 31
+10 31
+11 31
+12 32
+13 33
+14 33
+15 34
+16 34
+17 35
+18 36
+19 37
+20 38
+21 39
+22 40
+23 41
+23 42
+23 43
+24 44
+25 45
+26 46
+27 47
+27 48
+28 49
+29 50
+30 51
+Group-Begin
+query_path:/home/shrey/motif_match/Code/C/examples/data/query/Bhairavi_m1_44100.wav.cent.spline1.feat
+reference_path:/home/shrey/motif_match/Code/C/examples/data/reference/GNB_Bhairavi1_0641965kallidaikurichi.wav.cent.spline1.feat
+group_start:1647
+group_end:1650
+members_size:10
+Member-1
+start:1647
+end:1650
+score:0.087779
+cost:2.599457
+cost_actual:3.000000
+war:3.599457
+waq:2.599457
+alignment_size:4
+query reference
+40 1647
+41 1648
+41 1649
+42 1650
+Member-2
+start:1647
+end:1650
+score:0.087779
+cost:2.599457
+cost_actual:3.000000
+war:3.599457
+waq:2.599457
+alignment_size:4
+query reference
+40 1647
+41 1648
+41 1649
+42 1650
+Member-3
+start:1647
+end:1650
+score:0.087779
+cost:2.599457
+cost_actual:3.000000
+war:3.599457
+waq:2.599457
+alignment_size:4
+query reference
+40 1647
+41 1648
+41 1649
+42 1650
+Member-4
+start:1647
+end:1650
+score:0.087779
+cost:2.599457
+cost_actual:3.000000
+war:3.599457
+waq:2.599457
+alignment_size:4
+query reference
+40 1647
+41 1648
+41 1649
+42 1650
+Member-5
+start:1647
+end:1650
+score:0.087779
+cost:2.599457
+cost_actual:3.000000
+war:3.599457
+waq:2.599457
+alignment_size:4
+query reference
+40 1647
+41 1648
+41 1649
+42 1650
+Member-6
+start:1647
+end:1650
+score:0.087779
+cost:2.599457
+cost_actual:3.000000
+war:3.599457
+waq:2.599457
+alignment_size:4
+query reference
+40 1647
+41 1648
+41 1649
+42 1650
+Member-7
+start:1647
+end:1650
+score:0.087779
+cost:2.599457
+cost_actual:3.000000
+war:3.599457
+waq:2.599457
+alignment_size:4
+query reference
+40 1647
+41 1648
+41 1649
+42 1650
+Member-8
+start:1647
+end:1650
+score:0.087779
+cost:2.599457
+cost_actual:3.000000
+war:3.599457
+waq:2.599457
+alignment_size:4
+query reference
+40 1647
+41 1648
+41 1649
+42 1650
+Member-9
+start:1647
+end:1650
+score:0.087779
+cost:2.599457
+cost_actual:3.000000
+war:3.599457
+waq:2.599457
+alignment_size:4
+query reference
+40 1647
+41 1648
+41 1649
+42 1650
+Member-10
+start:1647
+end:1650
+score:0.087779
+cost:2.599457
+cost_actual:3.000000
+war:3.599457
+waq:2.599457
+alignment_size:4
+query reference
+40 1647
+41 1648
+41 1649
+42 1650
+Best Member
+start:1647
+end:1650
+score:0.087779
+cost:2.599457
+cost_actual:3.000000
+war:3.599457
+waq:2.599457
+alignment_size:4
+query reference
+40 1647
+41 1648
+41 1649
+42 1650
+Group-Begin
+query_path:/home/shrey/motif_match/Code/C/examples/data/query/Bhairavi_m1_44100.wav.cent.spline1.feat
+reference_path:/home/shrey/motif_match/Code/C/examples/data/reference/KVN_Bhairavi1_NF598KVN.wav.cent.spline1.feat
+group_start:1105
+group_end:1105
+members_size:23
+Member-1
+start:1105
+end:1105
+score:0.027056
+cost:0.662881
+cost_actual:1.000000
+war:0.662881
+waq:0.662881
+alignment_size:1
+query reference
+41 1105
+Member-2
+start:1105
+end:1105
+score:0.027056
+cost:0.662881
+cost_actual:1.000000
+war:0.662881
+waq:0.662881
+alignment_size:1
+query reference
+41 1105
+Member-3
+start:1105
+end:1105
+score:0.027056
+cost:0.662881
+cost_actual:1.000000
+war:0.662881
+waq:0.662881
+alignment_size:1
+query reference
+41 1105
+Member-4
+start:1105
+end:1105
+score:0.027056
+cost:0.662881
+cost_actual:1.000000
+war:0.662881
+waq:0.662881
+alignment_size:1
+query reference
+41 1105
+Member-5
+start:1105
+end:1105
+score:0.027056
+cost:0.662881
+cost_actual:1.000000
+war:0.662881
+waq:0.662881
+alignment_size:1
+query reference
+41 1105
+Member-6
+start:1105
+end:1105
+score:0.027056
+cost:0.662881
+cost_actual:1.000000
+war:0.662881
+waq:0.662881
+alignment_size:1
+query reference
+41 1105
+Member-7
+start:1105
+end:1105
+score:0.027056
+cost:0.662881
+cost_actual:1.000000
+war:0.662881
+waq:0.662881
+alignment_size:1
+query reference
+41 1105
+Member-8
+start:1105
+end:1105
+score:0.027056
+cost:0.662881
+cost_actual:1.000000
+war:0.662881
+waq:0.662881
+alignment_size:1
+query reference
+41 1105
+Member-9
+start:1105
+end:1105
+score:0.027056
+cost:0.662881
+cost_actual:1.000000
+war:0.662881
+waq:0.662881
+alignment_size:1
+query reference
+41 1105
+Member-10
+start:1105
+end:1105
+score:0.027056
+cost:0.662881
+cost_actual:1.000000
+war:0.662881
+waq:0.662881
+alignment_size:1
+query reference
+41 1105
+Member-11
+start:1105
+end:1105
+score:0.027056
+cost:0.662881
+cost_actual:1.000000
+war:0.662881
+waq:0.662881
+alignment_size:1
+query reference
+41 1105
+Member-12
+start:1105
+end:1105
+score:0.027056
+cost:0.662881
+cost_actual:1.000000
+war:0.662881
+waq:0.662881
+alignment_size:1
+query reference
+41 1105
+Member-13
+start:1105
+end:1105
+score:0.027056
+cost:0.662881
+cost_actual:1.000000
+war:0.662881
+waq:0.662881
+alignment_size:1
+query reference
+41 1105
+Member-14
+start:1105
+end:1105
+score:0.027056
+cost:0.662881
+cost_actual:1.000000
+war:0.662881
+waq:0.662881
+alignment_size:1
+query reference
+41 1105
+Member-15
+start:1105
+end:1105
+score:0.027056
+cost:0.662881
+cost_actual:1.000000
+war:0.662881
+waq:0.662881
+alignment_size:1
+query reference
+41 1105
+Member-16
+start:1105
+end:1105
+score:0.027056
+cost:0.662881
+cost_actual:1.000000
+war:0.662881
+waq:0.662881
+alignment_size:1
+query reference
+41 1105
+Member-17
+start:1105
+end:1105
+score:0.027056
+cost:0.662881
+cost_actual:1.000000
+war:0.662881
+waq:0.662881
+alignment_size:1
+query reference
+41 1105
+Member-18
+start:1105
+end:1105
+score:0.027056
+cost:0.662881
+cost_actual:1.000000
+war:0.662881
+waq:0.662881
+alignment_size:1
+query reference
+41 1105
+Member-19
+start:1105
+end:1105
+score:0.027056
+cost:0.662881
+cost_actual:1.000000
+war:0.662881
+waq:0.662881
+alignment_size:1
+query reference
+41 1105
+Member-20
+start:1105
+end:1105
+score:0.027056
+cost:0.662881
+cost_actual:1.000000
+war:0.662881
+waq:0.662881
+alignment_size:1
+query reference
+41 1105
+Member-21
+start:1105
+end:1105
+score:0.027056
+cost:0.662881
+cost_actual:1.000000
+war:0.662881
+waq:0.662881
+alignment_size:1
+query reference
+41 1105
+Member-22
+start:1105
+end:1105
+score:0.027056
+cost:0.662881
+cost_actual:1.000000
+war:0.662881
+waq:0.662881
+alignment_size:1
+query reference
+41 1105
+Member-23
+start:1105
+end:1105
+score:0.027056
+cost:0.662881
+cost_actual:1.000000
+war:0.662881
+waq:0.662881
+alignment_size:1
+query reference
+41 1105
+Best Member
+start:1105
+end:1105
+score:0.027056
+cost:0.662881
+cost_actual:1.000000
+war:0.662881
+waq:0.662881
+alignment_size:1
+query reference
+41 1105
+Group-Begin
+query_path:/home/shrey/motif_match/Code/C/examples/data/query/Bhairavi_m1_44100.wav.cent.spline1.feat
+reference_path:/home/shrey/motif_match/Code/C/examples/data/reference/Musiri_Bhairavi1_musirinew.wav.cent.spline1.feat
+group_start:2199
+group_end:2211
+members_size:1
+Member-1
+start:2199
+end:2211
+score:0.425437
+cost:12.975820
+cost_actual:13.000000
+war:12.975820
+waq:12.975820
+alignment_size:13
+query reference
+21 2199
+22 2200
+23 2201
+24 2202
+25 2203
+26 2204
+27 2205
+28 2206
+29 2207
+30 2208
+31 2209
+32 2210
+33 2211
+Best Member
+start:2199
+end:2211
+score:0.425437
+cost:12.975820
+cost_actual:13.000000
+war:12.975820
+waq:12.975820
+alignment_size:13
+query reference
+21 2199
+22 2200
+23 2201
+24 2202
+25 2203
+26 2204
+27 2205
+28 2206
+29 2207
+30 2208
+31 2209
+32 2210
+33 2211
+Group-Begin
+query_path:/home/shrey/motif_match/Code/C/examples/data/query/Bhairavi_m1_44100.wav.cent.spline1.feat
+reference_path:/home/shrey/motif_match/Code/C/examples/data/reference/Nedanuri_Bhairavi1_concert40tmk1tb.wav.cent.spline1.feat
+group_start:993
+group_end:994
+members_size:9
+Member-1
+start:993
+end:994
+score:0.065086
+cost:1.627147
+cost_actual:2.000000
+war:1.627147
+waq:1.627147
+alignment_size:2
+query reference
+41 993
+42 994
+Member-2
+start:993
+end:994
+score:0.065086
+cost:1.627147
+cost_actual:2.000000
+war:1.627147
+waq:1.627147
+alignment_size:2
+query reference
+41 993
+42 994
+Member-3
+start:993
+end:994
+score:0.065086
+cost:1.627147
+cost_actual:2.000000
+war:1.627147
+waq:1.627147
+alignment_size:2
+query reference
+41 993
+42 994
+Member-4
+start:993
+end:994
+score:0.065086
+cost:1.627147
+cost_actual:2.000000
+war:1.627147
+waq:1.627147
+alignment_size:2
+query reference
+41 993
+42 994
+Member-5
+start:993
+end:994
+score:0.065086
+cost:1.627147
+cost_actual:2.000000
+war:1.627147
+waq:1.627147
+alignment_size:2
+query reference
+41 993
+42 994
+Member-6
+start:993
+end:994
+score:0.065086
+cost:1.627147
+cost_actual:2.000000
+war:1.627147
+waq:1.627147
+alignment_size:2
+query reference
+41 993
+42 994
+Member-7
+start:993
+end:994
+score:0.065086
+cost:1.627147
+cost_actual:2.000000
+war:1.627147
+waq:1.627147
+alignment_size:2
+query reference
+41 993
+42 994
+Member-8
+start:993
+end:994
+score:0.065086
+cost:1.627147
+cost_actual:2.000000
+war:1.627147
+waq:1.627147
+alignment_size:2
+query reference
+41 993
+42 994
+Member-9
+start:993
+end:994
+score:0.065086
+cost:1.627147
+cost_actual:2.000000
+war:1.627147
+waq:1.627147
+alignment_size:2
+query reference
+41 993
+42 994
+Best Member
+start:993
+end:994
+score:0.065086
+cost:1.627147
+cost_actual:2.000000
+war:1.627147
+waq:1.627147
+alignment_size:2
+query reference
+41 993
+42 994
+

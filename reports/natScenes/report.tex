@@ -1,7 +1,7 @@
 % @Author: Athul Vijayan
 % @Date:   2014-05-09 13:56:20
-% @Last Modified by:   athul
-% @Last Modified time: 2016-02-26 17:58:34
+% @Last Modified by:   Athul Vijayan
+% @Last Modified time: 2016-03-02 18:26:26
 
 \documentclass[11pt,paper=a4,answers]{exam}
 \usepackage{graphicx,lastpage}
@@ -297,10 +297,10 @@ Here, the search space is exponential in length of response. So before arriving 
 In the previous study, we fixed the beginning of the frame in template and changed the width of frame. Here we will slide the frame also to create a temporal dimension too. Heatmaps of the ACF gram - a time vs lag vs ACVF plot are given in figure~\ref{img:acfgram1} for same neuron and figure~\ref{img:acfgram2} for different neurons.\\
 Images show results for for different manually fixed window widths. The following inferences can be taken:
 \begin{itemize}
-    \item For small window length ($\aprox 15$), the template is small. Such a small template does not satisfy as a motif. Also as the samples are less, estimate of sample correlation will be poor.
-    \item For window lengths $\aprox 30$ we see patterns. These shows that there are repeating subsequences in the response.
+    \item For small window length ($\approx$ 15), the template is small. Such a small template does not satisfy as a motif. Also as the samples are less, estimate of sample correlation will be poor.
+    \item For window lengths $\approx 30$ we see patterns. These shows that there are repeating subsequences in the response.
     \item The repeating patterns seem to be reappearing periodically in lag.
-    \item For window widths $\aprox 60$, there are two subsequences that match. Above this, Only match is for lag 0.
+    \item For window widths $\approx 60$, there are two subsequences that match. Above this, Only match is for lag 0.
     \item There are common subsequences across different neurons.
 \end{itemize}
 \begin{figure}
@@ -357,6 +357,48 @@ Images show results for for different manually fixed window widths. The followin
 \subsection{Longest common subsequences} % (fold)
 \label{sub:longest_common_subsequences}
 In previous study, we fixed the window widths and saw that there are in fact repeating patterns. Here we try to find set of common subsequences in neurons. Also, till now we used Pearson correlation to compare two signals. We look into other ways of comparing two responses too.
+\subsubsection{Longest common segment set for neuron responses} % (fold)
+\label{ssub:longest_common_segment_set_for_neuron_responses}
+Here we compare responses of two neurons- template and target neurons. Both signals are time series signals obtained by averaging responses to each trial of the same stimuli. Subsequence matching needs to be performed
+between these two signals. The number of similar portions could be more than one and spread across the entire signal.\\
+Let $\bm{X} = < x_1, x_2,\hdots, x_n ; x_i \in R >$ be template signal and $\bm{Y} = <y_1, y_2, \hdots, y_m ; y_m \in R>$ be the target signal. Now similarity between two points has to be defined. Following options of similarity measures are considered.
+\begin{enumerate}
+    \item Euclidean distance\\
+    $$sim(x_i, y_j) =  (x_i - y_j)^2$$
+    \item Cubic\\
+    $$sim(x_i, y_j) =  1 - (x_i - y_j)^3$$
+\end{enumerate}
+Classic problem of finding LCSS is as follows:
+$$
+LCS\left(X_{i},Y_{j}\right) =
+\begin{cases}
+  \emptyset
+& \mbox{ if }\ i = 0 \mbox{ or }  j = 0 \\
+  \textrm{  } LCS\left(X_{i-1},Y_{j-1}\right) \frown x_{i}
+& \mbox{ if } sim(x_i , y_j) > \tau_{sim} \\
+  \mbox{longest}\left(LCS\left(X_{i},Y_{j-1}\right),LCS\left(X_{i-1},Y_{j}\right)\right)
+& \mbox{ if } sim(x_i , y_j) < \tau_{sim} \\
+\end{cases}
+$$
+We can solve this problem by Dynamic Programming.
+\newpage
+\section{**Future work}
+\begin{enumerate}
+    \item LCSS on neural response\\
+    Perform LCSS to find common subsequences in responses of two neurons. For this we can use different similarity functions.\\
+    On performing LCSS on two neurons, the scores matrix generated is in Figure
+    \begin{figure}
+        \centering
+        \includegraphics[width=.7\linewidth]{\plt/lcssMain_scoremat_2016_02_23_16_52_00}
+        \caption{Score matrix after LCSS on two neuron responses}
+    \end{figure}
+    \item RLCS\\
+    Perform RLCS to match sequences.
+    \item Multi dimensional extension\\
+    Till now we were trying to find similarities between two neurons. We need to analyze neurons as a population.\\
+    Extend methods above for multi dimension/ population of neurons.
+\end{enumerate}
+% subsubsection longest_common_segment_set_for_neuron_responses (end)
 % subsection longest_common_subsequences (end)
 % section searching_for_motifs (end)
 % ============================== Content ends here

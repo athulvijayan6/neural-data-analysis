@@ -1,0 +1,273 @@
+#include "types.h"
+/* this will parse the spot vector and prepare some numbers of list
+ * equal to the number of unique motifs queried. The file will contain the
+ * info of the matches in below given format. This file is to be processed 
+ * further to get the desired result.
+ * <query_file_name> <ref_file_name> <start_sample> <end_sample> <score>
+ */
+
+//define macros
+
+double min(double x, double y)  {
+  return (x<=y ? x : y);
+}
+
+double  max(double x, double y)  {
+  return x>=y ? x : y;
+}
+
+
+
+//declaring functions
+int spot_comp_func(const void* a, const void* b);
+int doub_cmp_fun (const void *pa, const void *pb );
+double mean_of_first_diff(DoubleMatrixPTR mat_ptr, int start, int end);
+double std_of_first_diff(DoubleMatrixPTR mat_ptr, int start, int end);
+
+
+
+// my main
+int main(int argc, char* argv[]) {
+  
+  if (argc != 2 +1) {
+    printf("!!!!!!Error!!!!!\n");
+    printf("Usage: %s <result_file> <outfilename>", argv[0]);
+    exit(-1);
+  }
+  
+  int top_n = atoi(argv[2]);
+
+  SpotVectorPTR spot_vec_ptr = create_SpotVectorPTR();
+  alloc_members_SpotVectorPTR(spot_vec_ptr, 500);
+  
+  // not sure whether the read binary mode works.
+  FILEPTR fin;
+  if ((fin = fopen(argv[1], "rb")) == NULL) {
+    printf("ERROR: Cannot open file %s\n", argv[1]);
+    exit(-1);
+  }
+  
+  // reading the result into spot vector
+  printf("Reading spot_vector...\n");
+  scanf_SpotVectorPTR(fin, spot_vec_ptr);
+  printf("Reading over, %d spots read\n", spot_vec_ptr->size);
+  // closing the file
+  fclose(fin);
+
+
+
+
+
+  // loop over spot vector and get the unique refs.
+  printf("Finding unique refs and queries... \n");
+  char refs[100][500];
+  //char queries[100][500];
+  int ref_ctr = 0;  // ref counter
+  //  int query_ctr =0; // query counter 
+  {
+    // for ref
+    int i;
+    for (i = 0; i < spot_vec_ptr -> size; i++) {
+      int j = 0;
+      for (j = 0; j < ref_ctr; j++)
+	if (strcmp(spot_vec_ptr->vec[i].reference_path, refs[j]) == 0)
+	  break;
+      // if current ref is not found in queries then add it to the list.
+      if (j == ref_ctr) {
+	strcpy(refs[ref_ctr], spot_vec_ptr->vec[i].reference_path);
+	++ref_ctr;
+      }
+    }
+    printf("%d unique refs found namely\n", ref_ctr);
+  }   
+  // for each spot in spotvec, open the corresponding  sp file for query and reference.
+  // locate the points of interest in sp file using start and end of query and reference.
+  // write function for to find slope and it standard deviation and find it for sp ponts.
+  // update the score of all the members like this for that spot.
+  // Do this for all the spots.
+  // write the updated spot vector.
+  
+  int ri;
+  int count_verf = 0;
+  for (ri = 0; ri < ref_ctr ;  ri++) {
+    char refname[500];
+    char refspname[500];
+    char dum[500], dum2[500];
+    strcpy(refname, refs[ri]);
+
+    find_filename_in_path_without_extn(refname, dum);
+    strcat(dum, ".sp");
+    find_dir_in_path(refname, dum2);
+    strcat(dum2, "/");
+    strcat(dum2, dum);
+    strcpy(refspname, dum2);
+
+    SaddlePointsPTR refsp_sp_ptr = create_SaddlePointsPTR();
+    fill_SaddlePointsPTR_from_file(refspname, refsp_sp_ptr);
+    int i;
+    for (i = 0; i < spot_vec_ptr -> size; i++) {
+      
+      if (strcmp(refs[ri], spot_vec_ptr -> vec[i].reference_path) != 0)
+	continue;
+
+      ++count_verf;
+
+      char queryname[500];
+      char queryspname[500];
+
+    
+      //    strcpy(refname, spot_vec_ptr -> vec[i].reference_path);
+      strcpy(queryname, spot_vec_ptr -> vec[i].query_path);
+
+    
+      find_filename_in_path_without_extn(queryname, dum);
+      strcat(dum, ".sp");
+      find_dir_in_path(queryname, dum2);
+      strcat(dum2, "/");
+      strcat(dum2, dum);
+      strcpy(queryspname, dum2);
+
+
+      //    SaddlePointsPTR refsp_sp_ptr = create_SaddlePointsPTR();
+      SaddlePointsPTR querysp_sp_ptr = create_SaddlePointsPTR();
+      //    fill_SaddlePointsPTR_from_file(refspname, refsp_sp_ptr);
+      fill_SaddlePointsPTR_from_file(queryspname, querysp_sp_ptr);
+
+      int j;
+      for (j = 0; j < spot_vec_ptr->vec[i].member_vec_ptr->size; j++) {
+            
+	int start = arg_find_smallest_num_after_D(refsp_sp_ptr->x_ptr, spot_vec_ptr->vec[i].member_vec_ptr->vec[j].start);
+	int end = arg_find_largest_num_before_D(refsp_sp_ptr->x_ptr, spot_vec_ptr->vec[i].member_vec_ptr->vec[j].end);
+	int start_q = arg_find_smallest_num_after_D(querysp_sp_ptr->x_ptr, spot_vec_ptr->vec[i].member_vec_ptr->vec[j].start_q);
+	int end_q = arg_find_largest_num_before_D(querysp_sp_ptr->x_ptr, spot_vec_ptr->vec[i].member_vec_ptr->vec[j].end_q);
+      
+	double muQ = mean_of_first_diff(querysp_sp_ptr->y_ptr, start_q, end_q);
+	double sigmaQ = std_of_first_diff(querysp_sp_ptr->y_ptr, start_q, end_q);
+	double muR = mean_of_first_diff(refsp_sp_ptr->y_ptr, start, end);
+
+	double sigmaR = std_of_first_diff(refsp_sp_ptr->y_ptr, start, end);;
+	
+	double Z1 = muQ * sigmaR;
+	double Z2 = muR * sigmaQ;
+      
+	double rho = min(Z1,Z2) / max(Z1,Z2);
+
+	double pscore = spot_vec_ptr->vec[i].member_vec_ptr->vec[j].score;
+      
+
+
+	//	printf("%f %f %f %f %f %f %f %f\n", muQ, sigmaQ, muR, sigmaR, Z1, Z2, rho, pscore);
+
+	spot_vec_ptr->vec[i].member_vec_ptr->vec[j].score  = 0.7*pscore + 0.3*rho;
+      }
+
+      // for the best member
+
+      {
+	int start = arg_find_smallest_num_after_D(refsp_sp_ptr->x_ptr, spot_vec_ptr->vec[i].best_member_ptr->start);
+	int end = arg_find_largest_num_before_D(refsp_sp_ptr->x_ptr, spot_vec_ptr->vec[i].best_member_ptr->end);
+	int start_q = arg_find_smallest_num_after_D(querysp_sp_ptr->x_ptr, spot_vec_ptr->vec[i].best_member_ptr->start_q);
+	int end_q = arg_find_largest_num_before_D(querysp_sp_ptr->x_ptr, spot_vec_ptr->vec[i].best_member_ptr->end_q);
+      
+	double muQ = mean_of_first_diff(querysp_sp_ptr->y_ptr, start_q, end_q);
+	double sigmaQ = std_of_first_diff(querysp_sp_ptr->y_ptr, start_q, end_q);
+	double muR = mean_of_first_diff(refsp_sp_ptr->y_ptr, start, end);
+	double sigmaR = std_of_first_diff(refsp_sp_ptr->y_ptr, start, end);;
+	
+	double Z1 = muQ * sigmaR;
+	double Z2 = muR * sigmaQ;
+      
+	if (Z1 < 0 && Z2 < 0) {
+	  Z1 = abs(Z1);
+	  Z2 = abs(Z2);
+	}
+	
+	double rho;
+
+	if (max(Z1,Z2) != 0)
+	  rho = min(Z1,Z2)/max(Z1,Z2);
+	else
+	  rho =0;
+
+	double pscore = spot_vec_ptr->vec[i].best_member_ptr->score;
+
+	printf("%f %f %f %f %f %f %f %f %f\n", muQ, sigmaQ, muR, sigmaR, Z1,  Z2, min(Z1,Z2)/max(Z1,Z2), pscore, 0.7*pscore + 0.3*rho);
+
+	spot_vec_ptr->vec[i].best_member_ptr->score  = 0.7*pscore + 0.3*rho;
+      }
+   
+      //    empty_SaddlePointsPTR(refsp_sp_ptr);
+      empty_SaddlePointsPTR(querysp_sp_ptr);
+      //    destroy_SaddlePointsPTR(refsp_sp_ptr);
+      destroy_SaddlePointsPTR(querysp_sp_ptr);
+    }
+
+    empty_SaddlePointsPTR(refsp_sp_ptr);
+    destroy_SaddlePointsPTR(refsp_sp_ptr);
+  }
+
+
+  printf("******** Count for verfication is %d , SpotVecPTR Size is %d *********\n", count_verf, spot_vec_ptr->size);
+
+  FILEPTR fout = fopen(argv[2], "w");
+  printf_SpotVectorPTR(fout, spot_vec_ptr);
+  fclose(fout);
+  return 0;
+}
+
+
+double mean_of_first_diff(DoubleMatrixPTR mat_ptr, int start, int end) {
+  int i; 
+  double mean = 0.0;
+  for (i = start; i <= end-1; i++) {
+    mean = mean + (mat_ptr->mat[i+1][0] - mat_ptr->mat[i][0]);
+  }
+
+  mean  =  mean/((end-1) - start +1);
+
+  return mean;
+}
+
+double std_of_first_diff(DoubleMatrixPTR mat_ptr, int start, int end) {
+  int i; 
+  double mean = mean_of_first_diff(mat_ptr, start, end);
+  double std = 0;
+  for (i = start; i <= end-1; i++) {
+    double temp = (mat_ptr->mat[i+1][0] - mat_ptr->mat[i][0]) - mean;
+    std = std + (temp*temp);
+  }
+
+  std  =  std/((end-1) - start +1);
+  
+  return sqrt(std);
+}
+
+
+// define functions
+int spot_comp_func(const void* a, const void* b) {
+  if (strcmp(((Spot*) a) -> query_path, ((Spot*) b) -> query_path) == 0) {
+    if (((Spot*) a) -> group_end_q > ((Spot*) b) -> group_start_q  && ((Spot*) a) -> group_start_q < ((Spot*) b) -> group_end_q) {
+      if (((Spot*) a) -> best_member_ptr -> score == ((Spot*) b) -> best_member_ptr -> score) 
+	return 0;
+      else if (((Spot*) a) -> best_member_ptr -> score > ((Spot*) b) -> best_member_ptr -> score) 
+	return -1; // this is done for desceding order
+      else 
+	return 1; // this is done for descending order
+    } else  if (((Spot*) a) -> group_end_q < ((Spot*) b) -> group_start_q)
+      return -1;
+    else 
+      return 1;
+  } else {
+    return strcmp(((Spot*) a) -> query_path, ((Spot*) b) -> query_path);
+  }
+}
+
+
+int doub_cmp_fun (const void *pa, const void *pb )
+{
+    const double *a = pa;
+    const double *b = pb;
+    if (a[1] <= b[1]) 
+        return 1;
+    return -1;
+}

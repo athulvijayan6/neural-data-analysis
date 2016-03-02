@@ -1,0 +1,13 @@
+Td 0.300000
+seqFilterTd 0.50
+Fs 44100
+frame_shift 441
+cpu 1
+distname cubic
+hop_size_fp 2
+hop_size_sp 5
+safe_region_factor 0.400000
+beta 0.53
+algo rlcs
+rho 0.8
+reference_window_size_ratio 1.500000

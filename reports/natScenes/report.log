@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2015.11.9)  15 FEB 2016 15:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2015.11.9)  25 FEB 2016 11:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -627,13 +627,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 102--103
 
  []
 
-<img/noise.png, id=65, 945.5325pt x 643.40375pt>
+<img/noise.png, id=80, 945.5325pt x 643.40375pt>
 File: img/noise.png Graphic file (type png)
  <use img/noise.png>
 Package pdftex.def Info: img/noise.png used on input line 133.
 (pdftex.def)             Requested size: 374.07103pt x 254.54912pt.
  [2]
-<../../plots/visualMain_meanPlot_2016_02_05_13_03_29.pdf, id=75, 578.16pt x 433
+<../../plots/visualMain_meanPlot_2016_02_05_13_03_29.pdf, id=90, 578.16pt x 433
 .62pt>
 File: ../../plots/visualMain_meanPlot_2016_02_05_13_03_29.pdf Graphic file (typ
 e pdf)
@@ -642,7 +642,7 @@ Package pdftex.def Info: ../../plots/visualMain_meanPlot_2016_02_05_13_03_29.pd
 f used on input line 172.
 (pdftex.def)             Requested size: 224.43976pt x 168.33037pt.
 
-<../../plots/visualMain_meanPlot_2016_02_05_13_03_46.pdf, id=76, 578.16pt x 433
+<../../plots/visualMain_meanPlot_2016_02_05_13_03_46.pdf, id=91, 578.16pt x 433
 .62pt>
 File: ../../plots/visualMain_meanPlot_2016_02_05_13_03_46.pdf Graphic file (typ
 e pdf)
@@ -659,7 +659,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 184--186
  []
 
 
-<../../plots/reliabMain_raPlot_2016_02_05_13_25_56.pdf, id=81, 578.16pt x 433.6
+<../../plots/reliabMain_raPlot_2016_02_05_13_25_56.pdf, id=96, 578.16pt x 433.6
 2pt>
 File: ../../plots/reliabMain_raPlot_2016_02_05_13_25_56.pdf Graphic file (type 
 pdf)
@@ -678,7 +678,7 @@ e
 pdfTeX warning: pdflatex (file ../../plots/reliabMain_raPlot_2016_02_05_13_25_5
 6.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >]
-<../../plots/subsetbMain_pcaPlot_2016_02_05_15_41_05.pdf, id=216, 578.16pt x 43
+<../../plots/subsetbMain_pcaPlot_2016_02_05_15_41_05.pdf, id=231, 578.16pt x 43
 3.62pt>
 File: ../../plots/subsetbMain_pcaPlot_2016_02_05_15_41_05.pdf Graphic file (typ
 e pdf)
@@ -687,7 +687,7 @@ Package pdftex.def Info: ../../plots/subsetbMain_pcaPlot_2016_02_05_15_41_05.pd
 f used on input line 216.
 (pdftex.def)             Requested size: 224.43976pt x 168.33037pt.
 
-<../../plots/subsetbMain_errPlot_2016_02_12_12_42_39.pdf, id=217, 578.16pt x 43
+<../../plots/subsetbMain_errPlot_2016_02_12_12_42_39.pdf, id=232, 578.16pt x 43
 3.62pt>
 File: ../../plots/subsetbMain_errPlot_2016_02_12_12_42_39.pdf Graphic file (typ
 e pdf)
@@ -702,7 +702,7 @@ pdfTeX warning: pdflatex (file ../../plots/subsetbMain_errPlot_2016_02_12_12_42
 _39.pdf): PDF inclusion: multiple pdfs with page group included in a single pag
 e
 >]
-<../../plots/acfMain_acfPlot_2016_02_05_16_49_00.pdf, id=318, 1011.78pt x 867.2
+<../../plots/acfMain_acfPlot_2016_02_05_16_49_00.pdf, id=333, 1011.78pt x 867.2
 4pt>
 File: ../../plots/acfMain_acfPlot_2016_02_05_16_49_00.pdf Graphic file (type pd
 f)
@@ -711,7 +711,7 @@ Package pdftex.def Info: ../../plots/acfMain_acfPlot_2016_02_05_16_49_00.pdf us
 ed on input line 250.
 (pdftex.def)             Requested size: 224.43976pt x 192.36812pt.
 
-<../../plots/acfMain_acfPlot_2016_02_05_16_49_09.pdf, id=319, 1011.78pt x 867.2
+<../../plots/acfMain_acfPlot_2016_02_05_16_49_09.pdf, id=334, 1011.78pt x 867.2
 4pt>
 File: ../../plots/acfMain_acfPlot_2016_02_05_16_49_09.pdf Graphic file (type pd
 f)
@@ -720,7 +720,7 @@ Package pdftex.def Info: ../../plots/acfMain_acfPlot_2016_02_05_16_49_09.pdf us
 ed on input line 255.
 (pdftex.def)             Requested size: 224.43976pt x 192.36812pt.
 
-<../../plots/acfMain_acfPlot_2016_02_05_16_52_16.pdf, id=320, 1011.78pt x 867.2
+<../../plots/acfMain_acfPlot_2016_02_05_16_52_16.pdf, id=335, 1011.78pt x 867.2
 4pt>
 File: ../../plots/acfMain_acfPlot_2016_02_05_16_52_16.pdf Graphic file (type pd
 f)
@@ -729,7 +729,7 @@ Package pdftex.def Info: ../../plots/acfMain_acfPlot_2016_02_05_16_52_16.pdf us
 ed on input line 260.
 (pdftex.def)             Requested size: 224.43976pt x 192.36812pt.
 
-<../../plots/acfMain_acfPlot_2016_02_05_16_49_27.pdf, id=321, 1011.78pt x 867.2
+<../../plots/acfMain_acfPlot_2016_02_05_16_49_27.pdf, id=336, 1011.78pt x 867.2
 4pt>
 File: ../../plots/acfMain_acfPlot_2016_02_05_16_49_27.pdf Graphic file (type pd
 f)
@@ -738,7 +738,7 @@ Package pdftex.def Info: ../../plots/acfMain_acfPlot_2016_02_05_16_49_27.pdf us
 ed on input line 265.
 (pdftex.def)             Requested size: 224.43976pt x 192.36812pt.
 
-<../../plots/acfMain_acfPlot_2016_02_05_16_45_21.pdf, id=322, 1011.78pt x 867.2
+<../../plots/acfMain_acfPlot_2016_02_05_16_45_21.pdf, id=337, 1011.78pt x 867.2
 4pt>
 File: ../../plots/acfMain_acfPlot_2016_02_05_16_45_21.pdf Graphic file (type pd
 f)
@@ -747,7 +747,7 @@ Package pdftex.def Info: ../../plots/acfMain_acfPlot_2016_02_05_16_45_21.pdf us
 ed on input line 275.
 (pdftex.def)             Requested size: 224.43976pt x 192.36812pt.
 
-<../../plots/acfMain_acfPlot_2016_02_05_16_45_37.pdf, id=323, 1011.78pt x 867.2
+<../../plots/acfMain_acfPlot_2016_02_05_16_45_37.pdf, id=338, 1011.78pt x 867.2
 4pt>
 File: ../../plots/acfMain_acfPlot_2016_02_05_16_45_37.pdf Graphic file (type pd
 f)
@@ -756,7 +756,7 @@ Package pdftex.def Info: ../../plots/acfMain_acfPlot_2016_02_05_16_45_37.pdf us
 ed on input line 280.
 (pdftex.def)             Requested size: 224.43976pt x 192.36812pt.
 
-<../../plots/acfMain_acfPlot_2016_02_05_16_45_48.pdf, id=324, 1011.78pt x 867.2
+<../../plots/acfMain_acfPlot_2016_02_05_16_45_48.pdf, id=339, 1011.78pt x 867.2
 4pt>
 File: ../../plots/acfMain_acfPlot_2016_02_05_16_45_48.pdf Graphic file (type pd
 f)
@@ -765,7 +765,7 @@ Package pdftex.def Info: ../../plots/acfMain_acfPlot_2016_02_05_16_45_48.pdf us
 ed on input line 285.
 (pdftex.def)             Requested size: 224.43976pt x 192.36812pt.
 
-<../../plots/acfMain_acfPlot_2016_02_05_16_45_57.pdf, id=325, 1011.78pt x 867.2
+<../../plots/acfMain_acfPlot_2016_02_05_16_45_57.pdf, id=340, 1011.78pt x 867.2
 4pt>
 File: ../../plots/acfMain_acfPlot_2016_02_05_16_45_57.pdf Graphic file (type pd
 f)
@@ -808,41 +808,7 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 302.
 
-! Undefined control sequence.
-<recently read> \aprox 
-                       
-l.302     \item For small window length ($\aprox
-                                                 15$), the template is small...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<recently read> \aprox 
-                       
-l.303     \item For window lengths $\aprox
-                                           30$ we see patterns. These shows ...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<recently read> \aprox 
-                       
-l.305     \item For window widths $\aprox
-                                          60$, there are two subsequences th...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-<../../plots/acfMain_corrGram_2016_02_05_16_49_00.pdf, id=1886, 1011.78pt x 867
+<../../plots/acfMain_corrGram_2016_02_05_16_49_00.pdf, id=1901, 1011.78pt x 867
 .24pt>
 File: ../../plots/acfMain_corrGram_2016_02_05_16_49_00.pdf Graphic file (type p
 df)
@@ -851,7 +817,7 @@ Package pdftex.def Info: ../../plots/acfMain_corrGram_2016_02_05_16_49_00.pdf u
 sed on input line 312.
 (pdftex.def)             Requested size: 224.43976pt x 192.36812pt.
 
-<../../plots/acfMain_corrGram_2016_02_05_16_49_10.pdf, id=1887, 1011.78pt x 867
+<../../plots/acfMain_corrGram_2016_02_05_16_49_10.pdf, id=1902, 1011.78pt x 867
 .24pt>
 File: ../../plots/acfMain_corrGram_2016_02_05_16_49_10.pdf Graphic file (type p
 df)
@@ -860,7 +826,7 @@ Package pdftex.def Info: ../../plots/acfMain_corrGram_2016_02_05_16_49_10.pdf u
 sed on input line 317.
 (pdftex.def)             Requested size: 224.43976pt x 192.36812pt.
 
-<../../plots/acfMain_corrGram_2016_02_05_16_52_17.pdf, id=1888, 1011.78pt x 867
+<../../plots/acfMain_corrGram_2016_02_05_16_52_17.pdf, id=1903, 1011.78pt x 867
 .24pt>
 File: ../../plots/acfMain_corrGram_2016_02_05_16_52_17.pdf Graphic file (type p
 df)
@@ -869,7 +835,7 @@ Package pdftex.def Info: ../../plots/acfMain_corrGram_2016_02_05_16_52_17.pdf u
 sed on input line 322.
 (pdftex.def)             Requested size: 224.43976pt x 192.36812pt.
 
-<../../plots/acfMain_corrGram_2016_02_05_16_49_28.pdf, id=1889, 1011.78pt x 867
+<../../plots/acfMain_corrGram_2016_02_05_16_49_28.pdf, id=1904, 1011.78pt x 867
 .24pt>
 File: ../../plots/acfMain_corrGram_2016_02_05_16_49_28.pdf Graphic file (type p
 df)
@@ -878,7 +844,7 @@ Package pdftex.def Info: ../../plots/acfMain_corrGram_2016_02_05_16_49_28.pdf u
 sed on input line 327.
 (pdftex.def)             Requested size: 224.43976pt x 192.36812pt.
 
-<../../plots/acfMain_corrGram_2016_02_05_16_45_22.pdf, id=1890, 1011.78pt x 867
+<../../plots/acfMain_corrGram_2016_02_05_16_45_22.pdf, id=1905, 1011.78pt x 867
 .24pt>
 File: ../../plots/acfMain_corrGram_2016_02_05_16_45_22.pdf Graphic file (type p
 df)
@@ -887,7 +853,7 @@ Package pdftex.def Info: ../../plots/acfMain_corrGram_2016_02_05_16_45_22.pdf u
 sed on input line 337.
 (pdftex.def)             Requested size: 224.43976pt x 192.36812pt.
 
-<../../plots/acfMain_corrGram_2016_02_05_16_45_38.pdf, id=1891, 1011.78pt x 867
+<../../plots/acfMain_corrGram_2016_02_05_16_45_38.pdf, id=1906, 1011.78pt x 867
 .24pt>
 File: ../../plots/acfMain_corrGram_2016_02_05_16_45_38.pdf Graphic file (type p
 df)
@@ -896,7 +862,7 @@ Package pdftex.def Info: ../../plots/acfMain_corrGram_2016_02_05_16_45_38.pdf u
 sed on input line 342.
 (pdftex.def)             Requested size: 224.43976pt x 192.36812pt.
 
-<../../plots/acfMain_corrGram_2016_02_05_16_45_48.pdf, id=1892, 1011.78pt x 867
+<../../plots/acfMain_corrGram_2016_02_05_16_45_48.pdf, id=1907, 1011.78pt x 867
 .24pt>
 File: ../../plots/acfMain_corrGram_2016_02_05_16_45_48.pdf Graphic file (type p
 df)
@@ -905,7 +871,7 @@ Package pdftex.def Info: ../../plots/acfMain_corrGram_2016_02_05_16_45_48.pdf u
 sed on input line 347.
 (pdftex.def)             Requested size: 224.43976pt x 192.36812pt.
 
-<../../plots/acfMain_corrGram_2016_02_05_16_45_57.pdf, id=1893, 1011.78pt x 867
+<../../plots/acfMain_corrGram_2016_02_05_16_45_57.pdf, id=1908, 1011.78pt x 867
 .24pt>
 File: ../../plots/acfMain_corrGram_2016_02_05_16_45_57.pdf Graphic file (type p
 df)
@@ -913,8 +879,18 @@ df)
 Package pdftex.def Info: ../../plots/acfMain_corrGram_2016_02_05_16_45_57.pdf u
 sed on input line 352.
 (pdftex.def)             Requested size: 224.43976pt x 192.36812pt.
- [8] [9 <../../plots/acfMain_corrGram_2016_02_05_16_49_00.pdf> <../../plots/acf
-Main_corrGram_2016_02_05_16_49_10.pdf
+
+Underfull \hbox (badness 10000) in paragraph at lines 368--369
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 370--371
+
+ []
+
+[8] [9 <../../plots/acfMain_corrGram_2016_02_05_16_49_00.pdf> <../../plots/acfM
+ain_corrGram_2016_02_05_16_49_10.pdf
 
 pdfTeX warning: pdflatex (file ../../plots/acfMain_corrGram_2016_02_05_16_49_10
 .pdf): PDF inclusion: multiple pdfs with page group included in a single page
@@ -940,33 +916,32 @@ pdfTeX warning: pdflatex (file ../../plots/acfMain_corrGram_2016_02_05_16_45_48
 pdfTeX warning: pdflatex (file ../../plots/acfMain_corrGram_2016_02_05_16_45_57
 .pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >]
+<../../plots/lcssMain_scoremat_2016_02_23_16_52_00.pdf, id=4320, 1011.78pt x 86
+7.24pt>
+File: ../../plots/lcssMain_scoremat_2016_02_23_16_52_00.pdf Graphic file (type 
+pdf)
+ <use ../../plots/lcssMain_scoremat_2016_02_23_16_52_00.pdf>
+Package pdftex.def Info: ../../plots/lcssMain_scoremat_2016_02_23_16_52_00.pdf 
+used on input line 393.
+(pdftex.def)             Requested size: 327.30946pt x 280.55283pt.
+ [11 <../../plots/lcssMain_scoremat_2016_02_23_16_52_00.pdf>]
 This exam contains 0 questions with 0 parts, 0 subparts, and 0 subsubparts.
 
 AED: lastpage setting LastPage
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 365.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 365.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 406.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 406.
 (/home/athul/machineLearning/neuralData/reports/natScenes/report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 365.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 365.
-
-
-Package rerunfilecheck Warning: File `report.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `report.out':
-(rerunfilecheck)             Before: 20181B6A4E289A3636722EFFDB35CFFD;613
-(rerunfilecheck)             After:  150AFBA7EB1D6EF8F931A6ED4B758DB6;690.
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 365.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 406.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 406.
+Package rerunfilecheck Info: File `report.out' has not changed.
+(rerunfilecheck)             Checksum: 9DCB3E1D7AEC5D02B18718791B13C54D;846.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 406.
  ) 
 Here is how much of TeX's memory you used:
- 11217 strings out of 493085
- 178894 string characters out of 6136917
- 304706 words of memory out of 5000000
- 14491 multiletter control sequences out of 15000+600000
+ 11237 strings out of 493085
+ 179446 string characters out of 6136917
+ 306706 words of memory out of 5000000
+ 14501 multiletter control sequences out of 15000+600000
  15010 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,11n,40p,604b,500s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -975,16 +950,17 @@ r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmsy8.pfb>
+t/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+msy8.pfb>
 Output written on /home/athul/machineLearning/neuralData/reports/natScenes/repo
-rt.pdf (10 pages, 11224406 bytes).
+rt.pdf (11 pages, 11481622 bytes).
 PDF statistics:
- 4345 PDF objects out of 5155 (max. 8388607)
- 289 compressed objects within 3 object streams
- 34 named destinations out of 1000 (max. 500000)
- 191 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 4678 PDF objects out of 5155 (max. 8388607)
+ 327 compressed objects within 4 object streams
+ 43 named destinations out of 1000 (max. 500000)
+ 220 words of extra memory for PDF output out of 10000 (max. 10000000)
 

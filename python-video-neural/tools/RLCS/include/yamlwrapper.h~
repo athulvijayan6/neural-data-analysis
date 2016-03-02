@@ -1,0 +1,42 @@
+/* Description: Contains wrapper modules to read yaml file and use it as 
+ * a dictionary as it's done in python.
+ * 
+ * NOTE: Currently this version of code only work for one level yaml 
+ * dictionaries of type- 
+ * #################################
+ * ## yaml file example ############
+ * <key 1>:
+ * - <value 1>
+ * - <...>
+ * - <value 2>
+ * <...>
+ * <key n>:
+ * - <value 1>
+ * - <...>
+ * - <value 2>
+ * ## yaml file example ends here###
+ * #################################
+ * THIS CODE WILL ONLY WORK FOR THIS SPECIFIC TYPE OF YAML FILE.
+ *
+ * Creation Date: 26 March 2014
+ * Author: Shrey Dutta
+ */
+
+#ifndef YAMLWRAPPER_H
+#define YAMLWRAPPER_H
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <assert.h>
+#include <string.h>
+#include <ctype.h>
+
+typedef struct YamlDict {
+  // to be continued ...
+
+} YamlDict;
+typedef YamlDict* YamlDictPTR
+
+YamlDict yaml_read_file(const FILE* yaml_file);
+

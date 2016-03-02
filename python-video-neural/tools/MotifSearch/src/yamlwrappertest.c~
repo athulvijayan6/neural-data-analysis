@@ -1,0 +1,40 @@
+/*
+ TO test yamlwrapper
+ */
+
+
+#include "yamlwrapper.h"
+#include "types.h"
+
+
+int main(int argc, char * argv[]) {
+  
+  if (argc!= 2+1) {
+    printf("USAGE: yamlwrappertest <yamlfile.yaml> <filetype>\n");
+    exit(-1);
+  }  
+  
+
+  char * yaml_filename = argv[1];
+  int type = atoi(argv[2]);
+  
+
+  FILE * yaml_fp = fopen(yaml_filename, "r");
+
+  
+  printf("I am in\n");
+
+
+  // TODO:print them and check
+
+  if (type == 1){
+    printf("I am type 1\n");
+    IntVector * yaml_data =   yaml_read_file_type1(yaml_fp);
+  } else {
+    printf("I am type 2\n");
+    StringVector * yaml_data = yaml_read_file_type2(yaml_fp);
+  }
+    
+
+  return 0;
+}

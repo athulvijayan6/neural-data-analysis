@@ -1,0 +1,32 @@
+/* Description: Contains routines for max-min operations
+ * Creation Date: 9 March 2014
+ * Author: Shrey Dutta
+ */
+
+
+#ifndef MAXMIN_H
+#define MAXMIN_H
+#include <stdio.h>
+#include <float.h>
+#include "types.h"
+
+// find the maximum value in the vector
+double max_vector_D(const DoubleVectorPTR vec_ptr);
+
+// find the argmax value in the vector
+int argmax_vector_D(const DoubleVectorPTR vec_ptr);
+
+// find the max in the matrix
+void max_matrix_D(const DoubleMatrixPTR mat_ptr, doublePTR max_num);
+
+// find the argmax and saves the index in  max_num_index
+void argmax_matrix_D(const DoubleMatrixPTR mat_ptr, IntVectorPTR max_num_index_ptr);
+void argmax_matrix_D_gen(const DoubleMatrixPTR mat_ptr, const int min_row, const int min_col, const int max_row, const int max_col, IntVectorPTR max_num_index_ptr);
+
+//TODO: Double Matrix is simply used just so that because of SaddlePoint thing. ie, it has to be DoubleMatrix for rlcs_window to work.
+int arg_find_smallest_num_after_D(const DoubleMatrixPTR mat_ptr, int num);
+int arg_find_largest_num_before_D(const DoubleMatrixPTR mat_ptr, int num);
+
+//TODO: write it for all other types.
+
+#endif

@@ -1,0 +1,28 @@
+#include "types.h"
+
+int main(int argc, char* argv[]) {
+  
+  char * buffer = read_file_into_buffer(argv[1]);
+  
+  int bi = 0;
+
+  int tsize = 100;
+  int offset;
+  DoubleMatrixPTR time_pitch_ptr = create_DoubleMatrixPTR();
+  alloc_members_DoubleMatrixPTR(time_pitch_ptr, tsize, 2);
+  int i;
+  for (i = 0; i < tsize; i++) {
+    sscanf(&buffer[bi], "%lf%lf%n", &(time_pitch_ptr->mat[i][0]), &(time_pitch_ptr->mat[i][1]), &offset);
+    printf("%lf\t%lf\n", time_pitch_ptr->mat[i][0], time_pitch_ptr->mat[i][1]);
+    bi += offset;
+  }
+  
+  
+  time_pitch_ptr->size = tsize;
+  free_members_DoubleMatrixPTR(time_pitch_ptr);
+  destroy_DoubleMatrixPTR(time_pitch_ptr);
+
+  free(buffer);
+
+  return  0;
+}

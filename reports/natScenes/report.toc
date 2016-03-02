@@ -9,3 +9,5 @@
 \contentsline {section}{\numberline {5}Searching for subsequences}{6}{section.5}
 \contentsline {subsection}{\numberline {5.1}ACF Gram}{8}{subsection.5.1}
 \contentsline {subsection}{\numberline {5.2}Longest common subsequences}{8}{subsection.5.2}
+\contentsline {subsubsection}{\numberline {5.2.1}Longest common segment set for neuron responses}{8}{subsubsection.5.2.1}
+\contentsline {section}{\numberline {6}**Future work}{11}{section.6}

@@ -251,6 +251,9 @@ INPUT ../../plots/acfMain_corrGram_2016_02_05_16_45_48.pdf
 INPUT /home/athul/machineLearning/neuralData/reports/natScenes/../../plots/acfMain_corrGram_2016_02_05_16_45_57.pdf
 INPUT ../../plots/acfMain_corrGram_2016_02_05_16_45_57.pdf
 INPUT ../../plots/acfMain_corrGram_2016_02_05_16_45_57.pdf
+INPUT /home/athul/machineLearning/neuralData/reports/natScenes/../../plots/lcssMain_scoremat_2016_02_23_16_52_00.pdf
+INPUT ../../plots/lcssMain_scoremat_2016_02_23_16_52_00.pdf
+INPUT ../../plots/lcssMain_scoremat_2016_02_23_16_52_00.pdf
 INPUT /home/athul/machineLearning/neuralData/reports/natScenes/report.aux
 INPUT /home/athul/machineLearning/neuralData/reports/natScenes/report.out
 INPUT /home/athul/machineLearning/neuralData/reports/natScenes/report.out
@@ -259,6 +262,7 @@ INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb
