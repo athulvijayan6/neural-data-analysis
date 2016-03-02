@@ -1,7 +1,7 @@
 % @Author: Athul Vijayan
 % @Date:   2014-05-09 13:56:20
-% @Last Modified by:   Athul
-% @Last Modified time: 2016-02-15 15:28:00
+% @Last Modified by:   athul
+% @Last Modified time: 2016-02-26 17:58:34
 
 \documentclass[11pt,paper=a4,answers]{exam}
 \usepackage{graphicx,lastpage}
@@ -90,13 +90,11 @@ on the next page\ldots}{\iflastpage{\footnotesize End}{\footnotesize Please go  
 \newpage
 \section{Introduction to motif analysis in neurons} % (fold)
 \label{sec:introduction}
-We aim to study how neurons encode the information in V1. Motifs are recurring patterns in the response of a single neuron or a population of neurons. If we take several trials of same stimuli, we try to extract what is invariant in these. The simplest example is getting similar spike rate in every trials for a neuron. This is called reliability of a neuron or a population. A neuron is reliable implies it produces similar responses to a stimuli every time it is presented.\\
-As in the next section will show, The responses of single neurons are not very correlated; or the time series responses of single neurons are reliable. Looking further, we search for recurring subsequences/ motifs. In a population of neurons, It will be a multidimensional subsequence.\\
+We aim to study how neurons encode the information in V1. Motifs are recurring patterns in the response of a single neuron or a population of neurons. If we take several trials of same stimuli, We expect `something' in the responses that is invariant. We try to extract what is invariant in these. This is called reliability of a neuron or a population. A neuron is reliable implies it produces similar responses to a stimuli every time it is presented.\\
+As in the next section will show, The responses of single neurons are not very correlated; or the time series responses of single neurons are not reliable. Looking further, we search for recurring subsequences/ motifs. In a population of neurons, It will be a multidimensional subsequence.\\
 Each section will dig deeper into topics.
 % section introduction (end)
 
-\section{Experiment} % (fold)
-\label{sec:experiment}
 \subsection{Setup} % (fold)
 \label{sub:setup}
 Calcium images were scanned using a Two-photon calcium imaging device on mice injected with GCaMP6f. Firing rates of these cells were then inferred using a fast nonnegative deconvolution algorithm on the Calcium imaging data.\\
@@ -195,7 +193,7 @@ From figure~\ref{img:ra} is seen that the above measure is very low ($<0.4$) for
 
 \section{Study of principal components} % (fold)
 \label{sec:study_of_correlation}
-It is known that there are three kinds of cells in V1 - simple, complex and orientation insensitive cells. Are there any correlation within these neurons? Is there redundancy in the code? We do an eigen analysis on the responses of all neurons in a mice to find how many uncorrelated dimensions are required to capture most of the variance.\\
+It is known that there are three kinds of cells in V1 - simple, complex and orientation insensitive cells. Are there any correlation within these neurons? Is there redundancy in the code? We do an Eigen analysis on the responses of all neurons in a mice to find how many uncorrelated dimensions are required to capture most of the variance.\\
 Here we take number of neurons as feature dimension. The responses are averages across trials to form each point in the feature space. Every such time series responses were stacked to form the rows. Then PCA is done on the data to find number of components to variance explained ratio. Figure~\ref{img:pca} shows the result for a mouse towards a sinusoidal grating stimuli.
 \begin{figure}
     \centering
