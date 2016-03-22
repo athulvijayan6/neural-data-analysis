@@ -1,10 +1,21 @@
 # -*- coding: utf-8 -*-
 # @Author: Athul
 # @Date:   2016-03-07 18:04:47
-# @Last Modified by:   Athul
-# @Last Modified time: 2016-03-08 12:25:22
+# @Last Modified by:   Athul Vijayan
+# @Last Modified time: 2016-03-18 10:29:02
+
+# A python implementation of algorithm in
+# 1.Shrey Dutta, Krishnaraj Sekhar PV, Hema A. Murthy:
+#   Raga Verification in Carnatic Music Using Longest Common Segment Set. ISMIR 2015: 
+#    605-611
+# 2.S. Dutta and H. A. Murthy, "A modified rough longest common subsequence algorithm for
+#   motif spotting in an Alapana of Carnatic Music," Communications (NCC), 2014 Twentieth
+#   National Conference on, Kanpur, 2014, pp. 1-6.
+
+
 import numpy as np
 from math import floor
+import matplotlib.pyplot as plt
 
 def distance(x, y, measure="euclidean"): # distance measure.
     if (measure == "euclidean"):
@@ -15,6 +26,13 @@ def distance(x, y, measure="euclidean"): # distance measure.
         print("Invalid measure! ")
 
 def backtrack(X, Y, score, diag, cost):
+    '''Backtracks through the score matrix produced to find the matching signals.
+    Returns a variable segment which is a p x 3 matrix.
+        p is the length of subsequence set.
+        First column denotes index in query
+        Second column denotes index in reference
+        Third column denotes corresponding score
+    Cut at zeros in scores column to find exact set of subsequences'''
     # Find max and min of score matrix
     maxScore = -1*np.inf
     for i in xrange(score.shape[0]):
@@ -45,6 +63,13 @@ def backtrack(X, Y, score, diag, cost):
     
 
 def rlcs(X, Y, tau_dist=0.005, delta=0.5):
+    '''Performs the dynamic programming for RLCS. And finally returns score matrices for further analysis.
+    parameters:
+        X - Query signal; Either a 1D numpy array or 2D array with columns as feature dim and rows as number of samples.
+        Y - Reference signal; Either a 1D numpy array or 2D array with columns as feature dim and rows as number of samples
+        tau_dist - with normalized distance below tau_dist, samples are considered similar.
+        delta - penalty for gap.
+    '''
     # if the input is vector (1D problem), count the elements
     # if not, count number of rows. Each point is a row and each column is a dim
     m = X.shape[0]   # Expect matrix/ multidimensional input
@@ -53,7 +78,6 @@ def rlcs(X, Y, tau_dist=0.005, delta=0.5):
         m = X.size
     if (n == 1):
         n = Y.size
-
     # find min distance and max distance
     maxDist = minDist = distance(X[0], Y[0])
     for i in xrange(m):
@@ -117,14 +141,13 @@ def rlcs(X, Y, tau_dist=0.005, delta=0.5):
 
     lri = score.shape[0] - 1; # last row index of score matrix
     lci = score.shape[1] - 1; # last column index of score matrix
-
     for i in xrange (lri):
         # last row
-        if (diag[lri-1, i] == 1):
+        if (diag[i, lci-1] == 1):
             score[i, lci] = (partial[i, lci-1]*np.square(p) + np.square(cost[i, lci-1]))/np.square(p)
         else:
             score[i, lci] = score[i, lci-1]
-        diag[lri, i] = 3                    # left
+        diag[i, lci] = 3                    # left
 
     for i in xrange (lci):
         # last row
@@ -138,6 +161,24 @@ def rlcs(X, Y, tau_dist=0.005, delta=0.5):
     diag[lri, lci] = 2
 
     return score, diag, cost
+
+def plotLCS(segment, X, Y):
+    '''Plots the common subsequence with the score.
+    From one sample to another, The following inferences can be drawn.
+    1. Diagonal movement - next sample is a match - score increases.
+    2. Right - A gap is fount, next sample of query is matched with current sample of reference. - score decreases due to penalty.
+    3. Up = A gap is fount, current sample of query is matched with next sample of reference. - score decreases due to penalty.
+
+    matplotlib axis and fig is returned.'''
+    fig, ax = plt.subplots(figsize=(14, 12))
+    match = np.zeros((X.shape[0], Y.shape[0]))
+    for m in segment:
+        i, j = m[0], m[1]
+        match[i-1, j-1] = m[2]
+    cax = ax.imshow(match, aspect='auto', origin='lower', interpolation="none")
+    ax.grid(True)
+    cbar = fig.colorbar(cax)
+    return fig, ax    
 
 if __name__ == '__main__':
     print(''' This module is not intended to run from interpreter.
