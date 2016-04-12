@@ -1,19 +1,20 @@
 # -*- coding: utf-8 -*-
 # @Author: Athul Vijayan
 # @Date:   2016-04-05 23:39:31
-# @Last Modified by:   Athul Vijayan
-# @Last Modified time: 2016-04-06 08:43:32
+# @Last Modified by:   Athul
+# @Last Modified time: 2016-04-06 12:53:20
 from __future__ import division
 import numpy as np
 import scipy.io
-import os
+import itertools
+import re, os
+import pickle
 from lcs import rlcs as rlcs
 import datetime
 import matplotlib.pyplot as plt
 from matplotlib import gridspec
 plt.style.use('ggplot')
-
-plotDir = '../plots/'
+plt.ioff()
 
 dataRoot = '../datasets/'
 
@@ -23,18 +24,25 @@ datapaths = glob.glob('../datasets/**/**/**/AmpMov.mat')
 
 tau_dist = 0.005
 
+allSegs = {}
 for path in datapaths:
+
+    plotDir = '../plots/'+re.search("[0-9\-]+", path).group()+'/'
+    if not os.path.exists(plotDir):
+        os.makedirs(plotDir)
+
     data    = scipy.io.loadmat(path)
     data    = data['AmpMov']
+    NumNeurons = data[0, 0]['NumNeurons']
     MT_nat  = data[0, 0]['MT_nat']
+    
     vidIndex = 0
     data    = MT_nat
     sample_rate = 20
     ensembleSpikeRate = data[0, vidIndex]
-    n1Set = xrange(5)
-    n2Set = xrange(10, 15)
 
-    for n1, n2 in zip(n1Set, n2Set)
+    miceSegs = {}
+    for n1, n2 in [j for j in itertools.combinations(xrange(NumNeurons), 2)]:
         s1 = ensembleSpikeRate[n1]
         s2 = ensembleSpikeRate[n2]
 
@@ -52,6 +60,7 @@ for path in datapaths:
         lens = [i.shape[0] for i in xSegs]
         idx = lens.index(max(lens))
         xseg, yseg = xSegs[idx], ySegs[idx]
+        miceSegs[(n1, n2)] = xSegs
         
         ax.plot(xrange(xseg.size), xseg)
         ax.plot(xrange(yseg.size), yseg)
@@ -62,7 +71,7 @@ for path in datapaths:
         ax.annotate(text.format(n1, n2), xy=(0.01, 0.01), xycoords='axes fraction', fontsize=12)
         now = datetime.datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
         fig.savefig(plotDir+'rlcsMain_getSegs_'+now+'.eps')
-        close()
+        plt.close()
 
         # Plot the score matrix
         fig, ax = rlcs.plotLCS(segment, X, Y)
@@ -73,6 +82,10 @@ for path in datapaths:
         ax.annotate(text.format(n1, n2), xy=(0.01, 0.01), xycoords='axes fraction', fontsize=12)
         now = datetime.datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
         fig.savefig(plotDir+'rlcsMain_backtrack_'+now+'.pdf')
-        close()
+        plt.close()
 
-        plt.show()
+    allSegs[path] = miceSegs
+with open('outfile.pkl', 'wb') as f:
+    pickle.dump(allSegs, f)
+
+plt.show()
