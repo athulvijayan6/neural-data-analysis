@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # @Author: Athul Vijayan
 # @Date:   2016-04-05 23:39:31
-# @Last Modified by:   Athul
-# @Last Modified time: 2016-04-06 12:53:20
+# @Last Modified by:   Athul Vijayan
+# @Last Modified time: 2016-04-12 08:28:15
 from __future__ import division
 import numpy as np
 import scipy.io
@@ -28,6 +28,7 @@ allSegs = {}
 for path in datapaths:
 
     plotDir = '../plots/'+re.search("[0-9\-]+", path).group()+'/'
+    print plotDir
     if not os.path.exists(plotDir):
         os.makedirs(plotDir)
 
