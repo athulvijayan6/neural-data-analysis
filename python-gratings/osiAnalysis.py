@@ -3,14 +3,17 @@
 # @Author: Athul
 # @Date:   2015-09-04 16:42:24
 # @Last Modified by:   Athul
-# @Last Modified time: 2016-02-05 12:28:49
+# @Last Modified time: 2016-04-24 14:08:29
 from __future__ import division
 import numpy as np
 import scipy.io
+import datetime
 import osi.osi as osi
 from scipy.cluster.vq import kmeans, whiten, vq
 import matplotlib.pyplot as plt
 plt.style.use('ggplot')
+
+plotDir = '../plots/'
 
 dataTargets = ['../datasets/driftingGratings/Mouse-A/', '../datasets/driftingGratings/Mouse-B/', '../datasets/driftingGratings/Mouse-C/', '../datasets/driftingGratings/Mouse-D/', '../datasets/driftingGratings/Mouse-E/']
 for mouse in xrange(1):
@@ -94,11 +97,13 @@ for mouse in xrange(1):
         ax.set_title('Classification of simple and complex cells')
         ax.set_xlabel('Orientation index')
         ax.set_title('Direction index')
+        now = datetime.datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
+        fig.savefig(plotDir+'gratings_cluster_'+now+'.pdf')
     # ----------------------------------------------------------
 
     # % % 1. Plots each time-series data of length 120 with 
     # % % each trial of an experiment with seperate color
-    if True:
+    if False:
         theta = 1
         fig, ax = plt.subplots()
         for j in xrange(10):
@@ -108,6 +113,8 @@ for mouse in xrange(1):
         ax.set_title('Plots of time-series data with each trial in diffenrent color')
         ax.set_xlabel('time')
         ax.set_title('Spikes')
+        now = datetime.datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
+        fig.savefig(plotDir+'gratings_ts_'+now+'.pdf')
     # # % --------------------------------------------------------
 
     # % --------------------------3-----------------------------
@@ -120,6 +127,8 @@ for mouse in xrange(1):
         ax.set_title('Neuron response (spike rate) Vs direction of stimuli')
         ax.set_xlabel('angle in radians')
         ax.set_title('Spike rate')
+        now = datetime.datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
+        fig.savefig(plotDir+'gratings_res_'+now+'.pdf')
     # % --------------------------------------------------------
 
 
@@ -127,8 +136,8 @@ for mouse in xrange(1):
     # % 4. Polar plot of Directional selectivity
     # % Take a neuron, there will be 10 plots corresponding to each trial of the experiment
     # % plot each of the 10 plots in a figure to verify the similarity in response
-    if False:
-        plt.figure()
+    if True:
+        fig = plt.figure()
         ax = plt.subplot(111, polar=True)
         plt.grid(True)
         for trial in xrange(10):
@@ -146,6 +155,8 @@ for mouse in xrange(1):
         ax.set_title('Polar plot of Directional selectivity')
         ax.text(1.2, 0.8, 'DSI= %.2f' % np.abs(dircirvar[neuronId]))
         plt.legend(loc='upper right')
+        now = datetime.datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
+        fig.savefig(plotDir+'gratings_dirpolar_'+now+'.pdf')
     # % --------------------------------------------------------
 
     # % --------------------------5-----------------------------
@@ -155,8 +166,8 @@ for mouse in xrange(1):
 
     # % There are observations for 16 angles, but there are only 8 orientations.
     # % We can treat them as two different observations. More data !
-    if False:
-        plt.figure()
+    if True:
+        fig = plt.figure()
         ax = plt.subplot(111, polar=True)
         plt.grid(True)
         del avgData
@@ -178,8 +189,10 @@ for mouse in xrange(1):
         ax.set_xticklabels(['0', '', '45', '', '90', '', '135', ''])
         ax.set_title('Polar plot of Orientation selectivity')
         ax.text(1, 0.8, 'neuron with OSI= %.2f' % np.abs(cirvar[neuronId])+'\nPreffered orientation= %.2f' % np.angle(cirvar[neuronId], deg=True)+' deg')
+        now = datetime.datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
+        fig.savefig(plotDir+'gratings_oripolar_'+now+'.pdf')
 
     plt.legend(loc='upper right')
-    plt.show()    
+    plt.show()
     # % ********************** Plots ************************
 
