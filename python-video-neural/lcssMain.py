@@ -3,7 +3,7 @@
 # @Author: Athul
 # @Date:   2016-02-23 16:00:11
 # @Last Modified by:   Athul
-# @Last Modified time: 2016-04-06 10:12:00
+# @Last Modified time: 2016-04-25 11:13:45
 from __future__ import division
 import numpy as np
 import scipy.io
@@ -17,7 +17,7 @@ plotDir = '../plots/'
 
 # ============================ Loading neuronal data here ===============
 dataRoot = '../datasets/video/'
-data = scipy.io.loadmat('../datasets/video/2014-03-04/1/AmpMov.mat')
+data = scipy.io.loadmat('../datasets/video/2013-28-06/1/AmpMov.mat')
 data = data['AmpMov']
 
 
@@ -25,17 +25,13 @@ NumMovies       = data[0, 0]['NumMovies']
 NumNeurons      = data[0, 0]['NumNeurons']
 
 MT_nat          = data[0, 0]['MT_nat']
-MT_K0           = data[0, 0]['MT_K0']
-MT_K1           = data[0, 0]['MT_K1']
-MT_K1_5         = data[0, 0]['MT_K1_5']
-MT_K3           = data[0, 0]['MT_K3']
 
 vidIndex = 0
 neuronId = 20
-data = MT_K0
+data = MT_nat
 sample_rate = 20
 ensembleSpikeRate = data[0, vidIndex]
-n1 , n2 = 10, 25
+n1 , n2 = 10, 30
 s1 = ensembleSpikeRate[n1]
 s2 = ensembleSpikeRate[n2]
 
