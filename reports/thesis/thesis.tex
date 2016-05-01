@@ -5,11 +5,12 @@
 \usepackage{threeparttable}
 \usepackage{setspace}
 \usepackage{amsmath}
+\usepackage{gensymb}
 \usepackage{amsthm}
 \usepackage{txfonts,pxfonts,amsfonts}
 \usepackage{epsfig}
 \usepackage{caption}
-\usepackage{subfig}
+\usepackage{subcaption}
 \usepackage{graphicx}
 % \usepackage[square,numbers,sort]{natbib}
 \usepackage[square]{natbib}
@@ -19,7 +20,7 @@
 
 
 %\include{commands}
-
+\newcommand{\plt}{thesis_plots}
 % Strut macros for skipping spaces above and below text in tables. 
 \def\abovestrut#1{\rule[0in]{0in}{#1}\ignorespaces}
 \def\belowstrut#1{\rule[-#1]{0in}{#1}\ignorespaces}
@@ -142,16 +143,16 @@ xxxxxxxxxxx \= xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx \kill
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Overview of Thesis}
+\chapter{Introduction}
 \label{chap:intro}
-\section{Introduction} % (fold)
-\label{sec:introduction}
-
-% section introduction (end)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Background and Previous work}
 \label{chap:lit}
+\section{Visual pathway in brain} % (fold)
+\label{sec:visual_pathway_in_brain}
+
+% section visual_pathway_in_brain (end)
 \section{Experiment setup} % (fold)
 \label{sec:experiment_setup}
 \subsection{Sinusoidal grating visual stimuli} % (fold)
@@ -173,17 +174,61 @@ xxxxxxxxxxx \= xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx \kill
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Analyzing neuronal properties}
 \label{chap:searchmotif}
-Characteristics of neurons in the V1 are discussed in the background section. In this chapter, we use experimental data to demonstrate the claimed properties of neurons in V1. With the data 
+Characteristics of neurons in the V1 are discussed in the background section. In this chapter, we use experimental data to demonstrate the claimed properties of neurons in V1. In the experiment, a drifting sinusoidal grating video is shown to awake mice and neuronal responses were recorded. See Section~\ref{sub:sinusoidal_grating_visual_stimuli} for detailed experiment setup. 
+
+Average response of a neuron is modeled as a function of orientation using a Gaussian function. Similarly, average response to various directions are modeled using a mixture of Gaussian functions. Root mean square of residuals are used as a goodness of fit measure.
+
+Neurons in V1 are classified into simple, complex and unselective cells. Classifying a neuron into either of this class is useful as we can find the population of similar cells in the brain. Rather than thresholding OSI and DSI, We have used a k-means clustering algorithm with more features to classify cells.
 \section{Quantifying Orientation and Directional selectivity} % (fold)
 \label{sec:quantifying_orientation_and_directional_selectivity}
-
+Modern imaging technologies allow examining responses of neurons with clarity. 
 % section quantifying_orientation_and_directional_selectivity (end)
 
-\section{Modeling neuronal response to sinusoidal gratings stimuli} % (fold)
+\section{Modeling neuronal response} % (fold)
 \label{sec:modeling_neuronal_response_to_sinusoidal_gratings_stimuli}
+Modeling the response of neuron to various orientations and visualizing is a great way to see if in fact there is a orientation selectivity. If the cell seems selective, we can characterize the degree of selectivity and preferred orientation.
 
+Orientation tuning curve is modeled using a Gaussian function with constant offset. The empirical form of the orientation tuning curve is,
+$$R_o(\theta) = C + R_p \exp\left\{\frac{-||\theta-\theta_{pref}||^2}{2\sigma^2}\right\}$$
+Where $R_o(\theta)$ is the time-averaged response of neuron to angle of orientation $\theta$. Parameter $\theta_{pref}$ is the preferred orientation of the neuron. Tuning width $\sigma$  tell us how much the cell is selective. $C$ is a constant offset.
+
+Similarly, we can model direction tuning curve using a mixture of Gaussian functions with a constant offset. 
+$$R_d(\theta) = C + R_p \exp\left\{\frac{-||\theta-\theta_{pref}||^2}{2\sigma_1^2}\right\} + R_n \exp\left\{\frac{-||\theta-\theta_{null}||^2}{2\sigma_2^2}\right\}$$
+Where $R_o(\theta)$ is the time-averaged response of neuron to angle of direction $\theta$. Relative magnitude of tuning widths, $\sigma_1$ and $\sigma_2$ denote the amount of directional selectivity. $C$ is a constant offset.
 % section modeling_neuronal_response_to_sinusoidal_gratings_stimuli (end)
 
+Parameters are estimated by minimizing squared sum of error. Sum of squared error is defined as:
+$$SSE = \sum_{i=1}^N ||R(\theta_i) - R_o(\theta_i)||^2$$
+A gradient descent algorithm finds the optimum parameters by minimizing SSE.
+In Figure~\ref{fig:curvefit_complex} , fit of tuning curves of a complex cell is given. The distinct peak in the orientation tuning curve shows selectivity to orientation $\theta_{pref}$. In the direction tuning curve, peaks of different magnitude shows one direction is more preferred than other.
+\begin{figure}[h]
+  \begin{subfigure}[b]{0.5\textwidth}
+    \includegraphics[width=\linewidth]{\plt/gratings_crvefit_n_3_2016_05_01_15_40_28.pdf}
+    \caption{Orientation tuning curve}
+    \label{fig:oritune_complex}
+  \end{subfigure}%
+  \begin{subfigure}[b]{0.5\textwidth}
+    \includegraphics[width=\linewidth]{\plt/gratings_crvefit_n_3_2016_05_01_15_40_28.pdf}
+    \caption{Direction tuning curve}
+    \label{fig:dirtune_complex}
+  \end{subfigure}%
+  \caption{Fit of orientation and direction tuning curves of a neuron. The distinct peak in the orientation tuning curve shows selectivity to orientation $\theta_{pref}$. Different $\sigma_1$ and $\sigma_2$ in direction tuning curve shows direction sensitive cell. - Thus a complex cell}\label{fig:curvefit_complex}
+\end{figure}
+
+In Figure~\ref{fig:curvefit_simple} , fit of tuning curves of a complex cell is given. The distinct peak in the orientation tuning curve shows selectivity to orientation $\theta_{pref}$. In the direction tuning curve, peaks of same magnitude shows direction is irrelevant.
+\begin{figure}[h]
+  \begin{subfigure}[b]{0.5\textwidth}
+    \includegraphics[width=\linewidth]{\plt/gratings_crvefit_n_0_2016_05_01_15_40_26.pdf}
+    \caption{Orientation tuning curve}
+    \label{fig:oritune_simple}
+  \end{subfigure}%
+  \begin{subfigure}[b]{0.5\textwidth}
+    \includegraphics[width=\linewidth]{\plt/gratings_crvefit_n_0_2016_05_01_15_40_26.pdf}
+    \caption{Direction tuning curve}
+    \label{fig:dirtune_simple}
+  \end{subfigure}%
+  \caption{Fit of orientation and direction tuning curves of a neuron. The distinct peak in the orientation tuning curve shows selectivity to orientation $\theta_{pref}$. Similar $\sigma_1$ and $\sigma_2$ in direction tuning curve direction is irrelevant. - Thus a simple cell}\label{fig:curvefit_simple}
+\end{figure}
 \section{Classification of neurons based on selectivity} % (fold)
 \label{sec:classification_of_neurons_based_on_selectivity}
 

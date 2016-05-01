@@ -3,7 +3,7 @@
 # @Author: Athul
 # @Date:   2015-09-04 16:42:24
 # @Last Modified by:   Athul
-# @Last Modified time: 2016-04-24 14:08:29
+# @Last Modified time: 2016-05-01 15:42:06
 from __future__ import division
 import numpy as np
 import scipy.io
@@ -77,7 +77,10 @@ for mouse in xrange(1):
     # ========================== Gaussian fit ===================================
     
     # % ====================== Plots =======================
-    neuronId = 63
+    # neuronId = 63 % good osi dsi curve, simple cell
+    # neuronId = 52 % good osi dsi curve, complex cell
+    neuronId = 58
+
 
     # % ----------------------- --------------------------------
     if False:
@@ -98,7 +101,7 @@ for mouse in xrange(1):
         ax.set_xlabel('Orientation index')
         ax.set_title('Direction index')
         now = datetime.datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
-        fig.savefig(plotDir+'gratings_cluster_'+now+'.pdf')
+        fig.savefig(plotDir+'gratings_cluster_n'+str(neuronId)+'_'+now+'.pdf')
     # ----------------------------------------------------------
 
     # % % 1. Plots each time-series data of length 120 with 
@@ -114,7 +117,7 @@ for mouse in xrange(1):
         ax.set_xlabel('time')
         ax.set_title('Spikes')
         now = datetime.datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
-        fig.savefig(plotDir+'gratings_ts_'+now+'.pdf')
+        fig.savefig(plotDir+'gratings_ts_n'+str(neuronId)+'_'+now+'.pdf')
     # # % --------------------------------------------------------
 
     # % --------------------------3-----------------------------
@@ -128,7 +131,7 @@ for mouse in xrange(1):
         ax.set_xlabel('angle in radians')
         ax.set_title('Spike rate')
         now = datetime.datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
-        fig.savefig(plotDir+'gratings_res_'+now+'.pdf')
+        fig.savefig(plotDir+'gratings_res_n'+str(neuronId)+'_'+now+'.pdf')
     # % --------------------------------------------------------
 
 
@@ -156,7 +159,7 @@ for mouse in xrange(1):
         ax.text(1.2, 0.8, 'DSI= %.2f' % np.abs(dircirvar[neuronId]))
         plt.legend(loc='upper right')
         now = datetime.datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
-        fig.savefig(plotDir+'gratings_dirpolar_'+now+'.pdf')
+        fig.savefig(plotDir+'gratings_dirpolar_n'+str(neuronId)+'_'+now+'.pdf')
     # % --------------------------------------------------------
 
     # % --------------------------5-----------------------------
@@ -190,7 +193,7 @@ for mouse in xrange(1):
         ax.set_title('Polar plot of Orientation selectivity')
         ax.text(1, 0.8, 'neuron with OSI= %.2f' % np.abs(cirvar[neuronId])+'\nPreffered orientation= %.2f' % np.angle(cirvar[neuronId], deg=True)+' deg')
         now = datetime.datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
-        fig.savefig(plotDir+'gratings_oripolar_'+now+'.pdf')
+        fig.savefig(plotDir+'gratings_oripolar_n'+str(neuronId)+'_'+now+'.pdf')
 
     plt.legend(loc='upper right')
     plt.show()
