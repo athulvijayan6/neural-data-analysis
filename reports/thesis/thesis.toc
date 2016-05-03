@@ -12,10 +12,14 @@
 \contentsline {subsection}{\numberline {2.2.2}Natural videos visual stimuli}{2}{subsection.2.2.2}
 \contentsline {section}{\numberline {2.3}Orientation and Directional selectivity of neurons in V1}{2}{section.2.3}
 \contentsline {chapter}{\numberline {3}Analyzing neuronal properties}{3}{chapter.3}
-\contentsline {section}{\numberline {3.1}Quantifying Orientation and Directional selectivity}{4}{section.3.1}
-\contentsline {section}{\numberline {3.2}Modeling neuronal response}{4}{section.3.2}
-\contentsline {section}{\numberline {3.3}Classification of neurons based on selectivity}{5}{section.3.3}
-\contentsline {chapter}{\numberline {4}Searching for Motifs}{7}{chapter.4}
-\contentsline {chapter}{\numberline {5}Rough Longest Common Subsequence}{8}{chapter.5}
-\contentsline {chapter}{\numberline {6}Inferences and Future work}{9}{chapter.6}
-\contentsline {chapter}{\numberline {A}Neural visual pathway}{10}{appendix.A}
+\contentsline {section}{\numberline {3.1}Quantifying Orientation and Directional selectivity}{3}{section.3.1}
+\contentsline {section}{\numberline {3.2}Modeling neuronal response}{6}{section.3.2}
+\contentsline {section}{\numberline {3.3}Finding similarly tuned neurons}{7}{section.3.3}
+\contentsline {section}{\numberline {3.4}Study of principal components}{9}{section.3.4}
+\contentsline {section}{\numberline {3.5}Study of Reliability}{11}{section.3.5}
+\contentsline {chapter}{\numberline {4}Searching for Motifs}{13}{chapter.4}
+\contentsline {section}{\numberline {4.1}Study of Autocorrelation Function (ACF)}{14}{section.4.1}
+\contentsline {section}{\numberline {4.2}ACFGram}{14}{section.4.2}
+\contentsline {chapter}{\numberline {5}Rough Longest Common Subsequence}{15}{chapter.5}
+\contentsline {chapter}{\numberline {6}Inferences and Future work}{16}{chapter.6}
+\contentsline {chapter}{\numberline {A}Neural visual pathway}{17}{appendix.A}

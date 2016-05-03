@@ -1,7 +1,22 @@
-\begin{thebibliography}{0}
+\begin{thebibliography}{2}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
 \expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+
+\bibitem[{Rosenbaum {\em et~al.\/}(2014)Rosenbaum, Tchumatchenko, and
+  Moreno-Bote}]{rosenbaum2014correlated}
+{\bf Rosenbaum, R.}, {\bf T.~Tchumatchenko}, and {\bf R.~Moreno-Bote}, {\em
+  Correlated neuronal activity and its relationship to coding, dynamics and
+  network architecture:\/}.
+\newblock Frontiers Research Topics. Frontiers E-books, 2014.
+\newblock ISBN 9782889193578.
+\newblock \urlprefix\url{https://books.google.co.in/books?id=AQNdBgAAQBAJ}.
+
+\bibitem[{Tiesinga {\em et~al.\/}(2008)Tiesinga, Fellous, and
+  Sejnowski}]{tiesinga2008regulation}
+{\bf Tiesinga, P.}, {\bf J.-M. Fellous}, and {\bf T.~J. Sejnowski} (2008).
+\newblock Regulation of spike timing in visual cortical circuits.
+\newblock {\em Nature reviews neuroscience\/}, {\bf 9}(2), 97--107.
 
 \end{thebibliography}

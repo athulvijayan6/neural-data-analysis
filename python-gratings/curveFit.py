@@ -3,7 +3,7 @@
 # @Author: Athul Vijayan
 # @Date:   2015-09-19 22:47:47
 # @Last Modified by:   Athul
-# @Last Modified time: 2016-05-01 15:40:19
+# @Last Modified time: 2016-05-02 12:52:57
 from __future__ import division
 import numpy as np
 import scipy.io
@@ -40,28 +40,67 @@ for mouse in xrange(1):
         cirvar[i], dircirvar[i], OSI[i], DSI[i] = osi.computeAll(spikeRate[i])
     spikeRate = spikeRate[np.argsort(np.abs(cirvar))[::-1]]
 
-    # ========================= Fit curve =============================
+    # # ========================= Fit orientation curve =============================
     numNeurons = spikeRate.shape[0]
-    w0 = np.array([4, 50, np.pi/2, 1, 50, 3*np.pi/2, 1])
-    what = np.zeros((numNeurons, w0.size))
-    sse = np.zeros((numNeurons,))
+    w0_ori = np.array([4, 50, np.pi/2, 1])
+    what_ori = np.zeros((numNeurons, w0_ori.size))
+    sse_ori = np.zeros((numNeurons,))
     for n in xrange(numNeurons):
-        what[n], sse[n] = fit.fitCurve(spikeRate[n, :, :], w0)
+        spikeRate_ori = spikeRate
+        spikeRate_ori[n, 80:, 1] = spikeRate[n, :80, 1]
+        what_ori[n], sse_ori[n] = fit.fitCurve(spikeRate_ori[n, :80, :], w0_ori, func=fit.uniGaussian)
+
+    # ========================= Fit direction curve =============================
+    numNeurons = spikeRate.shape[0]
+    w0_dir = np.array([4, 50, np.pi/2, 1, 50, 3*np.pi/2, 1])
+    what_dir = np.zeros((numNeurons, w0_dir.size))
+    sse_dir = np.zeros((numNeurons,))
+    for n in xrange(numNeurons):
+        what_dir[n], sse_dir[n] = fit.fitCurve(spikeRate[n, :, :], w0_dir, func=fit.doubleGaussian)
 
     # ========================== Plot fits ============================
+    # Fit of orientation responses
     if True:    
-        for n in xrange(10):
+        for n in [3]:
+            fig = plt.figure()
+            plt.subplot(111)
+            gs = gridspec.GridSpec(2, 1, height_ratios=[3, 1])
+            ax0, ax1 = plt.subplot(gs[0]), plt.subplot(gs[1])
+            for trial in xrange(10):
+                trialData = spikeRate[n, trial:80:10, :]
+                ax0.plot(np.degrees(trialData[:, 1]), trialData[:, 0], linewidth=1)
+                res = trialData[:, 0] - fit.uniGaussian(trialData[:, 1], what_ori[n])
+                ax1.plot(np.degrees(trialData[:, 1]), res, linewidth=1)
+            x = np.arange(0, 180, 5)
+            y = fit.uniGaussian(np.radians(x), what_ori[n])
+            ax1.plot(x, np.ones(x.shape), color='black')
+            ax0.plot(x, y, linewidth=3, color='crimson', label='Fitted curve')
+
+            ax0.set_title('Fitting of orientation selectivity')
+            ax0.set_xlabel(r'$\theta$')
+            ax0.set_ylabel('spikerate')
+
+            ax1.set_title('Residuals')
+            ax1.set_xlabel(r'$\theta$')
+            ax1.set_ylabel('residuals')
+            plt.annotate('SSE: '+str(sse_ori[n]), xy=(0, 1), xytext=(12, -12), va='top', xycoords='axes fraction', textcoords='offset points')
+            now = datetime.datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
+            fig.savefig(plotDir+'gratings_crvefit_osi_n_'+str(n)+'_'+now+'.pdf')
+
+    # Fit of direction responses
+    if False:    
+        for n in [0]:
             fig = plt.figure()
             plt.subplot(111)
             gs = gridspec.GridSpec(2, 1, height_ratios=[3, 1])
             ax0, ax1 = plt.subplot(gs[0]), plt.subplot(gs[1])
             for trial in xrange(10):
                 trialData = spikeRate[n, trial::10, :]
-                ax0.plot(np.degrees(trialData[:, 1]), trialData[:, 0], linewidth=1, label='expe data of trial'+str(trial))
-                res = trialData[:, 0] - fit.doubleGaussian(trialData[:, 1], what[n])
-                ax1.plot(np.degrees(trialData[:, 1]), res, linewidth=1, label='trial '+str(trial))
+                ax0.plot(np.degrees(trialData[:, 1]), trialData[:, 0], linewidth=1)
+                res = trialData[:, 0] - fit.doubleGaussian(trialData[:, 1], what_dir[n])
+                ax1.plot(np.degrees(trialData[:, 1]), res, linewidth=1)
             x = np.arange(0, 360, 5)
-            y = fit.doubleGaussian(np.radians(x), what[n])
+            y = fit.doubleGaussian(np.radians(x), what_dir[n])
             ax1.plot(x, np.ones(x.shape), color='black')
             ax0.plot(x, y, linewidth=3.5, color='crimson', label='Fitted curve')
 
@@ -72,7 +111,7 @@ for mouse in xrange(1):
             ax1.set_title('Residuals')
             ax1.set_xlabel(r'$\theta$')
             ax1.set_ylabel('residuals')
-            plt.annotate('SSE: '+str(sse[n]), xy=(0, 1), xytext=(12, -12), va='top', xycoords='axes fraction', textcoords='offset points')
+            plt.annotate('SSE: '+str(sse_dir[n]), xy=(0, 1), xytext=(12, -12), va='top', xycoords='axes fraction', textcoords='offset points')
             now = datetime.datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
             fig.savefig(plotDir+'gratings_crvefit_n_'+str(n)+'_'+now+'.pdf')
     

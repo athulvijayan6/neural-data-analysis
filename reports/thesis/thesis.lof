@@ -1,8 +1,15 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Fit of orientation and direction tuning curves of a neuron. The distinct peak in the orientation tuning curve shows selectivity to orientation $\theta _{pref}$. Different $\sigma _1$ and $\sigma _2$ in direction tuning curve shows direction sensitive cell. - Thus a complex cell\relax }}{5}{figure.caption.8}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Fit of orientation and direction tuning curves of a neuron. The distinct peak in the orientation tuning curve shows selectivity to orientation $\theta _{pref}$. Similar $\sigma _1$ and $\sigma _2$ in direction tuning curve direction is irrelevant. - Thus a simple cell\relax }}{6}{figure.caption.9}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Responses $R(\theta _k)$ of a simple neuron for each $\theta _k$ plotted in both orientation and direction space. Equal lobes in direction space shows direction is irrelevant.\relax }}{4}{figure.caption.8}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Responses $R(\theta _k)$ of a complex neuron for each $\theta _k$ plotted in both orientation and direction space. Unequal lobes in direction space shows one direction is preferred than its opposite.\relax }}{5}{figure.caption.9}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Responses $R(\theta _k)$ of a an orientation insensitive neuron for each $\theta _k$ plotted in both orientation and direction space. Similar responses to all orientations shows absence of selectivity.\relax }}{5}{figure.caption.10}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Fit of orientation and direction tuning curves of a neuron. The distinct peak in the orientation tuning curve shows selectivity to orientation $\theta _{pref}$. Different $\sigma _1$ and $\sigma _2$ in direction tuning curve shows direction sensitive cell. - Thus a complex cell\relax }}{7}{figure.caption.11}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Fit of orientation and direction tuning curves of a neuron. The distinct peak in the orientation tuning curve shows selectivity to orientation $\theta _{pref}$. Similar $\sigma _1$ and $\sigma _2$ in direction tuning curve direction of stimuli is irrelevant. - Thus a simple cell\relax }}{8}{figure.caption.12}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Pairwise Pearson correlation of neurons. Both axes are sorted in decreasing order of OSI.\relax }}{9}{figure.caption.13}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Orientation tuning curves of some neurons retrieved from correlation study. All of them have a same preferred orientation.\relax }}{10}{figure.caption.14}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Principal Component Analysis of response of neuron to drifting sinusoidal grating stimuli.\relax }}{11}{figure.caption.15}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Reliability measure $R_A$ for different neurons\relax }}{12}{figure.caption.16}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
