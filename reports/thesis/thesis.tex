@@ -358,18 +358,41 @@ In the experiment, each neuron responses are captured as a time series sampled a
 \end{itemize}
 Analyzing motifs in neuronal signals will help us understand reliable information representation. Even if two responses of same trial has a long subsequence but not time synchronized, Study of reliability in Section~\ref{sec:study_of_reliability} will fail as the Pearson correlation coefficient will output a small value. Motivic analysis can detect such subsequences even if they are time shifted.
 
-Study of motifs across two different neurons within a mouse can explain correlation between two neurons. Correlated neurons can represent neuronal interconnections. Correlated and synchronous activity in populations of neurons has been observed in many brain regions and has been shown to play a crucial role in cortical coding, attention, and network dynamics [\cite{rosenbaum2014correlated}]. Studying correlations between neurons is again not effective if they are time separated as Pearson correlation will fail. Analyzing motifs across neurons will be a better way to study neuronal correlations.
+Study of motifs across two different neurons within a mouse can explain correlation between two neurons. Correlated neurons can represent neuronal interconnections. Correlated and synchronous activity in populations of neurons has been observed in many brain regions and has been shown to play a crucial role in cortical coding, attention, and network dynamics [\cite{rosenbaum2014correlated}]. Studying correlations between neurons is again not effective if their responses are time separated as Pearson correlation will fail. Analyzing motifs across neurons will be a better way to study neuronal correlations.
 
-Motifs found in neurons from two \textit{different} mices will represent similar biological process both the neurons undergoes. As the motifs found cannot be due to interconnections, they are due to same activation mechanism of neurons. In this case, we would expect a small motif compared to motifs found within mouse.
+Motifs found in neurons from two \textit{different} mice will represent similar biological process both the neurons undergoes. As the motifs found cannot be due to interconnections, they are due to same activation mechanism of neurons. In this case, we would expect a small motif compared to motifs found within mouse.
 
 In this chapter, we will analyze the presence of motifs in neuronal signals. The presence of motifs will motivate us to extract the motifs and their significance.
-\section{Study of Autocorrelation Function (ACF)} % (fold)
-\label{sec:study_of_autocorrelation_function_}
+\section{Cross-Correlation Function} % (fold)
+\label{sec:correlation_function}
+Cross correlation is a measure of similarity between two signals as a function of lag of one signal relative to the other. It is commonly used for searching a short query sequence in a large reference sequence. The function calculates sliding dot product at various lags. For discrete signals, cross correlation is defined as:
+$$(f \star g)[n]\ \stackrel{\mathrm{def}}{=} \sum_{m=-\infty}^{\infty} f^*[m]\ g[m+n].$$
+Searching for a motif using correlation function  is possible if we already have a subsequence that we suspect as a motif. To visualize correlation function in query search, we will manually select a subsequence and search for its occurrences in a neuronal response signal. For the scope of this chapter, we take a subsequence from the response of a `template neuron' and search for its occurrences in response of a `target neuron'.
 
-% section study_of_autocorrelation_function_ (end)
+Trial averaged responses of template and target neurons are taken, then a subset of former is extracted using parameters frame ending and frame width. This subsequence is compared with target sequence as a function of lag. Figure~\ref{img:cacf} shows Cross-Correlation function between a target neuron response and a manually chosen subsequence from template neuron.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=.7\linewidth]{\plt/acfMain_acfPlot_2016_02_05_16_45_37.pdf}
+    \caption{Cross-Correlation function between a target neuron response and a manually chosen subsequence from template neuron.}
+    \label{img:cacf}
+\end{figure}
+This study is not effective as we do not know what to search for. Manually selecting a subsequence is inefficient and selected subsequence does not guarantee to be valid motif. 
+% section correlation_function (end)
 \section{ACFGram} % (fold)
 \label{sec:acfgram}
+A spectrum describes a signal in terms of energy spread over its frequency components. A spectrogram does exactly the same but also takes  another time into consideration. Computing spectrogram is done by first making chunks/frames of time-domain signal which usually overlap. Magnitude of Fourier transform of each frame is computed to form magnitude spectrum of that frame. These frame spectra are stacked horizontally in increasing order of frame ending time to form a spectrogram. This enables us to study the change of spectra with time.
 
+We formulate an analogous visualization of Cross-Correlation function where the template signal changes in each frame. A frame is a subsequence of original signal with a width and frame ending parameter. Changing the frame ending successively will return overlapping frames having same width. Figure~\ref{img:framesel} shows how a frame from template signal is selected.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{\plt/framesel.pdf}
+    \caption{Extracting frame from template based on frame width and ending.}
+    \label{img:framesel}
+\end{figure}
+Cross-Correlation of extracted frame and target signal at various lags are computed. Next frame is extracted by incrementing frame ending parameter. The process is then repeated for the next frames. Cross-Correlation function of each frame is then stacked horizontally to form a temporal dimension. We call the resulting Time Vs Lag Vs Cross-Correlation function as ACFGram.
+
+In the previous study
+In Section~\ref{sec:correlation_function} we varied frame width and frame ending manually to extract a signal subsequence and then queried it in target signal. ACFGram removes frame ending parameter. Existence of motifs will be clear if we iterate frame width. The study was conducted across trials of same neuron and across different neurons.
 % section acfgram (end)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

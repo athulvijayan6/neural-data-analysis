@@ -11,6 +11,8 @@
 \contentsline {figure}{\numberline {3.8}{\ignorespaces Principal Component Analysis of response of neuron to drifting sinusoidal grating stimuli.\relax }}{11}{figure.caption.15}
 \contentsline {figure}{\numberline {3.9}{\ignorespaces Reliability measure $R_A$ for different neurons\relax }}{12}{figure.caption.16}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Cross-Correlation function between a target neuron response and a manually chosen subsequence from template neuron.\relax }}{15}{figure.caption.17}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Extracting frame from template based on frame width and ending.\relax }}{16}{figure.caption.18}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

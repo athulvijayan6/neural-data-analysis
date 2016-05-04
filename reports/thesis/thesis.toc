@@ -18,8 +18,8 @@
 \contentsline {section}{\numberline {3.4}Study of principal components}{9}{section.3.4}
 \contentsline {section}{\numberline {3.5}Study of Reliability}{11}{section.3.5}
 \contentsline {chapter}{\numberline {4}Searching for Motifs}{13}{chapter.4}
-\contentsline {section}{\numberline {4.1}Study of Autocorrelation Function (ACF)}{14}{section.4.1}
-\contentsline {section}{\numberline {4.2}ACFGram}{14}{section.4.2}
-\contentsline {chapter}{\numberline {5}Rough Longest Common Subsequence}{15}{chapter.5}
-\contentsline {chapter}{\numberline {6}Inferences and Future work}{16}{chapter.6}
-\contentsline {chapter}{\numberline {A}Neural visual pathway}{17}{appendix.A}
+\contentsline {section}{\numberline {4.1}Cross-Correlation Function}{14}{section.4.1}
+\contentsline {section}{\numberline {4.2}ACFGram}{16}{section.4.2}
+\contentsline {chapter}{\numberline {5}Rough Longest Common Subsequence}{18}{chapter.5}
+\contentsline {chapter}{\numberline {6}Inferences and Future work}{19}{chapter.6}
+\contentsline {chapter}{\numberline {A}Neural visual pathway}{20}{appendix.A}
