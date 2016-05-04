@@ -143,11 +143,11 @@ xxxxxxxxxxx \= xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx \kill
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Introduction}   % 2-3 pages
+\chapter{Introduction}   % 2 pages
 \label{chap:intro}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Background and Previous work}    % 5 pages
+\chapter{Background and Previous work}    %8  pages
 \label{chap:lit}
 \section{Visual pathway in brain} % (fold)
 \label{sec:visual_pathway_in_brain}
@@ -390,14 +390,93 @@ We formulate an analogous visualization of Cross-Correlation function where the 
     \label{img:framesel}
 \end{figure}
 Cross-Correlation of extracted frame and target signal at various lags are computed. Next frame is extracted by incrementing frame ending parameter. The process is then repeated for the next frames. Cross-Correlation function of each frame is then stacked horizontally to form a temporal dimension. We call the resulting Time Vs Lag Vs Cross-Correlation function as ACFGram.
-
+% $$ShYaM1193
 In the previous study
 In Section~\ref{sec:correlation_function} we varied frame width and frame ending manually to extract a signal subsequence and then queried it in target signal. ACFGram removes frame ending parameter. Existence of motifs will be clear if we iterate frame width. The study was conducted across trials of same neuron and across different neurons.
+
+The Figure~\ref{fig:acfgram_same}  shows ACFGram plots for template and target responses from same neuron. The study aim to find presence of repeating subsequence within a neuron's response. The length of suspected motif is varied as a parameter.
+For a small frame width ($\sim 15$) the estimation of Cross-Correlation function is poor. Also such a small subsequence is not significant enough to be considered as a motif. As we Increase the frame width, repeating patterns are found which indicates the presence of repeating subsequence.
+\begin{figure}[h]
+  \begin{subfigure}[b]{0.5\textwidth}
+    \includegraphics[width=\linewidth]{\plt/acfMain_corrGram_2016_02_05_16_49_00.pdf}
+    \caption{Frame width = 15}
+    \label{fig:ori_simple}
+  \end{subfigure}%
+  \begin{subfigure}[b]{0.5\textwidth}
+    \includegraphics[width=\linewidth]{\plt/acfMain_corrGram_2016_02_05_16_49_10.pdf}
+    \caption{Frame width = 30}
+    \label{fig:acfgram_same}
+  \end{subfigure}%
+  \caption{ACFGram plots for template and target responses from same neuron.}\label{fig:oridir_simple}
+\end{figure}
+The Figure~\ref{fig:acfgram_diff} shows ACFGram plots for two different neuron responses. Motifs across neurons are studied for finding a better correlation metric. For different frame widths, responses indicate presence of motifs across neurons. The approximate length of motifs is more than 2 seconds, which is significant. Importantly, more or less any pair of neurons taken from the sampled set of 65 neurons from each mouse exhibited the presence of motifs. This indicates the inter neuronal correlation. This supports the claim that information in V1 is coded in population by inter-neuronal correlations.
+\begin{figure}[h]
+  \begin{subfigure}[b]{0.5\textwidth}
+    \includegraphics[width=\linewidth]{\plt/acfMain_corrGram_2016_02_05_16_45_22.pdf}
+    \caption{Frame width = 15, frame shift = 5}
+    \label{fig:ori_simple}
+  \end{subfigure}%
+  \begin{subfigure}[b]{0.5\textwidth}
+    \includegraphics[width=\linewidth]{\plt/acfMain_corrGram_2016_02_05_16_45_38.pdf}
+    \caption{Frame width = 30, frame shift = 5}
+    \label{fig:acfgram_diff}
+  \end{subfigure}%
+  \caption{ACFGram plots for template and target responses from different neurons.}\label{fig:oridir_simple}
+\end{figure}
+The search for the presence of motifs in primary visual cortex succeeded in with experimentally verifying rough common subsequences of significance ($>2$ seconds) exists in neuronal responses. This motivates us to find the longest motifs you can find between two neurons. Also till now we used Pearson correlation as a measure of similarity. We look into rough measures of similarity and longest common subsequence in the next chapter.
+
 % section acfgram (end)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Rough Longest Common Subsequence}     % 12 pages
+\chapter{Rough Longest Common Subsequence (RLCS)}     % 12 pages
 \label{chap:rlcs}
+Having established existence of motifs in neuronal responses, A robust algorithm to extract best possible motifs from two signals is required. As a longer motif has more significance in the context, an algorithm which produce longest common subsequence is desirable. Longest Common Subsequence (LCS) is a classical problem in query string matching, data comparison and Bio-informatics. We will eventually look into an adapted LCS problem which can be used to match signals called Rough Longest Common Subsequence (RLCS).
+
+\section{Longest Common Subsequence (LCS)} % (fold)
+\label{sec:longest_common_subsequence_}
+A subsequence of a string $S$ is a set of characters that appear from left to right in original string $S$ but not necessarily consecutive. There will be more than one subsequence for any string with length greater than unity. For two strings $S_1$ and $S_2$, the common entries in sets of substrings of each strings are called common subsequences of $S_1$ and $S_2$. Among the common subsequences, the subsequence with maximal length is called Longest Common Subsequence. 
+
+Some examples of LCS are given in Table~\ref{table:lcs_ex}. Note that there can be more than one LCS for two strings.
+\begin{table}[h]
+\centering
+\begin{tabular}{|c | c| c|}
+\hline
+String 1 - $S_1$ & String 2 - $S_2$ & LCS($S_1, S_2$) \\
+\hline
+ABCDGH & AEDFHR & ADH \\
+AGGTAB & GXTXAYB & GTAB \\
+AGCAT  & GAC     & AC, GC and GA \\
+BACDB & BDCB & BCB \\
+\hline 
+\end{tabular}
+\caption{Some examples of LCS in string comparison}
+\label{table:lcs_ex}
+\end{table}
+
+LCS problem can be defined formally for two subsequences $X = (x1, x2...xm)$ and $Y = (y1, y2...yn)$ as 
+$$
+LCS\left(X_{i},Y_{j}\right) =
+\begin{cases}
+  \empty
+& \mbox{ if }\ i = 0 \mbox{ or }  j = 0 \\
+  \textrm{  } LCS\left(X_{i-1},Y_{j-1}\right) \frown x_{i}
+& \mbox{ if } x_i = y_j \\
+  \mbox{longest}\left(LCS\left(X_{i},Y_{j-1}\right),LCS\left(X_{i-1},Y_{j}\right)\right)
+& \mbox{ if } x_i \ne y_j \\
+\end{cases}
+$$
+
+Where $X_i = (x1, x2...xi)$ and $Y_j = (y1, y2...yj)$.
+
+LCS problem has an optimal substructure- the problem can be broken down into subproblems of similar kind. As the problem also has overlapping subproblems, a Dynamic Programming approach is used to find the LCS. Running time of the dynamic programming approach is  $O(nm)$ where n and m are the lengths of strings.
+% section longest_common_subsequence_ (end)
+
+\section{RLCS} % (fold)
+\label{sec:rlcs}
+LCS problem can be adapted for signal matching. Instead of equality, a rough distance measure is used. If the distance between samples is less than a threshold, they are considered a match. It is not desirable just to optimize the length of subsequence in signals as the gaps between selected samples can cause false alarms. Dynamic Programming optimization has to be penalizing gaps and motivating matches. The rest of the problem and the solution remains similar to LCS problem and similar Dynamic Programming approach can solve the problem efficiently.
+
+Various context uses different distance measures for comparing samples.  Manhattan distance (city block distance) of notes is used in context of music matching[\cite{lin2011music}]. In a work on verification of Raga in Carnatic music, a new similarity measure 
+% section rlcs (end)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Inferences and Future work}    % 3 pages

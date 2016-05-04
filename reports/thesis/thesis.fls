@@ -279,6 +279,18 @@ INPUT /home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/acfMain
 INPUT /home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/framesel.pdf
 INPUT /home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/framesel.pdf
 INPUT /home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/framesel.pdf
+INPUT /home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/acfMain_corrGram_2016_02_05_16_49_00.pdf
+INPUT /home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/acfMain_corrGram_2016_02_05_16_49_00.pdf
+INPUT /home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/acfMain_corrGram_2016_02_05_16_49_00.pdf
+INPUT /home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/acfMain_corrGram_2016_02_05_16_49_10.pdf
+INPUT /home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/acfMain_corrGram_2016_02_05_16_49_10.pdf
+INPUT /home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/acfMain_corrGram_2016_02_05_16_49_10.pdf
+INPUT /home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/acfMain_corrGram_2016_02_05_16_45_22.pdf
+INPUT /home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/acfMain_corrGram_2016_02_05_16_45_22.pdf
+INPUT /home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/acfMain_corrGram_2016_02_05_16_45_22.pdf
+INPUT /home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/acfMain_corrGram_2016_02_05_16_45_38.pdf
+INPUT /home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/acfMain_corrGram_2016_02_05_16_45_38.pdf
+INPUT /home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/acfMain_corrGram_2016_02_05_16_45_38.pdf
 INPUT /home/athul/machineLearning/neuralData/reports/thesis/thesis.bbl
 INPUT /home/athul/machineLearning/neuralData/reports/thesis/thesis.bbl
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/pxfonts/pxb.tfm
@@ -306,6 +318,7 @@ INPUT /home/athul/machineLearning/neuralData/reports/thesis/thesis.out
 INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/pxfonts/pxex.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/pxfonts/pxsy.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/pxfonts/pxsyc.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/pxfonts/rpxi.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/pxfonts/rpxmi.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/pxfonts/rpxr.pfb

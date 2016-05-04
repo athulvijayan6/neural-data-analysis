@@ -13,6 +13,8 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Cross-Correlation function between a target neuron response and a manually chosen subsequence from template neuron.\relax }}{15}{figure.caption.17}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Extracting frame from template based on frame width and ending.\relax }}{16}{figure.caption.18}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces ACFGram plots for template and target responses from same neuron.\relax }}{17}{figure.caption.19}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces ACFGram plots for template and target responses from different neurons.\relax }}{18}{figure.caption.20}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

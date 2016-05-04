@@ -20,6 +20,8 @@
 \BOOKMARK [0][-]{chapter.4}{Searching for Motifs}{}% 20
 \BOOKMARK [1][-]{section.4.1}{Cross-Correlation Function}{chapter.4}% 21
 \BOOKMARK [1][-]{section.4.2}{ACFGram}{chapter.4}% 22
-\BOOKMARK [0][-]{chapter.5}{Rough Longest Common Subsequence}{}% 23
-\BOOKMARK [0][-]{chapter.6}{Inferences and Future work}{}% 24
-\BOOKMARK [0][-]{appendix.A}{Neural visual pathway}{}% 25
+\BOOKMARK [0][-]{chapter.5}{Rough Longest Common Subsequence \(RLCS\)}{}% 23
+\BOOKMARK [1][-]{section.5.1}{Longest Common Subsequence \(LCS\)}{chapter.5}% 24
+\BOOKMARK [1][-]{section.5.2}{RLCS}{chapter.5}% 25
+\BOOKMARK [0][-]{chapter.6}{Inferences and Future work}{}% 26
+\BOOKMARK [0][-]{appendix.A}{Neural visual pathway}{}% 27
