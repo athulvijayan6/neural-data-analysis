@@ -15,10 +15,12 @@
 % \usepackage[square,numbers,sort]{natbib}
 \usepackage[square]{natbib}
 \usepackage[hidelinks]{hyperref} % hyperlinks for references.
-%\usepackage{algorithmic}
-%\usepackage{algorithm}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
 
-
+\makeatletter
+\def\BState{\State\hskip-\ALG@thistlm}
+\makeatother
 %\include{commands}
 \newcommand{\plt}{thesis_plots}
 % Strut macros for skipping spaces above and below text in tables. 
@@ -479,7 +481,7 @@ Modified LCS problem with rough comparison is stated below. The RLCS of two inpu
 $$
 S\left(X_{i},Y_{j}\right) =
 \begin{cases}
-  \emptyset
+  0
 & \mbox{ if }\ i = 0 \mbox{ or }  j = 0 \\
   \textrm{  } S\left(X_{i-1},Y_{j-1}\right) \frown x_{i}
 & \mbox{ if } dist(x_i , y_j) < \tau_{dist} \\
@@ -491,17 +493,129 @@ Where $X_i = <x1, x2...xi>$ and $Y_j = <y1, y2...yj>$.
 
 Various context uses different distance measures for comparing samples.  Manhattan distance (city block distance) of notes is used in context of music matching [\cite{lin2011music}]. In a work on verification of Raga in Carnatic music [\cite{duttaraga}], a domain specific similarity measure is used. RLCS on neuronal signals in this work uses normalized Euclidean distance for checking similarity.
 $$dist(x_i, y_i) = (x_i - y_j)^2$$
-A normalization was done using the following equation:
+Distances are normalized from 0 to 1 by performing: 
 $$dist(x_i, y_i) = \frac{dist(x_i, y_i) - minDist}{maxDist - minDist}$$
 Where $minDist$ is the minimum pairwise distance and $maxDist$ is the maximum pairwise distance.
 
 Most important part of RLCS is the adapted score update rules. In the classical LCS problem, the gaps between the selected subsequence was not considered; Instead only the length of the subsequence was of consideration. But in signals, having a gap in between will give poor signal match. So it is important to penalize the gaps and reward matches.
-The following score update rules penalizes gaps in subsequence.
-\begin{itemize}
+The following score update rules penalizes gaps in subsequence and awards positive score for matches.
+\begin{enumerate}
   \item Score update for a match. $dist(x_i, y_j) < \tau_{dist}$\\
-  $$Score += 1 - \frac{dist(x_i, y_j)}{\tau_{dist}}$$
-  This case happens when a match is found. The score should be rewarded with a positive value.  As the term is less than 1 in this case, The maximum score a$\frac{dist(x_i, y_j)}{\tau_{dist}}$
-\end{itemize}
+  $$score(i, j) = score(i - 1, j - 1) + 1 - \frac{dist(x_i, y_j)}{\tau_{dist}}$$
+  This case happens when a match is found. The score should be rewarded with a positive value.  The maximum awarded score is 1 for an exact sample match and minimum score given is 0 for when the distance equals threshold. The closer the samples, more the score.
+  \item Score update for a mismatch. $dist(x_i, y_j) > \tau_{dist}$\\
+  $$score(i, j) = score(i - 1, j - 1) - \delta$$
+  We allowed any number of gaps in a string LCS problem. But in the case of signals, we cannot allow large gaps as it would produce false alarms. We penalize each mismatching samples with a constant score $\delta$.
+\end{enumerate}
+The problem is then recursively solved using  Dynamic Programming algorithm which will provide us with a 2-D score matrix. The Dynamic programming algorithm for input sequences $X = <x_0, x_1, ..., x_{m-1}>$ and $Y = <y_0, y_1, ..., y_{n-1}>$ is explained in 
+
+\begin{algorithm}
+\caption{Dynamic Programming algorithm for RLCS ***}\label{euclid}
+\begin{algorithmic}[1]
+  \Function{RLCS}{X, Y, $\tau_{dist}$, $\delta$}
+  \State $m \gets \text{length of }\textit{X}$
+  \State $n \gets \text{length of }\textit{Y}$
+  \State $p \gets min(m, n)$
+  \For {$i = 0$; $i < m$; $i++$}
+    \For {$j = 0$; $j < n$; $j++$}
+      \State $dist(i, j) \gets euclideanDistance(x_i, y_j)$
+    \EndFor
+  \EndFor
+  \State $\text{minDist} \gets min(dist)$ \Comment{For normalization}
+  \State $\text{maxDist} \gets min(dist)$ \Comment{For normalization}\\
+
+  \State $\text{cost} \gets zeros(m+2, n+2)$ \Comment{For storing running score}
+  \State $\text{score} \gets zeros(m+2, n+2)$ \Comment{For storing score}
+  \State $\text{diag} \gets zeros(m+2, n+2)$ \Comment{For backtracking}
+  \State $\text{partial} \gets zeros(m+2, n+2)$ \Comment{For storing partial scores.}\\
+
+  \For {$i = 0$; $i < m$; $i++$}
+    \For {$j = 0$; $j < n$; $j++$}
+      \State $d \gets (dist(i, j) - \text{minDist})/(\text{maxDist} - \text{minDist})$ 
+      \Comment{Normalize}
+      \If {($d < \tau{dist}$)} 
+        \State $\text{diag }(i, j) \gets ` \nearrow '$\Comment{Path to travel while backtracking}
+        \State $\text{cost }(i, j) \gets \text{cost }(i-1, j-1) + (1 - d/\tau_{dist})$
+        \State $\text{score }(i, j) = \text{score }(i-1, j-1)$
+      \ElsIf {$\text{cost }(i-1, j) > \text{cost }(i, j-1)$}
+        \State $\text{diag }(i, j) \gets ` \uparrow'$
+        \State $\text{cost }(i, j) = \text{cost }(i-1, j) - \delta$\Comment{Penalize}
+
+        
+      \EndIf
+
+    \EndFor
+  \EndFor
+  \If {$i > \textit{stringlen}$} \Return false
+  \EndIf
+  \State $j \gets \textit{patlen}$
+  \BState \emph{loop}:
+  \If {$\textit{string}(i) = \textit{path}(j)$}
+  \State $j \gets j-1$.
+  \State $i \gets i-1$.
+  \State \textbf{goto} \emph{loop}.
+  \State \textbf{close};
+  \EndIf
+  \State $i \gets i+\max(\textit{delta}_1(\textit{string}(i)),\textit{delta}_2(j))$.
+  \State \textbf{goto} \emph{top}.
+  \EndFunction
+\end{algorithmic}
+\end{algorithm}
+
+
+Backtracking through score matrix will gives us the Longest Common Subsequence. As we have been penalizing gaps, there will be points in the track where score is zero. For each sample match we had increased score and decreased for gaps. So the zero will mean that there are enough mismatches to balance the positive score created by matches. This lets us identify the boundary of a subsequence. A number of subsequences could be extracted by cutting at points where score goes zero. This set of subsequences are called \textbf{Longest Common Subsequence Set} (LCSS) [\cite{duttaraga}]. Algorithm ** explains backtracking to extract the LCSS.
+
+\begin{algorithm}
+\caption{Dynamic Programming algorithm for RLCS ***}\label{euclid}
+\begin{algorithmic}[1]
+  \Function{RLCS}{X, Y, $\tau_{dist}$, $\delta$}
+  \State $m \gets \text{length of }\textit{X}$
+  \State $n \gets \text{length of }\textit{Y}$
+  \State $p \gets min(m, n)$
+  \For {$i = 0$; $i < m$; $i++$}
+    \For {$j = 0$; $j < n$; $j++$}
+      \State $dist(i, j) \gets euclideanDistance(x_i, y_j)$
+    \EndFor
+  \EndFor
+  \State $\text{minDist} \gets min(dist)$ \Comment{For normalization}
+  \State $\text{maxDist} \gets min(dist)$ \Comment{For normalization}\\
+
+  \State $\text{cost} \gets zeros(m+2, n+2)$ \Comment{For storing running score}
+  \State $\text{score} \gets zeros(m+2, n+2)$ \Comment{For storing score}
+  \State $\text{diag} \gets zeros(m+2, n+2)$ \Comment{For backtracking}
+  \State $\text{partial} \gets zeros(m+2, n+2)$ \Comment{For storing partial scores.}\\
+
+  \For {$i = 0$; $i < m$; $i++$}
+    \For {$j = 0$; $j < n$; $j++$}
+      \State $d \gets (dist(i, j) - \text{minDist})/(\text{maxDist} - \text{minDist})$ 
+      \Comment{Normalize}
+    \EndFor
+  \EndFor
+  \EndFunction
+\end{algorithmic}
+\end{algorithm}
+\subsection{Motivic analysis of Neuronal signals with RLCS} % (fold)
+\label{sub:motivic_analysis_of_neuronal_signals_with_rlcs}
+Having established presence of motifs in neuronal responses, we use Rough Longest Common Subsequence (RLCS) algorithm to find the `best' motifs from a signal processing point of view. Penalizing the gaps makes RLCS a good signal matching algorithm.
+
+The experiment was conducted on responses of neurons from V1 of 11 mice to different visual stimuli. Each signal is sampled at 20 Hz and last for 10 seconds. The study is split into different sections based on which neurons the signals come from.
+\subsubsection{Motifs in responses of a neuron to different trials} % (fold)
+\label{ssub:motifs_in_responses_of_a_neuron_to_different_trials}
+The signals from a neuron's response to different trials of same stimuli are passed to RLCS algorithm to detect motifs. The score matrix in Figure 
+% subsubsection motifs_in_responses_of_a_neuron_to_different_trials (end)
+\subsubsection{Motifs in responses of two neurons in a mice} % (fold)
+\label{ssub:motifs_in_responses_of_two_neurons_in_a_mice}
+
+% subsubsection motifs_in_responses_of_two_neurons_in_a_mice (end)
+\subsubsection{Motifs in responses of neurons across different mice} % (fold)
+\label{ssub:motifs_in_responses_of_neurons_across_different_mice}
+
+% subsubsection motifs_in_responses_of_neurons_across_different_mice (end)
+% subsection motivic_analysis_of_neuronal_signals_with_rlcs (end)
+\subsection{Normalized RLCS score as a correlation metric} % (fold)
+\label{sub:normalized_rlcs_score_as_a_correlation_metric}
+
+% subsection normalized_rlcs_score_as_a_correlation_metric (end)
 % section rlcs (end)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

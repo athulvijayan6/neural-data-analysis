@@ -23,5 +23,10 @@
 \contentsline {chapter}{\numberline {5}Rough Longest Common Subsequence (RLCS)}{19}{chapter.5}
 \contentsline {section}{\numberline {5.1}Longest Common Subsequence (LCS)}{19}{section.5.1}
 \contentsline {section}{\numberline {5.2}RLCS}{20}{section.5.2}
-\contentsline {chapter}{\numberline {6}Inferences and Future work}{23}{chapter.6}
-\contentsline {chapter}{\numberline {A}Neural visual pathway}{24}{appendix.A}
+\contentsline {subsection}{\numberline {5.2.1}Motivic analysis of Neuronal signals with RLCS}{24}{subsection.5.2.1}
+\contentsline {subsubsection}{Motifs in responses of a neuron to different trials}{24}{section*.22}
+\contentsline {subsubsection}{Motifs in responses of two neurons in a mice}{25}{section*.23}
+\contentsline {subsubsection}{Motifs in responses of neurons across different mice}{25}{section*.24}
+\contentsline {subsection}{\numberline {5.2.2}Normalized RLCS score as a correlation metric}{25}{subsection.5.2.2}
+\contentsline {chapter}{\numberline {6}Inferences and Future work}{26}{chapter.6}
+\contentsline {chapter}{\numberline {A}Neural visual pathway}{27}{appendix.A}

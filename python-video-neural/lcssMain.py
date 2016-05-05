@@ -3,7 +3,7 @@
 # @Author: Athul
 # @Date:   2016-02-23 16:00:11
 # @Last Modified by:   Athul
-# @Last Modified time: 2016-04-25 11:13:45
+# @Last Modified time: 2016-05-05 15:30:46
 from __future__ import division
 import numpy as np
 import scipy.io
@@ -56,7 +56,9 @@ print len(xSegs)
 # ========================= Plots here ===========================
 # ================ Plot extracted subsequences ===================
 fig, ax = plt.subplots()
-xseg, yseg = xSegs[0], ySegs[0]
+lens = [i.shape[0] for i in xSegs]
+idx = lens.index(max(lens))
+xseg, yseg = xSegs[idx], ySegs[idx]
 ax.plot(xrange(xseg.size), xseg)
 ax.plot(xrange(yseg.size), yseg)
 ax.set_xlabel('x')
