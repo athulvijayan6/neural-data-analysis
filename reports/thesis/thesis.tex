@@ -475,7 +475,33 @@ LCS problem has an optimal substructure- the problem can be broken down into sub
 \label{sec:rlcs}
 LCS problem can be adapted for signal matching. Instead of equality, a rough distance measure is used. If the distance between samples is less than a threshold, they are considered a match. It is not desirable just to optimize the length of subsequence in signals as the gaps between selected samples can cause false alarms. Dynamic Programming optimization has to be penalizing gaps and motivating matches. The rest of the problem and the solution remains similar to LCS problem and similar Dynamic Programming approach can solve the problem efficiently.
 
-Various context uses different distance measures for comparing samples.  Manhattan distance (city block distance) of notes is used in context of music matching[\cite{lin2011music}]. In a work on verification of Raga in Carnatic music, a new similarity measure 
+Modified LCS problem with rough comparison is stated below. The RLCS of two input sequnces $X = <x1, x2...xm>$ and $Y = <y1, y2...yn>$ is obtained by maximizing the score value $S$.
+$$
+S\left(X_{i},Y_{j}\right) =
+\begin{cases}
+  \emptyset
+& \mbox{ if }\ i = 0 \mbox{ or }  j = 0 \\
+  \textrm{  } S\left(X_{i-1},Y_{j-1}\right) \frown x_{i}
+& \mbox{ if } dist(x_i , y_j) < \tau_{dist} \\
+  \mbox{max}\left(S\left(X_{i},Y_{j-1}\right),S\left(X_{i-1},Y_{j}\right)\right)
+& \mbox{ if } dist(x_i , y_j) > \tau_{dist} \\
+\end{cases}
+$$
+Where $X_i = <x1, x2...xi>$ and $Y_j = <y1, y2...yj>$.
+
+Various context uses different distance measures for comparing samples.  Manhattan distance (city block distance) of notes is used in context of music matching [\cite{lin2011music}]. In a work on verification of Raga in Carnatic music [\cite{duttaraga}], a domain specific similarity measure is used. RLCS on neuronal signals in this work uses normalized Euclidean distance for checking similarity.
+$$dist(x_i, y_i) = (x_i - y_j)^2$$
+A normalization was done using the following equation:
+$$dist(x_i, y_i) = \frac{dist(x_i, y_i) - minDist}{maxDist - minDist}$$
+Where $minDist$ is the minimum pairwise distance and $maxDist$ is the maximum pairwise distance.
+
+Most important part of RLCS is the adapted score update rules. In the classical LCS problem, the gaps between the selected subsequence was not considered; Instead only the length of the subsequence was of consideration. But in signals, having a gap in between will give poor signal match. So it is important to penalize the gaps and reward matches.
+The following score update rules penalizes gaps in subsequence.
+\begin{itemize}
+  \item Score update for a match. $dist(x_i, y_j) < \tau_{dist}$\\
+  $$Score += 1 - \frac{dist(x_i, y_j)}{\tau_{dist}}$$
+  This case happens when a match is found. The score should be rewarded with a positive value.  As the term is less than 1 in this case, The maximum score a$\frac{dist(x_i, y_j)}{\tau_{dist}}$
+\end{itemize}
 % section rlcs (end)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

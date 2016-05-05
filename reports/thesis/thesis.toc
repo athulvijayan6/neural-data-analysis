@@ -23,5 +23,5 @@
 \contentsline {chapter}{\numberline {5}Rough Longest Common Subsequence (RLCS)}{19}{chapter.5}
 \contentsline {section}{\numberline {5.1}Longest Common Subsequence (LCS)}{19}{section.5.1}
 \contentsline {section}{\numberline {5.2}RLCS}{20}{section.5.2}
-\contentsline {chapter}{\numberline {6}Inferences and Future work}{22}{chapter.6}
-\contentsline {chapter}{\numberline {A}Neural visual pathway}{23}{appendix.A}
+\contentsline {chapter}{\numberline {6}Inferences and Future work}{23}{chapter.6}
+\contentsline {chapter}{\numberline {A}Neural visual pathway}{24}{appendix.A}
