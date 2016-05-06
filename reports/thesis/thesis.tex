@@ -601,20 +601,79 @@ Having established presence of motifs in neuronal responses, we use Rough Longes
 The experiment was conducted on responses of neurons from V1 of 11 mice to different visual stimuli. Each signal is sampled at 20 Hz and last for 10 seconds. The study is split into different sections based on which neurons the signals come from.
 \subsubsection{Motifs in responses of a neuron to different trials} % (fold)
 \label{ssub:motifs_in_responses_of_a_neuron_to_different_trials}
-The signals from a neuron's response to different trials of same stimuli are passed to RLCS algorithm to detect motifs. The score matrix in Figure 
+The signals from a neuron's response to different trials of same stimuli are passed to RLCS algorithm to detect motifs. The Figure~\ref{img:score_trial} shows score matrix obtained after RLCS. The effect of $\tau_{dist}$ was experimentally studied and fixed at $0.005$. For $\tau_{dist}$ above $0.001$, false alarms increased. Decreasing threshold caused bad detection rate. The desired motif takes a path through the score matrix. The diagonal shifts in the score path are sample matches - as a result of that we can see the increase in score. Shifting to right or top denotes a gap in the subsequence. As mismatches cause penalty, the score will decrease. When enough mismatches to compensate the total positive score are encountered, The score will become zero. Such points on the backtrack path having zero score mark boundaries of subsequences.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{\plt/rlcsMain_backtrack_2016_03_15_22_19_32.pdf}
+    \caption{Score matrix from RLCS of responses a neuron to different trials.}
+    \label{img:score_trial}
+\end{figure}
+
+The Figure~\ref{img:motif_trial} shows a motif from the responses of a neuron to different trials. The signal retrieved shows good similarity. At 20Hz sampling frequency, the motif lasts more than $3$ seconds. Which is a significant time for two neurons to have very similar response. Also, this phenomena occurs in each neuron we studied.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=.8\linewidth]{\plt/rlcsMain_getSegs_2016_04_06_10_22_48}
+    \caption{Extracted motif (longest) from responses a neuron to different trials.}
+    \label{img:motif_trial}
+\end{figure}
 % subsubsection motifs_in_responses_of_a_neuron_to_different_trials (end)
 \subsubsection{Motifs in responses of two neurons in a mice} % (fold)
 \label{ssub:motifs_in_responses_of_two_neurons_in_a_mice}
-
+Responses of two neurons to same visual stimuli are analyzed for motifs. Both neurons were sampled simultaneously during experiment. The Figure shows score matrix and Figure shows longest motif spotted. In the score matrix, two disconnected paths can be found. Each one of these correspond to a common subsequence. Set of such subsequences are LCSS. Motifs across mice have a duration more than $2.5$ seconds  consistently. More or less any two neurons taken for study, motifs of length $> 2$ seconds were spotted. This shows correlation in responses of neurons. In some cases, the length of motif crossed $5$ seconds.
+\begin{figure}
+    \centering
+    \includegraphics[width=.8\linewidth]{\plt/rlcsMain_backtrack_2016_03_15_22_19_32.pdf}
+    \caption{Score matrix from RLCS of responses of two neurons in a mouse.}
+    \label{img:score_neuron}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=.8\linewidth]{\plt/rlcsMain_getSegs_2016_04_06_10_22_48}
+    \caption{Extracted motif (longest) from responses of two neurons in a mouse.}
+    \label{img:motif_neuron}
+\end{figure}
 % subsubsection motifs_in_responses_of_two_neurons_in_a_mice (end)
 \subsubsection{Motifs in responses of neurons across different mice} % (fold)
 \label{ssub:motifs_in_responses_of_neurons_across_different_mice}
-
+Two neurons across two mice were taken for study. As the neurons does not have any interconnections, the motifs are expected to have less duration if at all they exists. The study proved that motifs across mice occurs very less frequent than previous cases. Even when they exists, they have short duration $\sim 1$ seconds. Motifs across mice could be caused by similar activation mechanism of neurons. This explains absence of long motifs across mice and presence of short subsequences. Exceptionally in some cases motifs of duration $\sim 3$ seconds were spotted across mice. Figure and Figure shows score matrix and extracted motif from responses of two neurons across mice. More plots of score matrix and motifs are in Appendix~\ref{chap:rlcsplots_appndx}.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{\plt/rlcsMain_backtrack_2016_03_15_22_19_32.pdf}
+    \caption{Score matrix from RLCS of responses of two neurons in a mouse.}
+    \label{img:score_neuron}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{\plt/rlcsMain_getSegs_2016_04_06_10_22_48}
+    \caption{Extracted motif (longest) from responses of two neurons in a mouse.}
+    \label{img:motif_neuron}
+\end{figure}
 % subsubsection motifs_in_responses_of_neurons_across_different_mice (end)
 % subsection motivic_analysis_of_neuronal_signals_with_rlcs (end)
 \subsection{Normalized RLCS score as a correlation metric} % (fold)
 \label{sub:normalized_rlcs_score_as_a_correlation_metric}
+We have seen RLCS was very effective in query search, signal matching and correlation study even when classical correlations metric Pearson correlation coefficient failed to detect correlation. As the information encoding in V1 largely depend on population of neurons and their inter-correlations, A robust measure of signal correlations needs to be used for analysis. We explore the possibility of normalized RLCS score between two signals as a robust correlation metric.
 
+The sum of RLCS scores contain information about how close the matched samples are, how long is the detected subsentence, how much gaps they have in between samples. This brings the consideration of using RLCS score as correlation measure. But to compare two scores, we need it to be normalized. We use standard z-normalization In which average score will be transformed to zero; all the scores above mean gets a positive score and every score below mean score gets a negative score. Please note that this is effective only when a large dataset is used as mean and standard deviation needs to be estimated. The standard z - score of a raw RLCS score $s$ is
+$$z = {x- \mu \over \sigma}$$
+Where $s = \sum_{i, j} \text{score } (i, j)$ is the raw RLCS score.
+$\mu$ is the mean and $\sigma$ is the standard deviation of the population of scores.
+
+As a demonstration, Figure shows two signals which have a low Pearson correlation and good RLCS score. The extracted subsequnce shows a good correlation which was not detectable by Pearson correlation.
+\begin{figure}[h]
+  \begin{subfigure}[b]{0.5\textwidth}
+    \includegraphics[width=\linewidth]{\plt/acfMain_corrGram_2016_02_05_16_45_22.pdf}
+    \caption{RLCS score matrix}
+    \label{fig:ori_simple}
+  \end{subfigure}%
+  \begin{subfigure}[b]{0.5\textwidth}
+    \includegraphics[width=\linewidth]{\plt/acfMain_corrGram_2016_02_05_16_45_38.pdf}
+    \caption{Extracted common subsequence was not detected by Pearson correlation}
+    \label{fig:acfgram_diff}
+  \end{subfigure}%
+  \caption{Demonstration of RLCS score's dominance over Pearson correlation as a metric of similarity. RLCS analysis of two signals having low Pearson correlation. Extracted  subsequence was not detected by Pearson correlation.}
+  \label{fig:oridir_simple}
+\end{figure}
 % subsection normalized_rlcs_score_as_a_correlation_metric (end)
 % section rlcs (end)
 
@@ -624,7 +683,8 @@ The signals from a neuron's response to different trials of same stimuli are pas
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \appendix
-\chapter{Neural visual pathway}
+\chapter{More RLCS plots}
+\label{chap:rlcsplots_appndx}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bibliography.

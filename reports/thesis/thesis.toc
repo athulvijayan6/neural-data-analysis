@@ -1,9 +1,9 @@
 \contentsline {chapter}{ACKNOWLEDGEMENTS}{i}{chapter*.1}
 \contentsline {chapter}{ABSTRACT}{ii}{chapter*.2}
 \contentsline {chapter}{LIST OF TABLES}{v}{chapter*.4}
-\contentsline {chapter}{LIST OF FIGURES}{vi}{chapter*.5}
-\contentsline {chapter}{ABBREVIATIONS}{vii}{chapter*.6}
-\contentsline {chapter}{NOTATION}{viii}{chapter*.7}
+\contentsline {chapter}{LIST OF FIGURES}{vii}{chapter*.5}
+\contentsline {chapter}{ABBREVIATIONS}{viii}{chapter*.6}
+\contentsline {chapter}{NOTATION}{ix}{chapter*.7}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {chapter}{\numberline {2}Background and Previous work}{2}{chapter.2}
 \contentsline {section}{\numberline {2.1}Visual pathway in brain}{2}{section.2.1}
@@ -25,8 +25,8 @@
 \contentsline {section}{\numberline {5.2}RLCS}{20}{section.5.2}
 \contentsline {subsection}{\numberline {5.2.1}Motivic analysis of Neuronal signals with RLCS}{24}{subsection.5.2.1}
 \contentsline {subsubsection}{Motifs in responses of a neuron to different trials}{24}{section*.22}
-\contentsline {subsubsection}{Motifs in responses of two neurons in a mice}{25}{section*.23}
-\contentsline {subsubsection}{Motifs in responses of neurons across different mice}{25}{section*.24}
-\contentsline {subsection}{\numberline {5.2.2}Normalized RLCS score as a correlation metric}{25}{subsection.5.2.2}
-\contentsline {chapter}{\numberline {6}Inferences and Future work}{26}{chapter.6}
-\contentsline {chapter}{\numberline {A}Neural visual pathway}{27}{appendix.A}
+\contentsline {subsubsection}{Motifs in responses of two neurons in a mice}{26}{section*.25}
+\contentsline {subsubsection}{Motifs in responses of neurons across different mice}{28}{section*.28}
+\contentsline {subsection}{\numberline {5.2.2}Normalized RLCS score as a correlation metric}{29}{subsection.5.2.2}
+\contentsline {chapter}{\numberline {6}Inferences and Future work}{31}{chapter.6}
+\contentsline {chapter}{\numberline {A}More RLCS plots}{32}{appendix.A}

@@ -16,5 +16,12 @@
 \contentsline {figure}{\numberline {4.3}{\ignorespaces ACFGram plots for template and target responses from same neuron.\relax }}{17}{figure.caption.19}
 \contentsline {figure}{\numberline {4.4}{\ignorespaces ACFGram plots for template and target responses from different neurons.\relax }}{18}{figure.caption.20}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Score matrix from RLCS of responses a neuron to different trials.\relax }}{25}{figure.caption.23}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Extracted motif (longest) from responses a neuron to different trials.\relax }}{26}{figure.caption.24}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Score matrix from RLCS of responses of two neurons in a mouse.\relax }}{27}{figure.caption.26}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Extracted motif (longest) from responses of two neurons in a mouse.\relax }}{27}{figure.caption.27}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Score matrix from RLCS of responses of two neurons in a mouse.\relax }}{28}{figure.caption.29}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Extracted motif (longest) from responses of two neurons in a mouse.\relax }}{29}{figure.caption.30}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Demonstration of RLCS score's dominance over Pearson correlation as a metric of similarity. RLCS analysis of two signals having low Pearson correlation. Extracted subsequence was not detected by Pearson correlation.\relax }}{30}{figure.caption.31}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
