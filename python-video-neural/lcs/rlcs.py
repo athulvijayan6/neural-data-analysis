@@ -2,7 +2,7 @@
 # @Author: Athul
 # @Date:   2016-03-07 18:04:47
 # @Last Modified by:   Athul
-# @Last Modified time: 2016-04-05 12:53:27
+# @Last Modified time: 2016-05-06 10:31:59
 
 # A python implementation of algorithm in
 # 1.Shrey Dutta, Krishnaraj Sekhar PV, Hema A. Murthy:
@@ -162,12 +162,12 @@ def plotLCS(segment, X, Y):
     3. Up = A gap is fount, current sample of query is matched with next sample of reference. - score decreases due to penalty.
 
     matplotlib axis and fig is returned.'''
-    fig, ax = plt.subplots(figsize=(14, 12))
+    fig, ax = plt.subplots(figsize=(16, 14))
     match = np.zeros((X.shape[0], Y.shape[0]), dtype=np.float64)
     for m in segment:
         i, j = int(m[0]), int(m[1])
         match[i-1, j-1] = m[2]
-    cax = ax.imshow(match, aspect='auto', origin='lower', interpolation="none")
+    cax = ax.imshow(match, aspect='auto', origin='lower', interpolation="none", cmap='PuBu')
     ax.grid(True)
     cbar = fig.colorbar(cax)
     return fig, ax

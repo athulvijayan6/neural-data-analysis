@@ -151,12 +151,45 @@ xxxxxxxxxxx \= xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx \kill
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Background and Previous work}    %8  pages
 \label{chap:lit}
+Signal processing and machine learning methods are great to bring out valuable inferences from data. The conclusions we draw from statistical methods will have meaning only with the context of the problem. To analyze and draw conclusions from neuronal data, we need to have a good understanding of the background. This chapter provides background in basic Neuroscience and previous works in the similar problem.
 \section{Visual pathway in brain} % (fold)
 \label{sec:visual_pathway_in_brain}
+Brain is the most sophisticated organ nature has devised. Brain is mainly made up of orderly arrays of cells called neuron (also called nerve cell). Neurons are electrically excitable cells which process information through electrical and chemical processes. Neurons are also information carriers that connects the whole body to the brain. Visual perception is a complex function yet brain does it very efficiently. There are 100 million photo-receptors in a human retina. But there are only nearly 1 millions axons that carry information to brain [\cite{bear2007neuroscience}]. Understanding how brain represents and process visual information can help us create artificially intelligent machines with vision abilities.
 
+This section describes functioning of neurons and background on visual pathway of brain.
+\subsection{Neurons} % (fold)
+\label{sub:neurons}
+Neurons consists of three parts - soma, dendrites and axons. Axon is the signal transmitting cylinder like nerve fiber that comes out from soma. Dendrites are branched fibers that receive information from other nerve cells. The axon can be anywhere from less than a millimeter to a meter or more in length; the dendrites are mostly in the millimeter range. Near the point where it ends, an axon usually splits into many branches, whose terminal parts come very close to but do not quite touch the cell bodies or dendrites of other nerve cells. At these regions, called synapses, information is conveyed from one nerve cell, the presynaptic cell, to the next, the postsynaptic cell [\cite{hubel1995eye}].
+
+The job of a nerve cell is to take in information from the cells that feed into it, process that information, and to deliver the integrated information to other cells. The information is usually conveyed in the form of brief events called nerve impulses. The nerve cell is bathed in and contains salt water. Because most of the salt molecules are ionized, the fluids both inside and outside the cell will contain chloride, potassium, sodium, and calcium ions (Cl , K+, Na+ and $\text{Ca}^{2+}$).
+In the resting state, the inside and outside of the cell differ in electrical potential by 0.07 volts. The signals that the nerve conveys consist of transient changes in this resting potential, which travel along the fiber from the cell body to the axon endings. During an impulse, a large number of sodium pores in a short length of the nerve fiber suddenly open, so that briefly the sodium ions dominate and that part of the nerve suddenly becomes negative outside, relative to inside. The sodium pores then reclose, and meanwhile even more potassium pores have opened than are open in the resting state. Both events—the sodium pores reclosing and additional potassium pores opening—lead to the rapid restoration of the positive-outside resting state. The whole sequence lasts about one-thousandth of a second. [\cite{hubel1995eye}]
+
+Neuron's response are quantified by number of spikes per second - called spike rate. In the data we use in this work, we use $\text{Ca}^{2+}$ concentration as the response of neuron. As the spikes are caused by the ion concentration changes, $\text{Ca}^{2+}$ ion concentration is a good proxy for spike rate. Vogelstein deconvolution algorithm [\cite{vogelstein2010fast}] extracts the spike train of each neuron from a raw fluorescence movie. We use inferred spike rate from Vogelstein deconvolution algorithm as the neuron's response.
+
+\subsection{Visual pathway} % (fold)
+\label{sub:visual_pathway}
+The enormous task of taking the light that gets reflected from objects around us to the two retinas and translating it into a meaningful visual scene is often ignored. The visual pathway starts with eye, of which most important part is the retina. Retina contains light receptors called rods and cones. Rods are far more numerous than cones and are responsible for our vision in dim light but do not respond to bright light. Cones do not respond to dim light but are responsible for our ability to see fine detail and for our color vision. The layer of cells at the back of the retina contains the retinal ganglion cells which then reaches brain through optic nerve. The output of the eyes are output of retinal ganglion cells rather than retina.
+
+Receptive field refers to the specific receptors that input information into a given cell in the nervous system. For vision, it refers to a region on the retina from where information goes to a particular neuron. As we go into higher levels of brain, the receptive field gets complicated. Note that receptive fields do overlap.
+
+The optical nerve goes to brain to join primary visual cortex through cells called lateral geniculate cells. About half the fibers coming from an eye cross to the side of the brain opposite the eye of origin, and half stay on the same side. lateral geniculate cells receive fibers from the cerebral cortex also, which plays some role in attention. The primary visual cortex (V1) is a plate of cells 2 millimeters thick, with a surface area of a few square inches. V1 contains three different kinds of cells - simple cells, complex cells and orientation insensitive cells. Like in an artificial neural network, the neurons in higher levels captures edge properties in the image. Neurons in V1 are also orientation selective cells which can represent visual information in terms of edges as visual features. [\cite{hubel1995eye}]
+
+Neurons in V1 are selective to orientation and direction of a visually contrasting pattern in the receptive field. The orientation is the angle to which the patterns is aligned, direction is the direction in which the pattern is moving in the next frame. Figure shows the behavior of orientation selective neurons. They have a preferred orientation to which they have optimum response. As the orientation deviates from preferred orientation, the responses reduces exponentially.
+
+Within orientation selective cells, there are two kinds of cells - simple and complex cells. Consider moving the oriented stimuli perpendicular to the orientation angle. Among the two perpendicular directions, some neurons respond to one perpendicular direction more than the other. These cells are called complex cells. Neurons which respond similarly to both directions of motion is called simple cells. The figure explains the directional sensitivity of neurons in V1.
+% subsection visual_pathway (end)
+% subsection neurons (end)
 % section visual_pathway_in_brain (end)
 \section{Experiment setup} % (fold)
 \label{sec:experiment_setup}
+The data for this work was obtained from experiments conducted in Sur's lab of Neuroscience, MIT. A brief overview of the experiments and data is required to follow the upcoming chapters.
+
+``Data in this study were collected from adult ($> 8$ weeks old) mice of either sex. Mice were anesthetized using isoflurane (3\% induction, 1.5–2\% during surgery). A custom-built metal head post was attached to the skull using dental cement (C\&B-Metabond, Parkell), and a 3-mm-diameter craniotomy was performed over binocular V1 ($\sim 2–3$ mm lateral and 0.5 mm anterior to lambda). Care was taken not to rupture the dura mater. The core body temperature was maintained at 37.5°C using a heating blanket (Harvard Apparatus).
+
+For awake experiments, mice were first habituated for 5 d to head fixation on a custom-built stage. Once habituated, the mice received a microinjection of 100-200 nl of AAV1.Syn.GCaMP6f.WPRE.SV40 (University of Pennsylvania Vector Core, diluted to a titer of $10^{12}$ genomes $\text{ml}^1$), following which a cranial window was implanted over the
+craniotomy and sealed. Mice were allowed to recover for 2–3 weeks to allow for adequate expression of the virus before imaging commenced. Imaging was performed using a Prairie Ultima two-photon system. The imaging was done at a frequency of 20Hz. The imaging was done while mice were presented with a visual stimuli on a 23 inch gamma-corrected LCD monitor (Dell) covering a visual space of $\sim 96 \times 54 \text{ deg}^2$.'' [\cite{rikhye2015spatial}]
+
+The experiment was performed for the following two sets of visual stimuli.
 \subsection{Sinusoidal grating visual stimuli} % (fold)
 \label{sub:sinusoidal_grating_visual_stimuli}
 
@@ -167,12 +200,10 @@ xxxxxxxxxxx \= xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx \kill
 
 % subsection natural_videos_visual_stimuli (end)
 % section experiment_setup (end)
+\section{Previous works} % (fold)
+\label{sec:previous_work}
 
-\section{Orientation and Directional selectivity of neurons in V1} % (fold)
-\label{sec:orientation_and_directional_selectivity_of_neurons_in_v1}
-
-% section orientation_and_directional_selectivity_of_neurons_in_v1 (end)
-
+% section previous_work (end)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Analyzing neuronal properties} % 10 pages
 \label{chap:searchmotif}
@@ -604,53 +635,53 @@ The experiment was conducted on responses of neurons from V1 of 11 mice to diffe
 The signals from a neuron's response to different trials of same stimuli are passed to RLCS algorithm to detect motifs. The Figure~\ref{img:score_trial} shows score matrix obtained after RLCS. The effect of $\tau_{dist}$ was experimentally studied and fixed at $0.005$. For $\tau_{dist}$ above $0.001$, false alarms increased. Decreasing threshold caused bad detection rate. The desired motif takes a path through the score matrix. The diagonal shifts in the score path are sample matches - as a result of that we can see the increase in score. Shifting to right or top denotes a gap in the subsequence. As mismatches cause penalty, the score will decrease. When enough mismatches to compensate the total positive score are encountered, The score will become zero. Such points on the backtrack path having zero score mark boundaries of subsequences.
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\linewidth]{\plt/rlcsMain_backtrack_2016_03_15_22_19_32.pdf}
+    \includegraphics[width=\linewidth]{\plt/rlcsMain_score_trial_0_1n_102016_05_06_10_32_05.pdf}
     \caption{Score matrix from RLCS of responses a neuron to different trials.}
     \label{img:score_trial}
 \end{figure}
 
-The Figure~\ref{img:motif_trial} shows a motif from the responses of a neuron to different trials. The signal retrieved shows good similarity. At 20Hz sampling frequency, the motif lasts more than $3$ seconds. Which is a significant time for two neurons to have very similar response. Also, this phenomena occurs in each neuron we studied.
+The Figure~\ref{img:motif_trial} shows a motif from the responses of a neuron to different trials. The signal retrieved shows good similarity. At 20Hz sampling frequency, the motif lasts more than $6$ seconds. Which is a significant time for two neurons to have very similar response. Also, similar phenomena occurs in each neuron we studied.
 \begin{figure}[h]
     \centering
-    \includegraphics[width=.8\linewidth]{\plt/rlcsMain_getSegs_2016_04_06_10_22_48}
+    \includegraphics[width=.8\linewidth]{\plt/rlcsMain_motif_trial_0_1n_102016_05_06_10_30_17}
     \caption{Extracted motif (longest) from responses a neuron to different trials.}
     \label{img:motif_trial}
 \end{figure}
 % subsubsection motifs_in_responses_of_a_neuron_to_different_trials (end)
 \subsubsection{Motifs in responses of two neurons in a mice} % (fold)
 \label{ssub:motifs_in_responses_of_two_neurons_in_a_mice}
-Responses of two neurons to same visual stimuli are analyzed for motifs. Both neurons were sampled simultaneously during experiment. The Figure shows score matrix and Figure shows longest motif spotted. In the score matrix, two disconnected paths can be found. Each one of these correspond to a common subsequence. Set of such subsequences are LCSS. Motifs across mice have a duration more than $2.5$ seconds  consistently. More or less any two neurons taken for study, motifs of length $> 2$ seconds were spotted. This shows correlation in responses of neurons. In some cases, the length of motif crossed $5$ seconds.
+Responses of two neurons to same visual stimuli are analyzed for motifs. Both neurons were sampled simultaneously during experiment. The Figure~\ref{img:score_neuron} shows score matrix and Figure~\ref{img:motif_neuron} shows longest motif spotted. Note that in this case, motif has a duration of 7 seconds. In the score matrix, two disconnected paths can be found. Each one of these correspond to a common subsequence. Set of such subsequences are LCSS. Motifs across mice have an average duration about $3$ seconds. More or less any two neurons taken for study, motifs of length $> 2$ seconds were spotted. This shows correlation in responses of neurons. In some cases, the length of motif exceeded $6$ seconds.
 \begin{figure}
     \centering
-    \includegraphics[width=.8\linewidth]{\plt/rlcsMain_backtrack_2016_03_15_22_19_32.pdf}
+    \includegraphics[width=.8\linewidth]{\plt/rlcsMain_backtrack_n1_15_n2_52016_05_06_10_42_55.pdf}
     \caption{Score matrix from RLCS of responses of two neurons in a mouse.}
     \label{img:score_neuron}
 \end{figure}
 \begin{figure}
     \centering
-    \includegraphics[width=.8\linewidth]{\plt/rlcsMain_getSegs_2016_04_06_10_22_48}
+    \includegraphics[width=.8\linewidth]{\plt/rlcsMain_getSegs_15_n2_52016_05_06_10_42_54}
     \caption{Extracted motif (longest) from responses of two neurons in a mouse.}
     \label{img:motif_neuron}
 \end{figure}
 % subsubsection motifs_in_responses_of_two_neurons_in_a_mice (end)
 \subsubsection{Motifs in responses of neurons across different mice} % (fold)
 \label{ssub:motifs_in_responses_of_neurons_across_different_mice}
-Two neurons across two mice were taken for study. As the neurons does not have any interconnections, the motifs are expected to have less duration if at all they exists. The study proved that motifs across mice occurs very less frequent than previous cases. Even when they exists, they have short duration $\sim 1$ seconds. Motifs across mice could be caused by similar activation mechanism of neurons. This explains absence of long motifs across mice and presence of short subsequences. Exceptionally in some cases motifs of duration $\sim 3$ seconds were spotted across mice. Figure and Figure shows score matrix and extracted motif from responses of two neurons across mice. More plots of score matrix and motifs are in Appendix~\ref{chap:rlcsplots_appndx}.
+Two neurons across two mice were taken for study. As the neurons does not have any interconnections, the motifs are expected to have less duration if at all they exists. The study proved that motifs across mice occurs very less frequent than previous cases. Even when they exists, they have short duration $\sim 2$ seconds. Motifs across mice could be caused by similar activation mechanism of neurons. This explains absence of long motifs across mice and presence of short subsequences. Exceptionally in some cases motifs of duration $\sim 4$ seconds were spotted across mice. Figure~\ref{img:score_mice} and Figure~\ref{img:motif_mice} shows score matrix and extracted motif from responses of two neurons across mice. More plots of score matrix and motifs are in Appendix~\ref{chap:rlcsplots_appndx}.
 \begin{figure}
     \centering
-    \includegraphics[width=0.8\linewidth]{\plt/rlcsMain_backtrack_2016_03_15_22_19_32.pdf}
+    \includegraphics[width=0.8\linewidth]{\plt/rlcsMain_backtrack_mice_2016_05_06_10_48_51.pdf}
     \caption{Score matrix from RLCS of responses of two neurons in a mouse.}
-    \label{img:score_neuron}
+    \label{img:score_mice}
 \end{figure}
 \begin{figure}
     \centering
-    \includegraphics[width=0.8\linewidth]{\plt/rlcsMain_getSegs_2016_04_06_10_22_48}
+    \includegraphics[width=0.8\linewidth]{\plt/rlcsMain_getSegs_mice2016_05_06_10_48_51}
     \caption{Extracted motif (longest) from responses of two neurons in a mouse.}
-    \label{img:motif_neuron}
+    \label{img:motif_mice}
 \end{figure}
 % subsubsection motifs_in_responses_of_neurons_across_different_mice (end)
 % subsection motivic_analysis_of_neuronal_signals_with_rlcs (end)
-\subsection{Normalized RLCS score as a correlation metric} % (fold)
+\subsection{Normalized RLCS score as a correlation measure} % (fold)
 \label{sub:normalized_rlcs_score_as_a_correlation_metric}
 We have seen RLCS was very effective in query search, signal matching and correlation study even when classical correlations metric Pearson correlation coefficient failed to detect correlation. As the information encoding in V1 largely depend on population of neurons and their inter-correlations, A robust measure of signal correlations needs to be used for analysis. We explore the possibility of normalized RLCS score between two signals as a robust correlation metric.
 
@@ -659,19 +690,19 @@ $$z = {x- \mu \over \sigma}$$
 Where $s = \sum_{i, j} \text{score } (i, j)$ is the raw RLCS score.
 $\mu$ is the mean and $\sigma$ is the standard deviation of the population of scores.
 
-As a demonstration, Figure shows two signals which have a low Pearson correlation and good RLCS score. The extracted subsequnce shows a good correlation which was not detectable by Pearson correlation.
+As a demonstration, Figure shows two signals which have a low Pearson correlation $\rho= 0.18$ and good RLCS score. The extracted subsequence shows good similarity on $\sim 140$ samples which was not detected by Pearson correlation. The score plot shows that many of the matches were not on the diagonal line. Pearson correlation is reliable only to detect similarities in the diagonal line of score matrix.
 \begin{figure}[h]
   \begin{subfigure}[b]{0.5\textwidth}
-    \includegraphics[width=\linewidth]{\plt/acfMain_corrGram_2016_02_05_16_45_22.pdf}
+    \includegraphics[width=\linewidth]{\plt/rlcsMain_backtrack_n1_16_n2_252016_05_06_11_00_24.pdf}
     \caption{RLCS score matrix}
     \label{fig:ori_simple}
   \end{subfigure}%
   \begin{subfigure}[b]{0.5\textwidth}
-    \includegraphics[width=\linewidth]{\plt/acfMain_corrGram_2016_02_05_16_45_38.pdf}
-    \caption{Extracted common subsequence was not detected by Pearson correlation}
+    \includegraphics[width=\linewidth]{\plt/rlcsMain_getSegs_16_n2_252016_05_06_11_00_24}
+    \caption{Extracted common subsequence}
     \label{fig:acfgram_diff}
   \end{subfigure}%
-  \caption{Demonstration of RLCS score's dominance over Pearson correlation as a metric of similarity. RLCS analysis of two signals having low Pearson correlation. Extracted  subsequence was not detected by Pearson correlation.}
+  \caption{Demonstration of RLCS score's dominance over Pearson correlation as a metric of similarity. RLCS analysis of two signals having low Pearson correlation. Extracted common subsequence was not detected by Pearson correlation.}
   \label{fig:oridir_simple}
 \end{figure}
 % subsection normalized_rlcs_score_as_a_correlation_metric (end)

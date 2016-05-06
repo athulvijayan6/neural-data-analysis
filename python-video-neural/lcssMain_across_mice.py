@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 # @Author: Athul
 # @Date:   2016-02-23 16:00:11
-# @Last Modified by:   Athul Vijayan
-# @Last Modified time: 2016-04-12 08:13:51
+# @Last Modified by:   Athul
+# @Last Modified time: 2016-05-06 10:48:44
 from __future__ import division
 import numpy as np
 import scipy.io
@@ -26,7 +26,7 @@ MT_nat          = data[0, 0]['MT_nat']
 vidIndex = 0
 data = MT_nat
 ensembleSpikeRate = data[0, vidIndex]
-n1 = 30
+n1 = 2
 s = ensembleSpikeRate[n1]
 # average across trials
 X = np.mean(s, axis=1)
@@ -38,7 +38,7 @@ MT_nat          = data[0, 0]['MT_nat']
 vidIndex = 0
 data = MT_nat
 ensembleSpikeRate = data[0, vidIndex]
-n2 = 30
+n2 = 20
 s = ensembleSpikeRate[n2]
 # average across trials
 Y = np.mean(s, axis=1)
@@ -73,7 +73,7 @@ ax.set_title('Matched signals across mice with dist_thres ' + str(tau_dist))
 text = '''Neuron A = {0}\nNeuron B = {1}'''
 ax.annotate(text.format(n1, n2), xy=(0.01, 0.01), xycoords='axes fraction', fontsize=12)
 now = datetime.datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
-fig.savefig(plotDir+'rlcsMain_getSegs_'+now+'.eps')
+fig.savefig(plotDir+'rlcsMain_getSegs_mice'+now+'.eps')
 
 # Plot the score matrix
 fig, ax = rlcs.plotLCS(segment, X, Y)
@@ -83,6 +83,6 @@ ax.set_title('Match of signals across mice with dist_thres ' + str(tau_dist))
 text = '''Neuron A = {0}\nNeuron B = {1}'''
 ax.annotate(text.format(n1, n2), xy=(0.01, 0.01), xycoords='axes fraction', fontsize=12)
 now = datetime.datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
-fig.savefig(plotDir+'rlcsMain_backtrack_'+now+'.pdf')
+fig.savefig(plotDir+'rlcsMain_backtrack_mice_'+now+'.pdf')
 
 plt.show()

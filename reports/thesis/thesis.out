@@ -7,23 +7,25 @@
 \BOOKMARK [0][-]{chapter.1}{Introduction}{}% 7
 \BOOKMARK [0][-]{chapter.2}{Background and Previous work}{}% 8
 \BOOKMARK [1][-]{section.2.1}{Visual pathway in brain}{chapter.2}% 9
-\BOOKMARK [1][-]{section.2.2}{Experiment setup}{chapter.2}% 10
-\BOOKMARK [2][-]{subsection.2.2.1}{Sinusoidal grating visual stimuli}{section.2.2}% 11
-\BOOKMARK [2][-]{subsection.2.2.2}{Natural videos visual stimuli}{section.2.2}% 12
-\BOOKMARK [1][-]{section.2.3}{Orientation and Directional selectivity of neurons in V1}{chapter.2}% 13
-\BOOKMARK [0][-]{chapter.3}{Analyzing neuronal properties}{}% 14
-\BOOKMARK [1][-]{section.3.1}{Quantifying Orientation and Directional selectivity}{chapter.3}% 15
-\BOOKMARK [1][-]{section.3.2}{Modeling neuronal response}{chapter.3}% 16
-\BOOKMARK [1][-]{section.3.3}{Finding similarly tuned neurons}{chapter.3}% 17
-\BOOKMARK [1][-]{section.3.4}{Study of principal components}{chapter.3}% 18
-\BOOKMARK [1][-]{section.3.5}{Study of Reliability}{chapter.3}% 19
-\BOOKMARK [0][-]{chapter.4}{Searching for Motifs}{}% 20
-\BOOKMARK [1][-]{section.4.1}{Cross-Correlation Function}{chapter.4}% 21
-\BOOKMARK [1][-]{section.4.2}{ACFGram}{chapter.4}% 22
-\BOOKMARK [0][-]{chapter.5}{Rough Longest Common Subsequence \(RLCS\)}{}% 23
-\BOOKMARK [1][-]{section.5.1}{Longest Common Subsequence \(LCS\)}{chapter.5}% 24
-\BOOKMARK [1][-]{section.5.2}{RLCS}{chapter.5}% 25
-\BOOKMARK [2][-]{subsection.5.2.1}{Motivic analysis of Neuronal signals with RLCS}{section.5.2}% 26
-\BOOKMARK [2][-]{subsection.5.2.2}{Normalized RLCS score as a correlation metric}{section.5.2}% 27
-\BOOKMARK [0][-]{chapter.6}{Inferences and Future work}{}% 28
-\BOOKMARK [0][-]{appendix.A}{More RLCS plots}{}% 29
+\BOOKMARK [2][-]{subsection.2.1.1}{Neurons}{section.2.1}% 10
+\BOOKMARK [2][-]{subsection.2.1.2}{Visual pathway}{section.2.1}% 11
+\BOOKMARK [1][-]{section.2.2}{Experiment setup}{chapter.2}% 12
+\BOOKMARK [2][-]{subsection.2.2.1}{Sinusoidal grating visual stimuli}{section.2.2}% 13
+\BOOKMARK [2][-]{subsection.2.2.2}{Natural videos visual stimuli}{section.2.2}% 14
+\BOOKMARK [1][-]{section.2.3}{Previous works}{chapter.2}% 15
+\BOOKMARK [0][-]{chapter.3}{Analyzing neuronal properties}{}% 16
+\BOOKMARK [1][-]{section.3.1}{Quantifying Orientation and Directional selectivity}{chapter.3}% 17
+\BOOKMARK [1][-]{section.3.2}{Modeling neuronal response}{chapter.3}% 18
+\BOOKMARK [1][-]{section.3.3}{Finding similarly tuned neurons}{chapter.3}% 19
+\BOOKMARK [1][-]{section.3.4}{Study of principal components}{chapter.3}% 20
+\BOOKMARK [1][-]{section.3.5}{Study of Reliability}{chapter.3}% 21
+\BOOKMARK [0][-]{chapter.4}{Searching for Motifs}{}% 22
+\BOOKMARK [1][-]{section.4.1}{Cross-Correlation Function}{chapter.4}% 23
+\BOOKMARK [1][-]{section.4.2}{ACFGram}{chapter.4}% 24
+\BOOKMARK [0][-]{chapter.5}{Rough Longest Common Subsequence \(RLCS\)}{}% 25
+\BOOKMARK [1][-]{section.5.1}{Longest Common Subsequence \(LCS\)}{chapter.5}% 26
+\BOOKMARK [1][-]{section.5.2}{RLCS}{chapter.5}% 27
+\BOOKMARK [2][-]{subsection.5.2.1}{Motivic analysis of Neuronal signals with RLCS}{section.5.2}% 28
+\BOOKMARK [2][-]{subsection.5.2.2}{Normalized RLCS score as a correlation measure}{section.5.2}% 29
+\BOOKMARK [0][-]{chapter.6}{Inferences and Future work}{}% 30
+\BOOKMARK [0][-]{appendix.A}{More RLCS plots}{}% 31

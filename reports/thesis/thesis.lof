@@ -1,27 +1,27 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Responses $R(\theta _k)$ of a simple neuron for each $\theta _k$ plotted in both orientation and direction space. Equal lobes in direction space shows direction is irrelevant.\relax }}{4}{figure.caption.8}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Responses $R(\theta _k)$ of a complex neuron for each $\theta _k$ plotted in both orientation and direction space. Unequal lobes in direction space shows one direction is preferred than its opposite.\relax }}{5}{figure.caption.9}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Responses $R(\theta _k)$ of a an orientation insensitive neuron for each $\theta _k$ plotted in both orientation and direction space. Similar responses to all orientations shows absence of selectivity.\relax }}{5}{figure.caption.10}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Fit of orientation and direction tuning curves of a neuron. The distinct peak in the orientation tuning curve shows selectivity to orientation $\theta _{pref}$. Different $\sigma _1$ and $\sigma _2$ in direction tuning curve shows direction sensitive cell. - Thus a complex cell\relax }}{7}{figure.caption.11}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Fit of orientation and direction tuning curves of a neuron. The distinct peak in the orientation tuning curve shows selectivity to orientation $\theta _{pref}$. Similar $\sigma _1$ and $\sigma _2$ in direction tuning curve direction of stimuli is irrelevant. - Thus a simple cell\relax }}{8}{figure.caption.12}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Pairwise Pearson correlation of neurons. Both axes are sorted in decreasing order of OSI.\relax }}{9}{figure.caption.13}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Orientation tuning curves of some neurons retrieved from correlation study. All of them have a same preferred orientation.\relax }}{10}{figure.caption.14}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Principal Component Analysis of response of neuron to drifting sinusoidal grating stimuli.\relax }}{11}{figure.caption.15}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Reliability measure $R_A$ for different neurons\relax }}{12}{figure.caption.16}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Responses $R(\theta _k)$ of a simple neuron for each $\theta _k$ plotted in both orientation and direction space. Equal lobes in direction space shows direction is irrelevant.\relax }}{9}{figure.caption.8}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Responses $R(\theta _k)$ of a complex neuron for each $\theta _k$ plotted in both orientation and direction space. Unequal lobes in direction space shows one direction is preferred than its opposite.\relax }}{10}{figure.caption.9}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Responses $R(\theta _k)$ of a an orientation insensitive neuron for each $\theta _k$ plotted in both orientation and direction space. Similar responses to all orientations shows absence of selectivity.\relax }}{10}{figure.caption.10}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Fit of orientation and direction tuning curves of a neuron. The distinct peak in the orientation tuning curve shows selectivity to orientation $\theta _{pref}$. Different $\sigma _1$ and $\sigma _2$ in direction tuning curve shows direction sensitive cell. - Thus a complex cell\relax }}{12}{figure.caption.11}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Fit of orientation and direction tuning curves of a neuron. The distinct peak in the orientation tuning curve shows selectivity to orientation $\theta _{pref}$. Similar $\sigma _1$ and $\sigma _2$ in direction tuning curve direction of stimuli is irrelevant. - Thus a simple cell\relax }}{13}{figure.caption.12}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Pairwise Pearson correlation of neurons. Both axes are sorted in decreasing order of OSI.\relax }}{14}{figure.caption.13}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Orientation tuning curves of some neurons retrieved from correlation study. All of them have a same preferred orientation.\relax }}{15}{figure.caption.14}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Principal Component Analysis of response of neuron to drifting sinusoidal grating stimuli.\relax }}{16}{figure.caption.15}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Reliability measure $R_A$ for different neurons\relax }}{17}{figure.caption.16}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Cross-Correlation function between a target neuron response and a manually chosen subsequence from template neuron.\relax }}{15}{figure.caption.17}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Extracting frame from template based on frame width and ending.\relax }}{16}{figure.caption.18}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces ACFGram plots for template and target responses from same neuron.\relax }}{17}{figure.caption.19}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces ACFGram plots for template and target responses from different neurons.\relax }}{18}{figure.caption.20}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Cross-Correlation function between a target neuron response and a manually chosen subsequence from template neuron.\relax }}{20}{figure.caption.17}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Extracting frame from template based on frame width and ending.\relax }}{21}{figure.caption.18}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces ACFGram plots for template and target responses from same neuron.\relax }}{22}{figure.caption.19}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces ACFGram plots for template and target responses from different neurons.\relax }}{23}{figure.caption.20}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Score matrix from RLCS of responses a neuron to different trials.\relax }}{25}{figure.caption.23}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Extracted motif (longest) from responses a neuron to different trials.\relax }}{26}{figure.caption.24}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Score matrix from RLCS of responses of two neurons in a mouse.\relax }}{27}{figure.caption.26}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Extracted motif (longest) from responses of two neurons in a mouse.\relax }}{27}{figure.caption.27}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Score matrix from RLCS of responses of two neurons in a mouse.\relax }}{28}{figure.caption.29}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Extracted motif (longest) from responses of two neurons in a mouse.\relax }}{29}{figure.caption.30}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Demonstration of RLCS score's dominance over Pearson correlation as a metric of similarity. RLCS analysis of two signals having low Pearson correlation. Extracted subsequence was not detected by Pearson correlation.\relax }}{30}{figure.caption.31}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Score matrix from RLCS of responses a neuron to different trials.\relax }}{30}{figure.caption.23}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Extracted motif (longest) from responses a neuron to different trials.\relax }}{31}{figure.caption.24}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Score matrix from RLCS of responses of two neurons in a mouse.\relax }}{32}{figure.caption.26}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Extracted motif (longest) from responses of two neurons in a mouse.\relax }}{32}{figure.caption.27}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Score matrix from RLCS of responses of two neurons in a mouse.\relax }}{33}{figure.caption.29}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Extracted motif (longest) from responses of two neurons in a mouse.\relax }}{34}{figure.caption.30}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Demonstration of RLCS score's dominance over Pearson correlation as a metric of similarity. RLCS analysis of two signals having low Pearson correlation. Extracted common subsequence was not detected by Pearson correlation.\relax }}{35}{figure.caption.31}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
