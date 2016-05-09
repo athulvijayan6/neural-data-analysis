@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 # @Author: Athul
 # @Date:   2016-02-23 16:00:11
-# @Last Modified by:   Athul
-# @Last Modified time: 2016-05-06 10:27:03
+# @Last Modified by:   Athul Vijayan
+# @Last Modified time: 2016-05-08 19:18:25
 from __future__ import division
 import numpy as np
 import scipy.io
@@ -17,7 +17,7 @@ plotDir = '../plots/'
 
 # ============================ Loading neuronal data here ===============
 dataRoot = '../datasets/video/'
-data = scipy.io.loadmat('../datasets/video/2013-28-06/1/AmpMov.mat')
+data = scipy.io.loadmat('../datasets/video/2014-08-04/1/AmpMov.mat')
 data = data['AmpMov']
 
 
@@ -31,12 +31,12 @@ neuronId = 20
 data = MT_nat
 sample_rate = 20
 ensembleSpikeRate = data[0, vidIndex]
-n = 10
+# n = 10
+n = 42
 s = ensembleSpikeRate[n]
-
 # average across trials
 X = s[:, 0]
-Y = s[:, 1]
+Y = s[:, 5]
 
 # At the end of loading your data, Have query as X and reference as Y
 # Both X and Y are numpy arrays

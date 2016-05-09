@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.4)  6 MAY 2016 19:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.3.2)  9 MAY 2016 16:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **thesis.tex
 (/home/athul/machineLearning/neuralData/reports/thesis/thesis.tex
-LaTeX2e <2016/02/01>
-Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
+LaTeX2e <2015/01/01>
+Babel <3.9l> and hyphenation patterns for 2 languages loaded.
 (/home/athul/machineLearning/neuralData/reports/thesis/iitmdiss.cls
 Document Class: iitmdiss 2005/03/09 Class for IIT-Madras Dissertations
 (/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
@@ -71,11 +71,11 @@ Package: setspace 2000/12/01 6.7 Contributed and Supported LaTeX2e package
 Package: `setspace' 6.7 <2000/12/01>
 ) (/home/athul/machineLearning/neuralData/reports/thesis/atbeginend.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
-Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
-Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
-Package caption3 Info: TeX engine: e-TeX on input line 67.
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
 \captionmargin=\dimen111
 \captionmargin@=\dimen112
 \captionwidth=\dimen113
@@ -90,15 +90,15 @@ Package caption3 Info: TeX engine: e-TeX on input line 67.
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2016/01/03 v1.0q Standard LaTeX Graphics (DPC,SPQR)
+Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
-Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
 File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
-Package graphics Info: Driver file: pdftex.def on input line 95.
+Package graphics Info: Driver file: pdftex.def on input line 94.
 
 (/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
@@ -133,40 +133,40 @@ Package: threeparttable 2003/06/13  v 3.0
 \@tempboxb=\box26
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2016/03/03 v2.15a AMS math features
+Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip43
 
 For additional information on amsmath, use the `?' option.
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
-Package: amstext 2000/06/29 v2.01 AMS text
+Package: amstext 2000/06/29 v2.01
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
-File: amsgen.sty 1999/11/30 v2.0 generic functions
+File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks16
 \ex@=\dimen128
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
-Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen129
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count93
-LaTeX Info: Redefining \frac on input line 199.
+LaTeX Info: Redefining \frac on input line 210.
 \uproot@=\count94
 \leftroot@=\count95
-LaTeX Info: Redefining \overline on input line 297.
+LaTeX Info: Redefining \overline on input line 306.
 \classnum@=\count96
 \DOTSCASE@=\count97
-LaTeX Info: Redefining \ldots on input line 394.
-LaTeX Info: Redefining \dots on input line 397.
-LaTeX Info: Redefining \cdots on input line 518.
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
 \Mathstrutbox@=\box27
 \strutbox@=\box28
 \big@size=\dimen130
-LaTeX Font Info:    Redeclaring font encoding OML on input line 630.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 631.
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \macc@depth=\count98
 \c@MaxMatrixCols=\count99
 \dotsspace@=\muskip10
@@ -187,8 +187,8 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 631.
 \multlinegap=\skip44
 \multlinetaggap=\skip45
 \mathdisplay@stack=\toks20
-LaTeX Info: Redefining \[ on input line 2735.
-LaTeX Info: Redefining \] on input line 2736.
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/was/gensymb.sty
 Package: gensymb 2003/07/02 v1.0 (WaS)
@@ -412,7 +412,7 @@ Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
 \epsfysize=\dimen138
 )
 (/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
-Package: subcaption 2016/02/20 v1.1-142 Sub-captions (AR)
+Package: subcaption 2013/02/03 v1.1-62 Sub-captions (AR)
 \c@subfigure=\count105
 \c@subtable=\count106
 )
@@ -551,6 +551,9 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 \@float@every@algorithm=\toks29
 \c@algorithm=\count119
 )
+(/usr/share/texlive/texmf-dist/tex/latex/placeins/placeins.sty
+Package: placeins 2005/04/18  v 2.2
+)
 (/usr/share/texlive/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
 Package: algpseudocode 
 
@@ -571,6 +574,21 @@ Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
 ) (/home/athul/machineLearning/neuralData/reports/thesis/thesis.aux
+
+LaTeX Warning: Label `fig:ori_simple' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:ori_simple' multiply defined.
+
+
+LaTeX Warning: Label `fig:dir_simple' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:dir_simple' multiply defined.
+
+
+LaTeX Warning: Label `fig:oridir_simple' multiply defined.
+
 
 LaTeX Warning: Label `chap:searchmotif' multiply defined.
 
@@ -593,9 +611,6 @@ LaTeX Warning: Label `sub@fig:ori_simple' multiply defined.
 LaTeX Warning: Label `fig:oridir_simple' multiply defined.
 
 
-LaTeX Warning: Label `euclid' multiply defined.
-
-
 LaTeX Warning: Label `fig:ori_simple' multiply defined.
 
 
@@ -610,46 +625,70 @@ LaTeX Warning: Label `sub@fig:acfgram_diff' multiply defined.
 
 LaTeX Warning: Label `fig:oridir_simple' multiply defined.
 
+
+LaTeX Warning: Label `fig:' multiply defined.
+
+
+LaTeX Warning: Label `fig:' multiply defined.
+
+
+LaTeX Warning: Label `fig:' multiply defined.
+
+
+LaTeX Warning: Label `fig:' multiply defined.
+
+
+LaTeX Warning: Label `fig:' multiply defined.
+
+
+LaTeX Warning: Label `fig:' multiply defined.
+
+
+LaTeX Warning: Label `fig:' multiply defined.
+
+
+LaTeX Warning: Label `fig:' multiply defined.
+
 )
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/pxmi/m/it on input line 40.
-LaTeX Font Info:    Try loading font information for OML+pxmi on input line 40.
+LaTeX Font Info:    Checking defaults for OML/pxmi/m/it on input line 41.
+LaTeX Font Info:    Try loading font information for OML+pxmi on input line 41.
 
  (/usr/share/texlive/texmf-dist/tex/latex/pxfonts/omlpxmi.fd
 File: omlpxmi.fd 2000/12/14 v1.0
 )
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMS/pxsy/m/n on input line 40.
-LaTeX Font Info:    Try loading font information for OMS+pxsy on input line 40.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMS/pxsy/m/n on input line 41.
+LaTeX Font Info:    Try loading font information for OMS+pxsy on input line 41.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/pxfonts/omspxsy.fd
 File: omspxsy.fd 2000/12/14 v1.0
 )
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMX/pxex/m/n on input line 40.
-LaTeX Font Info:    Try loading font information for OMX+pxex on input line 40.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMX/pxex/m/n on input line 41.
+LaTeX Font Info:    Try loading font information for OMX+pxex on input line 41.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/pxfonts/omxpxex.fd
 File: omxpxex.fd 2000/12/14 v1.0
 )
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for U/pxexa/m/n on input line 40.
-LaTeX Font Info:    Try loading font information for U+pxexa on input line 40.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for U/pxexa/m/n on input line 41.
+LaTeX Font Info:    Try loading font information for U+pxexa on input line 41.
 
 (/usr/share/texlive/texmf-dist/tex/latex/pxfonts/upxexa.fd
 File: upxexa.fd 2000/12/14 v1.0
 )
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Try loading font information for OT1+pxr on input line 40.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Try loading font information for OT1+pxr on input line 41.
 
 (/usr/share/texlive/texmf-dist/tex/latex/pxfonts/ot1pxr.fd
 File: ot1pxr.fd 2000/12/14 v1.0
@@ -721,20 +760,20 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Redefining \celsius on input line 40.
-Package gensymb Info: Faking symbols for \degree and \celsius on input line 40.
+LaTeX Info: Redefining \celsius on input line 41.
+Package gensymb Info: Faking symbols for \degree and \celsius on input line 41.
 
 
 
 Package gensymb Warning: Not defining \perthousand.
 
-LaTeX Info: Redefining \ohm on input line 40.
-Package gensymb Info: Using \Omega for \ohm on input line 40.
+LaTeX Info: Redefining \ohm on input line 41.
+Package gensymb Info: Using \Omega for \ohm on input line 41.
 
 Package gensymb Warning: Not defining \micro.
 
 \AtBeginShipoutBox=\box32
-Package hyperref Info: Link coloring OFF on input line 40.
+Package hyperref Info: Link coloring OFF on input line 41.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -743,9 +782,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count133
 )
-LaTeX Info: Redefining \ref on input line 40.
-LaTeX Info: Redefining \pageref on input line 40.
-LaTeX Info: Redefining \nameref on input line 40.
+LaTeX Info: Redefining \ref on input line 41.
+LaTeX Info: Redefining \pageref on input line 41.
+LaTeX Info: Redefining \nameref on input line 41.
 
 (/home/athul/machineLearning/neuralData/reports/thesis/thesis.out)
 (/home/athul/machineLearning/neuralData/reports/thesis/thesis.out)
@@ -753,21 +792,21 @@ LaTeX Info: Redefining \nameref on input line 40.
 \openout3 = `thesis.out'.
 
 Package epstopdf Info: Source file: <iitm.eps>
-(epstopdf)                    date: 2009-02-17 21:59:41
+(epstopdf)                    date: 2016-05-04 04:52:25
 (epstopdf)                    size: 711659 bytes
 (epstopdf)             Output file: <iitm-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-05-01 16:12:43
+(epstopdf)                    date: 2016-05-04 04:52:25
 (epstopdf)                    size: 40562 bytes
 (epstopdf)             Command: <repstopdf --outfile=iitm-eps-converted-to.pdf 
 iitm.eps>
-(epstopdf)             \includegraphics on input line 55.
+(epstopdf)             \includegraphics on input line 56.
 Package epstopdf Info: Output file is already uptodate.
 
-<iitm-eps-converted-to.pdf, id=128, 332.24126pt x 332.24126pt>
+<iitm-eps-converted-to.pdf, id=140, 332.24126pt x 332.24126pt>
 File: iitm-eps-converted-to.pdf Graphic file (type pdf)
 
 <use iitm-eps-converted-to.pdf>
-Package pdftex.def Info: iitm-eps-converted-to.pdf used on input line 55.
+Package pdftex.def Info: iitm-eps-converted-to.pdf used on input line 56.
 (pdftex.def)             Requested size: 99.67314pt x 99.67314pt.
  [0
 
@@ -775,84 +814,119 @@ Package pdftex.def Info: iitm-eps-converted-to.pdf used on input line 55.
 g/neuralData/reports/thesis/iitm-eps-converted-to.pdf>]
 Certificate
 
-Underfull \hbox (badness 10000) in paragraph at lines 76--81
+Underfull \hbox (badness 10000) in paragraph at lines 78--83
 
+ []
+
+LaTeX Font Info:    Try loading font information for U+pxmia on input line 87.
+(/usr/share/texlive/texmf-dist/tex/latex/pxfonts/upxmia.fd
+File: upxmia.fd 2000/12/14 v1.0
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 87.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 87.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for U+pxsyc on input line 87.
+
+(/usr/share/texlive/texmf-dist/tex/latex/pxfonts/upxsyc.fd
+File: upxsyc.fd 2000/12/14 v1.0
+)
+Underfull \hbox (badness 10000) in paragraph at lines 90--95
+
+ []
+
+
+Overfull \hbox (1.35732pt too wide) in paragraph at lines 75--102
+[]|  $[]$$[]$ 
  []
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.88 \acknowledgements
-                       [0
+l.102 \acknowledgements
+                        [0
 
-] [1
+]
+Overfull \hbox (19.85919pt too wide) in paragraph at lines 104--105
+\OT1/pxr/m/n/12 Foremost, I would like to ex-press my sin-cere grat-i-tude to m
+y guide Dr. Hema A. Murthy
+ []
+
+[1
 
 ] [2
 
-]
-(/home/athul/machineLearning/neuralData/reports/thesis/thesis.toc
-LaTeX Font Info:    Try loading font information for U+pxmia on input line 9.
-
-(/usr/share/texlive/texmf-dist/tex/latex/pxfonts/upxmia.fd
-File: upxmia.fd 2000/12/14 v1.0
-)
-LaTeX Font Info:    Try loading font information for U+msa on input line 9.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 9.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Try loading font information for U+pxsyc on input line 9.
-
-(/usr/share/texlive/texmf-dist/tex/latex/pxfonts/upxsyc.fd
-File: upxsyc.fd 2000/12/14 v1.0
-) [3
+] (/home/athul/machineLearning/neuralData/reports/thesis/thesis.toc
+[3
 
 ])
 \tf@toc=\write4
 \openout4 = `thesis.toc'.
 
- [4]
-(/home/athul/machineLearning/neuralData/reports/thesis/thesis.lot)
+ [4] (/home/athul/machineLearning/neuralData/reports/thesis/thesis.lot)
 \tf@lot=\write5
 \openout5 = `thesis.lot'.
 
- [5
+
+[5
+
+] (/home/athul/machineLearning/neuralData/reports/thesis/thesis.lof [6
 
 ]
-(/home/athul/machineLearning/neuralData/reports/thesis/thesis.lof [6
-
-])
+[7])
 \tf@lof=\write6
 \openout6 = `thesis.lof'.
 
- [7]
-[8
+ [8] [9
 
-] [9
+] [10
 
 ]
 CHAPTER 1.
 [1
 
 
-]
+] [2]
 CHAPTER 2.
-[2
+[3
 
-]
-Missing character: There is no â in font pxr!
-Missing character: There is no € in font pxr!
-Missing character: There is no ” in font pxr!
-Missing character: There is no â in font pxr!
-Missing character: There is no € in font pxr!
-Missing character: There is no ” in font pxr!
- [3] [4] [5]
+] [4] [5]
+<thesis_plots/ori_selectivity.pdf, id=381, 500.87125pt x 464.73625pt>
+File: thesis_plots/ori_selectivity.pdf Graphic file (type pdf)
+
+<use thesis_plots/ori_selectivity.pdf>
+Package pdftex.def Info: thesis_plots/ori_selectivity.pdf used on input line 23
+5.
+(pdftex.def)             Requested size: 258.77463pt x 240.11124pt.
+
+<thesis_plots/dir_simple.pdf, id=382, 496.85625pt x 258.9675pt>
+File: thesis_plots/dir_simple.pdf Graphic file (type pdf)
+
+<use thesis_plots/dir_simple.pdf>
+Package pdftex.def Info: thesis_plots/dir_simple.pdf used on input line 242.
+(pdftex.def)             Requested size: 215.64333pt x 112.39703pt.
+
+<thesis_plots/dir_complex.pdf, id=383, 496.85625pt x 258.9675pt>
+File: thesis_plots/dir_complex.pdf Graphic file (type pdf)
+
+<use thesis_plots/dir_complex.pdf>
+Package pdftex.def Info: thesis_plots/dir_complex.pdf used on input line 247.
+(pdftex.def)             Requested size: 215.64333pt x 112.39703pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[6]
 Missing character: There is no â in font pxr!
 Missing character: There is no € in font pxr!
 Missing character: There is no “ in font pxr!
@@ -864,78 +938,95 @@ Missing character: There is no ° in font pxr!
 Missing character: There is no â in font pxr!
 Missing character: There is no € in font pxr!
 Missing character: There is no “ in font pxr!
- [6] [7]
+ [7 </home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/ori_sel
+ectivity.pdf>]
+LaTeX Font Info:    Try loading font information for OMS+pxr on input line 271.
+
+ (/usr/share/texlive/texmf-dist/tex/latex/pxfonts/omspxr.fd
+File: omspxr.fd 2000/12/14 v1.0
+)
+LaTeX Font Info:    Font shape `OMS/pxr/m/n' in size <12> not available
+(Font)              Font shape `OMS/pxsy/m/n' tried instead on input line 271.
+
+[8 </home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/dir_simp
+le.pdf> </home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/dir
+_complex.pdf
+
+pdfTeX warning: pdflatex (file /home/athul/machineLearning/neuralData/reports/t
+hesis/thesis_plots/dir_complex.pdf): PDF inclusion: multiple pdfs with page gro
+up included in a single page
+>] [9] [10]
 CHAPTER 3.
-[8
+[11
 
 ]
-Overfull \hbox (24.97221pt too wide) in paragraph at lines 220--222
+Overfull \hbox (24.97221pt too wide) in paragraph at lines 311--313
 \OT1/pxr/m/n/12 Similarly, Nor-mal-ized length of vec-tor sum in di-rec-tion sp
 ace is de-fined as DSI(Direction
  []
 
 
-<thesis_plots/gratings_oripolar_2016_04_24_14_08_33.pdf, id=331, 578.16pt x 433
+<thesis_plots/gratings_oripolar_2016_04_24_14_08_33.pdf, id=477, 578.16pt x 433
 .62pt>
 File: thesis_plots/gratings_oripolar_2016_04_24_14_08_33.pdf Graphic file (type
  pdf)
  <use thesis_plots/gratings_oripolar_2016_04_24_14_08_33.pdf>
 Package pdftex.def Info: thesis_plots/gratings_oripolar_2016_04_24_14_08_33.pdf
- used on input line 228.
+ used on input line 319.
 (pdftex.def)             Requested size: 215.64333pt x 161.7271pt.
 
-<thesis_plots/gratings_dirpolar_2016_04_24_14_08_33.pdf, id=332, 578.16pt x 433
+<thesis_plots/gratings_dirpolar_2016_04_24_14_08_33.pdf, id=478, 578.16pt x 433
 .62pt>
 File: thesis_plots/gratings_dirpolar_2016_04_24_14_08_33.pdf Graphic file (type
  pdf)
  <use thesis_plots/gratings_dirpolar_2016_04_24_14_08_33.pdf>
 Package pdftex.def Info: thesis_plots/gratings_dirpolar_2016_04_24_14_08_33.pdf
- used on input line 233.
+ used on input line 324.
 (pdftex.def)             Requested size: 215.64333pt x 161.7271pt.
 
-<thesis_plots/gratings_oripolar_2016_05_01_15_25_00.pdf, id=334, 578.16pt x 433
+<thesis_plots/gratings_oripolar_2016_05_01_15_25_00.pdf, id=480, 578.16pt x 433
 .62pt>
 File: thesis_plots/gratings_oripolar_2016_05_01_15_25_00.pdf Graphic file (type
  pdf)
  <use thesis_plots/gratings_oripolar_2016_05_01_15_25_00.pdf>
 Package pdftex.def Info: thesis_plots/gratings_oripolar_2016_05_01_15_25_00.pdf
- used on input line 243.
+ used on input line 334.
 (pdftex.def)             Requested size: 215.64333pt x 161.7271pt.
 
-<thesis_plots/gratings_dirpolar_2016_05_01_15_25_00.pdf, id=335, 578.16pt x 433
+<thesis_plots/gratings_dirpolar_2016_05_01_15_25_00.pdf, id=481, 578.16pt x 433
 .62pt>
 File: thesis_plots/gratings_dirpolar_2016_05_01_15_25_00.pdf Graphic file (type
  pdf)
  <use thesis_plots/gratings_dirpolar_2016_05_01_15_25_00.pdf>
 Package pdftex.def Info: thesis_plots/gratings_dirpolar_2016_05_01_15_25_00.pdf
- used on input line 248.
+ used on input line 339.
 (pdftex.def)             Requested size: 215.64333pt x 161.7271pt.
- [9 </home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/grating
-s_oripolar_2016_04_24_14_08_33.pdf> </home/athul/machineLearning/neuralData/rep
-orts/thesis/thesis_plots/gratings_dirpolar_2016_04_24_14_08_33.pdf
+ [12 </home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/gratin
+gs_oripolar_2016_04_24_14_08_33.pdf> </home/athul/machineLearning/neuralData/re
+ports/thesis/thesis_plots/gratings_dirpolar_2016_04_24_14_08_33.pdf
 
 pdfTeX warning: pdflatex (file /home/athul/machineLearning/neuralData/reports/t
 hesis/thesis_plots/gratings_dirpolar_2016_04_24_14_08_33.pdf): PDF inclusion: m
 ultiple pdfs with page group included in a single page
 >]
-<thesis_plots/gratings_oripolar_2016_05_01_15_26_41.pdf, id=424, 578.16pt x 433
+<thesis_plots/gratings_oripolar_2016_05_01_15_26_41.pdf, id=570, 578.16pt x 433
 .62pt>
 File: thesis_plots/gratings_oripolar_2016_05_01_15_26_41.pdf Graphic file (type
  pdf)
  <use thesis_plots/gratings_oripolar_2016_05_01_15_26_41.pdf>
 Package pdftex.def Info: thesis_plots/gratings_oripolar_2016_05_01_15_26_41.pdf
- used on input line 258.
+ used on input line 349.
 (pdftex.def)             Requested size: 215.64333pt x 161.7271pt.
 
-<thesis_plots/gratings_dirpolar_2016_05_01_15_26_41.pdf, id=425, 578.16pt x 433
+<thesis_plots/gratings_dirpolar_2016_05_01_15_26_41.pdf, id=571, 578.16pt x 433
 .62pt>
 File: thesis_plots/gratings_dirpolar_2016_05_01_15_26_41.pdf Graphic file (type
  pdf)
  <use thesis_plots/gratings_dirpolar_2016_05_01_15_26_41.pdf>
 Package pdftex.def Info: thesis_plots/gratings_dirpolar_2016_05_01_15_26_41.pdf
- used on input line 263.
+ used on input line 354.
 (pdftex.def)             Requested size: 215.64333pt x 161.7271pt.
- [10 </home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/gratin
+ [13 </home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/gratin
 gs_oripolar_2016_05_01_15_25_00.pdf> </home/athul/machineLearning/neuralData/re
 ports/thesis/thesis_plots/gratings_dirpolar_2016_05_01_15_25_00.pdf
 
@@ -955,49 +1046,49 @@ pdfTeX warning: pdflatex (file /home/athul/machineLearning/neuralData/reports/t
 hesis/thesis_plots/gratings_dirpolar_2016_05_01_15_26_41.pdf): PDF inclusion: m
 ultiple pdfs with page group included in a single page
 >]
-<thesis_plots/gratings_crvefit_osi_n_3_2016_05_02_12_53_03.pdf, id=590, 578.16p
+<thesis_plots/gratings_crvefit_osi_n_3_2016_05_02_12_53_03.pdf, id=737, 578.16p
 t x 433.62pt>
 File: thesis_plots/gratings_crvefit_osi_n_3_2016_05_02_12_53_03.pdf Graphic fil
 e (type pdf)
 
 <use thesis_plots/gratings_crvefit_osi_n_3_2016_05_02_12_53_03.pdf>
 Package pdftex.def Info: thesis_plots/gratings_crvefit_osi_n_3_2016_05_02_12_53
-_03.pdf used on input line 290.
+_03.pdf used on input line 380.
 (pdftex.def)             Requested size: 215.64333pt x 161.7271pt.
 
-<thesis_plots/gratings_crvefit_n_3_2016_05_01_15_40_28.pdf, id=591, 578.16pt x 
+<thesis_plots/gratings_crvefit_n_3_2016_05_01_15_40_28.pdf, id=738, 578.16pt x 
 433.62pt>
 File: thesis_plots/gratings_crvefit_n_3_2016_05_01_15_40_28.pdf Graphic file (t
 ype pdf)
  <use thesis_plots/gratings_crvefit_n_3_2016_05_01_15_40_28.pdf>
 Package pdftex.def Info: thesis_plots/gratings_crvefit_n_3_2016_05_01_15_40_28.
-pdf used on input line 295.
+pdf used on input line 385.
 (pdftex.def)             Requested size: 215.64333pt x 161.7271pt.
 
-<thesis_plots/gratings_crvefit_osi_n_0_2016_05_02_12_52_43.pdf, id=593, 578.16p
+<thesis_plots/gratings_crvefit_osi_n_0_2016_05_02_12_52_43.pdf, id=740, 578.16p
 t x 433.62pt>
 File: thesis_plots/gratings_crvefit_osi_n_0_2016_05_02_12_52_43.pdf Graphic fil
 e (type pdf)
 
 <use thesis_plots/gratings_crvefit_osi_n_0_2016_05_02_12_52_43.pdf>
 Package pdftex.def Info: thesis_plots/gratings_crvefit_osi_n_0_2016_05_02_12_52
-_43.pdf used on input line 304.
+_43.pdf used on input line 394.
 (pdftex.def)             Requested size: 215.64333pt x 161.7271pt.
 
-<thesis_plots/gratings_crvefit_n_0_2016_05_01_15_40_26.pdf, id=594, 578.16pt x 
+<thesis_plots/gratings_crvefit_n_0_2016_05_01_15_40_26.pdf, id=741, 578.16pt x 
 433.62pt>
 File: thesis_plots/gratings_crvefit_n_0_2016_05_01_15_40_26.pdf Graphic file (t
 ype pdf)
  <use thesis_plots/gratings_crvefit_n_0_2016_05_01_15_40_26.pdf>
 Package pdftex.def Info: thesis_plots/gratings_crvefit_n_0_2016_05_01_15_40_26.
-pdf used on input line 309.
+pdf used on input line 399.
 (pdftex.def)             Requested size: 215.64333pt x 161.7271pt.
 
-[11]
+[14]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[12 </home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/grating
+[15 </home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/grating
 s_crvefit_osi_n_3_2016_05_02_12_53_03.pdf> </home/athul/machineLearning/neuralD
 ata/reports/thesis/thesis_plots/gratings_crvefit_n_3_2016_05_01_15_40_28.pdf
 
@@ -1007,34 +1098,34 @@ hesis/thesis_plots/gratings_crvefit_n_3_2016_05_01_15_40_28.pdf): PDF inclusion
 >]
 Package epstopdf Info: Source file: <thesis_plots/tuningCorr_desc_civar_m2.eps>
 
-(epstopdf)                    date: 2015-09-29 16:29:14
+(epstopdf)                    date: 2016-05-04 04:52:25
 (epstopdf)                    size: 695201 bytes
 (epstopdf)             Output file: <thesis_plots/tuningCorr_desc_civar_m2-eps-
 converted-to.pdf>
-(epstopdf)                    date: 2016-05-02 11:48:18
+(epstopdf)                    date: 2016-05-04 04:52:25
 (epstopdf)                    size: 35939 bytes
 (epstopdf)             Command: <repstopdf --outfile=thesis_plots/tuningCorr_de
 sc_civar_m2-eps-converted-to.pdf thesis_plots/tuningCorr_desc_civar_m2.eps>
-(epstopdf)             \includegraphics on input line 324.
+(epstopdf)             \includegraphics on input line 414.
 Package epstopdf Info: Output file is already uptodate.
 
-<thesis_plots/tuningCorr_desc_civar_m2-eps-converted-to.pdf, id=698, 587.19376p
+<thesis_plots/tuningCorr_desc_civar_m2-eps-converted-to.pdf, id=846, 587.19376p
 t x 442.65375pt>
 File: thesis_plots/tuningCorr_desc_civar_m2-eps-converted-to.pdf Graphic file (
 type pdf)
 
 <use thesis_plots/tuningCorr_desc_civar_m2-eps-converted-to.pdf>
 Package pdftex.def Info: thesis_plots/tuningCorr_desc_civar_m2-eps-converted-to
-.pdf used on input line 324.
+.pdf used on input line 414.
 (pdftex.def)             Requested size: 388.15536pt x 292.61166pt.
 
-<thesis_plots/gratings_sel_model_2016_05_02_15_57_20.pdf, id=699, 578.16pt x 43
+<thesis_plots/gratings_sel_model_2016_05_02_15_57_20.pdf, id=847, 578.16pt x 43
 3.62pt>
 File: thesis_plots/gratings_sel_model_2016_05_02_15_57_20.pdf Graphic file (typ
 e pdf)
  <use thesis_plots/gratings_sel_model_2016_05_02_15_57_20.pdf>
 Package pdftex.def Info: thesis_plots/gratings_sel_model_2016_05_02_15_57_20.pd
-f used on input line 330.
+f used on input line 420.
 (pdftex.def)             Requested size: 388.15536pt x 291.11276pt.
 
 
@@ -1043,125 +1134,118 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[13 </home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/grating
+[16 </home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/grating
 s_crvefit_osi_n_0_2016_05_02_12_52_43.pdf> </home/athul/machineLearning/neuralD
 ata/reports/thesis/thesis_plots/gratings_crvefit_n_0_2016_05_01_15_40_26.pdf
 
 pdfTeX warning: pdflatex (file /home/athul/machineLearning/neuralData/reports/t
 hesis/thesis_plots/gratings_crvefit_n_0_2016_05_01_15_40_26.pdf): PDF inclusion
 : multiple pdfs with page group included in a single page
->] [14 </home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/tuni
-ngCorr_desc_civar_m2-eps-converted-to.pdf>] [15 </home/athul/machineLearning/ne
-uralData/reports/thesis/thesis_plots/gratings_sel_model_2016_05_02_15_57_20.pdf
->]
-<thesis_plots/subsetbMain_pcaPlot_2016_02_05_15_41_05.pdf, id=874, 578.16pt x 4
+>] [17 </home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/tuni
+ngCorr_desc_civar_m2-eps-converted-to.pdf>]
+<thesis_plots/subsetbMain_pcaPlot_2016_02_05_15_41_05.pdf, id=970, 578.16pt x 4
 33.62pt>
 File: thesis_plots/subsetbMain_pcaPlot_2016_02_05_15_41_05.pdf Graphic file (ty
 pe pdf)
  <use thesis_plots/subsetbMain_pcaPlot_2016_02_05_15_41_05.pdf>
 Package pdftex.def Info: thesis_plots/subsetbMain_pcaPlot_2016_02_05_15_41_05.p
-df used on input line 347.
+df used on input line 436.
 (pdftex.def)             Requested size: 207.01575pt x 155.25616pt.
 
-<thesis_plots/subsetbMain_errPlot_2016_02_12_12_42_39.pdf, id=875, 578.16pt x 4
+<thesis_plots/subsetbMain_errPlot_2016_02_12_12_42_39.pdf, id=971, 578.16pt x 4
 33.62pt>
 File: thesis_plots/subsetbMain_errPlot_2016_02_12_12_42_39.pdf Graphic file (ty
 pe pdf)
  <use thesis_plots/subsetbMain_errPlot_2016_02_12_12_42_39.pdf>
 Package pdftex.def Info: thesis_plots/subsetbMain_errPlot_2016_02_12_12_42_39.p
-df used on input line 354.
+df used on input line 443.
 (pdftex.def)             Requested size: 207.01575pt x 155.25616pt.
 
-[16 </home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/subsetb
-Main_pcaPlot_2016_02_05_15_41_05.pdf> </home/athul/machineLearning/neuralData/r
-eports/thesis/thesis_plots/subsetbMain_errPlot_2016_02_12_12_42_39.pdf
+[18 </home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/grating
+s_sel_model_2016_05_02_15_57_20.pdf>] [19 </home/athul/machineLearning/neuralDa
+ta/reports/thesis/thesis_plots/subsetbMain_pcaPlot_2016_02_05_15_41_05.pdf> </h
+ome/athul/machineLearning/neuralData/reports/thesis/thesis_plots/subsetbMain_er
+rPlot_2016_02_12_12_42_39.pdf
 
 pdfTeX warning: pdflatex (file /home/athul/machineLearning/neuralData/reports/t
 hesis/thesis_plots/subsetbMain_errPlot_2016_02_12_12_42_39.pdf): PDF inclusion:
  multiple pdfs with page group included in a single page
 >]
-<thesis_plots/reliabMain_raPlot_2016_02_05_13_25_56.pdf, id=973, 578.16pt x 433
-.62pt>
+<thesis_plots/reliabMain_raPlot_2016_02_05_13_25_56.pdf, id=1119, 578.16pt x 43
+3.62pt>
 File: thesis_plots/reliabMain_raPlot_2016_02_05_13_25_56.pdf Graphic file (type
  pdf)
  <use thesis_plots/reliabMain_raPlot_2016_02_05_13_25_56.pdf>
 Package pdftex.def Info: thesis_plots/reliabMain_raPlot_2016_02_05_13_25_56.pdf
- used on input line 373.
-(pdftex.def)             Requested size: 301.89934pt x 226.42323pt.
- [17 </home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/reliab
+ used on input line 460.
+(pdftex.def)             Requested size: 258.77463pt x 194.07516pt.
+ [20 </home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/reliab
 Main_raPlot_2016_02_05_13_25_56.pdf>]
 CHAPTER 4.
-LaTeX Font Info:    Try loading font information for OMS+pxr on input line 386.
+[21
 
-(/usr/share/texlive/texmf-dist/tex/latex/pxfonts/omspxr.fd
-File: omspxr.fd 2000/12/14 v1.0
-)
-LaTeX Font Info:    Font shape `OMS/pxr/m/n' in size <12> not available
-(Font)              Font shape `OMS/pxsy/m/n' tried instead on input line 386.
- [18
-
-] [19]
-<thesis_plots/acfMain_acfPlot_2016_02_05_16_45_37.pdf, id=1034, 1011.78pt x 867
+] [22]
+<thesis_plots/acfMain_acfPlot_2016_02_05_16_45_37.pdf, id=1181, 1011.78pt x 867
 .24pt>
 File: thesis_plots/acfMain_acfPlot_2016_02_05_16_45_37.pdf Graphic file (type p
 df)
  <use thesis_plots/acfMain_acfPlot_2016_02_05_16_45_37.pdf>
 Package pdftex.def Info: thesis_plots/acfMain_acfPlot_2016_02_05_16_45_37.pdf u
-sed on input line 408.
+sed on input line 494.
 (pdftex.def)             Requested size: 301.89934pt x 258.77132pt.
- [20 </home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/acfMai
+ [23 </home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/acfMai
 n_acfPlot_2016_02_05_16_45_37.pdf>]
-<thesis_plots/framesel.pdf, id=1256, 731.73375pt x 298.11375pt>
+<thesis_plots/framesel.pdf, id=1402, 731.73375pt x 298.11375pt>
 File: thesis_plots/framesel.pdf Graphic file (type pdf)
 
 <use thesis_plots/framesel.pdf>
-Package pdftex.def Info: thesis_plots/framesel.pdf used on input line 421.
+Package pdftex.def Info: thesis_plots/framesel.pdf used on input line 507.
 (pdftex.def)             Requested size: 431.28667pt x 175.70818pt.
- [21 </home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/frames
+ [24 </home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/frames
 el.pdf>]
-<thesis_plots/acfMain_corrGram_2016_02_05_16_49_00.pdf, id=1299, 1011.78pt x 86
+<thesis_plots/acfMain_corrGram_2016_02_05_16_49_00.pdf, id=1445, 1011.78pt x 86
 7.24pt>
 File: thesis_plots/acfMain_corrGram_2016_02_05_16_49_00.pdf Graphic file (type 
 pdf)
  <use thesis_plots/acfMain_corrGram_2016_02_05_16_49_00.pdf>
 Package pdftex.def Info: thesis_plots/acfMain_corrGram_2016_02_05_16_49_00.pdf 
-used on input line 434.
+used on input line 519.
 (pdftex.def)             Requested size: 215.64333pt x 184.83853pt.
 
-<thesis_plots/acfMain_corrGram_2016_02_05_16_49_10.pdf, id=1300, 1011.78pt x 86
+<thesis_plots/acfMain_corrGram_2016_02_05_16_49_10.pdf, id=1446, 1011.78pt x 86
 7.24pt>
 File: thesis_plots/acfMain_corrGram_2016_02_05_16_49_10.pdf Graphic file (type 
 pdf)
  <use thesis_plots/acfMain_corrGram_2016_02_05_16_49_10.pdf>
 Package pdftex.def Info: thesis_plots/acfMain_corrGram_2016_02_05_16_49_10.pdf 
-used on input line 439.
+used on input line 524.
 (pdftex.def)             Requested size: 215.64333pt x 184.83853pt.
 
-<thesis_plots/acfMain_corrGram_2016_02_05_16_45_22.pdf, id=1302, 1011.78pt x 86
+<thesis_plots/acfMain_corrGram_2016_02_05_16_45_22.pdf, id=1448, 1011.78pt x 86
 7.24pt>
 File: thesis_plots/acfMain_corrGram_2016_02_05_16_45_22.pdf Graphic file (type 
 pdf)
  <use thesis_plots/acfMain_corrGram_2016_02_05_16_45_22.pdf>
 Package pdftex.def Info: thesis_plots/acfMain_corrGram_2016_02_05_16_45_22.pdf 
-used on input line 448.
+used on input line 533.
 (pdftex.def)             Requested size: 215.64333pt x 184.83853pt.
 
-<thesis_plots/acfMain_corrGram_2016_02_05_16_45_38.pdf, id=1303, 1011.78pt x 86
+<thesis_plots/acfMain_corrGram_2016_02_05_16_45_38.pdf, id=1449, 1011.78pt x 86
 7.24pt>
 File: thesis_plots/acfMain_corrGram_2016_02_05_16_45_38.pdf Graphic file (type 
 pdf)
  <use thesis_plots/acfMain_corrGram_2016_02_05_16_45_38.pdf>
 Package pdftex.def Info: thesis_plots/acfMain_corrGram_2016_02_05_16_45_38.pdf 
-used on input line 453.
+used on input line 538.
 (pdftex.def)             Requested size: 215.64333pt x 184.83853pt.
- [22 </home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/acfMai
+ [25 </home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/acfMai
 n_corrGram_2016_02_05_16_49_00.pdf> </home/athul/machineLearning/neuralData/rep
 orts/thesis/thesis_plots/acfMain_corrGram_2016_02_05_16_49_10.pdf
 
 pdfTeX warning: pdflatex (file /home/athul/machineLearning/neuralData/reports/t
 hesis/thesis_plots/acfMain_corrGram_2016_02_05_16_49_10.pdf): PDF inclusion: mu
 ltiple pdfs with page group included in a single page
->] [23 </home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/acfM
+>] [26 </home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/acfM
 ain_corrGram_2016_02_05_16_45_22.pdf> </home/athul/machineLearning/neuralData/r
 eports/thesis/thesis_plots/acfMain_corrGram_2016_02_05_16_45_38.pdf
 
@@ -1173,215 +1257,601 @@ CHAPTER 5.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[24
+[27
 
-] [25] [26]
-Underfull \hbox (badness 10000) in paragraph at lines 534--535
+] [28] [29]
+Underfull \hbox (badness 10000) in paragraph at lines 619--620
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 537--538
+Underfull \hbox (badness 10000) in paragraph at lines 622--623
 
  []
 
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 544.
-[27] [28]
-<thesis_plots/rlcsMain_score_trial_0_1n_102016_05_06_10_32_05.pdf, id=2539, 115
+put line 629.
+[30] [31]
+<thesis_plots/rlcsMain_score_trial_0_1n_102016_05_06_10_32_05.pdf, id=2689, 115
 6.32pt x 1011.78pt>
 File: thesis_plots/rlcsMain_score_trial_0_1n_102016_05_06_10_32_05.pdf Graphic 
 file (type pdf)
 
 <use thesis_plots/rlcsMain_score_trial_0_1n_102016_05_06_10_32_05.pdf>
 Package pdftex.def Info: thesis_plots/rlcsMain_score_trial_0_1n_102016_05_06_10
-_32_05.pdf used on input line 638.
+_32_05.pdf used on input line 716.
 (pdftex.def)             Requested size: 431.28667pt x 377.36325pt.
- [29]
+ [32]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 Package epstopdf Info: Source file: <thesis_plots/rlcsMain_motif_trial_0_1n_102
 016_05_06_10_30_17.eps>
-(epstopdf)                    date: 2016-05-06 10:30:18
+(epstopdf)                    date: 2016-05-07 00:11:21
 (epstopdf)                    size: 29330 bytes
 (epstopdf)             Output file: <thesis_plots/rlcsMain_motif_trial_0_1n_102
 016_05_06_10_30_17-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-05-06 10:31:06
+(epstopdf)                    date: 2016-05-07 00:11:21
 (epstopdf)                    size: 17260 bytes
 (epstopdf)             Command: <repstopdf --outfile=thesis_plots/rlcsMain_moti
 f_trial_0_1n_102016_05_06_10_30_17-eps-converted-to.pdf thesis_plots/rlcsMain_m
 otif_trial_0_1n_102016_05_06_10_30_17.eps>
-(epstopdf)             \includegraphics on input line 646.
+(epstopdf)             \includegraphics on input line 724.
 Package epstopdf Info: Output file is already uptodate.
 
 <thesis_plots/rlcsMain_motif_trial_0_1n_102016_05_06_10_30_17-eps-converted-to.
-pdf, id=2549, 578.16pt x 433.62pt>
+pdf, id=2697, 578.16pt x 433.62pt>
 File: thesis_plots/rlcsMain_motif_trial_0_1n_102016_05_06_10_30_17-eps-converte
 d-to.pdf Graphic file (type pdf)
 
 <use thesis_plots/rlcsMain_motif_trial_0_1n_102016_05_06_10_30_17-eps-converted
 -to.pdf>
 Package pdftex.def Info: thesis_plots/rlcsMain_motif_trial_0_1n_102016_05_06_10
-_30_17-eps-converted-to.pdf used on input line 646.
+_30_17-eps-converted-to.pdf used on input line 724.
 (pdftex.def)             Requested size: 345.03064pt x 258.7713pt.
- [30 </home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/rlcsMa
-in_score_trial_0_1n_102016_05_06_10_32_05.pdf>]
-<thesis_plots/rlcsMain_backtrack_n1_15_n2_52016_05_06_10_42_55.pdf, id=2598, 11
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+<thesis_plots/rlcsMain_backtrack_n1_15_n2_52016_05_06_10_42_55.pdf, id=2700, 11
 56.32pt x 1011.78pt>
 File: thesis_plots/rlcsMain_backtrack_n1_15_n2_52016_05_06_10_42_55.pdf Graphic
  file (type pdf)
 
 <use thesis_plots/rlcsMain_backtrack_n1_15_n2_52016_05_06_10_42_55.pdf>
 Package pdftex.def Info: thesis_plots/rlcsMain_backtrack_n1_15_n2_52016_05_06_1
-0_42_55.pdf used on input line 656.
+0_42_55.pdf used on input line 734.
 (pdftex.def)             Requested size: 345.03064pt x 301.89986pt.
 Package epstopdf Info: Source file: <thesis_plots/rlcsMain_getSegs_15_n2_52016_
 05_06_10_42_54.eps>
-(epstopdf)                    date: 2016-05-06 10:42:54
+(epstopdf)                    date: 2016-05-07 00:11:21
 (epstopdf)                    size: 32336 bytes
 (epstopdf)             Output file: <thesis_plots/rlcsMain_getSegs_15_n2_52016_
 05_06_10_42_54-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-05-06 10:43:38
+(epstopdf)                    date: 2016-05-07 00:11:21
 (epstopdf)                    size: 19512 bytes
 (epstopdf)             Command: <repstopdf --outfile=thesis_plots/rlcsMain_getS
 egs_15_n2_52016_05_06_10_42_54-eps-converted-to.pdf thesis_plots/rlcsMain_getSe
 gs_15_n2_52016_05_06_10_42_54.eps>
-(epstopdf)             \includegraphics on input line 662.
+(epstopdf)             \includegraphics on input line 740.
 Package epstopdf Info: Output file is already uptodate.
 
 <thesis_plots/rlcsMain_getSegs_15_n2_52016_05_06_10_42_54-eps-converted-to.pdf,
- id=2599, 578.16pt x 433.62pt>
+ id=2701, 578.16pt x 433.62pt>
 File: thesis_plots/rlcsMain_getSegs_15_n2_52016_05_06_10_42_54-eps-converted-to
 .pdf Graphic file (type pdf)
 
 <use thesis_plots/rlcsMain_getSegs_15_n2_52016_05_06_10_42_54-eps-converted-to.
 pdf>
 Package pdftex.def Info: thesis_plots/rlcsMain_getSegs_15_n2_52016_05_06_10_42_
-54-eps-converted-to.pdf used on input line 662.
+54-eps-converted-to.pdf used on input line 740.
 (pdftex.def)             Requested size: 345.03064pt x 258.7713pt.
-
-<thesis_plots/rlcsMain_backtrack_mice_2016_05_06_10_48_51.pdf, id=2603, 1156.32
+ [33]
+<thesis_plots/rlcsMain_backtrack_mice_2016_05_06_10_48_51.pdf, id=2712, 1156.32
 pt x 1011.78pt>
 File: thesis_plots/rlcsMain_backtrack_mice_2016_05_06_10_48_51.pdf Graphic file
  (type pdf)
 
 <use thesis_plots/rlcsMain_backtrack_mice_2016_05_06_10_48_51.pdf>
 Package pdftex.def Info: thesis_plots/rlcsMain_backtrack_mice_2016_05_06_10_48_
-51.pdf used on input line 672.
+51.pdf used on input line 750.
 (pdftex.def)             Requested size: 345.03064pt x 301.89986pt.
 Package epstopdf Info: Source file: <thesis_plots/rlcsMain_getSegs_mice2016_05_
 06_10_48_51.eps>
-(epstopdf)                    date: 2016-05-06 10:48:51
+(epstopdf)                    date: 2016-05-07 00:11:21
 (epstopdf)                    size: 32741 bytes
 (epstopdf)             Output file: <thesis_plots/rlcsMain_getSegs_mice2016_05_
 06_10_48_51-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-05-06 10:50:50
+(epstopdf)                    date: 2016-05-07 00:11:21
 (epstopdf)                    size: 20577 bytes
 (epstopdf)             Command: <repstopdf --outfile=thesis_plots/rlcsMain_getS
 egs_mice2016_05_06_10_48_51-eps-converted-to.pdf thesis_plots/rlcsMain_getSegs_
 mice2016_05_06_10_48_51.eps>
-(epstopdf)             \includegraphics on input line 678.
+(epstopdf)             \includegraphics on input line 756.
 Package epstopdf Info: Output file is already uptodate.
 
 <thesis_plots/rlcsMain_getSegs_mice2016_05_06_10_48_51-eps-converted-to.pdf, id
-=2604, 578.16pt x 433.62pt>
+=2713, 578.16pt x 433.62pt>
 File: thesis_plots/rlcsMain_getSegs_mice2016_05_06_10_48_51-eps-converted-to.pd
 f Graphic file (type pdf)
 
 <use thesis_plots/rlcsMain_getSegs_mice2016_05_06_10_48_51-eps-converted-to.pdf
 >
 Package pdftex.def Info: thesis_plots/rlcsMain_getSegs_mice2016_05_06_10_48_51-
-eps-converted-to.pdf used on input line 678.
+eps-converted-to.pdf used on input line 756.
 (pdftex.def)             Requested size: 345.03064pt x 258.7713pt.
- [31 </home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/rlcsMa
-in_motif_trial_0_1n_102016_05_06_10_30_17-eps-converted-to.pdf>] [32 </home/ath
-ul/machineLearning/neuralData/reports/thesis/thesis_plots/rlcsMain_backtrack_n1
-_15_n2_52016_05_06_10_42_55.pdf> </home/athul/machineLearning/neuralData/report
-s/thesis/thesis_plots/rlcsMain_getSegs_15_n2_52016_05_06_10_42_54-eps-converted
--to.pdf>] [33 </home/athul/machineLearning/neuralData/reports/thesis/thesis_plo
-ts/rlcsMain_backtrack_mice_2016_05_06_10_48_51.pdf>] [34 </home/athul/machineLe
-arning/neuralData/reports/thesis/thesis_plots/rlcsMain_getSegs_mice2016_05_06_1
-0_48_51-eps-converted-to.pdf>]
+ [34 </home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/rlcsMa
+in_score_trial_0_1n_102016_05_06_10_32_05.pdf>] [35 </home/athul/machineLearnin
+g/neuralData/reports/thesis/thesis_plots/rlcsMain_motif_trial_0_1n_102016_05_06
+_10_30_17-eps-converted-to.pdf>] [36 </home/athul/machineLearning/neuralData/re
+ports/thesis/thesis_plots/rlcsMain_backtrack_n1_15_n2_52016_05_06_10_42_55.pdf>
+ </home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/rlcsMain_g
+etSegs_15_n2_52016_05_06_10_42_54-eps-converted-to.pdf>] [37 </home/athul/machi
+neLearning/neuralData/reports/thesis/thesis_plots/rlcsMain_backtrack_mice_2016_
+05_06_10_48_51.pdf> </home/athul/machineLearning/neuralData/reports/thesis/thes
+is_plots/rlcsMain_getSegs_mice2016_05_06_10_48_51-eps-converted-to.pdf>]
 
 Package amsmath Warning: Foreign command \over;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 689.
+(amsmath)                 on input line 767.
 
 
-<thesis_plots/rlcsMain_backtrack_n1_16_n2_252016_05_06_11_00_24.pdf, id=2829, 1
+<thesis_plots/rlcsMain_backtrack_n1_16_n2_252016_05_06_11_00_24.pdf, id=2979, 1
 156.32pt x 1011.78pt>
 File: thesis_plots/rlcsMain_backtrack_n1_16_n2_252016_05_06_11_00_24.pdf Graphi
 c file (type pdf)
 
 <use thesis_plots/rlcsMain_backtrack_n1_16_n2_252016_05_06_11_00_24.pdf>
 Package pdftex.def Info: thesis_plots/rlcsMain_backtrack_n1_16_n2_252016_05_06_
-11_00_24.pdf used on input line 696.
+11_00_24.pdf used on input line 774.
 (pdftex.def)             Requested size: 215.64333pt x 188.6739pt.
 Package epstopdf Info: Source file: <thesis_plots/rlcsMain_getSegs_16_n2_252016
 _05_06_11_00_24.eps>
-(epstopdf)                    date: 2016-05-06 11:00:24
+(epstopdf)                    date: 2016-05-07 00:11:21
 (epstopdf)                    size: 34035 bytes
 (epstopdf)             Output file: <thesis_plots/rlcsMain_getSegs_16_n2_252016
 _05_06_11_00_24-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-05-06 11:04:33
+(epstopdf)                    date: 2016-05-07 00:11:21
 (epstopdf)                    size: 20022 bytes
 (epstopdf)             Command: <repstopdf --outfile=thesis_plots/rlcsMain_getS
 egs_16_n2_252016_05_06_11_00_24-eps-converted-to.pdf thesis_plots/rlcsMain_getS
 egs_16_n2_252016_05_06_11_00_24.eps>
-(epstopdf)             \includegraphics on input line 701.
+(epstopdf)             \includegraphics on input line 779.
 Package epstopdf Info: Output file is already uptodate.
 
 <thesis_plots/rlcsMain_getSegs_16_n2_252016_05_06_11_00_24-eps-converted-to.pdf
-, id=2830, 578.16pt x 433.62pt>
+, id=2980, 578.16pt x 433.62pt>
 File: thesis_plots/rlcsMain_getSegs_16_n2_252016_05_06_11_00_24-eps-converted-t
 o.pdf Graphic file (type pdf)
 
 <use thesis_plots/rlcsMain_getSegs_16_n2_252016_05_06_11_00_24-eps-converted-to
 .pdf>
 Package pdftex.def Info: thesis_plots/rlcsMain_getSegs_16_n2_252016_05_06_11_00
-_24-eps-converted-to.pdf used on input line 701.
+_24-eps-converted-to.pdf used on input line 779.
 (pdftex.def)             Requested size: 215.64333pt x 161.7271pt.
- [35 </home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/rlcsMa
-in_backtrack_n1_16_n2_252016_05_06_11_00_24.pdf> </home/athul/machineLearning/n
-euralData/reports/thesis/thesis_plots/rlcsMain_getSegs_16_n2_252016_05_06_11_00
-_24-eps-converted-to.pdf>]
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[38] [39 </home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/rl
+csMain_backtrack_n1_16_n2_252016_05_06_11_00_24.pdf> </home/athul/machineLearni
+ng/neuralData/reports/thesis/thesis_plots/rlcsMain_getSegs_16_n2_252016_05_06_1
+1_00_24-eps-converted-to.pdf>]
 CHAPTER 6.
-[36
+[40
 
-]
+] [41]
 APPENDIX A.
-[37
 
-] (/home/athul/machineLearning/neuralData/reports/thesis/thesis.bbl
-LaTeX Font Info:    Try loading font information for OT1+pxtt on input line 13.
+<thesis_plots/apndx/rlcsMain_score_trial_0_1n_222016_05_08_19_04_26.pdf, id=308
+5, 1156.32pt x 1011.78pt>
+File: thesis_plots/apndx/rlcsMain_score_trial_0_1n_222016_05_08_19_04_26.pdf Gr
+aphic file (type pdf)
+
+<use thesis_plots/apndx/rlcsMain_score_trial_0_1n_222016_05_08_19_04_26.pdf>
+Package pdftex.def Info: thesis_plots/apndx/rlcsMain_score_trial_0_1n_222016_05
+_08_19_04_26.pdf used on input line 817.
+(pdftex.def)             Requested size: 215.64333pt x 188.6739pt.
+Package epstopdf Info: Source file: <thesis_plots/apndx/rlcsMain_motif_trial_0_
+1n_222016_05_08_19_04_26.eps>
+(epstopdf)                    date: 2016-05-08 19:04:26
+(epstopdf)                    size: 27661 bytes
+(epstopdf)             Output file: <thesis_plots/apndx/rlcsMain_motif_trial_0_
+1n_222016_05_08_19_04_26-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-05-08 19:06:34
+(epstopdf)                    size: 16865 bytes
+(epstopdf)             Command: <repstopdf --outfile=thesis_plots/apndx/rlcsMai
+n_motif_trial_0_1n_222016_05_08_19_04_26-eps-converted-to.pdf thesis_plots/apnd
+x/rlcsMain_motif_trial_0_1n_222016_05_08_19_04_26.eps>
+(epstopdf)             \includegraphics on input line 821.
+Package epstopdf Info: Output file is already uptodate.
+
+<thesis_plots/apndx/rlcsMain_motif_trial_0_1n_222016_05_08_19_04_26-eps-convert
+ed-to.pdf, id=3086, 578.16pt x 433.62pt>
+File: thesis_plots/apndx/rlcsMain_motif_trial_0_1n_222016_05_08_19_04_26-eps-co
+nverted-to.pdf Graphic file (type pdf)
+
+<use thesis_plots/apndx/rlcsMain_motif_trial_0_1n_222016_05_08_19_04_26-eps-con
+verted-to.pdf>
+Package pdftex.def Info: thesis_plots/apndx/rlcsMain_motif_trial_0_1n_222016_05
+_08_19_04_26-eps-converted-to.pdf used on input line 821.
+(pdftex.def)             Requested size: 215.64333pt x 161.7271pt.
+
+<thesis_plots/apndx/rlcsMain_score_trial_0_1n_322016_05_08_19_14_28.pdf, id=308
+7, 1156.32pt x 1011.78pt>
+File: thesis_plots/apndx/rlcsMain_score_trial_0_1n_322016_05_08_19_14_28.pdf Gr
+aphic file (type pdf)
+
+<use thesis_plots/apndx/rlcsMain_score_trial_0_1n_322016_05_08_19_14_28.pdf>
+Package pdftex.def Info: thesis_plots/apndx/rlcsMain_score_trial_0_1n_322016_05
+_08_19_14_28.pdf used on input line 830.
+(pdftex.def)             Requested size: 215.64333pt x 188.6739pt.
+Package epstopdf Info: Source file: <thesis_plots/apndx/rlcsMain_motif_trial_0_
+1n_322016_05_08_19_14_28.eps>
+(epstopdf)                    date: 2016-05-08 19:14:28
+(epstopdf)                    size: 27261 bytes
+(epstopdf)             Output file: <thesis_plots/apndx/rlcsMain_motif_trial_0_
+1n_322016_05_08_19_14_28-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-05-08 19:15:44
+(epstopdf)                    size: 16286 bytes
+(epstopdf)             Command: <repstopdf --outfile=thesis_plots/apndx/rlcsMai
+n_motif_trial_0_1n_322016_05_08_19_14_28-eps-converted-to.pdf thesis_plots/apnd
+x/rlcsMain_motif_trial_0_1n_322016_05_08_19_14_28.eps>
+(epstopdf)             \includegraphics on input line 834.
+Package epstopdf Info: Output file is already uptodate.
+
+<thesis_plots/apndx/rlcsMain_motif_trial_0_1n_322016_05_08_19_14_28-eps-convert
+ed-to.pdf, id=3088, 578.16pt x 433.62pt>
+File: thesis_plots/apndx/rlcsMain_motif_trial_0_1n_322016_05_08_19_14_28-eps-co
+nverted-to.pdf Graphic file (type pdf)
+
+<use thesis_plots/apndx/rlcsMain_motif_trial_0_1n_322016_05_08_19_14_28-eps-con
+verted-to.pdf>
+Package pdftex.def Info: thesis_plots/apndx/rlcsMain_motif_trial_0_1n_322016_05
+_08_19_14_28-eps-converted-to.pdf used on input line 834.
+(pdftex.def)             Requested size: 215.64333pt x 161.7271pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+<thesis_plots/apndx/rlcsMain_score_trial_0_1n_422016_05_08_19_18_34.pdf, id=308
+9, 1156.32pt x 1011.78pt>
+File: thesis_plots/apndx/rlcsMain_score_trial_0_1n_422016_05_08_19_18_34.pdf Gr
+aphic file (type pdf)
+
+<use thesis_plots/apndx/rlcsMain_score_trial_0_1n_422016_05_08_19_18_34.pdf>
+Package pdftex.def Info: thesis_plots/apndx/rlcsMain_score_trial_0_1n_422016_05
+_08_19_18_34.pdf used on input line 843.
+(pdftex.def)             Requested size: 215.64333pt x 188.6739pt.
+Package epstopdf Info: Source file: <thesis_plots/apndx/rlcsMain_motif_trial_0_
+1n_422016_05_08_19_18_33.eps>
+(epstopdf)                    date: 2016-05-08 19:18:34
+(epstopdf)                    size: 29124 bytes
+(epstopdf)             Output file: <thesis_plots/apndx/rlcsMain_motif_trial_0_
+1n_422016_05_08_19_18_33-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-05-08 19:19:09
+(epstopdf)                    size: 17060 bytes
+(epstopdf)             Command: <repstopdf --outfile=thesis_plots/apndx/rlcsMai
+n_motif_trial_0_1n_422016_05_08_19_18_33-eps-converted-to.pdf thesis_plots/apnd
+x/rlcsMain_motif_trial_0_1n_422016_05_08_19_18_33.eps>
+(epstopdf)             \includegraphics on input line 847.
+Package epstopdf Info: Output file is already uptodate.
+
+<thesis_plots/apndx/rlcsMain_motif_trial_0_1n_422016_05_08_19_18_33-eps-convert
+ed-to.pdf, id=3090, 578.16pt x 433.62pt>
+File: thesis_plots/apndx/rlcsMain_motif_trial_0_1n_422016_05_08_19_18_33-eps-co
+nverted-to.pdf Graphic file (type pdf)
+
+<use thesis_plots/apndx/rlcsMain_motif_trial_0_1n_422016_05_08_19_18_33-eps-con
+verted-to.pdf>
+Package pdftex.def Info: thesis_plots/apndx/rlcsMain_motif_trial_0_1n_422016_05
+_08_19_18_33-eps-converted-to.pdf used on input line 847.
+(pdftex.def)             Requested size: 215.64333pt x 161.7271pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[42
+
+ </home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/apndx/rlcs
+Main_score_trial_0_1n_222016_05_08_19_04_26.pdf> </home/athul/machineLearning/n
+euralData/reports/thesis/thesis_plots/apndx/rlcsMain_motif_trial_0_1n_222016_05
+_08_19_04_26-eps-converted-to.pdf>] [43 </home/athul/machineLearning/neuralData
+/reports/thesis/thesis_plots/apndx/rlcsMain_score_trial_0_1n_322016_05_08_19_14
+_28.pdf> </home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/ap
+ndx/rlcsMain_motif_trial_0_1n_322016_05_08_19_14_28-eps-converted-to.pdf> </hom
+e/athul/machineLearning/neuralData/reports/thesis/thesis_plots/apndx/rlcsMain_s
+core_trial_0_1n_422016_05_08_19_18_34.pdf
+
+pdfTeX warning: pdflatex (file /home/athul/machineLearning/neuralData/reports/t
+hesis/thesis_plots/apndx/rlcsMain_score_trial_0_1n_422016_05_08_19_18_34.pdf): 
+PDF inclusion: multiple pdfs with page group included in a single page
+> </home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/apndx/rlc
+sMain_motif_trial_0_1n_422016_05_08_19_18_33-eps-converted-to.pdf>]
+<thesis_plots/apndx/rlcsMain_backtrack_n1_1_n2_302016_05_08_19_22_31.pdf, id=40
+93, 1156.32pt x 1011.78pt>
+File: thesis_plots/apndx/rlcsMain_backtrack_n1_1_n2_302016_05_08_19_22_31.pdf G
+raphic file (type pdf)
+
+<use thesis_plots/apndx/rlcsMain_backtrack_n1_1_n2_302016_05_08_19_22_31.pdf>
+Package pdftex.def Info: thesis_plots/apndx/rlcsMain_backtrack_n1_1_n2_302016_0
+5_08_19_22_31.pdf used on input line 860.
+(pdftex.def)             Requested size: 215.64333pt x 188.6739pt.
+Package epstopdf Info: Source file: <thesis_plots/apndx/rlcsMain_getSegs_1_n2_3
+02016_05_08_19_22_31.eps>
+(epstopdf)                    date: 2016-05-08 19:22:31
+(epstopdf)                    size: 31024 bytes
+(epstopdf)             Output file: <thesis_plots/apndx/rlcsMain_getSegs_1_n2_3
+02016_05_08_19_22_31-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-05-08 19:24:09
+(epstopdf)                    size: 19926 bytes
+(epstopdf)             Command: <repstopdf --outfile=thesis_plots/apndx/rlcsMai
+n_getSegs_1_n2_302016_05_08_19_22_31-eps-converted-to.pdf thesis_plots/apndx/rl
+csMain_getSegs_1_n2_302016_05_08_19_22_31.eps>
+(epstopdf)             \includegraphics on input line 864.
+Package epstopdf Info: Output file is already uptodate.
+
+<thesis_plots/apndx/rlcsMain_getSegs_1_n2_302016_05_08_19_22_31-eps-converted-t
+o.pdf, id=4094, 578.16pt x 433.62pt>
+File: thesis_plots/apndx/rlcsMain_getSegs_1_n2_302016_05_08_19_22_31-eps-conver
+ted-to.pdf Graphic file (type pdf)
+
+<use thesis_plots/apndx/rlcsMain_getSegs_1_n2_302016_05_08_19_22_31-eps-convert
+ed-to.pdf>
+Package pdftex.def Info: thesis_plots/apndx/rlcsMain_getSegs_1_n2_302016_05_08_
+19_22_31-eps-converted-to.pdf used on input line 864.
+(pdftex.def)             Requested size: 215.64333pt x 161.7271pt.
+
+<thesis_plots/apndx/rlcsMain_backtrack_n1_11_n2_222016_05_08_19_25_22.pdf, id=4
+095, 1156.32pt x 1011.78pt>
+File: thesis_plots/apndx/rlcsMain_backtrack_n1_11_n2_222016_05_08_19_25_22.pdf 
+Graphic file (type pdf)
+
+<use thesis_plots/apndx/rlcsMain_backtrack_n1_11_n2_222016_05_08_19_25_22.pdf>
+Package pdftex.def Info: thesis_plots/apndx/rlcsMain_backtrack_n1_11_n2_222016_
+05_08_19_25_22.pdf used on input line 873.
+(pdftex.def)             Requested size: 215.64333pt x 188.6739pt.
+Package epstopdf Info: Source file: <thesis_plots/apndx/rlcsMain_getSegs_11_n2_
+222016_05_08_19_25_22.eps>
+(epstopdf)                    date: 2016-05-08 19:25:22
+(epstopdf)                    size: 31606 bytes
+(epstopdf)             Output file: <thesis_plots/apndx/rlcsMain_getSegs_11_n2_
+222016_05_08_19_25_22-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-05-08 19:27:08
+(epstopdf)                    size: 19730 bytes
+(epstopdf)             Command: <repstopdf --outfile=thesis_plots/apndx/rlcsMai
+n_getSegs_11_n2_222016_05_08_19_25_22-eps-converted-to.pdf thesis_plots/apndx/r
+lcsMain_getSegs_11_n2_222016_05_08_19_25_22.eps>
+(epstopdf)             \includegraphics on input line 877.
+Package epstopdf Info: Output file is already uptodate.
+
+<thesis_plots/apndx/rlcsMain_getSegs_11_n2_222016_05_08_19_25_22-eps-converted-
+to.pdf, id=4096, 578.16pt x 433.62pt>
+File: thesis_plots/apndx/rlcsMain_getSegs_11_n2_222016_05_08_19_25_22-eps-conve
+rted-to.pdf Graphic file (type pdf)
+
+<use thesis_plots/apndx/rlcsMain_getSegs_11_n2_222016_05_08_19_25_22-eps-conver
+ted-to.pdf>
+Package pdftex.def Info: thesis_plots/apndx/rlcsMain_getSegs_11_n2_222016_05_08
+_19_25_22-eps-converted-to.pdf used on input line 877.
+(pdftex.def)             Requested size: 215.64333pt x 161.7271pt.
+
+<thesis_plots/apndx/rlcsMain_backtrack_n1_8_n2_182016_05_08_19_30_23.pdf, id=40
+97, 1156.32pt x 1011.78pt>
+File: thesis_plots/apndx/rlcsMain_backtrack_n1_8_n2_182016_05_08_19_30_23.pdf G
+raphic file (type pdf)
+
+<use thesis_plots/apndx/rlcsMain_backtrack_n1_8_n2_182016_05_08_19_30_23.pdf>
+Package pdftex.def Info: thesis_plots/apndx/rlcsMain_backtrack_n1_8_n2_182016_0
+5_08_19_30_23.pdf used on input line 886.
+(pdftex.def)             Requested size: 215.64333pt x 188.6739pt.
+Package epstopdf Info: Source file: <thesis_plots/apndx/rlcsMain_getSegs_8_n2_1
+82016_05_08_19_30_23.eps>
+(epstopdf)                    date: 2016-05-08 19:30:23
+(epstopdf)                    size: 30341 bytes
+(epstopdf)             Output file: <thesis_plots/apndx/rlcsMain_getSegs_8_n2_1
+82016_05_08_19_30_23-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-05-08 19:31:23
+(epstopdf)                    size: 19191 bytes
+(epstopdf)             Command: <repstopdf --outfile=thesis_plots/apndx/rlcsMai
+n_getSegs_8_n2_182016_05_08_19_30_23-eps-converted-to.pdf thesis_plots/apndx/rl
+csMain_getSegs_8_n2_182016_05_08_19_30_23.eps>
+(epstopdf)             \includegraphics on input line 890.
+Package epstopdf Info: Output file is already uptodate.
+
+<thesis_plots/apndx/rlcsMain_getSegs_8_n2_182016_05_08_19_30_23-eps-converted-t
+o.pdf, id=4098, 578.16pt x 433.62pt>
+File: thesis_plots/apndx/rlcsMain_getSegs_8_n2_182016_05_08_19_30_23-eps-conver
+ted-to.pdf Graphic file (type pdf)
+
+<use thesis_plots/apndx/rlcsMain_getSegs_8_n2_182016_05_08_19_30_23-eps-convert
+ed-to.pdf>
+Package pdftex.def Info: thesis_plots/apndx/rlcsMain_getSegs_8_n2_182016_05_08_
+19_30_23-eps-converted-to.pdf used on input line 890.
+(pdftex.def)             Requested size: 215.64333pt x 161.7271pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[44
+
+ </home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/apndx/rlcs
+Main_backtrack_n1_1_n2_302016_05_08_19_22_31.pdf> </home/athul/machineLearning/
+neuralData/reports/thesis/thesis_plots/apndx/rlcsMain_getSegs_1_n2_302016_05_08
+_19_22_31-eps-converted-to.pdf> </home/athul/machineLearning/neuralData/reports
+/thesis/thesis_plots/apndx/rlcsMain_backtrack_n1_11_n2_222016_05_08_19_25_22.pd
+f
+
+pdfTeX warning: pdflatex (file /home/athul/machineLearning/neuralData/reports/t
+hesis/thesis_plots/apndx/rlcsMain_backtrack_n1_11_n2_222016_05_08_19_25_22.pdf)
+: PDF inclusion: multiple pdfs with page group included in a single page
+> </home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/apndx/rlc
+sMain_getSegs_11_n2_222016_05_08_19_25_22-eps-converted-to.pdf>]
+<thesis_plots/apndx/rlcsMain_backtrack_mice_2016_05_08_19_51_44.pdf, id=4786, 1
+156.32pt x 1011.78pt>
+File: thesis_plots/apndx/rlcsMain_backtrack_mice_2016_05_08_19_51_44.pdf Graphi
+c file (type pdf)
+
+<use thesis_plots/apndx/rlcsMain_backtrack_mice_2016_05_08_19_51_44.pdf>
+Package pdftex.def Info: thesis_plots/apndx/rlcsMain_backtrack_mice_2016_05_08_
+19_51_44.pdf used on input line 902.
+(pdftex.def)             Requested size: 215.64333pt x 188.6739pt.
+Package epstopdf Info: Source file: <thesis_plots/apndx/rlcsMain_getSegs_mice20
+16_05_08_19_51_44.eps>
+(epstopdf)                    date: 2016-05-08 19:51:44
+(epstopdf)                    size: 30641 bytes
+(epstopdf)             Output file: <thesis_plots/apndx/rlcsMain_getSegs_mice20
+16_05_08_19_51_44-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-05-08 19:58:26
+(epstopdf)                    size: 19084 bytes
+(epstopdf)             Command: <repstopdf --outfile=thesis_plots/apndx/rlcsMai
+n_getSegs_mice2016_05_08_19_51_44-eps-converted-to.pdf thesis_plots/apndx/rlcsM
+ain_getSegs_mice2016_05_08_19_51_44.eps>
+(epstopdf)             \includegraphics on input line 906.
+Package epstopdf Info: Output file is already uptodate.
+
+<thesis_plots/apndx/rlcsMain_getSegs_mice2016_05_08_19_51_44-eps-converted-to.p
+df, id=4787, 578.16pt x 433.62pt>
+File: thesis_plots/apndx/rlcsMain_getSegs_mice2016_05_08_19_51_44-eps-converted
+-to.pdf Graphic file (type pdf)
+
+<use thesis_plots/apndx/rlcsMain_getSegs_mice2016_05_08_19_51_44-eps-converted-
+to.pdf>
+Package pdftex.def Info: thesis_plots/apndx/rlcsMain_getSegs_mice2016_05_08_19_
+51_44-eps-converted-to.pdf used on input line 906.
+(pdftex.def)             Requested size: 215.64333pt x 161.7271pt.
+
+<thesis_plots/apndx/rlcsMain_backtrack_mice_2016_05_08_19_48_28.pdf, id=4788, 1
+156.32pt x 1011.78pt>
+File: thesis_plots/apndx/rlcsMain_backtrack_mice_2016_05_08_19_48_28.pdf Graphi
+c file (type pdf)
+
+<use thesis_plots/apndx/rlcsMain_backtrack_mice_2016_05_08_19_48_28.pdf>
+Package pdftex.def Info: thesis_plots/apndx/rlcsMain_backtrack_mice_2016_05_08_
+19_48_28.pdf used on input line 915.
+(pdftex.def)             Requested size: 215.64333pt x 188.6739pt.
+Package epstopdf Info: Source file: <thesis_plots/apndx/rlcsMain_getSegs_mice20
+16_05_08_19_48_28.eps>
+(epstopdf)                    date: 2016-05-08 19:48:28
+(epstopdf)                    size: 32402 bytes
+(epstopdf)             Output file: <thesis_plots/apndx/rlcsMain_getSegs_mice20
+16_05_08_19_48_28-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-05-08 19:58:27
+(epstopdf)                    size: 20685 bytes
+(epstopdf)             Command: <repstopdf --outfile=thesis_plots/apndx/rlcsMai
+n_getSegs_mice2016_05_08_19_48_28-eps-converted-to.pdf thesis_plots/apndx/rlcsM
+ain_getSegs_mice2016_05_08_19_48_28.eps>
+(epstopdf)             \includegraphics on input line 919.
+Package epstopdf Info: Output file is already uptodate.
+
+<thesis_plots/apndx/rlcsMain_getSegs_mice2016_05_08_19_48_28-eps-converted-to.p
+df, id=4789, 578.16pt x 433.62pt>
+File: thesis_plots/apndx/rlcsMain_getSegs_mice2016_05_08_19_48_28-eps-converted
+-to.pdf Graphic file (type pdf)
+
+<use thesis_plots/apndx/rlcsMain_getSegs_mice2016_05_08_19_48_28-eps-converted-
+to.pdf>
+Package pdftex.def Info: thesis_plots/apndx/rlcsMain_getSegs_mice2016_05_08_19_
+48_28-eps-converted-to.pdf used on input line 919.
+(pdftex.def)             Requested size: 215.64333pt x 161.7271pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+<thesis_plots/apndx/rlcsMain_backtrack_mice_2016_05_08_19_52_57.pdf, id=4790, 1
+156.32pt x 1011.78pt>
+File: thesis_plots/apndx/rlcsMain_backtrack_mice_2016_05_08_19_52_57.pdf Graphi
+c file (type pdf)
+
+<use thesis_plots/apndx/rlcsMain_backtrack_mice_2016_05_08_19_52_57.pdf>
+Package pdftex.def Info: thesis_plots/apndx/rlcsMain_backtrack_mice_2016_05_08_
+19_52_57.pdf used on input line 928.
+(pdftex.def)             Requested size: 215.64333pt x 188.6739pt.
+Package epstopdf Info: Source file: <thesis_plots/apndx/rlcsMain_getSegs_mice20
+16_05_08_19_52_57.eps>
+(epstopdf)                    date: 2016-05-08 19:52:57
+(epstopdf)                    size: 32109 bytes
+(epstopdf)             Output file: <thesis_plots/apndx/rlcsMain_getSegs_mice20
+16_05_08_19_52_57-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-05-08 19:58:27
+(epstopdf)                    size: 19503 bytes
+(epstopdf)             Command: <repstopdf --outfile=thesis_plots/apndx/rlcsMai
+n_getSegs_mice2016_05_08_19_52_57-eps-converted-to.pdf thesis_plots/apndx/rlcsM
+ain_getSegs_mice2016_05_08_19_52_57.eps>
+(epstopdf)             \includegraphics on input line 932.
+Package epstopdf Info: Output file is already uptodate.
+
+<thesis_plots/apndx/rlcsMain_getSegs_mice2016_05_08_19_52_57-eps-converted-to.p
+df, id=4791, 578.16pt x 433.62pt>
+File: thesis_plots/apndx/rlcsMain_getSegs_mice2016_05_08_19_52_57-eps-converted
+-to.pdf Graphic file (type pdf)
+
+<use thesis_plots/apndx/rlcsMain_getSegs_mice2016_05_08_19_52_57-eps-converted-
+to.pdf>
+Package pdftex.def Info: thesis_plots/apndx/rlcsMain_getSegs_mice2016_05_08_19_
+52_57-eps-converted-to.pdf used on input line 932.
+(pdftex.def)             Requested size: 215.64333pt x 161.7271pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[45 </home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/apndx/r
+lcsMain_backtrack_n1_8_n2_182016_05_08_19_30_23.pdf> </home/athul/machineLearni
+ng/neuralData/reports/thesis/thesis_plots/apndx/rlcsMain_getSegs_8_n2_182016_05
+_08_19_30_23-eps-converted-to.pdf> </home/athul/machineLearning/neuralData/repo
+rts/thesis/thesis_plots/apndx/rlcsMain_backtrack_mice_2016_05_08_19_51_44.pdf
+
+pdfTeX warning: pdflatex (file /home/athul/machineLearning/neuralData/reports/t
+hesis/thesis_plots/apndx/rlcsMain_backtrack_mice_2016_05_08_19_51_44.pdf): PDF 
+inclusion: multiple pdfs with page group included in a single page
+> </home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/apndx/rlc
+sMain_getSegs_mice2016_05_08_19_51_44-eps-converted-to.pdf>]
+(/home/athul/machineLearning/neuralData/reports/thesis/thesis.bbl [46 </home/at
+hul/machineLearning/neuralData/reports/thesis/thesis_plots/apndx/rlcsMain_backt
+rack_mice_2016_05_08_19_48_28.pdf> </home/athul/machineLearning/neuralData/repo
+rts/thesis/thesis_plots/apndx/rlcsMain_getSegs_mice2016_05_08_19_48_28-eps-conv
+erted-to.pdf> </home/athul/machineLearning/neuralData/reports/thesis/thesis_plo
+ts/apndx/rlcsMain_backtrack_mice_2016_05_08_19_52_57.pdf
+
+pdfTeX warning: pdflatex (file /home/athul/machineLearning/neuralData/reports/t
+hesis/thesis_plots/apndx/rlcsMain_backtrack_mice_2016_05_08_19_52_57.pdf): PDF 
+inclusion: multiple pdfs with page group included in a single page
+> </home/athul/machineLearning/neuralData/reports/thesis/thesis_plots/apndx/rlc
+sMain_getSegs_mice2016_05_08_19_52_57-eps-converted-to.pdf>]
+LaTeX Font Info:    Try loading font information for OT1+pxtt on input line 28.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/pxfonts/ot1pxtt.fd
 File: ot1pxtt.fd 2000/12/14 v1.0
 ))
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 729.
- [38
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 948.
+ [47
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 729.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 948.
 
 (/home/athul/machineLearning/neuralData/reports/thesis/thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 729.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 729.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 948.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 948.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: A3CA94ED2D668776F4099E610A3D13BB;2055.
+(rerunfilecheck)             Checksum: 1C3ACA5CC88406A50ABC478C37E3DDB5;2280.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 729.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 948.
  ) 
 Here is how much of TeX's memory you used:
- 9790 strings out of 493029
- 151035 string characters out of 6136235
- 244448 words of memory out of 5000000
- 12979 multiletter control sequences out of 15000+600000
+ 9959 strings out of 495000
+ 159453 string characters out of 6181170
+ 237007 words of memory out of 5000000
+ 12789 multiletter control sequences out of 15000+600000
  30182 words of font info for 88 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 43i,9n,40p,881b,464s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 14 hyphenation exceptions out of 8191
+ 43i,9n,40p,1308b,460s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/pxfonts/pxex.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/pxfonts/pxsy.pfb></usr/share/texlive/texmf-dist/fonts/type1
@@ -1389,15 +1859,16 @@ e/texmf-dist/fonts/type1/public/pxfonts/pxex.pfb></usr/share/texlive/texmf-dist
 onts/rpxb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pxfonts/rpxi.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/public/pxfonts/rpxmi.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/pxfonts/rpxr.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/txfonts/txtt.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
-w/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/u
-plri8a.pfb>
+exmf-dist/fonts/type1/public/pxfonts/rpxsc.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/txfonts/txtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
+rw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/
+uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+
 Output written on /home/athul/machineLearning/neuralData/reports/thesis/thesis.
-pdf (49 pages, 6114641 bytes).
+pdf (59 pages, 6982629 bytes).
 PDF statistics:
- 3010 PDF objects out of 3580 (max. 8388607)
- 720 compressed objects within 8 object streams
- 118 named destinations out of 1000 (max. 500000)
- 399 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6248 PDF objects out of 7423 (max. 8388607)
+ 995 compressed objects within 10 object streams
+ 150 named destinations out of 1000 (max. 500000)
+ 528 words of extra memory for PDF output out of 10000 (max. 10000000)
 

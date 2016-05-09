@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 # @Author: Athul
 # @Date:   2016-02-23 16:00:11
-# @Last Modified by:   Athul
-# @Last Modified time: 2016-05-06 10:48:44
+# @Last Modified by:   Athul Vijayan
+# @Last Modified time: 2016-05-08 19:52:49
 from __future__ import division
 import numpy as np
 import scipy.io
@@ -16,7 +16,7 @@ plt.style.use('ggplot')
 plotDir = '../plots/'
 
 # ============================ Loading neuronal data here ===============
-data = scipy.io.loadmat('../datasets/video/2014-03-04/1/AmpMov.mat')
+data = scipy.io.loadmat('../datasets/video/2014-08-04/1/AmpMov.mat')
 data = data['AmpMov']
 
 NumNeurons      = data[0, 0]['NumNeurons']
@@ -26,7 +26,7 @@ MT_nat          = data[0, 0]['MT_nat']
 vidIndex = 0
 data = MT_nat
 ensembleSpikeRate = data[0, vidIndex]
-n1 = 2
+n1 = 21
 s = ensembleSpikeRate[n1]
 # average across trials
 X = np.mean(s, axis=1)
@@ -38,7 +38,7 @@ MT_nat          = data[0, 0]['MT_nat']
 vidIndex = 0
 data = MT_nat
 ensembleSpikeRate = data[0, vidIndex]
-n2 = 20
+n2 = 31
 s = ensembleSpikeRate[n2]
 # average across trials
 Y = np.mean(s, axis=1)

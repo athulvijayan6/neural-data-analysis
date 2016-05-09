@@ -1,34 +1,37 @@
 \contentsline {chapter}{ACKNOWLEDGEMENTS}{i}{chapter*.1}
 \contentsline {chapter}{ABSTRACT}{ii}{chapter*.2}
 \contentsline {chapter}{LIST OF TABLES}{v}{chapter*.4}
-\contentsline {chapter}{LIST OF FIGURES}{vii}{chapter*.5}
-\contentsline {chapter}{ABBREVIATIONS}{viii}{chapter*.6}
-\contentsline {chapter}{NOTATION}{ix}{chapter*.7}
+\contentsline {chapter}{LIST OF FIGURES}{viii}{chapter*.5}
+\contentsline {chapter}{ABBREVIATIONS}{ix}{chapter*.6}
+\contentsline {chapter}{NOTATION}{x}{chapter*.7}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
-\contentsline {chapter}{\numberline {2}Background and Previous work}{2}{chapter.2}
-\contentsline {section}{\numberline {2.1}Visual pathway in brain}{2}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Neurons}{3}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}Visual pathway}{4}{subsection.2.1.2}
-\contentsline {section}{\numberline {2.2}Experiment setup}{6}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Sinusoidal grating visual stimuli}{7}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Natural videos visual stimuli}{7}{subsection.2.2.2}
-\contentsline {section}{\numberline {2.3}Previous works}{7}{section.2.3}
-\contentsline {chapter}{\numberline {3}Analyzing neuronal properties}{8}{chapter.3}
-\contentsline {section}{\numberline {3.1}Quantifying Orientation and Directional selectivity}{8}{section.3.1}
-\contentsline {section}{\numberline {3.2}Modeling neuronal response}{11}{section.3.2}
-\contentsline {section}{\numberline {3.3}Finding similarly tuned neurons}{12}{section.3.3}
-\contentsline {section}{\numberline {3.4}Study of principal components}{14}{section.3.4}
-\contentsline {section}{\numberline {3.5}Study of Reliability}{16}{section.3.5}
-\contentsline {chapter}{\numberline {4}Searching for Motifs}{18}{chapter.4}
-\contentsline {section}{\numberline {4.1}Cross-Correlation Function}{19}{section.4.1}
-\contentsline {section}{\numberline {4.2}ACFGram}{21}{section.4.2}
-\contentsline {chapter}{\numberline {5}Rough Longest Common Subsequence (RLCS)}{24}{chapter.5}
-\contentsline {section}{\numberline {5.1}Longest Common Subsequence (LCS)}{24}{section.5.1}
-\contentsline {section}{\numberline {5.2}RLCS}{25}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Motivic analysis of Neuronal signals with RLCS}{29}{subsection.5.2.1}
-\contentsline {subsubsection}{Motifs in responses of a neuron to different trials}{29}{section*.22}
-\contentsline {subsubsection}{Motifs in responses of two neurons in a mice}{31}{section*.25}
-\contentsline {subsubsection}{Motifs in responses of neurons across different mice}{33}{section*.28}
-\contentsline {subsection}{\numberline {5.2.2}Normalized RLCS score as a correlation measure}{34}{subsection.5.2.2}
-\contentsline {chapter}{\numberline {6}Inferences and Future work}{36}{chapter.6}
-\contentsline {chapter}{\numberline {A}More RLCS plots}{37}{appendix.A}
+\contentsline {chapter}{\numberline {2}Background and Previous work}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Visual pathway in brain}{3}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Neurons}{4}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Visual pathway}{5}{subsection.2.1.2}
+\contentsline {section}{\numberline {2.2}Experiment setup}{7}{section.2.2}
+\contentsline {section}{\numberline {2.3}Previous works}{9}{section.2.3}
+\contentsline {chapter}{\numberline {3}Analyzing neuronal properties}{11}{chapter.3}
+\contentsline {section}{\numberline {3.1}Quantifying Orientation and Directional selectivity}{11}{section.3.1}
+\contentsline {section}{\numberline {3.2}Modeling neuronal response}{14}{section.3.2}
+\contentsline {section}{\numberline {3.3}Finding similarly tuned neurons}{15}{section.3.3}
+\contentsline {section}{\numberline {3.4}Study of principal components}{17}{section.3.4}
+\contentsline {section}{\numberline {3.5}Study of Reliability}{19}{section.3.5}
+\contentsline {chapter}{\numberline {4}Searching for Motifs}{21}{chapter.4}
+\contentsline {section}{\numberline {4.1}Cross-correlation Function}{22}{section.4.1}
+\contentsline {section}{\numberline {4.2}ACFGram}{24}{section.4.2}
+\contentsline {chapter}{\numberline {5}Rough Longest Common Subsequence (RLCS)}{27}{chapter.5}
+\contentsline {section}{\numberline {5.1}Longest Common Subsequence (LCS)}{27}{section.5.1}
+\contentsline {section}{\numberline {5.2}RLCS}{28}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Motivic analysis of Neuronal signals with RLCS}{32}{subsection.5.2.1}
+\contentsline {subsubsection}{Motifs in responses of a neuron to different trials}{33}{section*.24}
+\contentsline {subsubsection}{Motifs in responses of two neurons in a mice}{33}{section*.27}
+\contentsline {subsubsection}{Motifs in responses of neurons across different mice}{34}{section*.30}
+\contentsline {subsection}{\numberline {5.2.2}Normalized RLCS score as a correlation measure}{35}{subsection.5.2.2}
+\contentsline {chapter}{\numberline {6}Inferences and Future work}{40}{chapter.6}
+\contentsline {section}{\numberline {6.1}Inferences}{40}{section.6.1}
+\contentsline {section}{\numberline {6.2}Future work}{41}{section.6.2}
+\contentsline {chapter}{\numberline {A}Additional results from RLCS}{42}{appendix.A}
+\contentsline {section}{\numberline {A.1}RLCS of intertrial responses}{42}{section.A.1}
+\contentsline {section}{\numberline {A.2}RLCS of responses from two neurons in a mouse}{44}{section.A.2}
+\contentsline {section}{\numberline {A.3}RLCS of neuronal responses from two different mice}{45}{section.A.3}

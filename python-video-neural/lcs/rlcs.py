@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # @Author: Athul
 # @Date:   2016-03-07 18:04:47
-# @Last Modified by:   Athul
-# @Last Modified time: 2016-05-06 10:31:59
+# @Last Modified by:   Athul Vijayan
+# @Last Modified time: 2016-05-08 04:58:49
 
 # A python implementation of algorithm in
 # 1.Shrey Dutta, Krishnaraj Sekhar PV, Hema A. Murthy:
@@ -113,7 +113,7 @@ def rlcs(X, Y, tau_dist=0.005, delta=0.5):
                 if cost[i, j] < 0:
                     cost[i, j] = 0
                 if (diag[i, j-1] == 1):
-                    score[i, j] = (partial[i, j-1]*np.square(p) + np.square(cost[i-1, j]))/np.square(p)
+                    score[i, j] = (partial[i, j-1]*np.square(p) + np.square(cost[i, j - 1]))/np.square(p)
                 else:
                     score[i, j] = score[i, j-1]
 

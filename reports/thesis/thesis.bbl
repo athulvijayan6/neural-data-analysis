@@ -1,8 +1,23 @@
-\begin{thebibliography}{8}
+\begin{thebibliography}{14}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
 \expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+
+\bibitem[{Ayzenshtat {\em et~al.\/}(2012)Ayzenshtat, Gilad, Zurawel, and
+  Slovin}]{ayzenshtat2012population}
+{\bf Ayzenshtat, I.}, {\bf A.~Gilad}, {\bf G.~Zurawel}, and {\bf H.~Slovin}
+  (2012).
+\newblock Population response to natural images in the primary visual cortex
+  encodes local stimulus attributes and perceptual processing.
+\newblock {\em The Journal of Neuroscience\/}, {\bf 32}(40), 13971--13986.
+
+\bibitem[{Barlow {\em et~al.\/}(1957)Barlow, Fitzhugh, and
+  Kuffler}]{barlow1957change}
+{\bf Barlow, H.}, {\bf R.~Fitzhugh}, and {\bf S.~Kuffler} (1957).
+\newblock Change of organization in the receptive fields of the cat's retina
+  during dark adaptation.
+\newblock {\em The Journal of physiology\/}, {\bf 137}(3), 338.
 
 \bibitem[{Bear {\em et~al.\/}(2007)Bear, Connors, and
   Paradiso}]{bear2007neuroscience}
@@ -12,8 +27,8 @@
 \newblock ISBN 9780781760034.
 \newblock \urlprefix\url{https://books.google.co.in/books?id=75NgwLzueikC}.
 
-\bibitem[{Dutta {\em et~al.\/}()Dutta, PV, and Murthy}]{duttaraga}
-{\bf Dutta, S.}, {\bf K.~S. PV}, and {\bf H.~A. Murthy} ().
+\bibitem[{Dutta {\em et~al.\/}(2013)Dutta, PV, and Murthy}]{duttaraga}
+{\bf Dutta, S.}, {\bf K.~S. PV}, and {\bf H.~A. Murthy} (2013).
 \newblock Raga verification in carnatic music using longest common segment set.
 
 \bibitem[{Hubel(1995)}]{hubel1995eye}
@@ -22,10 +37,36 @@
 \newblock ISBN 9780716760092.
 \newblock \urlprefix\url{https://books.google.co.in/books?id=2Id9QgAACAAJ}.
 
+\bibitem[{Hubel and Wiesel(1959)}]{hubel1959receptive}
+{\bf Hubel, D.~H.} and {\bf T.~N. Wiesel} (1959).
+\newblock Receptive fields of single neurones in the cat's striate cortex.
+\newblock {\em The Journal of physiology\/}, {\bf 148}(3), 574--591.
+
+\bibitem[{Ishwar {\em et~al.\/}(2013)Ishwar, Dutta, Bellur, and
+  Murthy}]{ishwar2013motif}
+{\bf Ishwar, V.}, {\bf S.~Dutta}, {\bf A.~Bellur}, and {\bf H.~A. Murthy},
+  Motif spotting in an alapana in carnatic music.
+\newblock 2013.
+
 \bibitem[{Lin {\em et~al.\/}(2011)Lin, Wu, and Wang}]{lin2011music}
 {\bf Lin, H.-J.}, {\bf H.-H. Wu}, and {\bf C.-W. Wang} (2011).
 \newblock Music matching based on rough longest common subsequence.
 \newblock {\em J. Inf. Sci. Eng.\/}, {\bf 27}(1), 95--110.
+
+\bibitem[{Mazurek {\em et~al.\/}(2015)Mazurek, Kager, and
+  Van~Hooser}]{mazurek2015robust}
+{\bf Mazurek, M.}, {\bf M.~Kager}, and {\bf S.~D. Van~Hooser} (2015).
+\newblock Robust quantification of orientation selectivity and direction
+  selectivity.
+\newblock {\em Neural Circuits Revealed\/}, 127.
+
+\bibitem[{Reich {\em et~al.\/}(2000)Reich, Mechler, Purpura, and
+  Victor}]{reich2000interspike}
+{\bf Reich, D.~S.}, {\bf F.~Mechler}, {\bf K.~P. Purpura}, and {\bf J.~D.
+  Victor} (2000).
+\newblock Interspike intervals, receptive fields, and information encoding in
+  primary visual cortex.
+\newblock {\em The Journal of neuroscience\/}, {\bf 20}(5), 1964--1974.
 
 \bibitem[{Rikhye and Sur(2015)}]{rikhye2015spatial}
 {\bf Rikhye, R.~V.} and {\bf M.~Sur} (2015).

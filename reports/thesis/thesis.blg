@@ -4,45 +4,46 @@ The top-level auxiliary file: thesis.aux
 The style file: iitm.bst
 Database file #1: refs.bib
 Warning--empty journal in duttaraga
-You've used 8 entries,
+Warning--empty booktitle in ishwar2013motif
+You've used 14 entries,
             2930 wiz_defined-function locations,
-            656 strings with 6371 characters,
-and the built_in function-call counts, 5224 in all, are:
-= -- 383
-> -- 255
-< -- 2
-+ -- 83
-- -- 75
-* -- 460
-:= -- 766
-add.period$ -- 29
-call.type$ -- 8
-change.case$ -- 62
-chr.to.int$ -- 8
-cite$ -- 9
-duplicate$ -- 422
-empty$ -- 406
-format.name$ -- 99
-if$ -- 1020
+            696 strings with 7523 characters,
+and the built_in function-call counts, 9363 in all, are:
+= -- 679
+> -- 459
+< -- 3
++ -- 149
+- -- 135
+* -- 828
+:= -- 1352
+add.period$ -- 46
+call.type$ -- 14
+change.case$ -- 112
+chr.to.int$ -- 14
+cite$ -- 16
+duplicate$ -- 768
+empty$ -- 728
+format.name$ -- 179
+if$ -- 1826
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 81
-newline$ -- 49
-num.names$ -- 32
-pop$ -- 173
+missing$ -- 148
+newline$ -- 78
+num.names$ -- 56
+pop$ -- 319
 preamble$ -- 1
-purify$ -- 57
+purify$ -- 101
 quote$ -- 0
-skip$ -- 113
+skip$ -- 203
 stack$ -- 0
-substring$ -- 200
-swap$ -- 220
+substring$ -- 377
+swap$ -- 406
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 63
-warning$ -- 1
-while$ -- 32
+type$ -- 117
+warning$ -- 2
+while$ -- 58
 width$ -- 0
-write$ -- 113
-(There was 1 warning)
+write$ -- 187
+(There were 2 warnings)
